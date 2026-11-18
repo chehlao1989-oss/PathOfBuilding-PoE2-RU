@@ -33,7 +33,7 @@ code { font-family: Consolas, 'Courier New', monospace; font-size: .86em; color:
 .site-header { border-bottom: 1px solid var(--line); }
 .header-inner { max-width: 1260px; margin: auto; min-height: 97px; padding: 22px 44px; display: flex; justify-content: space-between; align-items: center; gap: 24px; }
 .brand { display: inline-flex; align-items: center; gap: 12px; font-family: Georgia, 'Times New Roman', serif; font-size: 15px; letter-spacing: .055em; white-space: nowrap; }
-.brand b { font-weight: 400; color: var(--gold); }
+.brand b { font-family: 'Times New Roman', Times, serif; font-size: 1.08em; font-weight: 400; font-variant-numeric: lining-nums; color: var(--gold); }
 .brand-seal { width: 37px; height: 37px; display: grid; place-items: center; border: 1px solid #aa8955; outline: 1px solid #aa89551a; outline-offset: 4px; color: var(--gold); border-radius: 50%; font-size: 13px; letter-spacing: -.04em; flex: 0 0 auto; }
 .site-nav { display: flex; flex-wrap: wrap; align-items: center; gap: 26px; color: #c1b9a9; font-size: 13px; }
 .site-nav a { padding: 4px 0; }
