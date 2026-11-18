@@ -63,7 +63,7 @@ h1 em { color: var(--gold); font-style: normal; }
 .screen-frame::before { top: -2px; left: -2px; border-width: 2px 0 0 2px; }
 .screen-frame::after { right: -2px; bottom: -2px; border-width: 0 2px 2px 0; }
 .screen-link { display: block; position: relative; background: #080b0d; }
-.main-screen { width: 100%; height: auto; aspect-ratio: 1282 / 752; object-fit: contain; }
+.main-screen { width: 100%; height: auto; aspect-ratio: 1916 / 1028; object-fit: contain; }
 .zoom-cue { display: flex; align-items: center; gap: 10px; position: absolute; right: 12px; bottom: 12px; background: #101517ed; border: 1px solid #8a704566; padding: 6px 11px; color: #d5c5a5; font-size: 11px; }
 .screen-frame figcaption { display: flex; flex-wrap: wrap; justify-content: space-between; gap: 7px 20px; padding: 12px 13px 7px; font-size: 12px; color: var(--gold); }
 .screen-note { color: #a1aaa6; font-size: 11px; }

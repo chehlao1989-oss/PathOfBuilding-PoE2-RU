@@ -3,9 +3,9 @@
 (() => {
   const screens = {
     tree: {
-      src: 'images/tree-ru.png',
-      caption: 'Дерево, которое говорит на вашем языке',
-      alt: 'Дерево пассивных умений, вкладки и характеристики в русской Path of Building 2'
+      src: 'images/tree-build-ru.png',
+      caption: 'Готовый билд: дерево пассивок и характеристики',
+      alt: 'Готовый билд с деревом 0_4 в русской Path of Building 2: выбранные пассивки и характеристики персонажа слева'
     },
     import: {
       src: 'images/import-ru.jpg',
