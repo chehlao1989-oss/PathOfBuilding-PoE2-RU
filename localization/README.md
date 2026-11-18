@@ -8,7 +8,7 @@
 
 ```powershell
 python scripts/build_ru_release.py
-python scripts/test_ru.py --directory dist/PoB2-RU-0.23.1-ru.1-beta.1
+python scripts/test_ru.py --directory dist/PoB2-RU-0.23.1-ru.1-beta.2
 ```
 
 Сборка читает `localization/portable-files.json` — явный список путей и SHA-256. Изменённый исходник требует проверки и явного обновления манифеста:

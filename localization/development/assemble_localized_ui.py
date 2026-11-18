@@ -14,6 +14,7 @@ from patch_build_warnings import patch_build_warnings
 from generate_pob_rare_templates_ru import write_rare_template_catalog
 from patch_trade_locale import patch_trade_locale
 from patch_character_import_locale import patch_character_import_locale
+from patch_project_support import patch_project_support
 
 
 WORK = Path(__file__).resolve().parent
@@ -115,6 +116,8 @@ def main():
         ('{148, -2, 0, 16}, ""', '{176, -2, 0, 16}, ""'),
         ('\tcontrols.betaTest.state = self.betaTest', '\tcontrols.betaTest.enabled = false\n\tcontrols.betaTest.state = self.betaTest'),
     ])
+
+    patch_project_support(BUILD)
 
     edit("Modules/Build.lua", [
         ('\tself.controls.statBox.height = function(control)',

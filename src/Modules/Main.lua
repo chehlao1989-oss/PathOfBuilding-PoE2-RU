@@ -205,6 +205,13 @@ function main:Init()
 	self.controls.about = new("ButtonControl", {"BOTTOMLEFT",self.anchorMain,"BOTTOMLEFT"}, {103, 0, 68, 20}, "About", function()
 		self:OpenAboutPopup()
 	end)
+	self.controls.supportProject = new("ButtonControl", {"BOTTOMLEFT",self.anchorMain,"BOTTOMLEFT"}, {0, -24, 160, 20}, "Support project", function()
+		self:OpenSupportPage()
+	end)
+	self.controls.supportProject.tooltipText = "Optional one-time support for the Russian localization on Boosty. PoB remains free."
+	self.controls.supportProject.shown = function()
+		return not launch.devMode and (not launch.updateAvailable or launch.updateAvailable == "none")
+	end
 	self.controls.applyUpdate = new("ButtonControl", {"BOTTOMLEFT",self.anchorMain,"BOTTOMLEFT"}, {0, -24, 140, 20}, "^x50E050Update Ready", function()
 		self:OpenUpdatePopup()
 	end)
@@ -223,7 +230,7 @@ function main:Init()
 	self.controls.checkUpdate.enabled = function()
 		return not launch.updateCheckRunning
 	end
-	self.controls.forkLabel = new("LabelControl", {"BOTTOMLEFT",self.anchorMain,"BOTTOMLEFT"}, {148, -26, 0, 16}, "")
+	self.controls.forkLabel = new("LabelControl", {"BOTTOMLEFT",self.anchorMain,"BOTTOMLEFT"}, {168, -26, 0, 14}, "")
 	self.controls.forkLabel.label = function()
 		return "^8PoB Community Fork"
 	end
@@ -1373,6 +1380,10 @@ function main:OpenUpdatePopup()
 	self:OpenPopup(800, 600, "Update Available", controls)
 end
 
+function main:OpenSupportPage()
+	OpenURL("https://boosty.to/dota2timer/donate")
+end
+
 function main:OpenAboutPopup(helpSectionIndex)
 	local textSize, subTitleSize, titleSize, popupWidth = 16, 20, 24, 810
 	local changeList = { }
@@ -1471,15 +1482,19 @@ function main:OpenAboutPopup(helpSectionIndex)
 	controls.github = new("ButtonControl", nil, {0, 62, 480, 18}, "^7GitHub page: ^x4040FFhttps://github.com/PathOfBuildingCommunity/PathOfBuilding-PoE2", function(control)
 		OpenURL("https://github.com/PathOfBuildingCommunity/PathOfBuilding-PoE2")
 	end)
-	controls.verLabel = new("ButtonControl", {"TOPLEFT", nil, "TOPLEFT"}, {10, 85, 100, 18}, "^7Version history:", function()
+	controls.supportProject = new("ButtonControl", nil, {0, 85, 190, 20}, "Support project", function()
+		self:OpenSupportPage()
+	end)
+	controls.supportNote = new("LabelControl", nil, {0, 110, 0, 14}, "Optional one-time support for the Russian localization on Boosty. PoB remains free.")
+	controls.verLabel = new("ButtonControl", {"TOPLEFT", nil, "TOPLEFT"}, {10, 133, 100, 18}, "^7Version history:", function()
 		controls.changelog.list = changeList
 		controls.changelog.sectionHeights = changeVersionHeights
 	end)
-	controls.helpLabel = new("ButtonControl", {"TOPRIGHT", nil, "TOPRIGHT"}, {-10, 85, 40, 18}, "^7Help:", function()
+	controls.helpLabel = new("ButtonControl", {"TOPRIGHT", nil, "TOPRIGHT"}, {-10, 133, 40, 18}, "^7Help:", function()
 		controls.changelog.list = helpList
 		controls.changelog.sectionHeights = helpSectionHeights
 	end)
-	controls.changelog = new("TextListControl", nil, {0, 103, popupWidth - 20, 515}, {{ x = 1, align = "LEFT" }, { x = 135, align = "LEFT" }}, helpSectionIndex and helpList or changeList, helpSectionIndex and helpSectionHeights or changeVersionHeights)
+	controls.changelog = new("TextListControl", nil, {0, 151, popupWidth - 20, 467}, {{ x = 1, align = "LEFT" }, { x = 135, align = "LEFT" }}, helpSectionIndex and helpList or changeList, helpSectionIndex and helpSectionHeights or changeVersionHeights)
 	if helpSectionIndex then
 		controls.changelog.controls.scrollBar.offset = helpSections[helpSectionIndex].height * textSize
 	end

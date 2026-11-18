@@ -1117,7 +1117,7 @@
   {
     "path": "Data/Locale/ru.lua",
     "source": "src/Data/Locale/ru.lua",
-    "sha256": "0057ad8bcd9347cbfa8ecc76be639f32b2cae908bb7bd4bd862d47647fa6db24"
+    "sha256": "1cfabe35dab96587e7326c2ef5d34436ab8626d2d7597d73ac5a1624524880c6"
   },
   {
     "path": "Data/Locale/skills_ru.lua",
@@ -5507,7 +5507,7 @@
   {
     "path": "Modules/Main.lua",
     "source": "src/Modules/Main.lua",
-    "sha256": "ccd2c8b054307f32f522b2498c86c09f1faffa9ef11b099803156c8dc30e1a47"
+    "sha256": "7ab38f3031c6ba9ac96059c61e899bb654b3956c0f2d646f2c9e7a8012f7a4f6"
   },
   {
     "path": "Modules/ModParser.lua",
@@ -8612,12 +8612,12 @@
   {
     "path": "README.md",
     "source": "localization/portable/README.md",
-    "sha256": "9f61d1b123e2e6a07e52cc7f3f9f9cd1d7cb2bbaa2a38d96d9560072e4218bf8"
+    "sha256": "c438831315d89f8826c3e07b31899a5c91553116e28e9b330e8e700aa6a44979"
   },
   {
     "path": "docs/QA-RU.md",
     "source": "docs/QA-RU.md",
-    "sha256": "8b7776f84bfe51d428687bf2891357204c70e79218a11d0b6844289f0be91394"
+    "sha256": "e0ace88124b626d0c452d5cd8c277f3db34c9ecfff62d86310346d9d4fdeddc9"
   },
   {
     "path": "coverage/item-names-ru-coverage.json",
@@ -8647,6 +8647,6 @@
   {
     "path": "RU-VERSION.json",
     "source": "localization/release.json",
-    "sha256": "6b45439cb75360acce291a1aedd6e87699cd9ffc03fe80eca2a7ff2c9c5f2601"
+    "sha256": "157fccc42b885c00a22fe73027871b99986abe659fa9dbd2c8d61e5f45d81d2c"
   }
 ]
