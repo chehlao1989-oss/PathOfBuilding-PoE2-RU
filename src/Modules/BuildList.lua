@@ -58,6 +58,9 @@ function listMode:Init(selBuildName, subPath)
 		self.controls.buildList:DeleteBuild(self.controls.buildList.selValue)
 	end)
 	self.controls.delete.enabled = function() return self.controls.buildList.selValue ~= nil end
+	for _, name in ipairs({ "new", "newFolder", "open", "copy", "rename", "delete" }) do
+		UILocale.fitButton(self.controls[name])
+	end
 	self.controls.sort = new("DropDownControl", {"LEFT",self.controls.delete,"RIGHT"}, {8, 0, 140, 20}, buildSortDropList, function(index, value)
 		main.buildSortMode = value.sortMode
 		self:SortList()

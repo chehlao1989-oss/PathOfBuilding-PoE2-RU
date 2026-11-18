@@ -6,6 +6,7 @@
 local pairs = pairs
 local ipairs = ipairs
 local t_insert = table.insert
+local utf8 = require('lua-utf8')
 local m_max = math.max
 local m_floor = math.floor
 
@@ -158,7 +159,7 @@ local CalcsTabClass = newClass("CalcsTab", "UndoHandler", "ControlHost", "Contro
 		} },
 		{ label = "Calculation Mode", { 
 			controlName = "mode", 
-			control = new("DropDownControl", nil, {0, 0, 100, 16}, buffModeDropList, function(index, value) 
+			control = new("DropDownControl", nil, {0, 0, 170, 16}, buffModeDropList, function(index, value) 
 				self.input.misc_buffMode = value.buffMode 
 				self:AddUndoState()
 				self.build.buildFlag = true
@@ -261,89 +262,59 @@ function CalcsTabClass:Draw(viewPort, inputEvents)
 	self.width = viewPort.width
 	self.height = viewPort.height
 
-	-- Arrange the sections
+	-- Keep offense and defense in separate columns when there is room.
 	local baseX = viewPort.x + 4
 	local baseY = viewPort.y + 30
-	local maxCol = m_floor(viewPort.width / (self.colWidth + 8))
-	if main.portraitMode then maxCol = 3 end
-	local colY = { }
-	local maxY = 0
+	local available = viewPort.width - 26
+	local gap = 8
+	local columns = m_max(1, math.min(5, m_floor((available + gap) / (256 + gap))))
+	local columnWidth = m_floor((available - (columns - 1) * gap) / columns)
+	local bottoms = {}
+	for column = 1, columns do
+		bottoms[column] = baseY
+	end
+	local maxY = baseY
 	for _, section in ipairs(self.sectionList) do
+		local first, last = 1, columns
+		if columns >= 4 then
+			if section.group == 1 then
+				last = columns - 2
+			else
+				first = columns - 4 + section.group + 1
+				last = first
+			end
+		end
+		local span = math.min(section.widthCols, last - first + 1)
+		section.width = span * columnWidth + (span - 1) * gap
 		section:UpdateSize()
 		if section.enabled then
-			local col
-			if section.group == 1 then
-				-- Group 1: Offense or 3 wide sections
-				-- This group is put into the first 3 columns, with each section placed into the highest available location
-				col = 1
-				if section.width == self.colWidth then -- if 1 col wide
-					local minY = colY[col] or baseY
-					for c = 2, 3 do
-						if (colY[c] or baseY) < minY then
-							col = c
-							minY = colY[c] or baseY
-						end
-					end
-				else
-					for c = 2, 3 do
-						colY[col] = m_max(colY[col] or baseY, colY[c] or baseY)
-					end
+			local column, top = first, math.huge
+			for start = first, last - span + 1 do
+				local candidate = bottoms[start]
+				for occupied = start + 1, start + span - 1 do
+					candidate = m_max(candidate, bottoms[occupied])
 				end
-			elseif section.group == 2 then
-				-- Group 2: Defense (the first 4 sections)
-				-- This group is put entirely into the 4th column
-				if maxCol >= 4 then
-					col = 4
-				end
-			elseif section.group == 3 then
-				-- Group 3: Defense (the remaining sections)
-				-- This group is put into a 5th column if there's room for one, otherwise they are handled separately
-				if maxCol >= 5 then
-					col = 5
+				if candidate < top then
+					column, top = start, candidate
 				end
 			end
-			if col then
-				section.x = baseX + (self.colWidth + 8) * (col - 1)
-				section.y = colY[col] or baseY
-				for c = col, col + section.widthCols - 1 do
-					colY[c] = section.y + section.height + 8
-				end
-				maxY = m_max(maxY, colY[col])
+			section.x = baseX + (column - 1) * (columnWidth + gap)
+			section.y = top
+			local bottom = top + section.height + gap
+			for occupied = column, column + span - 1 do
+				bottoms[occupied] = bottom
 			end
-		end
-	end
-	if maxCol < 5 then
-		-- There's no room for a 5th column
-		-- Each section from group 3 will instead be placed into column 4 if there's room, otherwise they'll be put in columns 1-3
-		for c = 1, 3 do
-			colY[c] = m_max(colY[1], colY[2], colY[3])
-		end
-		for _, section in ipairs(self.sectionList) do
-			if section.enabled and (main.portraitMode and section.group == 2 or section.group == 3) then
-				local col = 3
-				if colY[col] + section.height + 4 >= m_max(viewPort.y + viewPort.height, maxY) then
-					-- No room in the 4th column, find the highest available location in columns 1-4
-					local minY = colY[col]
-					for c = 3, 1, -1 do
-						if colY[c] < minY then
-							col = c
-							minY = colY[c]
-						end
-					end
-				end
-				section.x = baseX + (self.colWidth + 8) * (col - 1)
-				section.y = colY[col]
-				colY[col] = section.y + section.height + 8
-				maxY = m_max(maxY, colY[col])
-			end
+			maxY = m_max(maxY, bottom)
 		end
 	end
 	self.controls.scrollBar.height = viewPort.height
 	self.controls.scrollBar:SetContentDimension(maxY - (baseY - 26), viewPort.height)
 	for _, section in ipairs(self.sectionList) do
 		-- Give sections their actual Y position and let them update
-		section.y = section.y - self.controls.scrollBar.offset
-		section:UpdatePos()
+		if section.enabled then
+			section.y = section.y - self.controls.scrollBar.offset
+			section:UpdatePos()
+		end
 	end
 	
 	self.controls.search.y = 4 - self.controls.scrollBar.offset
@@ -458,8 +429,9 @@ function CalcsTabClass:CheckFlag(obj)
 end
 
 function CalcsTabClass:SearchMatch(txt)
-	local searchStr = self.controls.search.buf:lower()
-	return string.len(searchStr) > 0 and txt:lower():find(searchStr)
+	local search = utf8.lower(self.controls.search.buf)
+	return search ~= "" and (utf8.lower(txt):find(search, 1, true)
+		or utf8.lower(StripEscapes(UILocale.translate(txt .. ":"))):find(search, 1, true))
 end
 
 -- Build the calculation output tables

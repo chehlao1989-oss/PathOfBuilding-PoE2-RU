@@ -3,11 +3,22 @@
 -- Class: Item DB
 -- Item DB control.
 --
+local utf8 = require("lua-utf8")
 local pairs = pairs
 local ipairs = ipairs
 local t_insert = table.insert
 local m_max = math.max
 local m_floor = math.floor
+local russianTypeLabels = LoadModule("Data/Locale/item_filter_ru")
+local shortRussianTypeLabels = {
+	["One Handed Melee"] = "Одноручн. (ближ. бой)",
+	["Two Handed Melee"] = "Двуручн. (ближ. бой)",
+}
+local filterKeys = { "slot", "type", "sort", "league", "requirement", "obtainable", "searchMode" }
+local function localizedOptionLabel(option)
+	local label = type(option) == "table" and option.label or option
+	return StripEscapes(UILocale.translate(label))
+end
 
 
 local ItemDBClass = newClass("ItemDBControl", "ListControl", function(self, anchor, rect, itemsTab, db, dbType)
@@ -31,7 +42,7 @@ local ItemDBClass = newClass("ItemDBControl", "ListControl", function(self, anch
 	self.controls.slot = new("DropDownControl", {"BOTTOMLEFT",self,"TOPLEFT"}, {0, baseY, 179, 18}, self.slotList, function(index, value)
 		self.listBuildFlag = true
 	end)
-	self.controls.type = new("DropDownControl", {"LEFT",self.controls.slot,"RIGHT"}, {2, 0, 179, 18}, self.typeList, function(index, value)
+	self.controls.type = new("DropDownControl", {"LEFT",self.controls.slot,"RIGHT"}, {2, 0, 179, 18}, nil, function(index, value)
 		self.listBuildFlag = true
 	end)
 	if dbType == "UNIQUE" then
@@ -54,9 +65,40 @@ local ItemDBClass = newClass("ItemDBControl", "ListControl", function(self, anch
 	self.controls.searchMode = new("DropDownControl", {"LEFT",self.controls.search,"RIGHT"}, {2, 0, 100, 18}, { "Anywhere", "Names", "Modifiers" }, function(index, value)
 		self.listBuildFlag = true
 	end)
+	for _, key in ipairs(filterKeys) do
+		local dropdown = self.controls[key]
+		if dropdown then
+			dropdown.fitSelectedLabel = true
+			dropdown.droppedLabelPadding = 28
+			dropdown.maxDroppedWidth = 480
+			dropdown.localizedSearchAccessor = localizedOptionLabel
+		end
+	end
 	self:BuildSortOrder()
+	self:UpdateTypeLabels()
 	self.listBuildFlag = true
 end)
+
+function ItemDBClass:UpdateTypeLabels()
+	local entries = {}
+	local russian = UILocale.language == "ru"
+	for index, typeKey in ipairs(self.typeList) do
+		entries[index] = {
+			label = russian and (russianTypeLabels[typeKey] or UILocale.translate(typeKey)) or typeKey,
+			selectedLabel = russian and shortRussianTypeLabels[typeKey] or nil,
+			searchFilter = typeKey,
+		}
+	end
+	self.controls.type:SetList(entries)
+	for _, key in ipairs(filterKeys) do
+		local dropdown = self.controls[key]
+		if dropdown then
+			dropdown:CheckDroppedWidth(true)
+			dropdown:UpdateSearch()
+		end
+	end
+	self.typeLabelLanguage = UILocale.language
+end
 
 function ItemDBClass:LoadLeaguesAndTypes()
 	local leagueFlag = { }
@@ -76,6 +118,7 @@ function ItemDBClass:LoadLeaguesAndTypes()
 		t_insert(self.typeList, type)
 	end
 	self.leaguesAndTypesLoaded = true
+	self:UpdateTypeLabels()
 end
 
 function ItemDBClass:DoesItemMatchFilters(item)
@@ -137,41 +180,48 @@ function ItemDBClass:DoesItemMatchFilters(item)
 			return false
 		end
 	end
-	local searchStr = self.controls.search.buf:lower():gsub("[%-%.%+%[%]%$%^%%%?%*]", "%%%0")
+	local searchStr = utf8.lower(self.controls.search.buf):gsub("[%-%.%+%[%]%$%^%%%?%*]", "%%%0")
 	if searchStr:match("%S") then
 		local found = false
 		local mode = self.controls.searchMode.selIndex
 		if mode == 1 or mode == 2 then
 			local err, match = PCall(string.matchOrPattern, item.name:lower(), searchStr)
-			if not err and match then
-				found = true
+			found = not err and match
+			local label = UILocale.itemName(item)
+			if not found and label ~= item.name then
+				err, match = PCall(string.matchOrPattern, utf8.lower(label), searchStr)
+				found = not err and match
 			end
 		end
 		if mode == 1 or mode == 3 then
-			for _, line in pairs(item.enchantModLines) do
+			local function matchesModifier(line)
 				local err, match = PCall(string.matchOrPattern, line.line:lower(), searchStr)
-				if not err and match then
+				if not err and match then return true end
+				local localized = UILocale.itemModifier(line.line, line, item)
+				if localized == line.line then return false end
+				err, match = PCall(string.matchOrPattern, utf8.lower(localized), searchStr)
+				return not err and match
+			end
+			for _, line in pairs(item.enchantModLines) do
+				if matchesModifier(line) then
 					found = true
 					break
 				end
 			end
 			for _, line in pairs(item.runeModLines) do
-				local err, match = PCall(string.matchOrPattern, line.line:lower(), searchStr)
-				if not err and match then
+				if matchesModifier(line) then
 					found = true
 					break
 				end
 			end
 			for _, line in pairs(item.implicitModLines) do
-				local err, match = PCall(string.matchOrPattern, line.line:lower(), searchStr)
-				if not err and match then
+				if matchesModifier(line) then
 					found = true
 					break
 				end
 			end
 			for _, line in pairs(item.explicitModLines) do
-				local err, match = PCall(string.matchOrPattern, line.line:lower(), searchStr)
-				if not err and match then
+				if matchesModifier(line) then
 					found = true
 					break
 				end
@@ -250,7 +300,7 @@ function ItemDBClass:ListBuilder()
 			item.measuredPower = item.measuredPower or -math.huge
 			local now = GetTime()
 			if now - start > 50 then
-				self.defaultText = "^7Sorting... ("..m_floor(itemIndex/#list*100).."%)"
+				self.defaultText = "^7"..UILocale.format("Sorting... (%d%%)", m_floor(itemIndex / #list * 100))
 				coroutine.yield()
 				start = now
 			end
@@ -284,6 +334,10 @@ function ItemDBClass:ListBuilder()
 end
 
 function ItemDBClass:Draw(viewPort)
+	if self.typeLabelLanguage ~= UILocale.language then
+		self:UpdateTypeLabels()
+		self.listBuildFlag = true
+	end
 	if self.itemsTab.build.outputRevision ~= self.listOutputRevision then
 		self.listBuildFlag = true
 	end
@@ -312,7 +366,7 @@ end
 
 function ItemDBClass:GetRowValue(column, index, item)
 	if column == 1 then
-		return colorCodes[item.rarity] .. item.name
+		return colorCodes[item.rarity] .. UILocale.itemName(item)
 	end
 end
 

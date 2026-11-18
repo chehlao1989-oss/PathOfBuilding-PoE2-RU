@@ -4,6 +4,11 @@
 -- Gem selection combobox
 --
 
+local utf8 = require("lua-utf8")
+local function normalizeGemName(text)
+	return (utf8.lower(text):gsub("'", ""):gsub("‘", ""):gsub("’", ""))
+end
+
 local t_insert = table.insert
 local t_remove = table.remove
 local t_sort = table.sort
@@ -16,7 +21,7 @@ local gemTooltip = LoadModule("Classes/GemTooltip")
 local toolTipText = "Prefix tag searches with a colon and exclude tags with a dash. e.g. :fire:lightning:-cold:area"
 
 local GemSelectClass = newClass("GemSelectControl", "EditControl", function(self, anchor, rect, skillsTab, index, changeFunc, forceTooltip)
-	self.EditControl(anchor, rect, nil, nil, "^ %a':-")
+	self.EditControl(anchor, rect, nil, nil, "%c")
 	self.controls.scrollBar = new("ScrollBarControl", { "TOPRIGHT", self, "TOPRIGHT" }, {-1, 0, 18, 0}, (self.height - 4) * 4)
 	self.controls.scrollBar.y = function()
 		local width, height = self:GetSize()
@@ -139,16 +144,20 @@ function GemSelectClass:BuildList(buf)
 		t_remove(tagsList, 1)
 
 		-- Search for gem name using increasingly broad search patterns
-		local patternList = {
-			"^ " .. searchTerm:lower().."$", -- Exact match
-			"^" .. searchTerm:lower():gsub("%a", " %0%%l+") .. "$", -- Simple abbreviation ("CtF" -> "Cold to Fire")
-			"^ " .. searchTerm:lower(), -- Starts with
-			searchTerm:lower(), -- Contains
-		}
+		local term = normalizeGemName(searchTerm)
+		local literal = term:gsub("([%%%^%$%(%)%.%[%]%*%+%-%?])", "%%%1")
+		local patternList = { "^ " .. literal .. "$" }
+		if term:match("^[a-z]+$") then
+			t_insert(patternList, "^" .. term:gsub("%a", " %0%%l+") .. "$")
+		end
+		t_insert(patternList, "^ " .. literal)
+		t_insert(patternList, literal)
 		for i, pattern in ipairs(patternList) do
 			local matchList = { }
 			for gemId, gemData in pairs(self.gems) do
-				if self:FilterSupport(gemId, gemData) and not added[gemId] and ((" "..gemData.name:lower()):match(pattern)) then
+				if not added[gemId] and self:FilterSupport(gemId, gemData)
+					and ((" " .. normalizeGemName(gemData.name)):match(pattern)
+						or (" " .. normalizeGemName(UILocale.gemName(gemData))):match(pattern)) then
 					addThisGem = true
 					if #tagsList > 0 then
 						for _, tag in ipairs(tagsList) do
@@ -359,14 +368,16 @@ function GemSelectClass:UpdateGem(setText, addUndo, focusLost)
 	local gemId = self.list[m_max(self.selIndex, 1)]
 	-- don't process unless the buffer equals an actual gem, whether typed, clicked, or navigated with arrows
 	-- we don't nil the gemId here if it doesn't match because the imbuedGemSelect and slotGemSelect have different paths
-	local bufMatchesGem = (self.gems[gemId] and self.buf:lower() == self.gems[gemId].name:lower())
+	local gemData = self.gems[gemId]
+	local entered = normalizeGemName(self.buf)
+	local bufMatchesGem = gemData and (entered == normalizeGemName(gemData.name) or entered == normalizeGemName(UILocale.gemName(gemData)))
 
 	if self.buf:match("%S") and self.gems[gemId] then
 		self.gemId = gemId
 	else
 		self.gemId = nil
 	end
-	self.gemName = bufMatchesGem and (self.gemId and self.gems[self.gemId].name) or ""
+	self.gemName = bufMatchesGem and UILocale.gemName(gemData) or ""
 	if setText then
 		self:SetText(self.gemName)
 	end
@@ -449,7 +460,7 @@ function GemSelectClass:Draw(viewPort, noTooltip)
 					SetDrawColor(colorCodes.INTELLIGENCE)
 				end
 			end
-			local gemText = gemData and gemData.name or "<No matches>"
+			local gemText = gemData and UILocale.gemName(gemData) or "<No matches>"
 			DrawString(0, y, "LEFT", height - 4, "VAR", gemText)
 			if gemData then
 				if gemData.grantedEffect.support and self.sortCache.canSupport[gemId] then
@@ -578,7 +589,7 @@ function GemSelectClass:OnFocusGained()
 	self:UpdateSortCache()
 	self:BuildList("")
 	for index, gemId in pairs(self.list) do
-		if self.gems[gemId].name == self.buf then
+		if self.gems[gemId].name == self.buf or UILocale.gemName(self.gems[gemId]) == self.buf then
 			self.selIndex = index
 			self:ScrollSelIntoView()
 			break
@@ -634,7 +645,7 @@ function GemSelectClass:OnKeyDown(key, doubleClick)
 			if self.hoverSel and self.gems[self.list[self.hoverSel]] then
 				self.dropped = false
 				self.selIndex = self.hoverSel
-				self:SetText(self.gems[self.list[self.selIndex]].name)
+				self:SetText(UILocale.gemName(self.gems[self.list[self.selIndex]]))
 				self:UpdateGem(false, true)
 				return
 			end
@@ -645,7 +656,7 @@ function GemSelectClass:OnKeyDown(key, doubleClick)
 			end
 			self.selIndex = m_max(self.selIndex, 1)
 			if self.gems[self.list[self.selIndex]] then
-				self:SetText(self.gems[self.list[self.selIndex]].name)
+				self:SetText(UILocale.gemName(self.gems[self.list[self.selIndex]]))
 			end
 			self:UpdateGem(true, true, true)
 			return
@@ -663,7 +674,7 @@ function GemSelectClass:OnKeyDown(key, doubleClick)
 		elseif key == "DOWN" then
 			if self.selIndex < #self.list and not self.noMatches then
 				self.selIndex = self.selIndex + 1
-				self:SetText(self.gems[self.list[self.selIndex]].name)
+				self:SetText(UILocale.gemName(self.gems[self.list[self.selIndex]]))
 				self:UpdateGem()
 				self:ScrollSelIntoView()
 			end
@@ -673,7 +684,7 @@ function GemSelectClass:OnKeyDown(key, doubleClick)
 				if self.selIndex == 0 then
 					self:SetText(self.searchStr)
 				else
-					self:SetText(self.gems[self.list[self.selIndex]].name)
+					self:SetText(UILocale.gemName(self.gems[self.list[self.selIndex]]))
 				end
 				self:UpdateGem()
 				self:ScrollSelIntoView()

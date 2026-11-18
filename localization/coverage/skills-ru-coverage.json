@@ -1,0 +1,218 @@
+{
+  "activeReviews":[{
+      "id":"Metadata/Items/Gems/SkillGemHeraldOfThunder",
+      "level":12,
+      "lines":["Вестник грома","Полож. эффект","Удержано ресурсов: 30 Дух","Урон от атаки: 70%","Требуется: Уровень 46, 82 Ловк","Требуется: Любое боевое оружие","Пока умение активно, убийство врагов под действием шока","Болт","Положительный эффект","Нельзя уклониться","Радиус действия заряда - 1 м","100% физического урона болта становится уроном от молнии"],
+      "name":"Вестник грома",
+      "screenshot":"Screenshot_29.png"
+    },{
+      "id":"Metadata/Items/Gems/SkillGemGatheringStorm",
+      "level":14,
+      "lines":["Грядущая буря","Расход ресурсов: 32,8 маны в секунду","Урон от атаки: 299%","Требуется: Уровень 58, 57 Ловк, 57 Инт","Требуется: Боевой посох","Герой отпрыгивает назад и начинает поддержание","Обычный рывок","Идеальный рывок","Ударная волна","Ударная волна бури","20% физического урона становится уроном от молнии","+0.8 секунд(-ы) к итоговому времени атаки","+1 м к дальности ударов ближнего боя"],
+      "name":"Грядущая буря",
+      "screenshot":"Screenshot_30.png"
+    }],
+  "descriptions":{
+    "localized":1078,
+    "missing":[{
+        "hidden":true,
+        "id":"BlackStriderMassMortar",
+        "name":"Mass Mortar",
+        "reason":"No localized text for the game entry"
+      },{
+        "hidden":true,
+        "id":"BlackStriderWebProjectile",
+        "name":"Web Projectile",
+        "reason":"No localized text for the game entry"
+      },{
+        "hidden":true,
+        "id":"GoreChargerCharge",
+        "name":"Charge",
+        "reason":"No Russian description matching the game entry"
+      },{
+        "hidden":true,
+        "id":"HuhuGrubLarvaeMortar",
+        "name":"Mortar",
+        "reason":"No localized text for the game entry"
+      },{
+        "hidden":true,
+        "id":"MMAPorcupineAntSpikeball",
+        "name":"Spike Mortar",
+        "reason":"No localized text for the game entry"
+      },{
+        "hidden":true,
+        "id":"MMAPorcupineAntSpikeballSanctum",
+        "name":"Spike Mortar",
+        "reason":"No localized text for the game entry"
+      },{
+        "hidden":true,
+        "id":"MMSBoneRabbleMortar",
+        "name":"Mortar",
+        "reason":"No localized text for the game entry"
+      },{
+        "hidden":true,
+        "id":"MMSHellscapeDemonEliteTripleMortar",
+        "name":"Triple Mortar",
+        "reason":"No localized text for the game entry"
+      },{
+        "hidden":true,
+        "id":"ShellMonsterDeathMortar",
+        "name":"Death Mortar",
+        "reason":"No localized text for the game entry"
+      },{
+        "hidden":true,
+        "id":"ShellMonsterDeathMortarPoison",
+        "name":"Death Mortar",
+        "reason":"No localized text for the game entry"
+      },{
+        "hidden":true,
+        "id":"ShellMonsterSprayMortar",
+        "name":"Mortar",
+        "reason":"No localized text for the game entry"
+      },{
+        "hidden":true,
+        "id":"ShellMonsterSprayMortarPoison",
+        "name":"Mortar",
+        "reason":"No localized text for the game entry"
+      },{
+        "hidden":true,
+        "id":"TCAncestralLeagueKaruiHulk",
+        "name":"Shield Charge",
+        "reason":"No Russian description matching the game entry"
+      },{
+        "hidden":true,
+        "id":"TCExcavatorOrbCharge",
+        "name":"Orb Charge",
+        "reason":"No Russian description matching the game entry"
+      },{
+        "hidden":true,
+        "id":"TCHellscapePaleElite2Charge",
+        "name":"Charge",
+        "reason":"No Russian description matching the game entry"
+      },{
+        "hidden":true,
+        "id":"TCRathbreakerDrivebyCharge",
+        "name":"Charge",
+        "reason":"No Russian description matching the game entry"
+      },{
+        "hidden":true,
+        "id":"TCTwilghtOrderSoldierCharge",
+        "name":"Charge",
+        "reason":"No Russian description matching the game entry"
+      }],
+    "total":1095
+  },
+  "gemNames":{
+    "localized":966,
+    "missing":[],
+    "total":966
+  },
+  "missingVariantLabels":[],
+  "playerDescriptions":{
+    "localized":398,
+    "total":398
+  },
+  "pob":"0.23.1",
+  "poe2":"0.5.5g",
+  "statTemplates":{
+    "level":{
+      "localTranslations":[{
+          "id":"gem_stat_descriptions\tsupport_retreating_assault_projectile_damage_+%_final_if_melee_hit_in_past_2_seconds\tSupported Skills deal {0}% more Projectile Damage if you have Damaged an Enemy with a Melee Hit in the last two seconds",
+          "localized":true,
+          "scope":"gem_stat_descriptions",
+          "stats":"support_retreating_assault_projectile_damage_+%_final_if_melee_hit_in_past_2_seconds",
+          "text":"Supported Skills deal {0}% more Projectile Damage if you have Damaged an Enemy with a Melee Hit in the last two seconds",
+          "translation":"Усиленные умения наносят на {0}% больше урона снарядами, если за последние 2 секунды вы нанесли врагу урон ударом в ближнем бою"
+        },{
+          "id":"gem_stat_descriptions\tsupport_retreating_assault_projectile_damage_+%_final_if_melee_hit_in_past_8_seconds\tSupported Skills deal {0}% more Projectile Damage if you have Damaged an Enemy with a Melee Hit in the last eight seconds",
+          "localized":true,
+          "scope":"gem_stat_descriptions",
+          "stats":"support_retreating_assault_projectile_damage_+%_final_if_melee_hit_in_past_8_seconds",
+          "text":"Supported Skills deal {0}% more Projectile Damage if you have Damaged an Enemy with a Melee Hit in the last eight seconds",
+          "translation":"Усиленные умения наносят на {0}% больше урона снарядами, если за последние 8 секунд вы нанесли врагу урон ударом в ближнем бою"
+        },{
+          "id":"midnight_star_statset_0\tmidnight_star_attempt_to_consume_x_ice_seeds_to_create_an_ice_crystal_each_time_you_gain_ice_seeds,unique_nattblom_crystals_per_trigger\tConsumes {0} Arctic Petals to create {1} Ice Crystals when able",
+          "localized":true,
+          "scope":"midnight_star_statset_0",
+          "stats":"midnight_star_attempt_to_consume_x_ice_seeds_to_create_an_ice_crystal_each_time_you_gain_ice_seeds,unique_nattblom_crystals_per_trigger",
+          "text":"Consumes {0} Arctic Petals to create {1} Ice Crystals when able",
+          "translation":"При возможности поглощает Арктические лепестки ({0}), чтобы создать кристаллы льда ({1})"
+        }],
+      "localized":2202,
+      "missing":[],
+      "total":2202
+    },
+    "quality":{
+      "localTranslations":[{
+          "id":"entangle_statset_0\tbase_number_of_entangle_roots_allowed\t{0:+d} to Fissure Limit",
+          "localized":true,
+          "scope":"entangle_statset_0",
+          "stats":"base_number_of_entangle_roots_allowed",
+          "text":"{0:+d} to Fissure Limit",
+          "translation":"{0:+d} к лимиту расселин"
+        },{
+          "id":"gem_stat_descriptions\tperfect_timing_window_ms_+%\t{0}% longer Perfect Timing window",
+          "localized":true,
+          "scope":"gem_stat_descriptions",
+          "stats":"perfect_timing_window_ms_+%",
+          "text":"{0}% longer Perfect Timing window",
+          "translation":"Окно идеального момента на {0}% дольше"
+        },{
+          "id":"skill_stat_descriptions\tarmour_break_for_%_of_poison_damage_over_poison_duration\tBreak Armour equal to {0}% of Poison damage",
+          "localized":true,
+          "scope":"skill_stat_descriptions",
+          "stats":"armour_break_for_%_of_poison_damage_over_poison_duration",
+          "text":"Break Armour equal to {0}% of Poison damage",
+          "translation":"Разрушает броню в размере {0}% от нанесённого отравлением урона"
+        },{
+          "id":"skill_stat_descriptions\tspell_skill_%_chance_to_fire_8_additional_projectiles_in_nova\t+{0}% chance to fire 8 additional Projectiles in a circle",
+          "localized":true,
+          "scope":"skill_stat_descriptions",
+          "stats":"spell_skill_%_chance_to_fire_8_additional_projectiles_in_nova",
+          "text":"+{0}% chance to fire 8 additional Projectiles in a circle",
+          "translation":"+{0}% к шансу выпустить 8 дополнительных снарядов по кругу"
+        }],
+      "localized":411,
+      "missing":[],
+      "total":411
+    }
+  },
+  "steamBuildId":"26650308",
+  "supportDescriptions":{
+    "localized":566,
+    "total":566
+  },
+  "supportNames":{
+    "localized":567,
+    "total":567
+  },
+  "supportReviews":[{
+      "comparison":"В игре описание указывает заморозку. Строка свойства и данные PoB 0.23.1 указывают критический удар уроном от холода.",
+      "englishName":"Cold Exposure",
+      "id":"SupportColdExposurePlayer",
+      "name":"Восприимчивость к холоду",
+      "screenshot":"Screenshot_24.png"
+    },{
+      "comparison":"Описание PoB 0.23.1 дополнительно указывает задержку срабатывания и лимит в 20 колючек.",
+      "englishName":"Brambleslam",
+      "id":"SupportBrambleslamPlayer",
+      "name":"Терновник",
+      "screenshot":"Screenshot_25.png"
+    },{
+      "comparison":"В PoB 0.23.1 этот камень подходит только умениям атак.",
+      "englishName":"Frozen Spite",
+      "id":"SupportFrozenSpitePlayer",
+      "name":"Замёрзший гнев",
+      "screenshot":"Screenshot_26.png"
+    },{
+      "englishName":"Esh's Prowess",
+      "id":"SupportEshsProwess",
+      "name":"Умение Иш",
+      "screenshot":"Screenshot_27.png"
+    },{
+      "englishName":"Styrn's Ferocity",
+      "id":"SupportStyrnsFerocity",
+      "name":"Свирепость Стирна",
+      "screenshot":"Screenshot_28.png"
+    }]
+}

@@ -183,11 +183,9 @@ function BuildListClass:GetRowValue(column, index, build)
 		end
 	elseif column == 2 then
 		if build.buildName then
-			return s_format("%sLevel %d %s", 
-				build.className and colorCodes[build.className:upper()] or "^7", 
-				build.level or 1, 
-				(build.ascendClassName ~= "None" and build.ascendClassName) or build.className or "?"
-			)
+			local color = build.className and colorCodes[build.className:upper()] or "^7"
+			local class = (build.ascendClassName ~= "None" and build.ascendClassName) or build.className or "?"
+			return color .. UILocale.format("Level %d %s", build.level or 1, UILocale.translate(class))
 		else
 			return ""
 		end

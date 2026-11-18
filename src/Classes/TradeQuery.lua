@@ -345,7 +345,7 @@ on trade site to work on other leagues and realms)]]
 		tooltip:AddLine(16, "Sorts the weights by the stats selected multiplied by a value")
 		tooltip:AddLine(16, "Currently sorting by:")
 		for _, stat in ipairs(self.statSortSelectionList) do
-			tooltip:AddLine(16, s_format("%s: %.2f", stat.label, stat.weightMult))
+			tooltip:AddLine(16, s_format("%s: %.2f", UILocale.translate(stat.label), stat.weightMult))
 		end
 	end
 	self.sortModes = {
@@ -424,6 +424,11 @@ Highest Weight - Displays the order retrieved from trade]]
 		self.pbLeague = value
 		self:SetCurrencyConversionButton()
 	end)
+	self.controls.league.displayLabelAccessor = UILocale.itemLeague
+	self.controls.league.displayStringLabelAccessor = UILocale.itemLeague
+	self.controls.league.localizedSearchAccessor = UILocale.itemLeague
+	self.controls.league.fitSelectedLabel = true
+	self.controls.league.showFullLabelTooltip = true
 	self.controls.league:SetSel(self.pbLeagueIndex)
 	self.controls.league.enabled = function()
 		return #self.controls.league.list > 1
@@ -573,6 +578,7 @@ Highest Weight - Displays the order retrieved from trade]]
 	self.controls.scrollBar.shown = function() return scrollBarShown end
 
 	self.controls.fullPrice = new("LabelControl", {"BOTTOM", nil, "BOTTOM"}, {0, -row_height - pane_margins_vertical - row_vertical_padding, pane_width - 2 * pane_margins_horizontal, row_height}, "")
+	UILocale.fitTradeTotal(self.controls.fullPrice, pane_width - 2 * pane_margins_horizontal)
 	self.controls.close = new("ButtonControl", {"BOTTOM", nil, "BOTTOM"}, {0, -pane_margins_vertical, 90, row_height}, "Done", function()
 		main:ClosePopup()
 	end)
@@ -615,6 +621,7 @@ Highest Weight - Displays the order retrieved from trade]]
 			end
 		end
 	end
+	UILocale.prepareTradeTooltips(self.controls)
 	main:OpenPopup(pane_width, self.pane_height, "Trader", self.controls, nil, nil, "close", (scrollBarShown and scrollBarFunc or nil))
 end
 
@@ -625,13 +632,14 @@ function TradeQueryClass:SetStatWeights(previousSelectionList)
 	local statList = { }
 	local sliderController = { index = 1 }
 	local popupHeight = 500
+	local popupWidth = UILocale.language == "ru" and 600 or 500
 
 	local listYOffset = 45
 	-- account for top gap, bottom button size and gap, and a gap before buttons
-	local listHeight = popupHeight - 45 - 30 - 10
+	local listHeight = popupHeight - 65 - 30 - 10
 
 	controls.ListControl = new("TradeStatWeightMultiplierListControl", { "TOPLEFT", nil, "TOPRIGHT" },
-		{ -410, 45, 400, listHeight }, statList, sliderController)
+		{10 - popupWidth, 65, popupWidth - 20, listHeight}, statList, sliderController)
 
 	for _, stat in ipairs(data.powerStatList) do
 		if not stat.ignoreForItems and stat.label ~= "Name" then
@@ -647,8 +655,9 @@ function TradeQueryClass:SetStatWeights(previousSelectionList)
 		end
 	end
 
-	controls.SliderLabel = new("LabelControl", { "TOPLEFT", nil, "TOPRIGHT" }, {-410, 20, 0, 16}, "^7"..statList[1].stat.label..":")
-	controls.Slider = new("SliderControl", { "TOPLEFT", controls.SliderLabel, "TOPRIGHT" }, {20, 0, 150, 16}, function(value)
+	controls.SliderLabel = new("LabelControl", { "TOPLEFT", nil, "TOPRIGHT" }, {10 - popupWidth, 20, 0, 16}, "^7"..statList[1].stat.label..":")
+	controls.SliderLabel:SetWrapWidth(popupWidth - 280)
+	controls.Slider = new("SliderControl", { "TOPLEFT", nil, "TOPRIGHT" }, {-250, 20, 140, 16}, function(value)
 		if value == 0 then
 			controls.SliderValue.label = "^7Disabled"
 			statList[sliderController.index].stat.weightMult = 0
@@ -665,7 +674,7 @@ function TradeQueryClass:SetStatWeights(previousSelectionList)
 		local sliderOffsetX = round(184 * (1 - controls.Slider.val))
 		local tooltipWidth, tooltipHeight = self:GetSize()
 		if main.screenW >= 1338 - sliderOffsetX then
-			return controls[stat.label.."Slider"].tooltip.realDraw(self, x - 8 - sliderOffsetX, y - 4 - tooltipHeight, width, height, viewPort)
+			return controls.Slider.tooltip.realDraw(self, x - 8 - sliderOffsetX, y - 4 - tooltipHeight, width, height, viewPort)
 		end
 		return controls.Slider.tooltip.realDraw(self, x, y, width, height, viewPort)
 	end
@@ -721,7 +730,8 @@ function TradeQueryClass:SetStatWeights(previousSelectionList)
 		main:ClosePopup()
 		self:SetStatWeights(previousSelection)
 	end)
-	main:OpenPopup(420, popupHeight, "Stat Weight Multipliers", controls)
+	UILocale.prepareTradeTooltips(controls)
+	main:OpenPopup(popupWidth, popupHeight, "Stat Weight Multipliers", controls)
 end
 
 -- Method to update the Currency Conversion button label
@@ -847,7 +857,7 @@ function TradeQueryClass:UpdateDropdownList(row_idx)
 		local result = self.resultTbl[row_idx][pb_index]
 		local price = string.format(" %s(%d %s)", colorCodes["CURRENCY"], result.amount, result.currency)
 		local item = new("Item", result.item_string)
-		table.insert(dropdownLabels, colorCodes[item.rarity] .. item.name .. price)
+		table.insert(dropdownLabels, { label = colorCodes[item.rarity] .. item.name .. price, item = item, amount = result.amount, currency = result.currency })
 	end
 	self.controls["resultDropdown".. row_idx].selIndex = 1
 	self.controls["resultDropdown".. row_idx]:SetList(dropdownLabels)
@@ -1007,8 +1017,8 @@ function TradeQueryClass:PriceItemRowDisplay(row_idx, top_pane_alignment_ref, ro
 		return selectedNodeId and self.itemsTab.sockets[selectedNodeId] or activeSlot
 	end
 	local nameColor = slotTbl.unique and colorCodes.UNIQUE or "^7"
-	controls["name"..row_idx] = new("LabelControl", top_pane_alignment_ref, {0, row_idx*(row_height + row_vertical_padding), 135, row_height - 4}, nameColor..slotTbl.slotName)
-	controls["bestButton"..row_idx] = new("ButtonControl", { "LEFT", controls["name"..row_idx], "LEFT"}, {135 + 8, 0, 80, row_height}, "Find best", function()
+	controls["name"..row_idx] = new("LabelControl", top_pane_alignment_ref, {0, row_idx*(row_height + row_vertical_padding), 135, row_height - 4}, nameColor..UILocale.tradeSlotName(slotTbl))
+	controls["bestButton"..row_idx] = new("ButtonControl", { "LEFT", controls["name"..row_idx], "LEFT"}, {(UILocale.language == "ru" and 160 or 135) + 8, 0, 80, row_height}, "Find best", function()
 		self.tradeQueryGenerator:RequestQuery(activeSlot, { slotTbl = slotTbl, controls = controls, row_idx = row_idx }, self.statSortSelectionList, function(context, query, errMsg)
 			if errMsg then
 				self:SetNotice(context.controls.pbNotice, colorCodes.NEGATIVE .. errMsg)
@@ -1103,7 +1113,7 @@ you can add them, copy the link here, and press "Price Item" to evaluate the ite
 		itemSlotHelper.DrawViewer(self.itemsTab, nodeId, viewerX, viewerY, boxSize, boxSize)
 	end
 	local pbURL
-	controls["uri"..row_idx] = new("EditControl", { "TOPLEFT", controls["bestButton"..row_idx], "TOPRIGHT"}, {8, 0, 514, row_height}, nil, nil, "^%C\t\n", nil, function(buf)
+	controls["uri"..row_idx] = new("EditControl", { "TOPLEFT", controls["bestButton"..row_idx], "TOPRIGHT"}, {8, 0, UILocale.language == "ru" and 489 or 514, row_height}, nil, nil, "^%C\t\n", nil, function(buf)
 		local subpath = buf:match(self.hostName .. "trade2/search/(.+)$") or ""
 		local paths = {}
 		for path in subpath:gmatch("[^/]+") do
@@ -1168,14 +1178,19 @@ you can add them, copy the link here, and press "Price Item" to evaluate the ite
 	local clampItemIndex = function(index)
 		return m_min(m_max(index or 1, 1), self.sortedResultTbl[row_idx] and #self.sortedResultTbl[row_idx] or 1)
 	end
-	controls["changeButton"..row_idx] = new("ButtonControl", { "LEFT", controls["name"..row_idx], "LEFT"}, {135 + 8, 0, 80, row_height}, "<< Search", function()
+	controls["changeButton"..row_idx] = new("ButtonControl", { "LEFT", controls["name"..row_idx], "LEFT"}, {(UILocale.language == "ru" and 160 or 135) + 8, 0, 80, row_height}, "<< Search", function()
 		self:ResetResultRow(row_idx)
 	end)
 	controls["changeButton"..row_idx].shown = function() return self.resultTbl[row_idx] end
-	controls["resultDropdown"..row_idx] = new("DropDownControl", { "TOPLEFT", controls["changeButton"..row_idx], "TOPRIGHT"}, {8, 0, 351, row_height}, {}, function(index)
+	controls["resultDropdown"..row_idx] = new("DropDownControl", { "TOPLEFT", controls["changeButton"..row_idx], "TOPRIGHT"}, {8, 0, UILocale.language == "ru" and 326 or 351, row_height}, {}, function(index)
 		self.itemIndexTbl[row_idx] = self.sortedResultTbl[row_idx][index].index
 		self:SetFetchResultReturn(row_idx, self.itemIndexTbl[row_idx])
 	end)
+	controls["resultDropdown"..row_idx].displayLabelAccessor = UILocale.tradeResultLabel
+	controls["resultDropdown"..row_idx].localizedSearchAccessor = UILocale.tradeResultLabel
+	controls["resultDropdown"..row_idx].fitSelectedLabel = true
+	controls["resultDropdown"..row_idx].minimumLabelSize = 16
+	controls["resultDropdown"..row_idx].showFullLabelTooltip = true
 	self:UpdateDropdownList(row_idx)
 	controls["resultDropdown"..row_idx].tooltipFunc = function(tooltip, dropdown_mode, dropdown_index, dropdown_display_string)
 		local sortedRow = self.sortedResultTbl[row_idx]
@@ -1192,7 +1207,7 @@ you can add them, copy the link here, and press "Price Item" to evaluate the ite
 		local tooltipSlot = slotTbl.selectedJewelNodeId and self.itemsTab.sockets[slotTbl.selectedJewelNodeId] or activeSlot
 		self.itemsTab:AddItemTooltip(tooltip, item, tooltipSlot)
 		tooltip:AddSeparator(10)
-		tooltip:AddLine(16, string.format("^7Price: %s %s", result.amount, result.currency))
+		tooltip:AddLine(16, string.format("^7Price: %s %s", result.amount, UILocale.tradeCurrencyName(result.currency)))
 	end
 	controls["importButton"..row_idx] = new("ButtonControl", { "TOPLEFT", controls["resultDropdown"..row_idx], "TOPRIGHT"}, {8, 0, 100, row_height}, "Import Item", function()
 		self.itemsTab:CreateDisplayItemFromRaw(self.resultTbl[row_idx][self.itemIndexTbl[row_idx]].item_string)
@@ -1233,14 +1248,14 @@ you can add them, copy the link here, and press "Price Item" to evaluate the ite
 			if not itemResult then return "" end
 
 			local price = self.totalPrice[row_idx] and
-				self.totalPrice[row_idx].amount .. " " .. self.totalPrice[row_idx].currency
+				self.totalPrice[row_idx].amount .. " " .. UILocale.tradeCurrencyName(self.totalPrice[row_idx].currency)
 
 			-- we also check the price type so we can prefer instant buyout over
 			-- whisper
 			if itemResult.whisper and (itemResult.priceType ~= "~b/o") then
-				return price and "Whisper for " .. price or "Whisper"
+				return UILocale.tradeActionLabel("Whisper", price)
 			else
-				return price and "Search for " .. price or "Search"
+				return UILocale.tradeActionLabel("Search", price)
 			end
 
 		end, function()
@@ -1308,7 +1323,7 @@ function TradeQueryClass:GetTotalPriceString()
 	end)
 	for _, currency in ipairs(currencies) do
 		local value = prices[currency]
-		text = text .. tostring(value) .. " " .. currency .. ", "
+		text = text .. tostring(value) .. " " .. UILocale.tradeCurrencyName(currency) .. ", "
 	end
 	if text ~= "" then
 		text = text:sub(1, -3)

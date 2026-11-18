@@ -1,0 +1,3761 @@
+{
+  "pob": "0.23.1",
+  "tree": "0_4",
+  "steamBuildId": "26650308",
+  "names": {
+    "translated": 4284,
+    "total": 4353
+  },
+  "lines": {
+    "translated": 5491,
+    "total": 5691
+  },
+  "classes": {
+    "Monk": "Монах",
+    "Acolyte of Chayula": "Служитель Чаюлы",
+    "Invoker": "Заклинатель стихий",
+    "Huntress": "Копейщица",
+    "Ritualist": "Ритуалист",
+    "Amazon": "Амазонка",
+    "Druid": "Друид",
+    "Shaman": "Шаман",
+    "Oracle": "Оракул",
+    "Warrior": "Воин",
+    "Titan": "Титан",
+    "Warbringer": "Вестник войны",
+    "Smith of Kitava": "Кузнец Китавы",
+    "Sorceress": "Чародейка",
+    "Stormweaver": "Ткач бурь",
+    "Chronomancer": "Хрономант",
+    "Disciple of Varashta": "Ученица Варашты",
+    "Ranger": "Охотница",
+    "Pathfinder": "Следопыт",
+    "Deadeye": "Снайпер",
+    "Mercenary": "Наёмник",
+    "Tactician": "Тактик",
+    "Witchhunter": "Охотник на ведьм",
+    "Gemling Legionnaire": "Легионер каменитов",
+    "Witch": "Ведьма",
+    "Abyssal Lich": "Лич Бездны",
+    "Infernalist": "Инферналист",
+    "Blood Mage": "Маг крови",
+    "Lich": "Лич"
+  },
+  "recipeEmotions": {
+    "Despair": {
+      "id": "Metadata/Items/Currency/DistilledEmotion7",
+      "name": "Жидкое отчаяние",
+      "short": "Отчаяние"
+    },
+    "Disgust": {
+      "id": "Metadata/Items/Currency/DistilledEmotion6",
+      "name": "Жидкое отвращение",
+      "short": "Отвращение"
+    },
+    "Envy": {
+      "id": "Metadata/Items/Currency/DistilledEmotion5",
+      "name": "Жидкая зависть",
+      "short": "Зависть"
+    },
+    "Fear": {
+      "id": "Metadata/Items/Currency/DistilledEmotion8",
+      "name": "Концентрированный жидкий страх",
+      "short": "Страх"
+    },
+    "Greed": {
+      "id": "Metadata/Items/Currency/DistilledEmotion3",
+      "name": "Разбавленная жидкая жадность",
+      "short": "Жадность"
+    },
+    "Guilt": {
+      "id": "Metadata/Items/Currency/DistilledEmotion2",
+      "name": "Разбавленная жидкая вина",
+      "short": "Вина"
+    },
+    "Ire": {
+      "id": "Metadata/Items/Currency/DistilledEmotion1",
+      "name": "Разбавленный жидкий гнев",
+      "short": "Гнев"
+    },
+    "Isolation": {
+      "id": "Metadata/Items/Currency/DistilledEmotion10",
+      "name": "Концентрированное жидкое отчуждение",
+      "short": "Отчуждение"
+    },
+    "Paranoia": {
+      "id": "Metadata/Items/Currency/DistilledEmotion4",
+      "name": "Жидкая паранойя",
+      "short": "Паранойя"
+    },
+    "Suffering": {
+      "id": "Metadata/Items/Currency/DistilledEmotion9",
+      "name": "Концентрированное жидкое страдание",
+      "short": "Страдание"
+    }
+  },
+  "special": {
+    "oracle": [
+      {
+        "id": 479,
+        "en": "Hidden Forms",
+        "ru": "Скрытые формы",
+        "lines": {
+          "translated": 1,
+          "total": 1
+        },
+        "requires": [
+          5571
+        ]
+      },
+      {
+        "id": 483,
+        "en": "Gain Maximum Endurance Charges on Gaining Endurance Charge",
+        "ru": "Получение максимума зарядов выносливости при получении заряда выносливости",
+        "lines": {
+          "translated": 1,
+          "total": 1
+        },
+        "requires": [
+          5571
+        ]
+      },
+      {
+        "id": 761,
+        "en": "Command Skill Cooldown",
+        "ru": "Перезарядка умений приказов",
+        "lines": {
+          "translated": 1,
+          "total": 1
+        },
+        "requires": [
+          5571
+        ]
+      },
+      {
+        "id": 829,
+        "en": "Minion Duration",
+        "ru": "Время действия приспешников",
+        "lines": {
+          "translated": 1,
+          "total": 1
+        },
+        "requires": [
+          5571
+        ]
+      },
+      {
+        "id": 1628,
+        "en": "Stun Threshold",
+        "ru": "Порог оглушения",
+        "lines": {
+          "translated": 1,
+          "total": 1
+        },
+        "requires": [
+          5571
+        ]
+      },
+      {
+        "id": 1887,
+        "en": "Armour",
+        "ru": "Броня",
+        "lines": {
+          "translated": 1,
+          "total": 1
+        },
+        "requires": [
+          5571
+        ]
+      },
+      {
+        "id": 3281,
+        "en": "Powerful Casting",
+        "ru": "Могучее сотворение",
+        "lines": {
+          "translated": 1,
+          "total": 1
+        },
+        "requires": [
+          5571
+        ]
+      },
+      {
+        "id": 3544,
+        "en": "Lightning Damage",
+        "ru": "Урон от молнии",
+        "lines": {
+          "translated": 1,
+          "total": 1
+        },
+        "requires": [
+          5571
+        ]
+      },
+      {
+        "id": 3681,
+        "en": "Elemental Threshold",
+        "ru": "Порог наложения состояний",
+        "lines": {
+          "translated": 1,
+          "total": 1
+        },
+        "requires": [
+          5571
+        ]
+      },
+      {
+        "id": 3896,
+        "en": "Vale Dweller",
+        "ru": "Житель долин",
+        "lines": {
+          "translated": 2,
+          "total": 2
+        },
+        "requires": [
+          5571
+        ]
+      },
+      {
+        "id": 4621,
+        "en": "Stun and Elemental Threshold",
+        "ru": "Порог оглушения и наложения состояний",
+        "lines": {
+          "translated": 2,
+          "total": 2
+        },
+        "requires": [
+          5571
+        ]
+      },
+      {
+        "id": 4681,
+        "en": "Gain Maximum Frenzy Charges on Gaining Frenzy Charge",
+        "ru": "Получение максимума зарядов ярости при получении заряда ярости",
+        "lines": {
+          "translated": 1,
+          "total": 1
+        },
+        "requires": [
+          5571
+        ]
+      },
+      {
+        "id": 4873,
+        "en": "Energy",
+        "ru": "Энергия",
+        "lines": {
+          "translated": 1,
+          "total": 1
+        },
+        "requires": [
+          5571
+        ]
+      },
+      {
+        "id": 6088,
+        "en": "First Sting",
+        "ru": "Первое жжение",
+        "lines": {
+          "translated": 1,
+          "total": 2
+        },
+        "requires": [
+          5571
+        ]
+      },
+      {
+        "id": 6100,
+        "en": "Critical Damage",
+        "ru": "Критический урон",
+        "lines": {
+          "translated": 1,
+          "total": 1
+        },
+        "requires": [
+          5571
+        ]
+      },
+      {
+        "id": 6874,
+        "en": "Channelling Life Recoup",
+        "ru": "Восполнение здоровья при поддержании",
+        "lines": {
+          "translated": 1,
+          "total": 1
+        },
+        "requires": [
+          5571
+        ]
+      },
+      {
+        "id": 6999,
+        "en": "Totem Elemental Resistance",
+        "ru": "Тотемы: сопротивление стихиям",
+        "lines": {
+          "translated": 1,
+          "total": 1
+        },
+        "requires": [
+          5571
+        ]
+      },
+      {
+        "id": 7066,
+        "en": "Bow Attack Speed",
+        "ru": "Скорость атаки луком",
+        "lines": {
+          "translated": 1,
+          "total": 1
+        },
+        "requires": [
+          5571
+        ]
+      },
+      {
+        "id": 7258,
+        "en": "Strength and Spell Damage",
+        "ru": "Сила и урон от чар",
+        "lines": {
+          "translated": 2,
+          "total": 2
+        },
+        "requires": [
+          5571
+        ]
+      },
+      {
+        "id": 7553,
+        "en": "Trusted Partner",
+        "ru": "Доверенный партнёр",
+        "lines": {
+          "translated": 2,
+          "total": 2
+        },
+        "requires": [
+          5571
+        ]
+      },
+      {
+        "id": 8107,
+        "en": "Glory Generation",
+        "ru": "Накопление славы",
+        "lines": {
+          "translated": 1,
+          "total": 1
+        },
+        "requires": [
+          5571
+        ]
+      },
+      {
+        "id": 8248,
+        "en": "Bleed Duration",
+        "ru": "Длительность кровотечения",
+        "lines": {
+          "translated": 2,
+          "total": 2
+        },
+        "requires": [
+          5571
+        ]
+      },
+      {
+        "id": 8423,
+        "en": "Bow Attack Speed",
+        "ru": "Скорость атаки луком",
+        "lines": {
+          "translated": 1,
+          "total": 1
+        },
+        "requires": [
+          5571
+        ]
+      },
+      {
+        "id": 8693,
+        "en": "Armour while Bleeding",
+        "ru": "Броня при кровотечении",
+        "lines": {
+          "translated": 1,
+          "total": 1
+        },
+        "requires": [
+          5571
+        ]
+      },
+      {
+        "id": 8723,
+        "en": "Flesh Withstands",
+        "ru": "Терпеливая плоть",
+        "lines": {
+          "translated": 5,
+          "total": 5
+        },
+        "requires": [
+          5571
+        ]
+      },
+      {
+        "id": 9414,
+        "en": "Elemental Damage",
+        "ru": "Урон от стихий",
+        "lines": {
+          "translated": 1,
+          "total": 1
+        },
+        "requires": [
+          5571
+        ]
+      },
+      {
+        "id": 9554,
+        "en": "Life Costs and Chaos Damage",
+        "ru": "Расход здоровья и урон хаосом",
+        "lines": {
+          "translated": 3,
+          "total": 3
+        },
+        "requires": [
+          5571
+        ]
+      },
+      {
+        "id": 10636,
+        "en": "Block Chance",
+        "ru": "Шанс блока",
+        "lines": {
+          "translated": 1,
+          "total": 1
+        },
+        "requires": [
+          5571
+        ]
+      },
+      {
+        "id": 10713,
+        "en": "Armour",
+        "ru": "Броня",
+        "lines": {
+          "translated": 1,
+          "total": 1
+        },
+        "requires": [
+          5571
+        ]
+      },
+      {
+        "id": 11160,
+        "en": "Relinquish Your Life",
+        "ru": "Откажись от жизни",
+        "lines": {
+          "translated": 2,
+          "total": 2
+        },
+        "requires": [
+          5571
+        ]
+      },
+      {
+        "id": 11428,
+        "en": "Exhaust All Power",
+        "ru": "Истощение всех сил",
+        "lines": {
+          "translated": 1,
+          "total": 3
+        },
+        "requires": [
+          5571
+        ]
+      },
+      {
+        "id": 11464,
+        "en": "Movement Speed",
+        "ru": "Скорость передвижения",
+        "lines": {
+          "translated": 1,
+          "total": 1
+        },
+        "requires": [
+          5571
+        ]
+      },
+      {
+        "id": 11580,
+        "en": "Life Regeneration Rate",
+        "ru": "Скорость регенерации здоровья",
+        "lines": {
+          "translated": 1,
+          "total": 1
+        },
+        "requires": [
+          5571
+        ]
+      },
+      {
+        "id": 11666,
+        "en": "Reduced Movement Penalty",
+        "ru": "Снижение штрафа к скорости передвижения",
+        "lines": {
+          "translated": 1,
+          "total": 1
+        },
+        "requires": [
+          5571
+        ]
+      },
+      {
+        "id": 11861,
+        "en": "Strength and Spell Damage",
+        "ru": "Сила и урон от чар",
+        "lines": {
+          "translated": 2,
+          "total": 2
+        },
+        "requires": [
+          5571
+        ]
+      },
+      {
+        "id": 11984,
+        "en": "Physical Damage",
+        "ru": "Физический урон",
+        "lines": {
+          "translated": 1,
+          "total": 1
+        },
+        "requires": [
+          5571
+        ]
+      },
+      {
+        "id": 12601,
+        "en": "Gain Maximum Endurance Charges on Gaining Endurance Charge",
+        "ru": "Получение максимума зарядов выносливости при получении заряда выносливости",
+        "lines": {
+          "translated": 1,
+          "total": 1
+        },
+        "requires": [
+          5571
+        ]
+      },
+      {
+        "id": 12610,
+        "en": "Energy",
+        "ru": "Энергия",
+        "lines": {
+          "translated": 1,
+          "total": 1
+        },
+        "requires": [
+          5571
+        ]
+      },
+      {
+        "id": 12683,
+        "en": "Power of the Storm",
+        "ru": "Сила бури",
+        "lines": {
+          "translated": 1,
+          "total": 1
+        },
+        "requires": [
+          5571
+        ]
+      },
+      {
+        "id": 12940,
+        "en": "Cower Before the First Ones",
+        "ru": "Склонись перед Первыми",
+        "lines": {
+          "translated": 5,
+          "total": 5
+        },
+        "requires": [
+          5571
+        ]
+      },
+      {
+        "id": 13108,
+        "en": "Ally Attack and Cast Speed",
+        "ru": "Союзники: скорость атаки и сотворения чар",
+        "lines": {
+          "translated": 3,
+          "total": 3
+        },
+        "requires": [
+          5571
+        ]
+      },
+      {
+        "id": 13228,
+        "en": "Gain Maximum Power Charges on Gaining Power Charge",
+        "ru": "Получение максимума зарядов энергии при получении заряда энергии",
+        "lines": {
+          "translated": 2,
+          "total": 2
+        },
+        "requires": [
+          5571
+        ]
+      },
+      {
+        "id": 13468,
+        "en": "Give Up Your Essence",
+        "ru": "Отдай свою сущность",
+        "lines": {
+          "translated": 2,
+          "total": 2
+        },
+        "requires": [
+          5571
+        ]
+      },
+      {
+        "id": 13950,
+        "en": "Reduced Movement Penalty",
+        "ru": "Снижение штрафа к скорости передвижения",
+        "lines": {
+          "translated": 1,
+          "total": 1
+        },
+        "requires": [
+          5571
+        ]
+      },
+      {
+        "id": 14432,
+        "en": "Lunar Boon",
+        "ru": "Лунное покровительство",
+        "lines": {
+          "translated": 1,
+          "total": 1
+        },
+        "requires": [
+          5571
+        ]
+      },
+      {
+        "id": 15141,
+        "en": "Impale Chance",
+        "ru": "Шанс наложить Прокол",
+        "lines": {
+          "translated": 1,
+          "total": 1
+        },
+        "requires": [
+          5571
+        ]
+      },
+      {
+        "id": 15580,
+        "en": "Damage and Minion Damage",
+        "ru": "Урон и урон приспешников",
+        "lines": {
+          "translated": 2,
+          "total": 2
+        },
+        "requires": [
+          5571
+        ]
+      },
+      {
+        "id": 15672,
+        "en": "Totem Elemental Resistance",
+        "ru": "Тотемы: сопротивление стихиям",
+        "lines": {
+          "translated": 1,
+          "total": 1
+        },
+        "requires": [
+          5571
+        ]
+      },
+      {
+        "id": 16332,
+        "en": "Stun Threshold",
+        "ru": "Порог оглушения",
+        "lines": {
+          "translated": 1,
+          "total": 1
+        },
+        "requires": [
+          5571
+        ]
+      },
+      {
+        "id": 16615,
+        "en": "Unmoving Craiceann",
+        "ru": "Неподвижный Краценн",
+        "lines": {
+          "translated": 2,
+          "total": 2
+        },
+        "requires": [
+          5571
+        ]
+      },
+      {
+        "id": 16947,
+        "en": "Shelter from the Rain",
+        "ru": "Укрытие от дождя",
+        "lines": {
+          "translated": 2,
+          "total": 2
+        },
+        "requires": [
+          5571
+        ]
+      },
+      {
+        "id": 17059,
+        "en": "Channelling Stun Threshold",
+        "ru": "Порог оглушения при поддержании",
+        "lines": {
+          "translated": 1,
+          "total": 1
+        },
+        "requires": [
+          5571
+        ]
+      },
+      {
+        "id": 17729,
+        "en": "Chance to Poison and Spell Damage",
+        "ru": "Шанс отравить и урон от чар",
+        "lines": {
+          "translated": 2,
+          "total": 2
+        },
+        "requires": [
+          5571
+        ]
+      },
+      {
+        "id": 17894,
+        "en": "Her Final Bite",
+        "ru": "Её последний укус",
+        "lines": {
+          "translated": 2,
+          "total": 2
+        },
+        "requires": [
+          5571
+        ]
+      },
+      {
+        "id": 18081,
+        "en": "Call Upon the Deep",
+        "ru": "Воззвание к глубинам",
+        "lines": {
+          "translated": 1,
+          "total": 1
+        },
+        "requires": [
+          5571
+        ]
+      },
+      {
+        "id": 18353,
+        "en": "Physical and Lightning Damage",
+        "ru": "Физический урон и урон от молнии",
+        "lines": {
+          "translated": 2,
+          "total": 2
+        },
+        "requires": [
+          5571
+        ]
+      },
+      {
+        "id": 18441,
+        "en": "Maximum Rage",
+        "ru": "Максимум свирепости",
+        "lines": {
+          "translated": 1,
+          "total": 1
+        },
+        "requires": [
+          5571
+        ]
+      },
+      {
+        "id": 18972,
+        "en": "Echoes of Ferocity",
+        "ru": "Отголоски дикости",
+        "lines": {
+          "translated": 1,
+          "total": 1
+        },
+        "requires": [
+          5571
+        ]
+      },
+      {
+        "id": 19162,
+        "en": "Physical Damage and Increased Duration",
+        "ru": "Физический урон и увеличение длительности",
+        "lines": {
+          "translated": 2,
+          "total": 2
+        },
+        "requires": [
+          5571
+        ]
+      },
+      {
+        "id": 19953,
+        "en": "Lightning Damage",
+        "ru": "Урон от молнии",
+        "lines": {
+          "translated": 1,
+          "total": 1
+        },
+        "requires": [
+          5571
+        ]
+      },
+      {
+        "id": 19966,
+        "en": "Minion Duration",
+        "ru": "Время действия приспешников",
+        "lines": {
+          "translated": 1,
+          "total": 1
+        },
+        "requires": [
+          5571
+        ]
+      },
+      {
+        "id": 20391,
+        "en": "Block Chance",
+        "ru": "Шанс блока",
+        "lines": {
+          "translated": 1,
+          "total": 1
+        },
+        "requires": [
+          5571
+        ]
+      },
+      {
+        "id": 20496,
+        "en": "Physical Damage",
+        "ru": "Физический урон",
+        "lines": {
+          "translated": 1,
+          "total": 1
+        },
+        "requires": [
+          5571
+        ]
+      },
+      {
+        "id": 20963,
+        "en": "Calculated Hunter",
+        "ru": "Расчётливый охотник",
+        "lines": {
+          "translated": 2,
+          "total": 2
+        },
+        "requires": [
+          5571
+        ]
+      },
+      {
+        "id": 21218,
+        "en": "Bow Damage",
+        "ru": "Урон луком",
+        "lines": {
+          "translated": 1,
+          "total": 1
+        },
+        "requires": [
+          5571
+        ]
+      },
+      {
+        "id": 21549,
+        "en": "Physical Damage",
+        "ru": "Физический урон",
+        "lines": {
+          "translated": 1,
+          "total": 1
+        },
+        "requires": [
+          5571
+        ]
+      },
+      {
+        "id": 21809,
+        "en": "Physical Damage and Increased Duration",
+        "ru": "Физический урон и увеличение длительности",
+        "lines": {
+          "translated": 2,
+          "total": 2
+        },
+        "requires": [
+          5571
+        ]
+      },
+      {
+        "id": 22133,
+        "en": "Command Skill Cooldown",
+        "ru": "Перезарядка умений приказов",
+        "lines": {
+          "translated": 1,
+          "total": 1
+        },
+        "requires": [
+          5571
+        ]
+      },
+      {
+        "id": 22221,
+        "en": "Minion Damage",
+        "ru": "Урон приспешников",
+        "lines": {
+          "translated": 1,
+          "total": 1
+        },
+        "requires": [
+          5571
+        ]
+      },
+      {
+        "id": 23436,
+        "en": "Archon Duration and Critical Damage",
+        "ru": "Длительность состояния архонта и критический урон",
+        "lines": {
+          "translated": 2,
+          "total": 2
+        },
+        "requires": [
+          5571
+        ]
+      },
+      {
+        "id": 23708,
+        "en": "Armour while Bleeding",
+        "ru": "Броня при кровотечении",
+        "lines": {
+          "translated": 1,
+          "total": 1
+        },
+        "requires": [
+          5571
+        ]
+      },
+      {
+        "id": 23932,
+        "en": "Bow Attack Speed",
+        "ru": "Скорость атаки луком",
+        "lines": {
+          "translated": 1,
+          "total": 1
+        },
+        "requires": [
+          5571
+        ]
+      },
+      {
+        "id": 24993,
+        "en": "Life Costs and Chaos Damage",
+        "ru": "Расход здоровья и урон хаосом",
+        "lines": {
+          "translated": 3,
+          "total": 3
+        },
+        "requires": [
+          5571
+        ]
+      },
+      {
+        "id": 25058,
+        "en": "Gain Maximum Frenzy Charges on Gaining Frenzy Charge",
+        "ru": "Получение максимума зарядов ярости при получении заряда ярости",
+        "lines": {
+          "translated": 1,
+          "total": 1
+        },
+        "requires": [
+          5571
+        ]
+      },
+      {
+        "id": 25337,
+        "en": "Poison Chance",
+        "ru": "Шанс отравить",
+        "lines": {
+          "translated": 1,
+          "total": 1
+        },
+        "requires": [
+          5571
+        ]
+      },
+      {
+        "id": 25570,
+        "en": "Damage",
+        "ru": "Урон",
+        "lines": {
+          "translated": 1,
+          "total": 1
+        },
+        "requires": [
+          5571
+        ]
+      },
+      {
+        "id": 25678,
+        "en": "Life Costs and Chaos Damage",
+        "ru": "Расход здоровья и урон хаосом",
+        "lines": {
+          "translated": 3,
+          "total": 3
+        },
+        "requires": [
+          5571
+        ]
+      },
+      {
+        "id": 26228,
+        "en": "Prize of the Hunt",
+        "ru": "Охотничья добыча",
+        "lines": {
+          "translated": 2,
+          "total": 2
+        },
+        "requires": [
+          5571
+        ]
+      },
+      {
+        "id": 26300,
+        "en": "Archon Duration and Critical Damage",
+        "ru": "Длительность состояния архонта и критический урон",
+        "lines": {
+          "translated": 2,
+          "total": 2
+        },
+        "requires": [
+          5571
+        ]
+      },
+      {
+        "id": 27096,
+        "en": "Rustle of the Leaves",
+        "ru": "Шелест листвы",
+        "lines": {
+          "translated": 3,
+          "total": 3
+        },
+        "requires": [
+          5571
+        ]
+      },
+      {
+        "id": 27405,
+        "en": "Cooldown Recovery Rate",
+        "ru": "Ускорение перезарядки",
+        "lines": {
+          "translated": 1,
+          "total": 1
+        },
+        "requires": [
+          5571
+        ]
+      },
+      {
+        "id": 27572,
+        "en": "Chaos Damage",
+        "ru": "Урон хаосом",
+        "lines": {
+          "translated": 1,
+          "total": 1
+        },
+        "requires": [
+          5571
+        ]
+      },
+      {
+        "id": 28201,
+        "en": "Armour and Block Chance",
+        "ru": "Броня и шанс блока",
+        "lines": {
+          "translated": 2,
+          "total": 2
+        },
+        "requires": [
+          5571
+        ]
+      },
+      {
+        "id": 28223,
+        "en": "Critical Damage",
+        "ru": "Критический урон",
+        "lines": {
+          "translated": 1,
+          "total": 1
+        },
+        "requires": [
+          5571
+        ]
+      },
+      {
+        "id": 28489,
+        "en": "Shapeshifted Skill Effect Duration",
+        "ru": "Длительность эффектов умений при превращении",
+        "lines": {
+          "translated": 1,
+          "total": 1
+        },
+        "requires": [
+          5571
+        ]
+      },
+      {
+        "id": 28770,
+        "en": "Shapeshifted Elemental Damage",
+        "ru": "Урон от стихий при превращении",
+        "lines": {
+          "translated": 1,
+          "total": 1
+        },
+        "requires": [
+          5571
+        ]
+      },
+      {
+        "id": 29126,
+        "en": "Shapeshifted Elemental Damage",
+        "ru": "Урон от стихий при превращении",
+        "lines": {
+          "translated": 1,
+          "total": 1
+        },
+        "requires": [
+          5571
+        ]
+      },
+      {
+        "id": 29197,
+        "en": "Archon Duration and Critical Damage",
+        "ru": "Длительность состояния архонта и критический урон",
+        "lines": {
+          "translated": 2,
+          "total": 2
+        },
+        "requires": [
+          5571
+        ]
+      },
+      {
+        "id": 29985,
+        "en": "Minion Damage",
+        "ru": "Урон приспешников",
+        "lines": {
+          "translated": 1,
+          "total": 1
+        },
+        "requires": [
+          5571
+        ]
+      },
+      {
+        "id": 30781,
+        "en": "Movement Speed",
+        "ru": "Скорость передвижения",
+        "lines": {
+          "translated": 1,
+          "total": 1
+        },
+        "requires": [
+          5571
+        ]
+      },
+      {
+        "id": 31554,
+        "en": "Increased Duration",
+        "ru": "Увеличение длительности",
+        "lines": {
+          "translated": 1,
+          "total": 1
+        },
+        "requires": [
+          5571
+        ]
+      },
+      {
+        "id": 32768,
+        "en": "Glory Generation",
+        "ru": "Накопление славы",
+        "lines": {
+          "translated": 1,
+          "total": 1
+        },
+        "requires": [
+          5571
+        ]
+      },
+      {
+        "id": 33203,
+        "en": "Channelling Stun Threshold",
+        "ru": "Порог оглушения при поддержании",
+        "lines": {
+          "translated": 1,
+          "total": 1
+        },
+        "requires": [
+          5571
+        ]
+      },
+      {
+        "id": 33423,
+        "en": "Totem Cast and Attack Speed",
+        "ru": "Тотемы: скорость сотворения чар и атаки",
+        "lines": {
+          "translated": 2,
+          "total": 2
+        },
+        "requires": [
+          5571
+        ]
+      },
+      {
+        "id": 34143,
+        "en": "Physical Damage",
+        "ru": "Физический урон",
+        "lines": {
+          "translated": 1,
+          "total": 1
+        },
+        "requires": [
+          5571
+        ]
+      },
+      {
+        "id": 34181,
+        "en": "Maximum Rage",
+        "ru": "Максимум свирепости",
+        "lines": {
+          "translated": 1,
+          "total": 1
+        },
+        "requires": [
+          5571
+        ]
+      },
+      {
+        "id": 34490,
+        "en": "Shapeshifted Aftershock Chance",
+        "ru": "Шанс остаточной волны при превращения",
+        "lines": {
+          "translated": 1,
+          "total": 1
+        },
+        "requires": [
+          5571
+        ]
+      },
+      {
+        "id": 34769,
+        "en": "Life Regeneration Rate",
+        "ru": "Скорость регенерации здоровья",
+        "lines": {
+          "translated": 1,
+          "total": 1
+        },
+        "requires": [
+          5571
+        ]
+      },
+      {
+        "id": 34940,
+        "en": "Meditative Focus",
+        "ru": "Медитативная концентрация",
+        "lines": {
+          "translated": 2,
+          "total": 2
+        },
+        "requires": [
+          5571
+        ]
+      },
+      {
+        "id": 34990,
+        "en": "Poison Chance",
+        "ru": "Шанс отравить",
+        "lines": {
+          "translated": 1,
+          "total": 1
+        },
+        "requires": [
+          5571
+        ]
+      },
+      {
+        "id": 35393,
+        "en": "Armour while Bleeding",
+        "ru": "Броня при кровотечении",
+        "lines": {
+          "translated": 1,
+          "total": 1
+        },
+        "requires": [
+          5571
+        ]
+      },
+      {
+        "id": 35720,
+        "en": "Strength and Spell Damage",
+        "ru": "Сила и урон от чар",
+        "lines": {
+          "translated": 2,
+          "total": 2
+        },
+        "requires": [
+          5571
+        ]
+      },
+      {
+        "id": 35745,
+        "en": "Gain Maximum Endurance Charges on Gaining Endurance Charge",
+        "ru": "Получение максимума зарядов выносливости при получении заряда выносливости",
+        "lines": {
+          "translated": 1,
+          "total": 1
+        },
+        "requires": [
+          5571
+        ]
+      },
+      {
+        "id": 36025,
+        "en": "Minion Damage",
+        "ru": "Урон приспешников",
+        "lines": {
+          "translated": 1,
+          "total": 1
+        },
+        "requires": [
+          5571
+        ]
+      },
+      {
+        "id": 36197,
+        "en": "Totem Placement Speed",
+        "ru": "Скорость установки тотема",
+        "lines": {
+          "translated": 1,
+          "total": 1
+        },
+        "requires": [
+          5571
+        ]
+      },
+      {
+        "id": 36408,
+        "en": "Deadly Thorns",
+        "ru": "Смертоносные шипы",
+        "lines": {
+          "translated": 1,
+          "total": 1
+        },
+        "requires": [
+          5571
+        ]
+      },
+      {
+        "id": 37694,
+        "en": "Fire Damage",
+        "ru": "Урон от огня",
+        "lines": {
+          "translated": 1,
+          "total": 1
+        },
+        "requires": [
+          5571
+        ]
+      },
+      {
+        "id": 37778,
+        "en": "Self Sacrificing",
+        "ru": "Самопожертвование",
+        "lines": {
+          "translated": 1,
+          "total": 2
+        },
+        "requires": [
+          5571
+        ]
+      },
+      {
+        "id": 37888,
+        "en": "Limitless Pursuit",
+        "ru": "Бесконечная погоня",
+        "lines": {
+          "translated": 2,
+          "total": 2
+        },
+        "requires": [
+          5571
+        ]
+      },
+      {
+        "id": 38697,
+        "en": "Block Chance",
+        "ru": "Шанс блока",
+        "lines": {
+          "translated": 1,
+          "total": 1
+        },
+        "requires": [
+          5571
+        ]
+      },
+      {
+        "id": 39102,
+        "en": "Gain Maximum Power Charges on Gaining Power Charge",
+        "ru": "Получение максимума зарядов энергии при получении заряда энергии",
+        "lines": {
+          "translated": 2,
+          "total": 2
+        },
+        "requires": [
+          5571
+        ]
+      },
+      {
+        "id": 39857,
+        "en": "Mentorship",
+        "ru": "Менторство",
+        "lines": {
+          "translated": 3,
+          "total": 3
+        },
+        "requires": [
+          5571
+        ]
+      },
+      {
+        "id": 40511,
+        "en": "Minion Life",
+        "ru": "Здоровье приспешников",
+        "lines": {
+          "translated": 1,
+          "total": 1
+        },
+        "requires": [
+          5571
+        ]
+      },
+      {
+        "id": 42762,
+        "en": "Physical Damage",
+        "ru": "Физический урон",
+        "lines": {
+          "translated": 1,
+          "total": 1
+        },
+        "requires": [
+          5571
+        ]
+      },
+      {
+        "id": 43324,
+        "en": "Life Costs",
+        "ru": "Расход здоровья",
+        "lines": {
+          "translated": 1,
+          "total": 1
+        },
+        "requires": [
+          5571
+        ]
+      },
+      {
+        "id": 43385,
+        "en": "Minion Damage",
+        "ru": "Урон приспешников",
+        "lines": {
+          "translated": 1,
+          "total": 1
+        },
+        "requires": [
+          5571
+        ]
+      },
+      {
+        "id": 43486,
+        "en": "Gain Maximum Power Charges on Gaining Power Charge",
+        "ru": "Получение максимума зарядов энергии при получении заряда энергии",
+        "lines": {
+          "translated": 2,
+          "total": 2
+        },
+        "requires": [
+          5571
+        ]
+      },
+      {
+        "id": 43721,
+        "en": "Life Costs and Chaos Damage",
+        "ru": "Расход здоровья и урон хаосом",
+        "lines": {
+          "translated": 3,
+          "total": 3
+        },
+        "requires": [
+          5571
+        ]
+      },
+      {
+        "id": 44309,
+        "en": "Companion Damage",
+        "ru": "Урон компаньонов",
+        "lines": {
+          "translated": 1,
+          "total": 1
+        },
+        "requires": [
+          5571
+        ]
+      },
+      {
+        "id": 44452,
+        "en": "Physical Damage and Increased Duration",
+        "ru": "Физический урон и увеличение длительности",
+        "lines": {
+          "translated": 2,
+          "total": 2
+        },
+        "requires": [
+          5571
+        ]
+      },
+      {
+        "id": 44485,
+        "en": "Companion Damage",
+        "ru": "Урон компаньонов",
+        "lines": {
+          "translated": 1,
+          "total": 1
+        },
+        "requires": [
+          5571
+        ]
+      },
+      {
+        "id": 44560,
+        "en": "Cold Damage",
+        "ru": "Урон от холода",
+        "lines": {
+          "translated": 1,
+          "total": 1
+        },
+        "requires": [
+          5571
+        ]
+      },
+      {
+        "id": 45226,
+        "en": "Bow Damage",
+        "ru": "Урон луком",
+        "lines": {
+          "translated": 1,
+          "total": 1
+        },
+        "requires": [
+          5571
+        ]
+      },
+      {
+        "id": 45400,
+        "en": "Mighty Trunk",
+        "ru": "Могучий ствол",
+        "lines": {
+          "translated": 2,
+          "total": 2
+        },
+        "requires": [
+          5571
+        ]
+      },
+      {
+        "id": 45422,
+        "en": "Anger Management",
+        "ru": "Управление гневом",
+        "lines": {
+          "translated": 2,
+          "total": 2
+        },
+        "requires": [
+          5571
+        ]
+      },
+      {
+        "id": 46069,
+        "en": "Poison Damage",
+        "ru": "Урон от яда",
+        "lines": {
+          "translated": 1,
+          "total": 1
+        },
+        "requires": [
+          5571
+        ]
+      },
+      {
+        "id": 47633,
+        "en": "Thorns",
+        "ru": "Шипы",
+        "lines": {
+          "translated": 1,
+          "total": 1
+        },
+        "requires": [
+          5571
+        ]
+      },
+      {
+        "id": 48079,
+        "en": "Bleed Duration",
+        "ru": "Длительность кровотечения",
+        "lines": {
+          "translated": 2,
+          "total": 2
+        },
+        "requires": [
+          5571
+        ]
+      },
+      {
+        "id": 48160,
+        "en": "Ally Damage",
+        "ru": "Урон союзников",
+        "lines": {
+          "translated": 2,
+          "total": 2
+        },
+        "requires": [
+          5571
+        ]
+      },
+      {
+        "id": 48828,
+        "en": "Gain Maximum Frenzy Charges on Gaining Frenzy Charge",
+        "ru": "Получение максимума зарядов ярости при получении заряда ярости",
+        "lines": {
+          "translated": 1,
+          "total": 1
+        },
+        "requires": [
+          5571
+        ]
+      },
+      {
+        "id": 48935,
+        "en": "Attack Added Lighting Damage",
+        "ru": "Добавленный урон от молнии от атак",
+        "lines": {
+          "translated": 1,
+          "total": 1
+        },
+        "requires": [
+          5571
+        ]
+      },
+      {
+        "id": 49153,
+        "en": "Comradery",
+        "ru": "Товарищество",
+        "lines": {
+          "translated": 2,
+          "total": 2
+        },
+        "requires": [
+          5571
+        ]
+      },
+      {
+        "id": 49258,
+        "en": "Life Costs and Chaos Damage",
+        "ru": "Расход здоровья и урон хаосом",
+        "lines": {
+          "translated": 3,
+          "total": 3
+        },
+        "requires": [
+          5571
+        ]
+      },
+      {
+        "id": 49543,
+        "en": "Ally Attack and Cast Speed",
+        "ru": "Союзники: скорость атаки и сотворения чар",
+        "lines": {
+          "translated": 3,
+          "total": 3
+        },
+        "requires": [
+          5571
+        ]
+      },
+      {
+        "id": 49769,
+        "en": "Corruption Endures",
+        "ru": "Стойкая порча",
+        "lines": {
+          "translated": 1,
+          "total": 1
+        },
+        "requires": [
+          5571
+        ]
+      },
+      {
+        "id": 49929,
+        "en": "Everlasting Bloom",
+        "ru": "Вечное цветение",
+        "lines": {
+          "translated": 1,
+          "total": 1
+        },
+        "requires": [
+          5571
+        ]
+      },
+      {
+        "id": 50142,
+        "en": "Lightning Damage",
+        "ru": "Урон от молнии",
+        "lines": {
+          "translated": 1,
+          "total": 1
+        },
+        "requires": [
+          5571
+        ]
+      },
+      {
+        "id": 50184,
+        "en": "Poison Damage",
+        "ru": "Урон от яда",
+        "lines": {
+          "translated": 1,
+          "total": 1
+        },
+        "requires": [
+          5571
+        ]
+      },
+      {
+        "id": 50908,
+        "en": "Strength of the Deep",
+        "ru": "Сила глубин",
+        "lines": {
+          "translated": 2,
+          "total": 2
+        },
+        "requires": [
+          5571
+        ]
+      },
+      {
+        "id": 51618,
+        "en": "Life Costs and Regeneration",
+        "ru": "Расход здоровья и регенерация",
+        "lines": {
+          "translated": 2,
+          "total": 2
+        },
+        "requires": [
+          5571
+        ]
+      },
+      {
+        "id": 52115,
+        "en": "Nurturing Nature",
+        "ru": "Забота о природе",
+        "lines": {
+          "translated": 1,
+          "total": 1
+        },
+        "requires": [
+          5571
+        ]
+      },
+      {
+        "id": 52993,
+        "en": "Elemental Damage",
+        "ru": "Урон от стихий",
+        "lines": {
+          "translated": 1,
+          "total": 1
+        },
+        "requires": [
+          5571
+        ]
+      },
+      {
+        "id": 53910,
+        "en": "Forbidden Path",
+        "ru": "Запретный путь",
+        "lines": {
+          "translated": 4,
+          "total": 4
+        },
+        "requires": [
+          5571
+        ]
+      },
+      {
+        "id": 54289,
+        "en": "Gift of the Plains",
+        "ru": "Дар равнин",
+        "lines": {
+          "translated": 3,
+          "total": 3
+        },
+        "requires": [
+          5571
+        ]
+      },
+      {
+        "id": 54297,
+        "en": "Life Costs and Chaos Damage",
+        "ru": "Расход здоровья и урон хаосом",
+        "lines": {
+          "translated": 3,
+          "total": 3
+        },
+        "requires": [
+          5571
+        ]
+      },
+      {
+        "id": 55033,
+        "en": "Channelling Life Recoup",
+        "ru": "Восполнение здоровья при поддержании",
+        "lines": {
+          "translated": 1,
+          "total": 1
+        },
+        "requires": [
+          5571
+        ]
+      },
+      {
+        "id": 55897,
+        "en": "Shapeshifted Mana Regeneration",
+        "ru": "Регенерация маны при превращения",
+        "lines": {
+          "translated": 1,
+          "total": 1
+        },
+        "requires": [
+          5571
+        ]
+      },
+      {
+        "id": 56090,
+        "en": "Chance to Poison and Spell Damage",
+        "ru": "Шанс отравить и урон от чар",
+        "lines": {
+          "translated": 2,
+          "total": 2
+        },
+        "requires": [
+          5571
+        ]
+      },
+      {
+        "id": 56174,
+        "en": "Armour",
+        "ru": "Броня",
+        "lines": {
+          "translated": 1,
+          "total": 1
+        },
+        "requires": [
+          5571
+        ]
+      },
+      {
+        "id": 56466,
+        "en": "Night's Bite",
+        "ru": "Укус ночи",
+        "lines": {
+          "translated": 1,
+          "total": 1
+        },
+        "requires": [
+          5571
+        ]
+      },
+      {
+        "id": 56890,
+        "en": "Endlessly Soaring",
+        "ru": "Бесконечный полёт",
+        "lines": {
+          "translated": 1,
+          "total": 1
+        },
+        "requires": [
+          5571
+        ]
+      },
+      {
+        "id": 57002,
+        "en": "Rough Carapace",
+        "ru": "Грубый панцирь",
+        "lines": {
+          "translated": 1,
+          "total": 1
+        },
+        "requires": [
+          5571
+        ]
+      },
+      {
+        "id": 57079,
+        "en": "Known by All",
+        "ru": "Известен всем",
+        "lines": {
+          "translated": 1,
+          "total": 1
+        },
+        "requires": [
+          5571
+        ]
+      },
+      {
+        "id": 57202,
+        "en": "Stun Threshold",
+        "ru": "Порог оглушения",
+        "lines": {
+          "translated": 1,
+          "total": 1
+        },
+        "requires": [
+          5571
+        ]
+      },
+      {
+        "id": 57386,
+        "en": "Elemental Threshold",
+        "ru": "Порог наложения состояний",
+        "lines": {
+          "translated": 1,
+          "total": 1
+        },
+        "requires": [
+          5571
+        ]
+      },
+      {
+        "id": 57596,
+        "en": "Life Costs",
+        "ru": "Расход здоровья",
+        "lines": {
+          "translated": 1,
+          "total": 1
+        },
+        "requires": [
+          5571
+        ]
+      },
+      {
+        "id": 58197,
+        "en": "Unquenchable Iron",
+        "ru": "Неугасимое железо",
+        "lines": {
+          "translated": 1,
+          "total": 1
+        },
+        "requires": [
+          5571
+        ]
+      },
+      {
+        "id": 58368,
+        "en": "Minion Life",
+        "ru": "Здоровье приспешников",
+        "lines": {
+          "translated": 1,
+          "total": 1
+        },
+        "requires": [
+          5571
+        ]
+      },
+      {
+        "id": 59039,
+        "en": "Critical Damage",
+        "ru": "Критический урон",
+        "lines": {
+          "translated": 1,
+          "total": 1
+        },
+        "requires": [
+          5571
+        ]
+      },
+      {
+        "id": 59136,
+        "en": "Chance to Poison and Spell Damage",
+        "ru": "Шанс отравить и урон от чар",
+        "lines": {
+          "translated": 2,
+          "total": 2
+        },
+        "requires": [
+          5571
+        ]
+      },
+      {
+        "id": 59908,
+        "en": "Totem Area of Effect",
+        "ru": "Область действия тотема",
+        "lines": {
+          "translated": 1,
+          "total": 1
+        },
+        "requires": [
+          5571
+        ]
+      },
+      {
+        "id": 60014,
+        "en": "Scent of Blood",
+        "ru": "Запах крови",
+        "lines": {
+          "translated": 3,
+          "total": 3
+        },
+        "requires": [
+          5571
+        ]
+      },
+      {
+        "id": 60708,
+        "en": "Bow Damage",
+        "ru": "Урон луком",
+        "lines": {
+          "translated": 1,
+          "total": 1
+        },
+        "requires": [
+          5571
+        ]
+      },
+      {
+        "id": 61113,
+        "en": "Minion Damage",
+        "ru": "Урон приспешников",
+        "lines": {
+          "translated": 1,
+          "total": 1
+        },
+        "requires": [
+          5571
+        ]
+      },
+      {
+        "id": 61367,
+        "en": "Attack Added Lighting Damage",
+        "ru": "Добавленный урон от молнии от атак",
+        "lines": {
+          "translated": 1,
+          "total": 1
+        },
+        "requires": [
+          5571
+        ]
+      },
+      {
+        "id": 61471,
+        "en": "Damage and Minion Damage",
+        "ru": "Урон и урон приспешников",
+        "lines": {
+          "translated": 2,
+          "total": 2
+        },
+        "requires": [
+          5571
+        ]
+      },
+      {
+        "id": 61811,
+        "en": "Physical Damage and Increased Duration",
+        "ru": "Физический урон и увеличение длительности",
+        "lines": {
+          "translated": 2,
+          "total": 2
+        },
+        "requires": [
+          5571
+        ]
+      },
+      {
+        "id": 61977,
+        "en": "Damage and Minion Damage",
+        "ru": "Урон и урон приспешников",
+        "lines": {
+          "translated": 2,
+          "total": 2
+        },
+        "requires": [
+          5571
+        ]
+      },
+      {
+        "id": 62378,
+        "en": "Thorns",
+        "ru": "Шипы",
+        "lines": {
+          "translated": 1,
+          "total": 1
+        },
+        "requires": [
+          5571
+        ]
+      },
+      {
+        "id": 63170,
+        "en": "Totem Cast and Attack Speed and Elemental Resistance",
+        "ru": "Тотемы: скорость сотворения чар и атаки и сопротивление стихиям",
+        "lines": {
+          "translated": 3,
+          "total": 3
+        },
+        "requires": [
+          5571
+        ]
+      },
+      {
+        "id": 63243,
+        "en": "Ally Damage",
+        "ru": "Урон союзников",
+        "lines": {
+          "translated": 2,
+          "total": 2
+        },
+        "requires": [
+          5571
+        ]
+      },
+      {
+        "id": 63772,
+        "en": "Cooldown Recovery Rate",
+        "ru": "Ускорение перезарядки",
+        "lines": {
+          "translated": 1,
+          "total": 1
+        },
+        "requires": [
+          5571
+        ]
+      },
+      {
+        "id": 64083,
+        "en": "Lightning Damage",
+        "ru": "Урон от молнии",
+        "lines": {
+          "translated": 1,
+          "total": 1
+        },
+        "requires": [
+          5571
+        ]
+      },
+      {
+        "id": 64139,
+        "en": "Friend to Many",
+        "ru": "Друг многих",
+        "lines": {
+          "translated": 1,
+          "total": 1
+        },
+        "requires": [
+          5571
+        ]
+      },
+      {
+        "id": 64239,
+        "en": "Innate Rune",
+        "ru": "Врождённая руна",
+        "lines": {
+          "translated": 1,
+          "total": 1
+        },
+        "requires": [
+          5571
+        ]
+      },
+      {
+        "id": 65192,
+        "en": "Totem Cast and Attack Speed",
+        "ru": "Тотемы: скорость сотворения чар и атаки",
+        "lines": {
+          "translated": 2,
+          "total": 2
+        },
+        "requires": [
+          5571
+        ]
+      }
+    ]
+  },
+  "decorativeOracleNodes": 21,
+  "versionDifferences": [],
+  "missing": {
+    "name": [
+      {
+        "id": 10079,
+        "en": "Energy Shield Recharge"
+      },
+      {
+        "id": 11641,
+        "en": "Crystalline Potential"
+      },
+      {
+        "id": 11873,
+        "en": "Lightning Damage and Mana Regeneration"
+      },
+      {
+        "id": 12918,
+        "en": "Energy Shield Recharge"
+      },
+      {
+        "id": 13359,
+        "en": "Cold Damage and Energy Shield Recharge Rate"
+      },
+      {
+        "id": 14666,
+        "en": "Energy Shield Recharge"
+      },
+      {
+        "id": 15358,
+        "en": "Minion Life"
+      },
+      {
+        "id": 17706,
+        "en": "Energy Shield Recharge and Mana Flask Recovery"
+      },
+      {
+        "id": 18793,
+        "en": "Infused Spell Damage"
+      },
+      {
+        "id": 20236,
+        "en": "Critical Chance"
+      },
+      {
+        "id": 21227,
+        "en": "Energy Shield Delay"
+      },
+      {
+        "id": 21349,
+        "en": "The Cunning Fox"
+      },
+      {
+        "id": 23046,
+        "en": "Energy Shield Delay"
+      },
+      {
+        "id": 23940,
+        "en": "Adamant Recovery"
+      },
+      {
+        "id": 24060,
+        "en": "Infusion Consumption Chance"
+      },
+      {
+        "id": 24256,
+        "en": "Evasion"
+      },
+      {
+        "id": 25893,
+        "en": "Energy Shield Recharge"
+      },
+      {
+        "id": 26308,
+        "en": "All Attributes"
+      },
+      {
+        "id": 27017,
+        "en": "All Attributes"
+      },
+      {
+        "id": 27671,
+        "en": "Energy Shield Recharge"
+      },
+      {
+        "id": 27674,
+        "en": "Energy Shield Recharge"
+      },
+      {
+        "id": 28038,
+        "en": "Deflection"
+      },
+      {
+        "id": 28153,
+        "en": "The Rapid River"
+      },
+      {
+        "id": 3091,
+        "en": "Infusion Consumption Chance"
+      },
+      {
+        "id": 31943,
+        "en": "Cold Damage and Energy Shield Recharge Rate"
+      },
+      {
+        "id": 3203,
+        "en": "Evasion and Energy Shield"
+      },
+      {
+        "id": 32681,
+        "en": "Energy Shield Recharge and Delay"
+      },
+      {
+        "id": 327,
+        "en": "Evasion"
+      },
+      {
+        "id": 33402,
+        "en": "Shield Defences"
+      },
+      {
+        "id": 33639,
+        "en": "Infused Spell Damage"
+      },
+      {
+        "id": 36290,
+        "en": "Energy Shield Delay"
+      },
+      {
+        "id": 3630,
+        "en": "Evasion and Energy Shield Recharge"
+      },
+      {
+        "id": 36746,
+        "en": "Energy Shield Recharge"
+      },
+      {
+        "id": 37279,
+        "en": "Lightning Damage and Mana Regeneration"
+      },
+      {
+        "id": 38668,
+        "en": "Energy Shield Delay"
+      },
+      {
+        "id": 3893,
+        "en": "Deflection"
+      },
+      {
+        "id": 4017,
+        "en": "Energy Shield Recharge"
+      },
+      {
+        "id": 40691,
+        "en": "Energy Shield Recharge"
+      },
+      {
+        "id": 41159,
+        "en": "Lightning Damage and Mana Regeneration"
+      },
+      {
+        "id": 42076,
+        "en": "Energy Shield Recharge and Mana Flask Recovery"
+      },
+      {
+        "id": 43128,
+        "en": "Cast Speed and Area of Effect"
+      },
+      {
+        "id": 4346,
+        "en": "Damage on Critical"
+      },
+      {
+        "id": 43964,
+        "en": "Armour Break"
+      },
+      {
+        "id": 440,
+        "en": "Shield Defences"
+      },
+      {
+        "id": 44082,
+        "en": "Energy Shield Recharge"
+      },
+      {
+        "id": 45631,
+        "en": "Evasion and Energy Shield Recharge"
+      },
+      {
+        "id": 47831,
+        "en": "Deflection"
+      },
+      {
+        "id": 50062,
+        "en": "Reinforced Barrier"
+      },
+      {
+        "id": 50150,
+        "en": "Lightning Damage and Mana Regeneration"
+      },
+      {
+        "id": 50219,
+        "en": "Curse Delay"
+      },
+      {
+        "id": 5101,
+        "en": "Minion Revive Speed and Energy Shield Recharge"
+      },
+      {
+        "id": 51040,
+        "en": "Deflection"
+      },
+      {
+        "id": 517,
+        "en": "Energy Shield Recharge"
+      },
+      {
+        "id": 5188,
+        "en": "Energy Shield Recharge and Delay"
+      },
+      {
+        "id": 52743,
+        "en": "Energy Shield Recharge"
+      },
+      {
+        "id": 52971,
+        "en": "Quick Response"
+      },
+      {
+        "id": 54194,
+        "en": "Life Recoup"
+      },
+      {
+        "id": 56564,
+        "en": "Energy Shield Recharge"
+      },
+      {
+        "id": 56729,
+        "en": "Reduced Attribute Requirements and All Attributes"
+      },
+      {
+        "id": 58125,
+        "en": "Shield Defences"
+      },
+      {
+        "id": 58779,
+        "en": "Deflection"
+      },
+      {
+        "id": 61863,
+        "en": "Cold Damage and Energy Shield Recharge Rate"
+      },
+      {
+        "id": 64434,
+        "en": "Deflection"
+      },
+      {
+        "id": 64690,
+        "en": "Energy Shield Recharge"
+      },
+      {
+        "id": 6490,
+        "en": "Critical Damage"
+      },
+      {
+        "id": 8349,
+        "en": "Energy Shield Recharge"
+      },
+      {
+        "id": 8382,
+        "en": "Cold Damage and Energy Shield Recharge Rate"
+      },
+      {
+        "id": 8734,
+        "en": "Energy Shield Recharge"
+      },
+      {
+        "id": 9604,
+        "en": "Thirst of Kitava"
+      }
+    ],
+    "description": [
+      {
+        "id": 10079,
+        "en": "Energy Shield Recharge",
+        "lines": [
+          "15% increased Energy Shield Recharge Rate"
+        ]
+      },
+      {
+        "id": 10772,
+        "en": "Bloodthirsty",
+        "lines": [
+          "20% increased amount of Life Leeched",
+          "Leech Life 25% faster"
+        ],
+        "reason": "No unambiguous Russian template for the PoB text and client stat IDs/values."
+      },
+      {
+        "id": 10987,
+        "en": "Now and Again",
+        "lines": [
+          "Skills have 33% chance to not consume a Cooldown when used"
+        ],
+        "reason": "No unambiguous Russian template for the PoB text and client stat IDs/values."
+      },
+      {
+        "id": 11428,
+        "en": "Exhaust All Power",
+        "lines": [
+          "Archon Buffs also grant +50% Critical Damage Bonus",
+          "Archon Buffs also grant +30% Critical Hit Chance"
+        ],
+        "reason": "No unambiguous Russian template for the PoB text and client stat IDs/values."
+      },
+      {
+        "id": 11641,
+        "en": "Crystalline Potential",
+        "lines": [
+          "+10% to Quality of all Skills"
+        ]
+      },
+      {
+        "id": 11722,
+        "en": "Seal Generation Frequency",
+        "lines": [
+          "Skills Supported by Unleash have 10% increased Seal gain frequency"
+        ],
+        "reason": "No unambiguous Russian template for the PoB text and client stat IDs/values."
+      },
+      {
+        "id": 11873,
+        "en": "Lightning Damage and Mana Regeneration",
+        "lines": [
+          "8% increased Mana Regeneration Rate",
+          "8% increased Elemental Damage"
+        ]
+      },
+      {
+        "id": 1214,
+        "en": "Block and Shield Defences",
+        "lines": [
+          "15% increased Defences from Equipped Shield"
+        ],
+        "reason": "No unambiguous Russian template for the PoB text and client stat IDs/values."
+      },
+      {
+        "id": 12232,
+        "en": "Channelling Damage and Defences",
+        "lines": [
+          "4% increased Global Defences while Channelling"
+        ],
+        "reason": "No unambiguous Russian template for the PoB text and client stat IDs/values."
+      },
+      {
+        "id": 12795,
+        "en": "Path of the Sorceress",
+        "lines": [
+          "Can Allocate Passives from the Sorceress's starting point"
+        ],
+        "reason": "No unambiguous Russian template for the PoB text and client stat IDs/values."
+      },
+      {
+        "id": 12817,
+        "en": "Shield Defences",
+        "lines": [
+          "25% increased Defences from Equipped Shield"
+        ],
+        "reason": "No unambiguous Russian template for the PoB text and client stat IDs/values."
+      },
+      {
+        "id": 12822,
+        "en": "Adaptable Assault",
+        "lines": [
+          "+4 to Melee Strike Range if you've dealt a Projectile Attack Hit in the past eight seconds"
+        ],
+        "reason": "No unambiguous Russian template for the PoB text and client stat IDs/values."
+      },
+      {
+        "id": 12918,
+        "en": "Energy Shield Recharge",
+        "lines": [
+          "15% increased Energy Shield Recharge Rate"
+        ]
+      },
+      {
+        "id": 13359,
+        "en": "Cold Damage and Energy Shield Recharge Rate",
+        "lines": [
+          "8% increased Energy Shield Recharge Rate",
+          "8% increased Elemental Damage"
+        ]
+      },
+      {
+        "id": 14429,
+        "en": "Advanced Thaumaturgy",
+        "lines": [
+          "Grants Thaumaturgical Dynamism"
+        ],
+        "reason": "No unambiguous Russian template for the PoB text and client stat IDs/values."
+      },
+      {
+        "id": 14666,
+        "en": "Energy Shield Recharge",
+        "lines": [
+          "15% increased Energy Shield Recharge Rate"
+        ]
+      },
+      {
+        "id": 15358,
+        "en": "Minion Life",
+        "lines": [
+          "Minions have 10% increased maximum Life"
+        ]
+      },
+      {
+        "id": 16506,
+        "en": "Shapeshifting Elemental Ailment Chance",
+        "lines": [
+          "20% increased chance to inflict Elemental Ailments if you have Shapeshifted to an Animal form Recently"
+        ],
+        "reason": "No unambiguous Russian template for the PoB text and client stat IDs/values."
+      },
+      {
+        "id": 16568,
+        "en": "Companion Revive Speed",
+        "lines": [
+          "Minions Revive 15% faster if all your Minions are Companions"
+        ],
+        "reason": "No unambiguous Russian template for the PoB text and client stat IDs/values."
+      },
+      {
+        "id": 17372,
+        "en": "Reaching Strike",
+        "lines": [
+          "+2 to Melee Strike Range"
+        ],
+        "reason": "No unambiguous Russian template for the PoB text and client stat IDs/values."
+      },
+      {
+        "id": 17706,
+        "en": "Energy Shield Recharge and Mana Flask Recovery",
+        "lines": [
+          "10% increased Energy Shield Recharge Rate",
+          "10% increased Mana Recovery from Flasks"
+        ]
+      },
+      {
+        "id": 17788,
+        "en": "Crystalline Phylactery",
+        "lines": [
+          "100% increased Effect of the Socketed Jewel"
+        ],
+        "reason": "No unambiguous Russian template for the PoB text and client stat IDs/values."
+      },
+      {
+        "id": 18793,
+        "en": "Infused Spell Damage",
+        "lines": [
+          "12% increased Spell Damage if you have consumed an Elemental Infusion Recently"
+        ]
+      },
+      {
+        "id": 20236,
+        "en": "Critical Chance",
+        "lines": [
+          "10% increased Critical Hit Chance"
+        ]
+      },
+      {
+        "id": 21227,
+        "en": "Energy Shield Delay",
+        "lines": [
+          "15% faster start of Energy Shield Recharge"
+        ]
+      },
+      {
+        "id": 21349,
+        "en": "The Cunning Fox",
+        "lines": [
+          "+5% to Quality of all Skills"
+        ]
+      },
+      {
+        "id": 2138,
+        "en": "Spiral into Insanity",
+        "lines": [
+          "20% increased Defences"
+        ],
+        "reason": "No unambiguous Russian template for the PoB text and client stat IDs/values."
+      },
+      {
+        "id": 21684,
+        "en": "Block and Shield Defences",
+        "lines": [
+          "15% increased Defences from Equipped Shield"
+        ],
+        "reason": "No unambiguous Russian template for the PoB text and client stat IDs/values."
+      },
+      {
+        "id": 22057,
+        "en": "Shield Defences",
+        "lines": [
+          "25% increased Defences from Equipped Shield"
+        ],
+        "reason": "No unambiguous Russian template for the PoB text and client stat IDs/values."
+      },
+      {
+        "id": 22368,
+        "en": "Defences and Companion Life",
+        "lines": [
+          "10% increased Defences while your Companion is in your Presence"
+        ],
+        "reason": "No unambiguous Russian template for the PoB text and client stat IDs/values."
+      },
+      {
+        "id": 23046,
+        "en": "Energy Shield Delay",
+        "lines": [
+          "15% faster start of Energy Shield Recharge"
+        ]
+      },
+      {
+        "id": 23940,
+        "en": "Adamant Recovery",
+        "lines": [
+          "Increases and Reductions to Armour also apply to Energy Shield",
+          "Recharge Rate at 40% of their value"
+        ]
+      },
+      {
+        "id": 24060,
+        "en": "Infusion Consumption Chance",
+        "lines": [
+          "Skills have 5% chance to not remove Elemental Infusions but still count as consuming them"
+        ]
+      },
+      {
+        "id": 24062,
+        "en": "Immortal Infamy",
+        "lines": [
+          "10% increased Energy Shield Recharge Rate"
+        ],
+        "reason": "No unambiguous Russian template for the PoB text and client stat IDs/values."
+      },
+      {
+        "id": 24256,
+        "en": "Evasion",
+        "lines": [
+          "15% increased Evasion Rating"
+        ]
+      },
+      {
+        "id": 25893,
+        "en": "Energy Shield Recharge",
+        "lines": [
+          "15% increased Energy Shield Recharge Rate"
+        ]
+      },
+      {
+        "id": 26283,
+        "en": "Choice of Mana",
+        "lines": [
+          "Remnants have 50% increased effect"
+        ],
+        "reason": "No unambiguous Russian template for the PoB text and client stat IDs/values."
+      },
+      {
+        "id": 26308,
+        "en": "All Attributes",
+        "lines": [
+          "+3 to all Attributes"
+        ]
+      },
+      {
+        "id": 26447,
+        "en": "Refocus",
+        "lines": [
+          "30% increased Energy Shield Recharge Rate"
+        ],
+        "reason": "No unambiguous Russian template for the PoB text and client stat IDs/values."
+      },
+      {
+        "id": 27017,
+        "en": "All Attributes",
+        "lines": [
+          "+3 to all Attributes"
+        ]
+      },
+      {
+        "id": 27048,
+        "en": "Defences and Companion Life",
+        "lines": [
+          "10% increased Defences while your Companion is in your Presence"
+        ],
+        "reason": "No unambiguous Russian template for the PoB text and client stat IDs/values."
+      },
+      {
+        "id": 27671,
+        "en": "Energy Shield Recharge",
+        "lines": [
+          "15% increased Energy Shield Recharge Rate"
+        ]
+      },
+      {
+        "id": 27674,
+        "en": "Energy Shield Recharge",
+        "lines": [
+          "15% increased Energy Shield Recharge Rate"
+        ]
+      },
+      {
+        "id": 27687,
+        "en": "Greatest Defence",
+        "lines": [
+          "4% increased Attack Damage per 75 Item Armour and Evasion Rating on Equipped Shield"
+        ],
+        "reason": "No unambiguous Russian template for the PoB text and client stat IDs/values."
+      },
+      {
+        "id": 28038,
+        "en": "Deflection",
+        "lines": [
+          "Gain Deflection Rating equal to 6% of Evasion Rating"
+        ]
+      },
+      {
+        "id": 28153,
+        "en": "The Rapid River",
+        "lines": [
+          "Recoup Effects instead occur over 4 seconds"
+        ]
+      },
+      {
+        "id": 30233,
+        "en": "As the Whispers Demand",
+        "lines": [
+          "Ritual Sacrifice can be used on yourself to remove 20% of maximum Life and grant a random Monster Modifier",
+          "A maximum of one Modifer can be granted this way"
+        ],
+        "reason": "No unambiguous Russian template for the PoB text and client stat IDs/values."
+      },
+      {
+        "id": 3091,
+        "en": "Infusion Consumption Chance",
+        "lines": [
+          "Skills have 5% chance to not remove Elemental Infusions but still count as consuming them"
+        ]
+      },
+      {
+        "id": 31037,
+        "en": "Remnant Effect",
+        "lines": [
+          "Remnants have 10% increased effect"
+        ],
+        "reason": "No unambiguous Russian template for the PoB text and client stat IDs/values."
+      },
+      {
+        "id": 31517,
+        "en": "Seal Generation Frequency",
+        "lines": [
+          "Skills Supported by Unleash have 10% increased Seal gain frequency"
+        ],
+        "reason": "No unambiguous Russian template for the PoB text and client stat IDs/values."
+      },
+      {
+        "id": 31609,
+        "en": "Shield Defences",
+        "lines": [
+          "25% increased Defences from Equipped Shield"
+        ],
+        "reason": "No unambiguous Russian template for the PoB text and client stat IDs/values."
+      },
+      {
+        "id": 31943,
+        "en": "Cold Damage and Energy Shield Recharge Rate",
+        "lines": [
+          "8% increased Energy Shield Recharge Rate",
+          "8% increased Elemental Damage"
+        ]
+      },
+      {
+        "id": 3203,
+        "en": "Evasion and Energy Shield",
+        "lines": [
+          "12% increased Evasion Rating",
+          "12% increased maximum Energy Shield"
+        ]
+      },
+      {
+        "id": 32664,
+        "en": "Chakra of Breathing",
+        "lines": [
+          "1% increased Energy Shield Recharge Rate per 4 Dexterity"
+        ],
+        "reason": "No unambiguous Russian template for the PoB text and client stat IDs/values."
+      },
+      {
+        "id": 32681,
+        "en": "Energy Shield Recharge and Delay",
+        "lines": [
+          "8% increased Energy Shield Recharge Rate",
+          "8% faster start of Energy Shield Recharge"
+        ]
+      },
+      {
+        "id": 327,
+        "en": "Evasion",
+        "lines": [
+          "15% increased Evasion Rating"
+        ]
+      },
+      {
+        "id": 32799,
+        "en": "Captivating Companionship",
+        "lines": [
+          "20% increased Defences while your Companion is in your Presence"
+        ],
+        "reason": "No unambiguous Russian template for the PoB text and client stat IDs/values."
+      },
+      {
+        "id": 33093,
+        "en": "Effervescent",
+        "lines": [
+          "4% increased Cast Speed for each different Non-Instant Spell you've Cast Recently"
+        ],
+        "reason": "No unambiguous Russian template for the PoB text and client stat IDs/values."
+      },
+      {
+        "id": 33369,
+        "en": "Vaal Pact",
+        "lines": [
+          "Life Leech is Instant",
+          "Cannot use Life Flasks"
+        ],
+        "reason": "No unambiguous Russian template for the PoB text and client stat IDs/values."
+      },
+      {
+        "id": 33402,
+        "en": "Shield Defences",
+        "lines": [
+          "25% increased Defences from Equipped Shield"
+        ]
+      },
+      {
+        "id": 33639,
+        "en": "Infused Spell Damage",
+        "lines": [
+          "12% increased Spell Damage if you have consumed an Elemental Infusion Recently"
+        ]
+      },
+      {
+        "id": 33824,
+        "en": "Defences",
+        "lines": [
+          "10% increased Defences"
+        ],
+        "reason": "No unambiguous Russian template for the PoB text and client stat IDs/values."
+      },
+      {
+        "id": 34316,
+        "en": "One with the River",
+        "lines": [
+          "30% increased Defences while wielding a Quarterstaff"
+        ],
+        "reason": "No unambiguous Russian template for the PoB text and client stat IDs/values."
+      },
+      {
+        "id": 34324,
+        "en": "Spectral Ward",
+        "lines": [
+          "+1 to Maximum Energy Shield per 12 Item Evasion Rating on Equipped Body Armour"
+        ],
+        "reason": "No unambiguous Russian template for the PoB text and client stat IDs/values."
+      },
+      {
+        "id": 34375,
+        "en": "Shield Defences",
+        "lines": [
+          "25% increased Defences from Equipped Shield"
+        ],
+        "reason": "No unambiguous Russian template for the PoB text and client stat IDs/values."
+      },
+      {
+        "id": 34541,
+        "en": "Energising Deflection",
+        "lines": [
+          "30% increased Energy Shield Recharge Rate"
+        ],
+        "reason": "No unambiguous Russian template for the PoB text and client stat IDs/values."
+      },
+      {
+        "id": 34866,
+        "en": "Remnant Effect",
+        "lines": [
+          "Remnants have 10% increased effect"
+        ],
+        "reason": "No unambiguous Russian template for the PoB text and client stat IDs/values."
+      },
+      {
+        "id": 35417,
+        "en": "Wyvern's Breath",
+        "lines": [
+          "40% increased chance to inflict Elemental Ailments if you have Shapeshifted to an Animal form Recently"
+        ],
+        "reason": "No unambiguous Russian template for the PoB text and client stat IDs/values."
+      },
+      {
+        "id": 36290,
+        "en": "Energy Shield Delay",
+        "lines": [
+          "15% faster start of Energy Shield Recharge"
+        ]
+      },
+      {
+        "id": 3630,
+        "en": "Evasion and Energy Shield Recharge",
+        "lines": [
+          "10% increased Evasion Rating",
+          "10% increased Energy Shield Recharge Rate"
+        ]
+      },
+      {
+        "id": 36556,
+        "en": "Channelling Defences",
+        "lines": [
+          "8% increased Global Defences while Channelling"
+        ],
+        "reason": "No unambiguous Russian template for the PoB text and client stat IDs/values."
+      },
+      {
+        "id": 36746,
+        "en": "Energy Shield Recharge",
+        "lines": [
+          "15% increased Energy Shield Recharge Rate"
+        ]
+      },
+      {
+        "id": 36808,
+        "en": "Spiked Shield",
+        "lines": [
+          "2% increased Attack Damage per 75 Item Armour and Evasion Rating on Equipped Shield",
+          "50% increased Defences from Equipped Shield"
+        ],
+        "reason": "No unambiguous Russian template for the PoB text and client stat IDs/values."
+      },
+      {
+        "id": 37279,
+        "en": "Lightning Damage and Mana Regeneration",
+        "lines": [
+          "8% increased Mana Regeneration Rate",
+          "8% increased Elemental Damage"
+        ]
+      },
+      {
+        "id": 37778,
+        "en": "Self Sacrificing",
+        "lines": [
+          "20% reduced Spirit Reservation Efficiency of Skills"
+        ],
+        "reason": "No unambiguous Russian template for the PoB text and client stat IDs/values."
+      },
+      {
+        "id": 38535,
+        "en": "Stormcharged",
+        "lines": [
+          "40% increased Elemental Damage if you've dealt a Critical Hit Recently",
+          "15% increased Critical Hit Chance"
+        ],
+        "reason": "No unambiguous Russian template for the PoB text and client stat IDs/values."
+      },
+      {
+        "id": 38668,
+        "en": "Energy Shield Delay",
+        "lines": [
+          "15% faster start of Energy Shield Recharge"
+        ]
+      },
+      {
+        "id": 38888,
+        "en": "Unerring Impact",
+        "lines": [
+          "+2 to Melee Strike Range"
+        ],
+        "reason": "No unambiguous Russian template for the PoB text and client stat IDs/values."
+      },
+      {
+        "id": 3893,
+        "en": "Deflection",
+        "lines": [
+          "Gain Deflection Rating equal to 6% of Evasion Rating"
+        ]
+      },
+      {
+        "id": 39274,
+        "en": "Life Leech",
+        "lines": [
+          "10% increased amount of Life Leeched"
+        ],
+        "reason": "No unambiguous Russian template for the PoB text and client stat IDs/values."
+      },
+      {
+        "id": 39881,
+        "en": "Staggering Palm",
+        "lines": [
+          "20% increased Critical Damage Bonus"
+        ],
+        "reason": "No unambiguous Russian template for the PoB text and client stat IDs/values."
+      },
+      {
+        "id": 4017,
+        "en": "Energy Shield Recharge",
+        "lines": [
+          "15% increased Energy Shield Recharge Rate"
+        ]
+      },
+      {
+        "id": 40325,
+        "en": "Resolution",
+        "lines": [
+          "10% increased Defences"
+        ],
+        "reason": "No unambiguous Russian template for the PoB text and client stat IDs/values."
+      },
+      {
+        "id": 40691,
+        "en": "Energy Shield Recharge",
+        "lines": [
+          "15% increased Energy Shield Recharge Rate"
+        ]
+      },
+      {
+        "id": 41159,
+        "en": "Lightning Damage and Mana Regeneration",
+        "lines": [
+          "8% increased Mana Regeneration Rate",
+          "8% increased Elemental Damage"
+        ]
+      },
+      {
+        "id": 41811,
+        "en": "Shatter Palm",
+        "lines": [
+          "10% chance to Daze on Hit"
+        ],
+        "reason": "No unambiguous Russian template for the PoB text and client stat IDs/values."
+      },
+      {
+        "id": 41861,
+        "en": "Trusted Kinship",
+        "lines": [
+          "You can have two Companions of different types",
+          "You have 30% less Defences",
+          "Companions have +1 to each Defence for every 2 of that Defence you have"
+        ],
+        "reason": "No unambiguous Russian template for the PoB text and client stat IDs/values."
+      },
+      {
+        "id": 42076,
+        "en": "Energy Shield Recharge and Mana Flask Recovery",
+        "lines": [
+          "10% increased Energy Shield Recharge Rate",
+          "10% increased Mana Recovery from Flasks"
+        ]
+      },
+      {
+        "id": 42077,
+        "en": "Essence Infusion",
+        "lines": [
+          "40% increased Energy Shield Recharge Rate"
+        ],
+        "reason": "No unambiguous Russian template for the PoB text and client stat IDs/values."
+      },
+      {
+        "id": 42660,
+        "en": "Commanding Rage",
+        "lines": [
+          "Every Rage also grants you 1% increased Minion Attack Speed"
+        ],
+        "reason": "No unambiguous Russian template for the PoB text and client stat IDs/values."
+      },
+      {
+        "id": 42959,
+        "en": "Low Tolerance",
+        "lines": [
+          "60% increased Effect of Poison you inflict on targets that are not Poisoned"
+        ],
+        "reason": "No unambiguous Russian template for the PoB text and client stat IDs/values."
+      },
+      {
+        "id": 43128,
+        "en": "Cast Speed and Area of Effect",
+        "lines": [
+          "4% increased Cast Speed",
+          "8% increased Area of Effect"
+        ]
+      },
+      {
+        "id": 4331,
+        "en": "Guided Hand",
+        "lines": [
+          "On Heavy Stunning a Rare or Unique Enemy, your next Attack within 4 seconds will be Ancestrally Boosted"
+        ],
+        "reason": "No unambiguous Russian template for the PoB text and client stat IDs/values."
+      },
+      {
+        "id": 4346,
+        "en": "Damage on Critical",
+        "lines": [
+          "20% increased Damage if you've dealt a Critical Hit Recently"
+        ]
+      },
+      {
+        "id": 43633,
+        "en": "Energising Archon",
+        "lines": [
+          "40% increased Energy Shield Recharge Rate while affected by an Archon Buff"
+        ],
+        "reason": "No unambiguous Russian template for the PoB text and client stat IDs/values."
+      },
+      {
+        "id": 43964,
+        "en": "Armour Break",
+        "lines": [
+          "Break 20% increased Armour"
+        ]
+      },
+      {
+        "id": 440,
+        "en": "Shield Defences",
+        "lines": [
+          "25% increased Defences from Equipped Shield"
+        ]
+      },
+      {
+        "id": 44005,
+        "en": "Casting Cascade",
+        "lines": [
+          "6% increased Cast Speed for each different Non-Instant Spell you've Cast Recently"
+        ],
+        "reason": "No unambiguous Russian template for the PoB text and client stat IDs/values."
+      },
+      {
+        "id": 44082,
+        "en": "Energy Shield Recharge",
+        "lines": [
+          "15% increased Energy Shield Recharge Rate"
+        ]
+      },
+      {
+        "id": 44573,
+        "en": "Disciplined Training",
+        "lines": [
+          "Combo count loss occurs 20% slower"
+        ],
+        "reason": "No unambiguous Russian template for the PoB text and client stat IDs/values."
+      },
+      {
+        "id": 45202,
+        "en": "Ancestral Bond",
+        "lines": [
+          "Unlimited number of Summoned Totems",
+          "Totems reserve 75 Spirit each"
+        ],
+        "reason": "No unambiguous Russian template for the PoB text and client stat IDs/values."
+      },
+      {
+        "id": 45631,
+        "en": "Evasion and Energy Shield Recharge",
+        "lines": [
+          "10% increased Evasion Rating",
+          "10% increased Energy Shield Recharge Rate"
+        ]
+      },
+      {
+        "id": 45693,
+        "en": "Shield Defences",
+        "lines": [
+          "25% increased Defences from Equipped Shield"
+        ],
+        "reason": "No unambiguous Russian template for the PoB text and client stat IDs/values."
+      },
+      {
+        "id": 46060,
+        "en": "Voracious",
+        "lines": [
+          "20% of Leech is Instant"
+        ],
+        "reason": "No unambiguous Russian template for the PoB text and client stat IDs/values."
+      },
+      {
+        "id": 46384,
+        "en": "Wide Barrier",
+        "lines": [
+          "25% reduced Defences"
+        ],
+        "reason": "No unambiguous Russian template for the PoB text and client stat IDs/values."
+      },
+      {
+        "id": 46454,
+        "en": "Traveller's Wisdom",
+        "lines": [
+          "Attribute Passive Skills can instead grant 5% increased Damage",
+          "Attribute Passive Skills can instead grant 5% increased Defences",
+          "Attribute Passive Skills can instead grant 5% increased Cost Efficiency"
+        ],
+        "reason": "No unambiguous Russian template for the PoB text and client stat IDs/values."
+      },
+      {
+        "id": 4661,
+        "en": "Inspiring Leader",
+        "lines": [
+          "Banners also grant +25% to all Elemental Resistances to you and Allies"
+        ],
+        "reason": "No unambiguous Russian template for the PoB text and client stat IDs/values."
+      },
+      {
+        "id": 46972,
+        "en": "Arcane Mixtures",
+        "lines": [
+          "25% increased Energy Shield Recharge Rate"
+        ],
+        "reason": "No unambiguous Russian template for the PoB text and client stat IDs/values."
+      },
+      {
+        "id": 47316,
+        "en": "Goring",
+        "lines": [
+          "3% reduced maximum Life",
+          "40% increased Physical Damage"
+        ],
+        "reason": "No unambiguous Russian template for the PoB text and client stat IDs/values."
+      },
+      {
+        "id": 47375,
+        "en": "Defences and Companion Life",
+        "lines": [
+          "10% increased Defences while your Companion is in your Presence"
+        ],
+        "reason": "No unambiguous Russian template for the PoB text and client stat IDs/values."
+      },
+      {
+        "id": 47831,
+        "en": "Deflection",
+        "lines": [
+          "Gain Deflection Rating equal to 6% of Evasion Rating"
+        ]
+      },
+      {
+        "id": 4931,
+        "en": "Dependable Ward",
+        "lines": [
+          "25% increased Energy Shield Recharge Rate"
+        ],
+        "reason": "No unambiguous Russian template for the PoB text and client stat IDs/values."
+      },
+      {
+        "id": 50062,
+        "en": "Reinforced Barrier",
+        "lines": [
+          "20% increased maximum Energy Shield",
+          "Defend with 120% of Armour while not on Low Energy Shield"
+        ]
+      },
+      {
+        "id": 50150,
+        "en": "Lightning Damage and Mana Regeneration",
+        "lines": [
+          "8% increased Mana Regeneration Rate",
+          "8% increased Elemental Damage"
+        ]
+      },
+      {
+        "id": 50219,
+        "en": "Curse Delay",
+        "lines": [
+          "Curse zones erupt after 10% reduced delay"
+        ]
+      },
+      {
+        "id": 5101,
+        "en": "Minion Revive Speed and Energy Shield Recharge",
+        "lines": [
+          "8% increased Energy Shield Recharge Rate",
+          "Minions Revive 3% faster"
+        ]
+      },
+      {
+        "id": 51040,
+        "en": "Deflection",
+        "lines": [
+          "Gain Deflection Rating equal to 6% of Evasion Rating"
+        ]
+      },
+      {
+        "id": 51169,
+        "en": "Soul Bloom",
+        "lines": [
+          "20% increased Energy Shield Recovery rate"
+        ],
+        "reason": "No unambiguous Russian template for the PoB text and client stat IDs/values."
+      },
+      {
+        "id": 517,
+        "en": "Energy Shield Recharge",
+        "lines": [
+          "15% increased Energy Shield Recharge Rate"
+        ]
+      },
+      {
+        "id": 51807,
+        "en": "Defences and Companion Life",
+        "lines": [
+          "10% increased Defences while your Companion is in your Presence"
+        ],
+        "reason": "No unambiguous Russian template for the PoB text and client stat IDs/values."
+      },
+      {
+        "id": 5188,
+        "en": "Energy Shield Recharge and Delay",
+        "lines": [
+          "8% increased Energy Shield Recharge Rate",
+          "8% faster start of Energy Shield Recharge"
+        ]
+      },
+      {
+        "id": 52743,
+        "en": "Energy Shield Recharge",
+        "lines": [
+          "15% increased Energy Shield Recharge Rate"
+        ]
+      },
+      {
+        "id": 52971,
+        "en": "Quick Response",
+        "lines": [
+          "20% faster start of Energy Shield Recharge",
+          "30% faster start of Energy Shield Recharge when not on Full Life"
+        ]
+      },
+      {
+        "id": 53505,
+        "en": "Life Leech",
+        "lines": [
+          "10% increased amount of Life Leeched"
+        ],
+        "reason": "No unambiguous Russian template for the PoB text and client stat IDs/values."
+      },
+      {
+        "id": 53823,
+        "en": "Towering Shield",
+        "lines": [
+          "50% increased Defences from Equipped Shield"
+        ],
+        "reason": "No unambiguous Russian template for the PoB text and client stat IDs/values."
+      },
+      {
+        "id": 53941,
+        "en": "Shimmering",
+        "lines": [
+          "20% increased Energy Shield Recovery Rate if you haven't been Hit Recently"
+        ],
+        "reason": "No unambiguous Russian template for the PoB text and client stat IDs/values."
+      },
+      {
+        "id": 54194,
+        "en": "Life Recoup",
+        "lines": [
+          "4% of Damage taken Recouped as Life"
+        ]
+      },
+      {
+        "id": 5501,
+        "en": "Critical Overload",
+        "lines": [
+          "15% increased Spell Damage if you've dealt a Critical Hit Recently"
+        ],
+        "reason": "No unambiguous Russian template for the PoB text and client stat IDs/values."
+      },
+      {
+        "id": 56331,
+        "en": "Choice of Life",
+        "lines": [
+          "Remnants have 50% increased effect"
+        ],
+        "reason": "No unambiguous Russian template for the PoB text and client stat IDs/values."
+      },
+      {
+        "id": 56564,
+        "en": "Energy Shield Recharge",
+        "lines": [
+          "15% increased Energy Shield Recharge Rate"
+        ]
+      },
+      {
+        "id": 56729,
+        "en": "Reduced Attribute Requirements and All Attributes",
+        "lines": [
+          "+3 to all Attributes"
+        ]
+      },
+      {
+        "id": 56776,
+        "en": "Cooked",
+        "lines": [
+          "25% reduced Defences"
+        ],
+        "reason": "No unambiguous Russian template for the PoB text and client stat IDs/values."
+      },
+      {
+        "id": 57089,
+        "en": "Defences and Companion Life",
+        "lines": [
+          "10% increased Defences while your Companion is in your Presence"
+        ],
+        "reason": "No unambiguous Russian template for the PoB text and client stat IDs/values."
+      },
+      {
+        "id": 57253,
+        "en": "Path of the Warrior",
+        "lines": [
+          "Can Allocate Passives from the Warrior's starting point"
+        ],
+        "reason": "No unambiguous Russian template for the PoB text and client stat IDs/values."
+      },
+      {
+        "id": 57513,
+        "en": "Eldritch Battery",
+        "lines": [
+          "Converts all Energy Shield to Mana",
+          "Doubles Mana Costs"
+        ],
+        "reason": "No unambiguous Russian template for the PoB text and client stat IDs/values."
+      },
+      {
+        "id": 58125,
+        "en": "Shield Defences",
+        "lines": [
+          "25% increased Defences from Equipped Shield"
+        ]
+      },
+      {
+        "id": 58779,
+        "en": "Deflection",
+        "lines": [
+          "Gain Deflection Rating equal to 6% of Evasion Rating"
+        ]
+      },
+      {
+        "id": 59589,
+        "en": "Heavy Armour",
+        "lines": [
+          "150% of Strength Requirements from Boots, Gloves and Helmets also added to Armour"
+        ],
+        "reason": "No unambiguous Russian template for the PoB text and client stat IDs/values."
+      },
+      {
+        "id": 59596,
+        "en": "Covering Ward",
+        "lines": [
+          "25% increased Energy Shield Recharge Rate"
+        ],
+        "reason": "No unambiguous Russian template for the PoB text and client stat IDs/values."
+      },
+      {
+        "id": 59647,
+        "en": "Defences and Companion Life",
+        "lines": [
+          "10% increased Defences while your Companion is in your Presence"
+        ],
+        "reason": "No unambiguous Russian template for the PoB text and client stat IDs/values."
+      },
+      {
+        "id": 6088,
+        "en": "First Sting",
+        "lines": [
+          "80% increased Effect of Poison you inflict on targets that are not Poisoned"
+        ],
+        "reason": "No unambiguous Russian template for the PoB text and client stat IDs/values."
+      },
+      {
+        "id": 6133,
+        "en": "Core of the Guardian",
+        "lines": [
+          "100% increased Defences from Equipped Shield"
+        ],
+        "reason": "No unambiguous Russian template for the PoB text and client stat IDs/values."
+      },
+      {
+        "id": 61863,
+        "en": "Cold Damage and Energy Shield Recharge Rate",
+        "lines": [
+          "8% increased Energy Shield Recharge Rate",
+          "8% increased Elemental Damage"
+        ]
+      },
+      {
+        "id": 62431,
+        "en": "Anticipation",
+        "lines": [
+          "Skills Supported by Unleash have 25% increased Seal gain frequency"
+        ],
+        "reason": "No unambiguous Russian template for the PoB text and client stat IDs/values."
+      },
+      {
+        "id": 63182,
+        "en": "Defences and Companion Life",
+        "lines": [
+          "10% increased Defences while your Companion is in your Presence"
+        ],
+        "reason": "No unambiguous Russian template for the PoB text and client stat IDs/values."
+      },
+      {
+        "id": 63618,
+        "en": "Defences and Companion Life",
+        "lines": [
+          "10% increased Defences while your Companion is in your Presence"
+        ],
+        "reason": "No unambiguous Russian template for the PoB text and client stat IDs/values."
+      },
+      {
+        "id": 64434,
+        "en": "Deflection",
+        "lines": [
+          "Gain Deflection Rating equal to 6% of Evasion Rating"
+        ]
+      },
+      {
+        "id": 64601,
+        "en": "Hollow Palm Technique",
+        "lines": [
+          "Can Attack as though using a Quarterstaff while both of your hand slots are empty",
+          "Unarmed Attacks that would use your Quarterstaff's damage gain:",
+          "Physical damage based on their Skill Level",
+          "1% more Attack Speed per 75 Item Evasion Rating on Equipped Armour Items",
+          "+0.1% to Critical Hit Chance per 10 Item Energy Shield on Equipped Armour Items"
+        ],
+        "reason": "No unambiguous Russian template for the PoB text and client stat IDs/values."
+      },
+      {
+        "id": 64690,
+        "en": "Energy Shield Recharge",
+        "lines": [
+          "15% increased Energy Shield Recharge Rate"
+        ]
+      },
+      {
+        "id": 6490,
+        "en": "Critical Damage",
+        "lines": [
+          "10% increased Critical Damage Bonus"
+        ]
+      },
+      {
+        "id": 65518,
+        "en": "Sanguine Tides",
+        "lines": [
+          "50% less Life Recovery from Flasks",
+          "Gain 1 Life Flask Charge per 4% Life spent"
+        ],
+        "reason": "No unambiguous Russian template for the PoB text and client stat IDs/values."
+      },
+      {
+        "id": 664,
+        "en": "Choice of Power",
+        "lines": [
+          "Remnants have 50% increased effect"
+        ],
+        "reason": "No unambiguous Russian template for the PoB text and client stat IDs/values."
+      },
+      {
+        "id": 7302,
+        "en": "Echoing Pulse",
+        "lines": [
+          "Final Repeat of Spells has 30% increased Area of Effect"
+        ],
+        "reason": "No unambiguous Russian template for the PoB text and client stat IDs/values."
+      },
+      {
+        "id": 8349,
+        "en": "Energy Shield Recharge",
+        "lines": [
+          "15% increased Energy Shield Recharge Rate"
+        ]
+      },
+      {
+        "id": 8382,
+        "en": "Cold Damage and Energy Shield Recharge Rate",
+        "lines": [
+          "8% increased Energy Shield Recharge Rate",
+          "8% increased Elemental Damage"
+        ]
+      },
+      {
+        "id": 872,
+        "en": "Channelling Defences",
+        "lines": [
+          "8% increased Global Defences while Channelling"
+        ],
+        "reason": "No unambiguous Russian template for the PoB text and client stat IDs/values."
+      },
+      {
+        "id": 8734,
+        "en": "Energy Shield Recharge",
+        "lines": [
+          "15% increased Energy Shield Recharge Rate"
+        ]
+      },
+      {
+        "id": 8827,
+        "en": "Fast Metabolism",
+        "lines": [
+          "Life Leech effects are not removed when Unreserved Life is Filled"
+        ],
+        "reason": "No unambiguous Russian template for the PoB text and client stat IDs/values."
+      },
+      {
+        "id": 8831,
+        "en": "Tempered Mind",
+        "lines": [
+          "20% increased Critical Damage Bonus"
+        ],
+        "reason": "No unambiguous Russian template for the PoB text and client stat IDs/values."
+      },
+      {
+        "id": 9323,
+        "en": "Craving Slaughter",
+        "lines": [
+          "+8 maximum Rage for each time you've used a Skill that Requires Glory in the past 6 seconds, up to 5 times"
+        ],
+        "reason": "No unambiguous Russian template for the PoB text and client stat IDs/values."
+      },
+      {
+        "id": 9583,
+        "en": "Life Leech and Physical Damage",
+        "lines": [
+          "10% increased Physical Damage"
+        ],
+        "reason": "No unambiguous Russian template for the PoB text and client stat IDs/values."
+      },
+      {
+        "id": 9604,
+        "en": "Thirst of Kitava",
+        "lines": [
+          "Life Leeched from Empowered Attacks is Instant"
+        ]
+      }
+    ]
+  }
+}

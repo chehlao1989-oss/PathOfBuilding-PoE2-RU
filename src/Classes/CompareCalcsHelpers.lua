@@ -47,7 +47,7 @@ function M.ResolveSourceName(mod, build)
 		local itemId = mod.source:match("Item:(%d+):.+")
 		local item = build.itemsTab and build.itemsTab.items[tonumber(itemId)]
 		if item then
-			return colorCodes[item.rarity] .. item.name
+			return colorCodes[item.rarity] .. UILocale.itemName(item)
 		end
 	elseif sourceType == "Tree" then
 		local nodeId = mod.source:match("Tree:(%d+)")

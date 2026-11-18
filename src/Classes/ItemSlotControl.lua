@@ -17,6 +17,12 @@ local ItemSlotClass = newClass("ItemSlotControl", "DropDownControl", function(se
 			itemsTab.build.buildFlag = true
 		end
 	end)
+	self.displayLabelAccessor = function(entry)
+		return colorCodes[entry.item.rarity] .. UILocale.itemName(entry.item)
+	end
+	self.localizedSearchAccessor = function(entry)
+		return type(entry) == "table" and UILocale.itemName(entry.item) or UILocale.translate(entry)
+	end
 	self.anchor.collapse = true
 	self.enabled = function()
 		return #self.items > 1
@@ -94,7 +100,7 @@ function ItemSlotClass:Populate()
 	for _, item in pairs(self.itemsTab.items) do
 		if self.itemsTab:IsItemValidForSlot(item, self.slotName) then
 			t_insert(self.items, item.id)
-			t_insert(self.list, colorCodes[item.rarity]..item.name)
+			t_insert(self.list, { label = colorCodes[item.rarity]..item.name, item = item })
 			if item.id == self.selItemId then
 				self.selIndex = #self.list
 			end
@@ -103,6 +109,8 @@ function ItemSlotClass:Populate()
 	if not self.selItemId or not self.itemsTab.items[self.selItemId] or not self.itemsTab:IsItemValidForSlot(self.itemsTab.items[self.selItemId], self.slotName) then
 		self:SetSelItemId(0)
 	end
+
+	self:UpdateSearch()
 
 	-- Update Jewel Sockets
 	local jewelSocketCount = 0
@@ -136,7 +144,7 @@ end
 function ItemSlotClass:Draw(viewPort)
 	local x, y = self:GetPos()
 	local width, height = self:GetSize()
-	DrawString(x + self.labelOffset, y + 2, "RIGHT_X", height - 4, "VAR", "^7"..self.label..":")
+	DrawString(x + self.labelOffset, y + 2, "RIGHT_X", height - 4, "VAR", "^7"..UILocale.itemSlotLabel(self.label)..":")
 	self.DropDownControl:Draw(viewPort)
 	self:DrawControls(viewPort)
 	if not main.popups[1] and self.nodeId and (self.dropped or (self:IsMouseOver() and (self.otherDragSource or not self.itemsTab.selControl))) then

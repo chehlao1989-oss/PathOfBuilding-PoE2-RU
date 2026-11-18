@@ -3,6 +3,7 @@
 -- Class: DropDown Control
 -- Basic drop down control.
 --
+local utf8 = require('lua-utf8')
 local ipairs = ipairs
 local m_min = math.min
 local m_max = math.max
@@ -180,6 +181,17 @@ function DropDownClass:IsMouseOver()
 	local width, height = self:GetSize()
 	local cursorX, cursorY = GetCursorPos()
 	local dropExtra = self.dropped and self.dropHeight + 2 or 0
+	if self.fitSelectedLabel then
+		if cursorX >= x and cursorX < x + width and cursorY >= y and cursorY < y + height then
+			return true, "BODY"
+		end
+		if self.dropped and self.popupX and cursorX >= self.popupX and cursorX < self.popupX + self.popupWidth then
+			if cursorY >= self.popupY and cursorY < self.popupY + self.dropHeight + 4 then
+				return true, "DROP"
+			end
+		end
+		return false
+	end
 	local mOver
 
 	if self.dropped then
@@ -239,10 +251,17 @@ function DropDownClass:Draw(viewPort, noTooltip)
 	-- fit dropHeight to filtered content but keep initial orientation
 	self.dropHeight = m_max(m_min(self.dropHeight, self:GetDropCount() * lineHeight), lineHeight)
 	
-	local mOver, mOverComp = self:IsMouseOver()
 	local dropExtra = self.dropHeight + 4
 	scrollBar:SetContentDimension(lineHeight * self:GetDropCount(), self.dropHeight)
 	local dropY = self.dropUp and y - dropExtra or y + height
+	local dropX, dropWidth = x, self.droppedWidth
+	if self.fitSelectedLabel then
+		dropWidth = m_min(dropWidth, viewPort.width - 4)
+		dropX = m_max(viewPort.x, m_min(x, viewPort.x + viewPort.width - dropWidth - 2))
+		self.popupX, self.popupY, self.popupWidth = dropX, dropY, dropWidth
+		scrollBar.x = dropX + dropWidth - (x + width) - 1
+	end
+	local mOver, mOverComp = self:IsMouseOver()
 	if not enabled then
 		SetDrawColor(0.33, 0.33, 0.33)
 	elseif mOver or self.dropped then
@@ -256,7 +275,7 @@ function DropDownClass:Draw(viewPort, noTooltip)
 	DrawImage(nil, x, y, width, height)
 	if self.dropped then
 		SetDrawLayer(nil, 5)
-		DrawImage(nil, x, dropY, self.droppedWidth, dropExtra)
+		DrawImage(nil, dropX, dropY, dropWidth, dropExtra)
 		SetDrawLayer(nil, 0)
 	end
 	if not enabled or self.dropped then
@@ -278,7 +297,7 @@ function DropDownClass:Draw(viewPort, noTooltip)
 	if self.dropped then
 		SetDrawLayer(nil, 5)
 		SetDrawColor(0, 0, 0)
-		DrawImage(nil, x + 1, dropY + 1, self.droppedWidth - 2, dropExtra - 2)
+		DrawImage(nil, dropX + 1, dropY + 1, dropWidth - 2, dropExtra - 2)
 		SetDrawLayer(nil, 0)
 	end
 	if self.otherDragSource then
@@ -288,7 +307,7 @@ function DropDownClass:Draw(viewPort, noTooltip)
 
 	-- draw dropdown bar
 	if enabled then
-		if (mOver or self.dropped) and mOverComp ~= "DROP" and not noTooltip then
+		if (mOver or self.dropped) and mOverComp ~= "DROP" and not noTooltip and not (self.dropped and self.fitSelectedLabel) then
 			SetDrawLayer(nil, 100)
 			self:DrawTooltip(
 				x, y - (self.dropped and self.dropUp and dropExtra or 0), 
@@ -309,14 +328,29 @@ function DropDownClass:Draw(viewPort, noTooltip)
 	else
 		local selItem = self.list[self.selIndex]
 		if type(selItem) == "table" then
-			selLabel = selItem.label
+			selLabel = self.displayLabelAccessor and self.displayLabelAccessor(selItem) or selItem.selectedLabel or selItem.label
 			selDetail = selItem.detail
 		else
-			selLabel = selItem
+			selLabel = self.displayStringLabelAccessor and self.displayStringLabelAccessor(selItem) or selItem
 		end
 	end
 	SetViewport(x + 2, y + 2, width - height, lineHeight)
-	DrawString(0, 0, "LEFT", lineHeight, "VAR", selLabel or "")
+	local labelSize = lineHeight
+	if self.fitSelectedLabel and selLabel and not selDetail and not self:IsSearchActive() then
+		local textWidth = width - height - 2
+		while labelSize > (self.minimumLabelSize or 11) and DrawStringWidth(labelSize, "VAR", selLabel) > textWidth do
+			labelSize = labelSize - 1
+		end
+		if DrawStringWidth(labelSize, "VAR", selLabel) > textWidth then
+			local visible = StripEscapes(UILocale.translate(selLabel))
+			local length = utf8.len(visible)
+			repeat
+				length = length - 1
+				selLabel = utf8.sub(visible, 1, length) .. "…"
+			until length <= 0 or DrawStringWidth(labelSize, "VAR", selLabel) <= textWidth
+		end
+	end
+	DrawString(0, m_floor((lineHeight - labelSize) / 2), "LEFT", labelSize, "VAR", selLabel or "")
 	if selDetail ~= nil then
 		local dx = DrawStringWidth(lineHeight, "VAR", selDetail)
 		DrawString(width - dx - 22, 0, "LEFT", lineHeight, "VAR", selDetail)
@@ -327,7 +361,7 @@ function DropDownClass:Draw(viewPort, noTooltip)
 	if self.dropped then
 		SetDrawLayer(nil, 5)
 		self:DrawControls(viewPort)
-		width = self.droppedWidth
+		width = dropWidth
 
 		-- draw tooltip for hovered item
 		local cursorX, cursorY = GetCursorPos()
@@ -336,10 +370,10 @@ function DropDownClass:Draw(viewPort, noTooltip)
 		if self.hoverSel and not self.list[self.hoverSel] then
 			self.hoverSel = nil
 		end
-		if self.hoverSel and not noTooltip then
+		if self.hoverSel and not noTooltip and (self.showFullLabelTooltip or not self.fitSelectedLabel) then
 			SetDrawLayer(nil, 100)
 			self:DrawTooltip(
-				x, dropY + 2 + (self.hoverSelDrop - 1) * lineHeight - scrollBar.offset,
+				dropX, dropY + 2 + (self.hoverSelDrop - 1) * lineHeight - scrollBar.offset,
 				width, lineHeight,
 				viewPort,
 				"HOVER", self.hoverSel, self.list[self.hoverSel])
@@ -347,7 +381,7 @@ function DropDownClass:Draw(viewPort, noTooltip)
 		end
 
 		-- draw dropdown items
-		SetViewport(x + 2, dropY + 2, scrollBar.enabled and width - 22 or width - 4, self.dropHeight)
+		SetViewport(dropX + 2, dropY + 2, scrollBar.enabled and width - 22 or width - 4, self.dropHeight)
 		local dropIndex = 0
 		for index, listVal in ipairs(self.list) do
 			local searchInfo = self.searchInfos[index]
@@ -370,10 +404,10 @@ function DropDownClass:Draw(viewPort, noTooltip)
 				local label = nil
 				local detail = nil
 				if type(listVal) == "table" then
-					label = listVal.label
+					label = self.displayLabelAccessor and self.displayLabelAccessor(listVal) or listVal.label
 					detail = listVal.detail
 				else 
-					label = listVal
+					label = self.displayStringLabelAccessor and self.displayStringLabelAccessor(listVal) or listVal
 				end
 				DrawString(0, y, "LEFT", lineHeight, "VAR", label)
 				if detail ~= nil then
@@ -381,7 +415,10 @@ function DropDownClass:Draw(viewPort, noTooltip)
 					dx = DrawStringWidth(lineHeight, "VAR", detail)
 					DrawString(width - dx - 4 - 22, y, "LEFT", lineHeight, "VAR", detail)
 				end
-				self:DrawSearchHighlights(label, searchInfo, 0, y, width - 4, lineHeight)
+				if searchInfo then
+					local highlightLabel = self.localizedSearchAccessor and self.localizedSearchAccessor(listVal) or label
+					self:DrawSearchHighlights(highlightLabel, searchInfo, 0, y, width - 4, lineHeight)
+				end
 			end
 		end
 		SetDrawColor(1, 1, 1)
@@ -516,17 +553,21 @@ function DropDownClass:CheckDroppedWidth(enable)
 		local dWidth = self.width
 		for _, line in ipairs(self.list) do
 			if type(line) == "table" then
-				line = line.label or ""
+				line = self.displayLabelAccessor and self.displayLabelAccessor(line) or line.label or ""
+			elseif self.displayStringLabelAccessor then
+				line = self.displayStringLabelAccessor(line)
 			end
 			  -- +10 to stop clipping
-			dWidth = m_max(dWidth, DrawStringWidth(lineHeight, "VAR", line or "") + 10)
+			dWidth = m_max(dWidth, DrawStringWidth(lineHeight, "VAR", line or "") + (self.droppedLabelPadding or 10))
 		end
 		  -- no greater than self.maxDroppedWidth
 		self.droppedWidth = m_min(dWidth + scrollWidth, self.maxDroppedWidth)
 		if self.enableChangeBoxWidth then
 			local line = self.list[self.selIndex]
 			if type(line) == "table" then
-				line = line.label
+				line = self.displayLabelAccessor and self.displayLabelAccessor(line) or line.label
+			elseif line and self.displayStringLabelAccessor then
+				line = self.displayStringLabelAccessor(line)
 			end
 			-- add 20 to account for the 'down arrow' in the box
 			local boxWidth

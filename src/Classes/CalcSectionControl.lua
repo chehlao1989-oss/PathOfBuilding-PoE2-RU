@@ -84,55 +84,119 @@ function CalcSectionClass:IsMouseOver()
 	return mOver
 end
 
+local function layoutHeading(subSec, actor, width, top)
+	local title = UILocale.translate(subSec.label .. ":")
+	local titleWidth = UILocale.measureRaw(16, "VAR BOLD", title)
+	local titleText, titleLines = UILocale.wrap(subSec, title, 16, "VAR BOLD", width)
+	local heading = { title = titleText, y = top, height = titleLines * 16 + 6 }
+	if subSec.data.extra then
+		local summary = "^7"..formatCalcStr(UILocale.translate(subSec.data.extra), actor)
+		local summaryWidth = DrawStringWidth(14, "VAR", summary)
+		if titleLines == 1 and titleWidth + 6 + summaryWidth <= width then
+			heading.summaryX = 4 + titleWidth + 6
+			heading.summaryY = top + 4
+			heading.summary = UILocale.translate(summary)
+		else
+			local text, lines = UILocale.wrap(subSec.data, summary, 14, "VAR", width)
+			heading.summaryX = 4
+			heading.summaryY = top + titleLines * 16 + 3
+			heading.summary = text
+			heading.height = heading.height + lines * 14
+		end
+	end
+	return heading
+end
+
 function CalcSectionClass:UpdateSize()
-	self.enabled = self.calcsTab:CheckFlag(self)
-	if not self.enabled then
-		self.height = 22
+	self.enabled = false
+	self.height = 0
+	if not self.calcsTab:CheckFlag(self) then
 		return
 	end
-	local x, y = self:GetPos()
-	local width = self:GetSize()
-	self.height = 2
-	self.enabled = false
-	local yOffset = 0
-	for i, subSec in ipairs(self.subSection) do
-		self.controls["toggle"..i].y = yOffset + 3
-		local tempHeight = 0
-		yOffset = yOffset + 22
-		for _, rowData in ipairs(subSec.data) do
-			rowData.enabled = self.calcsTab:CheckFlag(rowData)
-			if rowData.enabled then
-				self.enabled = true
-				local xOffset = 134
-				for colour, colData in ipairs(rowData) do
-					colData.xOffset = xOffset
-					colData.yOffset = yOffset
-					colData.width = subSec.data.colWidth or width - 136
-					colData.height = 18
-					xOffset = xOffset + colData.width
+
+	for _, subSec in ipairs(self.subSection) do
+		for _, row in ipairs(subSec.data) do
+			local eligible = self.calcsTab:CheckFlag(row)
+			self.enabled = self.enabled or eligible
+			row.enabled = eligible and not self.subSection[1].collapsed and not subSec.collapsed
+		end
+	end
+	if not self.enabled then
+		return
+	end
+	if self.updateFunc and not self.subSection[1].collapsed then
+		self:updateFunc()
+	end
+
+	local actor = self.calcsTab.input.showMinion and self.calcsTab.calcsEnv.minion or self.calcsTab.calcsEnv.player
+	local top = 0
+	for index, subSec in ipairs(self.subSection) do
+		subSec.heading = layoutHeading(subSec, actor, self.width - 29, top)
+		self.controls["toggle"..index].y = top + 3
+		top = top + subSec.heading.height
+
+		local columns, labelWidth = 1, 0
+		for _, row in ipairs(subSec.data) do
+			if row.enabled then
+				columns = math.max(columns, #row)
+				if row.label then
+					labelWidth = math.max(labelWidth, DrawStringWidth(14, "VAR", row.label .. ":") + 12)
 				end
-				yOffset = yOffset + 18
-				self.height = self.height + 18
-				tempHeight = tempHeight + 18
-			end
-			if subSec.collapsed then
-				rowData.enabled = false
 			end
 		end
-		if self.enabled and not subSec.collapsed then
-			self.height = self.height + 22
-		else
-			self.height = self.height - tempHeight + 20
-			yOffset = yOffset - tempHeight - 2
+		labelWidth = math.min(labelWidth, math.floor(self.width * (columns == 1 and 0.61 or 0.34)))
+		subSec.labelWidth = labelWidth
+
+		for _, row in ipairs(subSec.data) do
+			if row.enabled then
+				row.y = top
+				row.height = 18
+				if row.label then
+					local text, lines = UILocale.wrap(row, row.label .. ":", 14, "VAR", labelWidth - 10)
+					row.labelText = text
+					row.height = math.max(row.height, lines * 14 + 4)
+				end
+
+				for column, cell in ipairs(row) do
+					local valueWidth = self.width - labelWidth - 4
+					local left = math.floor(valueWidth * (column - 1) / columns)
+					local right = math.floor(valueWidth * column / columns)
+					cell.xOffset = 2 + labelWidth + left
+					cell.yOffset = top
+					cell.width = right - left
+					if cell.control then
+						local control = cell.control
+						cell.controlWidth = cell.controlWidth or control:GetProperty("width")
+						local width = math.min(cell.controlWidth, cell.width - 8)
+						if control.width ~= width then
+							control.width = width
+							if control.CheckDroppedWidth then
+								control:CheckDroppedWidth(control.enableDroppedWidth)
+							end
+						end
+						row.height = math.max(row.height, control:GetProperty("height") + 4)
+					elseif cell.format and self.calcsTab:CheckFlag(cell) then
+						local size = row.textSize or 14
+						local text = formatCalcStr(cell.format, actor, cell)
+						if cell.format == "{output:BuffList}" then text = UILocale.effectList(text) end
+						local wrapped, lines = UILocale.wrap(cell, text, size, "VAR", cell.width - 8)
+						cell.displayText = wrapped
+						row.height = math.max(row.height, lines * size + 4)
+					else
+						cell.displayText = nil
+					end
+				end
+				for _, cell in ipairs(row) do
+					cell.height = row.height
+				end
+				top = top + row.height
+			end
+		end
+		if self.subSection[1].collapsed then
+			break
 		end
 	end
-	if self.enabled and not self.subSection[1].collapsed then
-		if self.updateFunc then
-			self:updateFunc()
-		end
-	else
-		self.height = 22
-	end
+	self.height = top + 2
 end
 
 function CalcSectionClass:UpdatePos()
@@ -149,7 +213,7 @@ function CalcSectionClass:UpdatePos()
 					colData.y = y + colData.yOffset
 				if colData.control then
 					colData.control.x = colData.x + 4
-					colData.control.y = colData.y + 9 - colData.control.height/2
+					colData.control.y = colData.y + math.floor((colData.height - colData.control:GetProperty("height")) / 2)
 				end
 			end
 			end
@@ -219,101 +283,64 @@ end
 function CalcSectionClass:Draw(viewPort, noTooltip)
 	local x, y = self:GetPos()
 	local width, height = self:GetSize()
+	if y + height <= viewPort.y or y >= viewPort.y + viewPort.height then
+		return
+	end
 	local cursorX, cursorY = GetCursorPos()
-	local actor = self.calcsTab.input.showMinion and self.calcsTab.calcsEnv.minion or self.calcsTab.calcsEnv.player
-	-- Draw border and background
 	SetDrawLayer(nil, -10)
 	SetDrawColor(self.colour)
 	DrawImage(nil, x, y, width, height)
 	SetDrawColor(0.10, 0.10, 0.10)
 	DrawImage(nil, x + 2, y + 2, width - 4, height - 4)
-	
-	local primary = true
-	local lineY = y
+
 	for _, subSec in ipairs(self.subSection) do
-		-- Draw line above label
+		local heading = subSec.heading
+		local top = y + heading.y
 		SetDrawColor(self.colour)
-		DrawImage(nil, x + 2, lineY, width - 4, 2)
-		SetDrawColor(0.10, 0.10, 0.10)
-		-- Draw label
-		if not self.enabled then
-			DrawString(x + 3, lineY + 3, "LEFT", 16, "VAR BOLD", "^8"..subSec.label)
-		else
-			local textColor = "^7"
-			if self.calcsTab:SearchMatch(subSec.label) then
-				textColor = colorCodes.HIGHLIGHT
-			end
-			DrawString(x + 3, lineY + 3, "LEFT", 16, "VAR BOLD", textColor..subSec.label..":")
-			if subSec.data.extra then
-				local x = x + 3 + DrawStringWidth(16, "VAR BOLD", subSec.label) + 10
-				DrawString(x, lineY + 3, "LEFT", 16, "VAR", "^7"..formatCalcStr(subSec.data.extra, actor))
-			end
+		DrawImage(nil, x + 2, top, width - 4, 2)
+		DrawImage(nil, x + 2, top + heading.height - 2, width - 4, 2)
+		local titleColor = self.calcsTab:SearchMatch(subSec.label) and colorCodes.HIGHLIGHT or "^7"
+		UILocale.drawRaw(x + 4, top + 3, "LEFT", 16, "VAR BOLD", titleColor..heading.title)
+		if heading.summary then
+			UILocale.drawRaw(x + heading.summaryX, y + heading.summaryY, "LEFT", 14, "VAR", heading.summary)
 		end
-		-- Draw line below label
-		SetDrawColor(self.colour)
-		DrawImage(nil, x + 2, lineY + 20, width - 4, 2)
-		-- Draw controls
-		SetDrawLayer(nil, 0)
-		self:DrawControls(viewPort, noTooltip and self.calcsTab.selControl)
-		if subSec.collapsed or not self.enabled then
-			if primary then
-				return
-			else
-				lineY = lineY + 20
-				primary = false
-			end
-		else
-			lineY = lineY + 20
-			primary = false
-			local rows = 0;
-			for _, rowData in ipairs(subSec.data) do
-				if rowData.enabled then
-					rows = rows + 1
-					local textColor = "^7"
-					if rowData.color then
-						textColor = rowData.color
-					end
-					if rowData.label then
-						SetDrawColor(rowData.bgCol or "^0")
-						DrawImage(nil, x + 2, lineY + 2, 130, 18)
-						if self.calcsTab:SearchMatch(rowData.label) then
-							textColor = colorCodes.HIGHLIGHT
+		for _, row in ipairs(subSec.data) do
+			local rowY = row.enabled and y + row.y
+			if rowY and rowY + row.height > viewPort.y and rowY < viewPort.y + viewPort.height then
+				if row.label then
+					SetDrawColor(row.bgCol or "^0")
+					DrawImage(nil, x + 2, rowY, subSec.labelWidth, row.height)
+					local color = self.calcsTab:SearchMatch(row.label) and colorCodes.HIGHLIGHT or row.color or "^7"
+					UILocale.drawRaw(x + subSec.labelWidth - 3, rowY + 2, "RIGHT_X", 14, "VAR", color..row.labelText)
+				end
+				for _, cell in ipairs(row) do
+					SetDrawColor(self.colour)
+					DrawImage(nil, cell.x, rowY, 2, row.height)
+					if cell.displayText then
+						if cursorY >= viewPort.y and cursorY < viewPort.y + viewPort.height
+							and cursorX >= cell.x and cursorY >= cell.y
+							and cursorX < cell.x + cell.width and cursorY < cell.y + cell.height then
+							self.calcsTab:SetDisplayStat(cell)
 						end
-						DrawString(x + 132, lineY + 2, "RIGHT_X", 16, "VAR", textColor..rowData.label..":")
-					end
-					for colour, colData in ipairs(rowData) do
-						-- Draw column separator at the left end of the cell
-						SetDrawColor(self.colour)
-						DrawImage(nil, colData.x, lineY + 2, 2, colData.height)
-						if colData.format and self.calcsTab:CheckFlag(colData) then
-							if cursorY >= viewPort.y and cursorY < viewPort.y + viewPort.height and cursorX >= colData.x and cursorY >= colData.y and cursorX < colData.x + colData.width and cursorY < colData.y + colData.height then
-								self.calcsTab:SetDisplayStat(colData)
-							end
-							if self.calcsTab.displayData == colData then
-								-- This is the display stat, draw a green border around this cell
-								SetDrawColor(0.25, 1, 0.25)
-								DrawImage(nil, colData.x + 2, colData.y, colData.width - 2, colData.height)
-								SetDrawColor(rowData.bgCol or "^0")
-								DrawImage(nil, colData.x + 3, colData.y + 1, colData.width - 4, colData.height - 2)
-							else
-								SetDrawColor(rowData.bgCol or "^0")
-								DrawImage(nil, colData.x + 2, colData.y, colData.width - 2, colData.height)
-							end
-							local textSize = rowData.textSize or 14
-							SetViewport(colData.x + 3, colData.y, colData.width - 4, colData.height)
-							DrawString(1, 9 - textSize/2, "LEFT", textSize, "VAR", "^7"..formatCalcStr(colData.format, actor, colData))
-							SetViewport()
+						SetDrawColor(row.bgCol or "^0")
+						DrawImage(nil, cell.x + 2, rowY, cell.width - 2, row.height)
+						if self.calcsTab.displayData == cell then
+							SetDrawColor(0.25, 1, 0.25)
+							DrawImage(nil, cell.x + 2, rowY, cell.width - 2, row.height)
+							SetDrawColor(row.bgCol or "^0")
+							DrawImage(nil, cell.x + 3, rowY + 1, cell.width - 4, row.height - 2)
 						end
+						UILocale.drawRaw(cell.x + 4, rowY + 2, "LEFT", row.textSize or 14, "VAR", "^7"..cell.displayText)
 					end
-					lineY = lineY + 18
 				end
 			end
-			-- If there's at least one enabled row in this subsection, offset by the border for the subsection label
-			if rows > 0 then
-				lineY = lineY + 2
-			end
+		end
+		if self.subSection[1].collapsed then
+			break
 		end
 	end
+	SetDrawLayer(nil, 0)
+	self:DrawControls(viewPort, noTooltip and self.calcsTab.selControl)
 end
 
 function CalcSectionClass:OnKeyDown(key, doubleClick)

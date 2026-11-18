@@ -10,6 +10,7 @@ local t_insert = table.insert
 local t_remove = table.remove
 local s_format = string.format
 local m_max = math.max
+local itemListTopOffset = 42
 local m_min = math.min
 local m_ceil = math.ceil
 local m_floor = math.floor
@@ -53,6 +54,7 @@ for _, entry in pairs(data.flavourText) do
     if entry.name and entry.id and entry.text then
         flavourLookup[entry.name] = flavourLookup[entry.name] or {}
         flavourLookup[entry.name][entry.id] = {
+            id = entry.id,
             text = entry.text,
             origin = entry.origin
         }
@@ -183,14 +185,15 @@ local ItemsTabClass = newClass("ItemsTab", "UndoHandler", "ControlHost", "Contro
 		self:OpenItemSetManagePopup()
 	end)
 
+	UILocale.fitButton(self.controls.setManage)
+
 	-- Price Items
 	self.controls.priceDisplayItem = new("ButtonControl", {"TOPLEFT",self,"TOPLEFT"}, {96, 32, 310, 20}, "Trade for these items", function()
 		self.tradeQuery:PriceItem()
 	end)
 	self.controls.priceDisplayItem.tooltipFunc = function(tooltip)
 		tooltip:Clear()
-		tooltip:AddLine(16, "^7Contains searches from the official trading site to help find")
-		tooltip:AddLine(16, "^7similar or better items for this build")
+		tooltip:AddLine(16, "^7Find similar or better items for this build on the official trade site.")
 	end
 
 	-- Item slots
@@ -273,6 +276,8 @@ local ItemsTabClass = newClass("ItemsTab", "UndoHandler", "ControlHost", "Contro
 	end)
 	self.controls.specLabel = new("LabelControl", {"RIGHT",prevSlot,"LEFT"}, {-2, 0, 0, 16}, "^7Passive tree:")
 
+	UILocale.fitButton(self.controls.specButton)
+
 	self.sockets = { }
 	local socketOrder = { }
 	for _, node in pairs(build.latestTree.nodes) do
@@ -335,7 +340,7 @@ local ItemsTabClass = newClass("ItemsTab", "UndoHandler", "ControlHost", "Contro
 	if main.portraitMode then
 		self.controls.itemList = new("ItemListControl", {"TOPRIGHT",self.lastSlot,"BOTTOMRIGHT"}, {0, 0, 360, 308}, self, true)
 	else
-		self.controls.itemList = new("ItemListControl", {"TOPLEFT",self.controls.setManage,"TOPRIGHT"}, {20, 20, 360, 308}, self, true)
+		self.controls.itemList = new("ItemListControl", {"TOPLEFT",self.controls.setManage,"TOPRIGHT"}, {20, itemListTopOffset, 360, 308}, self, true)
 	end
 
 	-- Database selector
@@ -376,7 +381,7 @@ local ItemsTabClass = newClass("ItemsTab", "UndoHandler", "ControlHost", "Contro
 	end
 
 	-- Create/import item
-	self.controls.craftDisplayItem = new("ButtonControl", {"TOPLEFT",main.portraitMode and self.controls.setManage or self.controls.itemList,"TOPRIGHT"}, {20, main.portraitMode and 0 or -20, 120, 20}, "Craft item...", function()
+	self.controls.craftDisplayItem = new("ButtonControl", {"TOPLEFT",main.portraitMode and self.controls.setManage or self.controls.itemList,"TOPRIGHT"}, {20, main.portraitMode and 0 or -itemListTopOffset, 120, 20}, "Craft item...", function()
 		self:CraftItem()
 	end)
 	self.controls.craftDisplayItem.shown = function()
@@ -385,20 +390,14 @@ local ItemsTabClass = newClass("ItemsTab", "UndoHandler", "ControlHost", "Contro
 	self.controls.newDisplayItem = new("ButtonControl", {"TOPLEFT",self.controls.craftDisplayItem,"TOPRIGHT"}, {8, 0, 120, 20}, "Create custom...", function()
 		self:EditDisplayItemText()
 	end)
-	self.controls.displayItemTip = new("LabelControl", {"TOPLEFT",self.controls.craftDisplayItem,"BOTTOMLEFT"}, {0, 8, 100, 16},
-[[^7Double-click an item from one of the lists,
-or copy and paste an item from in game
-(hover over the item and Ctrl+C) to view or edit
-the item and add it to your build. You can
-also clone an item within Path of Building by
-copying and pasting it with Ctrl+C and Ctrl+V.
+	UILocale.fitButton(self.controls.craftDisplayItem)
+	UILocale.fitButton(self.controls.newDisplayItem)
+	self.controls.displayItemTip = new("LabelControl", {"TOPLEFT",self.controls.craftDisplayItem,"BOTTOMLEFT"}, {0, 8, 340, 16},
+[[^7Double-click an item to open it. To copy a game item, hover over it in Path of Exile and press Ctrl+C, then paste it here with Ctrl+V. The same shortcuts can duplicate an item within PoB.
 
-You can Control + Click an item to equip it, or
-drag it onto the slot.  This will also add it to
-your build if it's from the unique/template list.
-If there's 2 slots an item can go in,
-holding Shift will put it in the second.]])
-	self.controls.sharedItemList = new("SharedItemListControl", {"TOPLEFT",self.controls.craftDisplayItem, "BOTTOMLEFT"}, {0, 232, 340, 308}, self, true)
+Ctrl+click an item or drag it onto a slot to equip it. Hold Shift to use the second compatible slot.]])
+	self.controls.displayItemTip:SetWrapWidth(340)
+	self.controls.sharedItemList = new("SharedItemListControl", {"TOPLEFT",self.controls.displayItemTip,"BOTTOMLEFT"}, {0, 30, 340, 308}, self, true)
 
 	-- Display item
 	self.displayItemTooltip = new("Tooltip")
@@ -507,6 +506,25 @@ holding Shift will put it in the second.]])
 	self.controls.displayItemAltVariant5.maxDroppedWidth = 1000
 	self.controls.displayItemAltVariant5.shown = function()
 		return self.displayItem.hasAltVariant5
+	end
+
+	local function variantLabel(label)
+		return UILocale.itemVariantName(label, self.displayItem)
+	end
+	for _, name in ipairs({ "displayItemVariant", "displayItemAltVariant", "displayItemAltVariant2",
+		"displayItemAltVariant3", "displayItemAltVariant4", "displayItemAltVariant5" }) do
+		local control = self.controls[name]
+		control.displayStringLabelAccessor = variantLabel
+		control.localizedSearchAccessor = variantLabel
+		control.fitSelectedLabel = true
+		control.showFullLabelTooltip = true
+		control.tooltipFunc = function(tooltip, mode, _, label)
+			tooltip:Clear()
+			if label and (mode == "BODY" or mode == "HOVER") then
+				tooltip.maxWidth = 500
+				tooltip:AddLine(14, variantLabel(label))
+			end
+		end
 	end
 
 	-- Section: Sockets and Links
@@ -705,12 +723,17 @@ holding Shift will put it in the second.]])
 		drop.y = function()
 			return i == 1 and 0 or 24
 		end
+		local runeModifier = { rune = true }
+		drop.displayLabelAccessor = function(value)
+			return UILocale.itemModifier(value.label, runeModifier)
+		end
+		drop.localizedSearchAccessor = drop.displayLabelAccessor
 		drop.tooltipFunc = function(tooltip, mode, index, value)
 			tooltip:Clear()
-			if value.lines and value.lines[1] ~= "None" then
-				tooltip:AddLine(14, "^7"..value.name)
+			if value and value.lines and value.lines[1] ~= "None" then
+				tooltip:AddLine(14, "^7" .. UILocale.itemRuneName(value.name))
 				for _, line in ipairs(value.lines) do
-					tooltip:AddLine(14, "^7"..line)
+					tooltip:AddLine(14, "^7" .. UILocale.itemModifier(line, runeModifier))
 				end
 				-- Adding Comparison
 				local compLines = { type = "Rune" }
@@ -725,7 +748,7 @@ holding Shift will put it in the second.]])
 		end
 
 		self.controls["displayItemRune"..i] = drop
-		self.controls["displayItemRuneLabel"..i] = new("LabelControl", {"RIGHT",drop,"LEFT"}, {-4, 0, 0, 14}, "^7Rune #"..i)
+		self.controls["displayItemRuneLabel"..i] = new("LabelControl", {"RIGHT",drop,"LEFT"}, {-4, 0, 0, 14}, "^7" .. UILocale.format("Rune #%s", i))
 	end
 
 	-- Section: Affix Selection
@@ -1282,11 +1305,52 @@ function ItemsTabClass:Save(xml)
 	end
 end
 
+function ItemsTabClass:LayoutLocalizedControls(viewPort)
+	local controls = self.controls
+	if self.layoutLanguage ~= UILocale.language then
+		self.layoutLanguage = UILocale.language
+		local labelWidth = m_max(84, controls.setLabel:GetProperty("width"), controls.specLabel:GetProperty("width"))
+		for _, slot in ipairs(self.orderedSlots) do
+			local textWidth = DrawStringWidth(16, "VAR", "^7"..slot.label..":")
+			labelWidth = m_max(labelWidth, textWidth - slot.labelOffset)
+		end
+		local inset = labelWidth + 12
+		controls.setSelect.x = inset
+		controls.priceDisplayItem.x = inset
+		self.slotAnchor.x = inset
+	end
+
+	local gap = 20
+	local equipmentRight = controls.setManage:GetPos() - self.x + controls.setManage:GetProperty("width")
+	local listRight = equipmentRight + gap + controls.itemList:GetProperty("width")
+	local sideWidth = self.displayItem and 462 or controls.sharedItemList:GetProperty("width")
+	local equipmentBottom = select(2, self.lastSlot:GetPos()) > select(2, controls.specSelect:GetPos())
+		and self.lastSlot or controls.specSelect
+	local sideAnchor, sidePoint, sideX, sideY
+
+	self.stackItemColumns = main.portraitMode or listRight + gap > viewPort.width
+	if self.stackItemColumns then
+		controls.itemList:SetAnchor("TOPLEFT", equipmentBottom, "BOTTOMLEFT", 12 - self.slotAnchor.x, 54)
+		local databaseHeight = controls.selectDBLabel:IsShown() and 362 or 670
+		sideAnchor, sidePoint, sideX, sideY = controls.itemList, "BOTTOMLEFT", 0, databaseHeight + gap
+	else
+		controls.itemList:SetAnchor("TOPLEFT", controls.setManage, "TOPRIGHT", gap, itemListTopOffset)
+		if listRight + gap + sideWidth + gap > viewPort.width then
+			sideAnchor, sidePoint, sideX, sideY = equipmentBottom, "BOTTOMLEFT", 12 - self.slotAnchor.x, gap
+		else
+			sideAnchor, sidePoint, sideX, sideY = controls.itemList, "TOPRIGHT", gap, -itemListTopOffset
+		end
+	end
+	controls.craftDisplayItem:SetAnchor("TOPLEFT", sideAnchor, sidePoint, sideX, sideY)
+	self.anchorDisplayItem:SetAnchor("TOPLEFT", sideAnchor, sidePoint, sideX, sideY)
+end
+
 function ItemsTabClass:Draw(viewPort, inputEvents)
 	self.x = viewPort.x
 	self.y = viewPort.y
 	self.width = viewPort.width
 	self.height = viewPort.height
+	self:LayoutLocalizedControls(viewPort)
 	self.controls.scrollBarH.width = viewPort.width
 	self.controls.scrollBarH.x = viewPort.x
 	self.controls.scrollBarH.y = viewPort.y + viewPort.height - 18
@@ -1295,7 +1359,14 @@ function ItemsTabClass:Draw(viewPort, inputEvents)
 	self.controls.scrollBarV.y = viewPort.y
 	do
 		local maxY = select(2, self.lastSlot:GetPos()) + 24
-		local maxX = self.anchorDisplayItem:GetPos() + 462
+		local maxX = m_max(
+			self.anchorDisplayItem:GetPos() + (self.displayItem and 462 or 340),
+			self.controls.setManage:GetPos() + self.controls.setManage:GetProperty("width") + 4,
+			self.controls.itemList:GetPos() + self.controls.itemList:GetProperty("width") + 4)
+		if self.controls.sharedItemList:IsShown() then
+			local _, listY = self.controls.sharedItemList:GetPos()
+			maxY = m_max(maxY, listY + self.controls.sharedItemList:GetProperty("height") + 4)
+		end
 		if self.displayItem then
 			local x, y = self.controls.displayItemTooltipAnchor:GetPos()
 			local ttW, ttH = self.displayItemTooltip:GetDynamicSize(viewPort)
@@ -1317,7 +1388,7 @@ function ItemsTabClass:Draw(viewPort, inputEvents)
 			self.controls.scrollBarH:SetOffset(0)
 		end
 		self.snapHScroll = nil
-		self.maxY = h and self.controls.scrollBarH.y or viewPort.y + viewPort.height
+		self.maxY = self.stackItemColumns and maxY or (h and self.controls.scrollBarH.y or viewPort.y + viewPort.height)
 	end
 	self.x = self.x - self.controls.scrollBarH.offset
 	self.y = self.y - self.controls.scrollBarV.offset
@@ -1326,10 +1397,8 @@ function ItemsTabClass:Draw(viewPort, inputEvents)
 		if event.type == "KeyDown" then
 			if event.key == "v" and IsKeyDown("CTRL") then
 				local newItem = Paste()
-				if newItem then
-					self:CreateDisplayItemFromRaw(newItem, true)
-				end
-				if self.displayItem and IsKeyDown("SHIFT") then
+				local imported = newItem and self:CreateDisplayItemFromRaw(newItem, true)
+				if imported and self.displayItem and IsKeyDown("SHIFT") then
 					self:AddDisplayItem()
 				end
 			elseif event.key == "e" then
@@ -1398,14 +1467,6 @@ function ItemsTabClass:Draw(viewPort, inputEvents)
 	-- Update weapon slots in case we got Giant's Blood from somewhere
 	self.slots["Weapon 2"]:Populate()
 	self.slots["Weapon 2 Swap"]:Populate()
-
-	if main.portraitMode then
-		self.controls.itemList:SetAnchor("TOPRIGHT", self.lastSlot, "BOTTOMRIGHT", 0, 40)
-	else
-		self.controls.itemList:SetAnchor("TOPLEFT", self.controls.setManage, "TOPRIGHT", 20, 20)
-	end
-	self.controls.craftDisplayItem:SetAnchor("TOPLEFT", main.portraitMode and self.controls.setManage or self.controls.itemList, "TOPRIGHT", 20, main.portraitMode and 0 or -20)
-	self.anchorDisplayItem:SetAnchor("TOPLEFT", main.portraitMode and self.controls.setManage or self.controls.itemList, "TOPRIGHT", 20, main.portraitMode and 0)
 
 	self:DrawControls(viewPort)
 	if self.controls.scrollBarH:IsShown() then
@@ -1804,16 +1865,44 @@ function ItemsTabClass:CopyAnointsAndAugments(newItem, copyAugments, overwrite, 
 end
 
 -- Attempt to create a new item from the given item raw text and sets it as the new display item
+local normalizeRussianItem = LoadModule("Modules/ItemClipboardLocale")
+
 function ItemsTabClass:CreateDisplayItemFromRaw(itemRaw, normalise)
-	local newItem = new("Item", itemRaw)
+	local source, issues = normalizeRussianItem(itemRaw)
+	if not source then
+		main:OpenMessagePopup("Импорт предмета", table.concat(issues, "\n"))
+		return false
+	end
+	local newItem = new("Item", source)
 	if newItem.base then
+		if issues and #issues == 0 then
+			newItem:BuildAndParseRaw()
+		end
 		self:CopyAnointsAndAugments(newItem, main.migrateAugments, false)
 		if normalise then
-			newItem:NormaliseQuality()
+			if not issues then newItem:NormaliseQuality() end
 			newItem:BuildModList()
 		end
 		self:SetDisplayItem(newItem)
+		if issues then
+			local added = {}
+			for _, issue in ipairs(issues) do added[issue] = true end
+			for _, list in ipairs({ newItem.enchantModLines, newItem.runeModLines, newItem.implicitModLines, newItem.explicitModLines }) do
+				for _, mod in ipairs(list) do
+					if mod.extra and not added[mod.line] then
+						issues[#issues + 1] = mod.line
+						added[mod.line] = true
+					end
+				end
+			end
+			if #issues > 0 then
+				main:OpenMessagePopup("Импорт предмета", "Проверьте строки, которые PoB не сопоставила:\n" .. table.concat(issues, "\n"))
+				return false
+			end
+		end
+		return true
 	end
+	return false
 end
 
 -- Sets the display item to the given item
@@ -2472,12 +2561,16 @@ function ItemsTabClass:CraftItem()
 	end
 	controls.typeLabel = new("LabelControl", {"TOPRIGHT",nil,"TOPLEFT"}, {50, 45, 0, 16}, "^7Type:")
 	controls.type = new("DropDownControl", {"TOPLEFT",nil,"TOPLEFT"}, {55, 45, 295, 18}, self.build.data.itemBaseTypeList, function(index, value)
-		controls.base.list = self.build.data.itemBaseLists[self.build.data.itemBaseTypeList[index]]
+		controls.base:SetList(copyTable(self.build.data.itemBaseLists[value], true))
 		controls.base.selIndex = 1
+		controls.base:ResetSearch()
 	end)
 	controls.type.selIndex = self.lastCraftTypeSel or 1
 	controls.baseLabel = new("LabelControl", {"TOPRIGHT",nil,"TOPLEFT"}, {50, 70, 0, 16}, "Base:")
-	controls.base = new("DropDownControl", {"TOPLEFT",nil,"TOPLEFT"}, {55, 70, 200, 18}, self.build.data.itemBaseLists[self.build.data.itemBaseTypeList[controls.type.selIndex]])
+	controls.base = new("DropDownControl", {"TOPLEFT",nil,"TOPLEFT"}, {55, 70, 295, 18},
+		copyTable(self.build.data.itemBaseLists[self.build.data.itemBaseTypeList[controls.type.selIndex]], true))
+	controls.base.displayLabelAccessor = UILocale.itemBaseLabel
+	controls.base.localizedSearchAccessor = UILocale.itemBaseLabel
 	controls.base.selIndex = self.lastCraftBaseSel or 1
 	controls.base.tooltipFunc = function(tooltip, mode, index, value)
 		tooltip:Clear()
@@ -2599,6 +2692,7 @@ end
 ---@param tooltip table @The tooltip to append into
 ---@param node table @The passive tree node that will be anointed, or nil to remove the current anoint.
 function ItemsTabClass:AppendAnointTooltip(tooltip, node, actionText)
+	local name = node and UILocale.passiveName(self.build.spec.treeVersion, node)
 	if not self.displayItem then
 		return
 	end
@@ -2610,7 +2704,7 @@ function ItemsTabClass:AppendAnointTooltip(tooltip, node, actionText)
 	local header
 	if node then
 		if self.build.spec.allocNodes[node.id] then
-			tooltip:AddLine(14, "^7"..actionText.." "..node.dn.." changes nothing because this node is already allocated on the tree.")
+			tooltip:AddLine(14, "^7"..UILocale.format("%s %s changes nothing because this node is already allocated on the tree.", UILocale.translate(actionText), name))
 			return
 		end
 
@@ -2618,15 +2712,15 @@ function ItemsTabClass:AppendAnointTooltip(tooltip, node, actionText)
 		if curAnoints and #curAnoints > 0 then
 			for _, curAnoint in ipairs(curAnoints) do
 				if curAnoint == node.dn then
-					tooltip:AddLine(14, "^7"..actionText.." "..node.dn.." changes nothing because this node is already anointed.")
+					tooltip:AddLine(14, "^7"..UILocale.format("%s %s changes nothing because this node is already anointed.", UILocale.translate(actionText), name))
 					return
 				end
 			end
 		end
 
-		header = "^7"..actionText.." "..node.dn.." will give you: "
+		header = "^7"..UILocale.format("%s %s will give you: ", UILocale.translate(actionText), name)
 	else
-		header = "^7"..actionText.." nothing will give you: "
+		header = "^7"..UILocale.format("%s nothing will give you: ", UILocale.translate(actionText))
 	end
 	local calcFunc = self.build.calcsTab:GetMiscCalculator()
 	local repSlotName = self.displayItem:GetPrimarySlot()
@@ -2634,7 +2728,7 @@ function ItemsTabClass:AppendAnointTooltip(tooltip, node, actionText)
 	local outputNew = calcFunc({ repSlotName = repSlotName, repItem = self:anointItem(node) })
 	local numChanges = self.build:AddStatComparesToTooltip(tooltip, outputBase, outputNew, header)
 	if node and numChanges == 0 then
-		tooltip:AddLine(14, "^7"..actionText.." "..node.dn.." changes nothing.")
+		tooltip:AddLine(14, "^7"..UILocale.format("%s %s changes nothing.", UILocale.translate(actionText), name))
 	end
 end
 
@@ -2660,11 +2754,11 @@ function ItemsTabClass:AnointDisplayItem(enchantSlot)
 	local function saveLabel()
 		local node = controls.notableDB.selValue
 		if node then
-			return "Anoint " .. node.dn
+			return UILocale.format("Anoint %s", UILocale.passiveName(self.build.spec.treeVersion, node))
 		end
 		local curAnoints = self:getAnoint(self.displayItem)
 		if curAnoints and #curAnoints >= self.anointEnchantSlot then
-			return "Remove "..curAnoints[self.anointEnchantSlot]
+			return UILocale.format("Remove %s", curAnoints[self.anointEnchantSlot])
 		end
 		return "No Anoint"
 	end
@@ -3278,7 +3372,7 @@ function ItemsTabClass:AddItemSetTooltip(tooltip, itemSet)
 		if not slot.nodeId then
 			local item = self.items[itemSet[slot.slotName].selItemId]
 			if item then
-				tooltip:AddLine(16, s_format("^7%s: %s%s", slot.slotName, colorCodes[item.rarity], item.name))
+				tooltip:AddLine(16, s_format("^7%s: %s%s", slot.slotName, colorCodes[item.rarity], UILocale.itemName(item)))
 			end
 		end
 	end
@@ -3312,6 +3406,7 @@ function ItemsTabClass:SetTooltipHeaderInfluence(tooltip, item)
 end
 
 function ItemsTabClass:FormatItemSource(text)
+	text = UILocale.itemSource(text)
 	return text:gsub("unique{([^}]+)}",colorCodes.UNIQUE.."%1"..colorCodes.SOURCE)
 			   :gsub("normal{([^}]+)}",colorCodes.NORMAL.."%1"..colorCodes.SOURCE)
 			   :gsub("currency{([^}]+)}",colorCodes.CURRENCY.."%1"..colorCodes.SOURCE)
@@ -3331,15 +3426,17 @@ function ItemsTabClass:AddItemTooltip(tooltip, item, slot, dbMode, maxWidth)
 	if not item.base or not item.baseName then
 		tooltip:AddLine(fontSizeTitle, rarityCode..(item.title or item.name or "Unknown Item"), "FONTIN SC")
 		tooltip:AddSeparator(30)
-		tooltip:AddLine(fontSizeTitle, colorCodes.NEGATIVE.."Item base is not supported by the current version.", "FONTIN SC")
+		tooltip:AddLine(fontSizeTitle, colorCodes.NEGATIVE .. UILocale.translate("Item base is not supported by the current version."), "FONTIN SC")
 		return
 	end
 	-- Item name
+	local uniqueTitle = (item.rarity == "UNIQUE" or item.rarity == "RELIC") and item.title
+	local baseName = UILocale.itemBaseName(item.baseName, uniqueTitle)
 	if item.title then
-		tooltip:AddLine(fontSizeTitle, rarityCode..item.title, "FONTIN SC")
-		tooltip:AddLine(fontSizeTitle, rarityCode..item.baseName:gsub(" %(.+%)",""), "FONTIN SC")
+		tooltip:AddLine(fontSizeTitle, rarityCode..UILocale.itemTitle(item), "FONTIN SC")
+		tooltip:AddLine(fontSizeTitle, rarityCode..baseName, "FONTIN SC")
 	else
-		tooltip:AddLine(fontSizeTitle, rarityCode..item.namePrefix..item.baseName:gsub(" %(.+%)","")..item.nameSuffix, "FONTIN SC")
+		tooltip:AddLine(fontSizeTitle, rarityCode..UILocale.itemNameWithoutTitle(item, baseName), "FONTIN SC")
 	end
 	tooltip.runicItem = item.runicItem
 	tooltip:AddSeparator(10)
@@ -3348,19 +3445,19 @@ function ItemsTabClass:AddItemTooltip(tooltip, item, slot, dbMode, maxWidth)
 	if dbMode then
 		if item.variantList then
 			if #item.variantList == 1 then
-				tooltip:AddLine(fontSizeBig, "^xFFFF30Variant: "..item.variantList[1], "FONTIN SC")
+				tooltip:AddLine(fontSizeBig, "^xFFFF30" .. UILocale.format("Variant: %s", UILocale.itemVariantName(item.variantList[1], item)), "FONTIN SC")
 			else
-				tooltip:AddLine(fontSizeBig, "^xFFFF30Variant: "..item.variantList[item.variant].." ("..#item.variantList.." variants)", "FONTIN SC")
+				tooltip:AddLine(fontSizeBig, "^xFFFF30" .. UILocale.format("Variant: %s (%d variants)", UILocale.itemVariantName(item.variantList[item.variant], item), #item.variantList), "FONTIN SC")
 			end
 		end
 		if item.league then
-			tooltip:AddLine(fontSizeBig, "^xFF5555Exclusive to: "..item.league, "FONTIN SC")
+			tooltip:AddLine(fontSizeBig, "^xFF5555" .. UILocale.format("Exclusive to: %s", UILocale.itemLeague(item.league)), "FONTIN SC")
 		end
 		if item.unreleased then
-			tooltip:AddLine(fontSizeBig, colorCodes.NEGATIVE.."Not yet available", "FONTIN SC")
+			tooltip:AddLine(fontSizeBig, colorCodes.NEGATIVE .. UILocale.translate("Not yet available"), "FONTIN SC")
 		end
 		if item.source then
-			tooltip:AddLine(fontSizeBig, colorCodes.SOURCE.."Source: "..self:FormatItemSource(item.source), "FONTIN SC")
+			tooltip:AddLine(fontSizeBig, colorCodes.SOURCE .. UILocale.format("Source: %s", self:FormatItemSource(item.source)), "FONTIN SC")
 		end
 		if item.upgradePaths then
 			for _, path in ipairs(item.upgradePaths) do
@@ -3413,16 +3510,16 @@ function ItemsTabClass:AddItemTooltip(tooltip, item, slot, dbMode, maxWidth)
 					if flavour.origin then
 						itemOrigin = flavour.origin
 					end
-					flavourText = flavour.text or flavour
+					flavourText = UILocale.itemFlavourText(flavour)
 				end
 			end
 		end
 	end
 
 	-- Combine base type with origin if available
-	local typeStr = base.weapon and self.build.data.weaponTypeInfo[base.type].label or base.type
+	local typeStr = UILocale.itemType(base, base.weapon and self.build.data.weaponTypeInfo[base.type].label or base.type)
 	if itemOrigin then
-		typeStr = itemOrigin .. " " .. typeStr
+		typeStr = UILocale.itemOrigin(itemOrigin, typeStr)
 		if itemOrigin == "Vaal" then
 			item.mutated = true
 		end
@@ -3430,14 +3527,14 @@ function ItemsTabClass:AddItemTooltip(tooltip, item, slot, dbMode, maxWidth)
 	self:SetTooltipHeaderInfluence(tooltip, item)
 	tooltip:AddLine(fontSizeBig, s_format("^x7F7F7F%s", typeStr), "FONTIN SC")
 	if item.quality and item.quality > 0 then
-		tooltip:AddLine(fontSizeBig, s_format("^x7F7F7FQuality: "..colorCodes.MAGIC.."+%d%%", item.quality), "FONTIN SC")
+		tooltip:AddLine(fontSizeBig, s_format("^x7F7F7F" .. UILocale.translate("Quality:") .. " "..colorCodes.MAGIC.."+%d%%", item.quality), "FONTIN SC")
 	end
 
 	if item.charmLimit then
-		tooltip:AddLine(fontSizeBig, s_format("^x7F7F7FCharm Slots: "..main:StatColor(item.charmLimit, base.charmLimit).."%d", item.charmLimit), "FONTIN SC")
+		tooltip:AddLine(fontSizeBig, s_format(("^x7F7F7F" .. UILocale.itemStatLabel("ItemDisplayBeltCharmSlots", "Charm Slots") .. ": ") .. ""..main:StatColor(item.charmLimit, base.charmLimit).."%d", item.charmLimit), "FONTIN SC")
 	end
 	if item.spiritValue then
-		tooltip:AddLine(fontSizeBig, s_format("^x7F7F7FSpirit: "..main:StatColor(item.spiritValue, base.spirit).."%d", item.spiritValue), "FONTIN SC")
+		tooltip:AddLine(fontSizeBig, s_format(("^x7F7F7F" .. UILocale.itemStatLabel("ItemDisplaySpiritValue", "Spirit") .. ": ") .. ""..main:StatColor(item.spiritValue, base.spirit).."%d", item.spiritValue), "FONTIN SC")
 	end
 
 	if base.weapon then
@@ -3445,35 +3542,35 @@ function ItemsTabClass:AddItemTooltip(tooltip, item, slot, dbMode, maxWidth)
 		local weaponData = item.weaponData[slotNum]
 		local totalDamageTypes = 0
 		if weaponData.PhysicalDPS then
-			tooltip:AddLine(fontSizeBig, s_format("^x7F7F7FPhysical Damage: "..colorCodes.MAGIC.."%d-%d (%.1f DPS)", weaponData.PhysicalMin, weaponData.PhysicalMax, weaponData.PhysicalDPS), "FONTIN SC")
+			tooltip:AddLine(fontSizeBig, s_format(("^x7F7F7F" .. UILocale.itemStatLabel("ItemDisplayWeaponPhysicalDamage", "Physical Damage") .. ": ") .. ""..colorCodes.MAGIC.."%d-%d (%.1f %s)", weaponData.PhysicalMin, weaponData.PhysicalMax, weaponData.PhysicalDPS, UILocale.translate("DPS")), "FONTIN SC")
 			totalDamageTypes = totalDamageTypes + 1
 		end
 		if weaponData.ElementalDPS then
 			local elemLine
 			for _, var in ipairs({"Fire","Cold","Lightning"}) do
 				if weaponData[var.."DPS"] then
-					elemLine = elemLine and elemLine.."^x7F7F7F, " or "^x7F7F7FElemental Damage: "
+					elemLine = elemLine and elemLine.."^x7F7F7F, " or ("^x7F7F7F" .. UILocale.itemStatLabel("ItemDisplayWeaponElementalDamage", "Elemental Damage") .. ": ") .. ""
 					elemLine = elemLine..s_format("%s%d-%d", colorCodes[var:upper()], weaponData[var.."Min"], weaponData[var.."Max"], "FONTIN SC")
 				end
 			end
 			tooltip:AddLine(fontSizeBig, elemLine, "FONTIN SC")
-			tooltip:AddLine(fontSizeBig, s_format("^x7F7F7FElemental DPS: "..colorCodes.MAGIC.."%.1f", weaponData.ElementalDPS), "FONTIN SC")
+			tooltip:AddLine(fontSizeBig, s_format("^x7F7F7F" .. UILocale.translate("Elemental DPS:") .. " "..colorCodes.MAGIC.."%.1f", weaponData.ElementalDPS), "FONTIN SC")
 			totalDamageTypes = totalDamageTypes + 1
 		end
 		if weaponData.ChaosDPS then
-			tooltip:AddLine(fontSizeBig, s_format("^x7F7F7FChaos Damage: "..colorCodes.CHAOS.."%d-%d "..colorCodes.MAGIC.."(%.1f DPS)", weaponData.ChaosMin, weaponData.ChaosMax, weaponData.ChaosDPS), "FONTIN SC")
+			tooltip:AddLine(fontSizeBig, s_format(("^x7F7F7F" .. UILocale.itemStatLabel("ItemDisplayWeaponChaosDamage", "Chaos Damage") .. ": ") .. ""..colorCodes.CHAOS.."%d-%d "..colorCodes.MAGIC.."(%.1f %s)", weaponData.ChaosMin, weaponData.ChaosMax, weaponData.ChaosDPS, UILocale.translate("DPS")), "FONTIN SC")
 			totalDamageTypes = totalDamageTypes + 1
 		end
 		if totalDamageTypes > 1 then
-			tooltip:AddLine(fontSizeBig, s_format("^x7F7F7FTotal DPS: "..colorCodes.MAGIC.."%.1f", weaponData.TotalDPS), "FONTIN SC")
+			tooltip:AddLine(fontSizeBig, s_format("^x7F7F7F" .. UILocale.translate("Total DPS:") .. " "..colorCodes.MAGIC.."%.1f", weaponData.TotalDPS), "FONTIN SC")
 		end
-		tooltip:AddLine(fontSizeBig, s_format("^x7F7F7FCritical Hit Chance: %s%.2f%%", main:StatColor(weaponData.CritChance, base.weapon.CritChanceBase), weaponData.CritChance), "FONTIN SC")
-		tooltip:AddLine(fontSizeBig, s_format("^x7F7F7FAttacks per Second: %s%.2f", main:StatColor(weaponData.AttackRate, base.weapon.AttackRateBase), weaponData.AttackRate), "FONTIN SC")
+		tooltip:AddLine(fontSizeBig, s_format(("^x7F7F7F" .. UILocale.itemStatLabel("ItemDisplayWeaponCriticalStrikeChance", "Critical Hit Chance") .. ": ") .. "%s%.2f%%", main:StatColor(weaponData.CritChance, base.weapon.CritChanceBase), weaponData.CritChance), "FONTIN SC")
+		tooltip:AddLine(fontSizeBig, s_format(("^x7F7F7F" .. UILocale.itemStatLabel("ItemDisplayWeaponAttacksPerSecond", "Attacks per Second") .. ": ") .. "%s%.2f", main:StatColor(weaponData.AttackRate, base.weapon.AttackRateBase), weaponData.AttackRate), "FONTIN SC")
 		if weaponData.ReloadTime then
-			tooltip:AddLine(fontSizeBig, s_format("^x7F7F7FReload Time: %s%.2f", main:StatColor(weaponData.ReloadTime, base.weapon.ReloadTimeBase), weaponData.ReloadTime), "FONTIN SC")
+			tooltip:AddLine(fontSizeBig, s_format(("^x7F7F7F" .. UILocale.itemStatLabel("ItemDisplayWeaponReloadTime", "Reload Time") .. ": ") .. "%s%.2f", main:StatColor(weaponData.ReloadTime, base.weapon.ReloadTimeBase), weaponData.ReloadTime), "FONTIN SC")
 		end
 		if weaponData.range < 120 then
-			tooltip:AddLine(fontSizeBig, s_format("^x7F7F7FWeapon Range: %s%.1f ^x7F7F7Fmetres", main:StatColor(weaponData.range, base.weapon.Range), weaponData.range / 10), "FONTIN SC")
+			tooltip:AddLine(fontSizeBig, s_format(("^x7F7F7F" .. UILocale.itemStatLabel("ItemDisplayWeaponRange", "Weapon Range") .. ": ") .. "%s%.1f ^x7F7F7F%s", main:StatColor(weaponData.range, base.weapon.Range), weaponData.range / 10, UILocale.translate("metres")), "FONTIN SC")
 		end
 	elseif base.armour then
 		-- Armour-specific info
@@ -3484,26 +3581,28 @@ function ItemsTabClass:AddItemTooltip(tooltip, item, slot, dbMode, maxWidth)
 		local energyShield = item:GetArmourDataValue("EnergyShield", level)
 		local ward = item:GetArmourDataValue("Ward", level)
 		if base.armour.BlockChance and armourData.BlockChance > 0 then
-			tooltip:AddLine(fontSizeBig, s_format("^x7F7F7FChance to Block: %s%d%%", main:StatColor(armourData.BlockChance, base.armour.BlockChance), armourData.BlockChance), "FONTIN SC")
+			tooltip:AddLine(fontSizeBig, s_format(("^x7F7F7F" .. UILocale.itemStatLabel("ItemDisplayShieldBlockChance", "Chance to Block") .. ": ") .. "%s%d%%", main:StatColor(armourData.BlockChance, base.armour.BlockChance), armourData.BlockChance), "FONTIN SC")
 		end
 		if armour > 0 then
-			tooltip:AddLine(fontSizeBig, s_format("^x7F7F7FArmour: %s%d", main:StatColor(armour, base.armour.ArmourBase), armour), "FONTIN SC")
+			tooltip:AddLine(fontSizeBig, s_format(("^x7F7F7F" .. UILocale.itemStatLabel("ItemDisplayArmourArmour", "Armour") .. ": ") .. "%s%d", main:StatColor(armour, base.armour.ArmourBase), armour), "FONTIN SC")
 		end
 		if evasion > 0 then
-			tooltip:AddLine(fontSizeBig, s_format("^x7F7F7FEvasion Rating: %s%d", main:StatColor(evasion, base.armour.EvasionBase), evasion), "FONTIN SC")
+			tooltip:AddLine(fontSizeBig, s_format(("^x7F7F7F" .. UILocale.itemStatLabel("ItemDisplayArmourEvasionRating", "Evasion Rating") .. ": ") .. "%s%d", main:StatColor(evasion, base.armour.EvasionBase), evasion), "FONTIN SC")
 		end
 		if energyShield > 0 then
-			tooltip:AddLine(fontSizeBig, s_format("^x7F7F7FEnergy Shield: %s%d", main:StatColor(energyShield, base.armour.EnergyShieldBase), energyShield), "FONTIN SC")
+			tooltip:AddLine(fontSizeBig, s_format(("^x7F7F7F" .. UILocale.itemStatLabel("ItemDisplayArmourEnergyShield", "Energy Shield") .. ": ") .. "%s%d", main:StatColor(energyShield, base.armour.EnergyShieldBase), energyShield), "FONTIN SC")
 		end
 		if ward > 0 then
-			tooltip:AddLine(fontSizeBig, s_format("^x7F7F7FRunic Ward: %s%d", main:StatColor(ward, base.armour.WardBase), ward), "FONTIN SC")
+			tooltip:AddLine(fontSizeBig, s_format(("^x7F7F7F" .. UILocale.itemStatLabel("ItemDisplayArmourWard", "Runic Ward") .. ": ") .. "%s%d", main:StatColor(ward, base.armour.WardBase), ward), "FONTIN SC")
 		end
 	elseif base.flask then
 		-- Flask-specific info
 		local flaskData = item.flaskData
 		if flaskData.lifeTotal then
 			if flaskData.lifeGradual ~= 0 then
-				tooltip:AddLine(fontSizeBig, s_format("^x7F7F7FRecovers %s%d ^x7F7F7FLife over %s%.1f0 ^x7F7F7FSeconds",
+				tooltip:AddLine(fontSizeBig, UILocale.itemFlaskRecovery("Life", flaskData.lifeGradual, flaskData.duration,
+					main:StatColor(flaskData.lifeTotal, base.flask.life), main:StatColor(flaskData.duration, base.flask.duration))
+					or s_format("^x7F7F7FRecovers %s%d ^x7F7F7FLife over %s%.1f0 ^x7F7F7FSeconds",
 					main:StatColor(flaskData.lifeTotal, base.flask.life), flaskData.lifeGradual,
 					main:StatColor(flaskData.duration, base.flask.duration), flaskData.duration
 					), "FONTIN SC")
@@ -3514,7 +3613,9 @@ function ItemsTabClass:AddItemTooltip(tooltip, item, slot, dbMode, maxWidth)
 		end
 		if flaskData.manaTotal then
 			if flaskData.manaGradual ~= 0 then
-				tooltip:AddLine(fontSizeBig, s_format("^x7F7F7FRecovers %s%d ^x7F7F7FMana over %s%.1f0 ^x7F7F7FSeconds",
+				tooltip:AddLine(fontSizeBig, UILocale.itemFlaskRecovery("Mana", flaskData.manaGradual, flaskData.duration,
+					main:StatColor(flaskData.manaTotal, base.flask.mana), main:StatColor(flaskData.duration, base.flask.duration))
+					or s_format("^x7F7F7FRecovers %s%d ^x7F7F7FMana over %s%.1f0 ^x7F7F7FSeconds",
 					main:StatColor(flaskData.manaTotal, base.flask.mana), flaskData.manaGradual,
 					main:StatColor(flaskData.duration, base.flask.duration), flaskData.duration
 					), "FONTIN SC")
@@ -3523,7 +3624,9 @@ function ItemsTabClass:AddItemTooltip(tooltip, item, slot, dbMode, maxWidth)
 				tooltip:AddLine(fontSizeBig, s_format("^x7F7F7FRecovers %s%d ^x7F7F7FMana instantly", main:StatColor(flaskData.manaTotal, base.flask.mana), flaskData.manaInstant), "FONTIN SC")
 			end
 		end
-		tooltip:AddLine(fontSizeBig, s_format("^x7F7F7FConsumes %s%d ^x7F7F7Fof %s%d ^x7F7F7FCharges on use",
+		tooltip:AddLine(fontSizeBig, UILocale.itemCharges(flaskData.chargesUsed, flaskData.chargesMax,
+			main:StatColor(flaskData.chargesUsed, base.flask.chargesUsed), main:StatColor(flaskData.chargesMax, base.flask.chargesMax))
+			or s_format("^x7F7F7FConsumes %s%d ^x7F7F7Fof %s%d ^x7F7F7FCharges on use",
 			main:StatColor(flaskData.chargesUsed, base.flask.chargesUsed), flaskData.chargesUsed,
 			main:StatColor(flaskData.chargesMax, base.flask.chargesMax), flaskData.chargesMax
 			), "FONTIN SC")
@@ -3533,7 +3636,7 @@ function ItemsTabClass:AddItemTooltip(tooltip, item, slot, dbMode, maxWidth)
 				line = main.notSupportedModTooltips and (line .. main.notSupportedTooltipText) or line
 				tooltip:AddLine(fontSizeBig, line, "FONTIN SC")
 			else
-				tooltip:AddLine(fontSizeBig, colorCodes.MAGIC..modLine.line, "FONTIN SC")
+				tooltip:AddLine(fontSizeBig, colorCodes.MAGIC .. UILocale.itemModifier(modLine.line), "FONTIN SC")
 			end
 		end
 	elseif base.charm then
@@ -3541,7 +3644,9 @@ function ItemsTabClass:AddItemTooltip(tooltip, item, slot, dbMode, maxWidth)
 		local charmData = item.charmData
 
 		tooltip:AddLine(fontSizeBig, s_format("^x7F7F7FLasts %s%.2f ^x7F7F7FSeconds", main:StatColor(charmData.duration, base.charm.duration), charmData.duration), "FONTIN SC")
-		tooltip:AddLine(fontSizeBig, s_format("^x7F7F7FConsumes %s%d ^x7F7F7Fof %s%d ^x7F7F7FCharges on use",
+		tooltip:AddLine(fontSizeBig, UILocale.itemCharges(charmData.chargesUsed, charmData.chargesMax,
+			main:StatColor(charmData.chargesUsed, base.charm.chargesUsed), main:StatColor(charmData.chargesMax, base.charm.chargesMax))
+			or s_format("^x7F7F7FConsumes %s%d ^x7F7F7Fof %s%d ^x7F7F7FCharges on use",
 			main:StatColor(charmData.chargesUsed, base.charm.chargesUsed), charmData.chargesUsed,
 			main:StatColor(charmData.chargesMax, base.charm.chargesMax), charmData.chargesMax
 		), "FONTIN SC")
@@ -3551,19 +3656,19 @@ function ItemsTabClass:AddItemTooltip(tooltip, item, slot, dbMode, maxWidth)
 				line = main.notSupportedModTooltips and (line .. main.notSupportedTooltipText) or line
 				tooltip:AddLine(fontSizeBig, line, "FONTIN SC")
 			else
-				tooltip:AddLine(fontSizeBig, colorCodes.MAGIC..modLine.line, "FONTIN SC")
+				tooltip:AddLine(fontSizeBig, colorCodes.MAGIC .. UILocale.itemModifier(modLine.line), "FONTIN SC")
 			end
 		end
 	elseif item.type == "Jewel" then
 		-- Jewel-specific info
 		if item.limit then
-			tooltip:AddLine(fontSizeBig, "^x7F7F7FLimited to: ^7"..item.limit, "FONTIN SC")
+			tooltip:AddLine(fontSizeBig, ("^x7F7F7F" .. UILocale.itemStatLabel("JewelItemLimit", "Limited to") .. ": ") .. "^7"..item.limit, "FONTIN SC")
 		end
 		if item.classRestriction then
 			tooltip:AddLine(fontSizeBig, "^x7F7F7FRequires Class "..(self.build.spec.curClassName == item.classRestriction and colorCodes.POSITIVE or colorCodes.NEGATIVE)..item.classRestriction, "FONTIN SC")
 		end
 		if item.jewelRadiusLabel then
-			tooltip:AddLine(fontSizeBig, "^x7F7F7FRadius: ^7"..item.jewelRadiusLabel, "FONTIN SC")
+			tooltip:AddLine(fontSizeBig, ("^x7F7F7F" .. UILocale.itemStatLabel("ItemDisplayHarvestEffectRadius", "Radius") .. ": ") .. "^7"..item.jewelRadiusLabel, "FONTIN SC")
 		end
 		if item.jewelRadiusData and slot and item.jewelRadiusData[slot.nodeId] then
 			local radiusData = item.jewelRadiusData[slot.nodeId]
@@ -3591,7 +3696,7 @@ function ItemsTabClass:AddItemTooltip(tooltip, item, slot, dbMode, maxWidth)
 			socketString = socketString .. "S "
 		end
 		socketString = socketString:gsub(" $", "")
-		tooltip:AddLine(fontSizeBig, "^x7F7F7FSockets: " .. socketString, "FONTIN SC")
+		tooltip:AddLine(fontSizeBig, ("^x7F7F7F" .. UILocale.itemStatLabel("ItemDisplayStringSockets", "Sockets") .. ": ") .. "" .. socketString, "FONTIN SC")
 	end
 	if item.jewelSocketCount > 0 then
 		local socketString = ""
@@ -3599,7 +3704,7 @@ function ItemsTabClass:AddItemTooltip(tooltip, item, slot, dbMode, maxWidth)
 			socketString = socketString .. "J "
 		end
 		socketString = socketString:gsub(" $", "")
-		tooltip:AddLine(fontSizeBig, "^x7F7F7FSockets: " .. socketString, "FONTIN SC")
+		tooltip:AddLine(fontSizeBig, ("^x7F7F7F" .. UILocale.itemStatLabel("ItemDisplayStringSockets", "Sockets") .. ": ") .. "" .. socketString, "FONTIN SC")
 	end
 	tooltip:AddSeparator(10)
 
@@ -3661,9 +3766,9 @@ function ItemsTabClass:AddItemTooltip(tooltip, item, slot, dbMode, maxWidth)
 								copyModLine.line = copyModLine.line:gsub("%d*%.?%d+", math.abs(newValue), 1) -- Only scale first number in line
 							end
 						end
-						formattedModLine = itemLib.formatModLine(copyModLine, dbMode)
+						formattedModLine = itemLib.formatModLine(copyModLine, dbMode, UILocale.itemModifier, item)
 					else
-						formattedModLine = itemLib.formatModLine(modLine, dbMode)
+						formattedModLine = itemLib.formatModLine(modLine, dbMode, UILocale.itemModifier, item)
 					end
 					for _ = 1, variantCount do
 						tooltip:AddLine(fontSizeBig, formattedModLine, "FONTIN SC", bg)
@@ -3725,15 +3830,15 @@ function ItemsTabClass:AddItemTooltip(tooltip, item, slot, dbMode, maxWidth)
 			tooltip:AddSeparator(10)
 		end
 		if item.mirrored then
-			tooltip:AddLine(fontSizeBig, colorCodes.NEGATIVE.."Mirrored", "FONTIN SC")
+			tooltip:AddLine(fontSizeBig, colorCodes.NEGATIVE .. UILocale.translate("Mirrored"), "FONTIN SC")
 		end
 		if item.sanctified then
-			tooltip:AddLine(fontSizeBig, colorCodes.FRACTURED.."Sanctified", "FONTIN SC")
+			tooltip:AddLine(fontSizeBig, colorCodes.FRACTURED .. UILocale.translate("Sanctified"), "FONTIN SC")
 		end
 		if item.doubleCorrupted then
-			tooltip:AddLine(fontSizeBig, colorCodes.NEGATIVE.."Twice Corrupted", "FONTIN SC")
+			tooltip:AddLine(fontSizeBig, colorCodes.NEGATIVE .. UILocale.translate("Twice Corrupted"), "FONTIN SC")
 		elseif item.corrupted then
-			tooltip:AddLine(fontSizeBig, colorCodes.NEGATIVE.."Corrupted", "FONTIN SC")
+			tooltip:AddLine(fontSizeBig, colorCodes.NEGATIVE .. UILocale.gemText("MonsterCorrupted", "Corrupted"), "FONTIN SC")
 		end
 		tooltip:AddSeparator(10)
 	end
@@ -3789,7 +3894,7 @@ function ItemsTabClass:AddItemTooltip(tooltip, item, slot, dbMode, maxWidth)
 	-- Stat differences
 	if not self.showStatDifferences then
 		tooltip:AddSeparator(14)
-		tooltip:AddLine(14, colorCodes.TIP.."Tip: Press Ctrl+D to enable the display of stat differences.")
+		tooltip:AddLine(14, colorCodes.TIP..UILocale.translate("Tip: Press Ctrl+D to enable the display of stat differences."))
 		return
 	end
 	local calcFunc, calcBase = self.build.calcsTab:GetMiscCalculator()
@@ -4042,11 +4147,15 @@ function ItemsTabClass:AddItemTooltip(tooltip, item, slot, dbMode, maxWidth)
 			end
 			local header
 			if item == selItem then
-				header = "^7Removing this item from " .. compareSlot.label .. " will give you:"
+				header = "^7" .. UILocale.format("Removing this item from %s will give you:",
+					UILocale.itemSlotLabel(compareSlot.label or compareSlot.slotName))
 			else
-				header = string.format("^7Equipping this item in %s will give you:%s",
-					compareSlot.label or compareSlot.slotName,
-					selItem and "\n(replacing " .. colorCodes[selItem.rarity] .. selItem.name .. "^7)" or "")
+				header = "^7" .. UILocale.format("Equipping this item in %s will give you:",
+					UILocale.itemSlotLabel(compareSlot.label or compareSlot.slotName))
+				if selItem then
+					header = header .. "\n" .. UILocale.format("(replacing %s)",
+						colorCodes[selItem.rarity] .. UILocale.itemName(selItem) .. "^7")
+				end
 			end
 			self.build:AddStatComparesToTooltip(tooltip, calcBase, output, header)
 		end

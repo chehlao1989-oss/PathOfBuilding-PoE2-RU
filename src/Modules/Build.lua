@@ -3,6 +3,7 @@
 -- Module: Build
 -- Loads and manages the current build.
 --
+local localizeBuildWarning = LoadModule("Modules/BuildWarningLocale")
 local pairs = pairs
 local ipairs = ipairs
 local next = next
@@ -103,69 +104,85 @@ function buildMode:Init(dbFileName, buildName, buildXML, convertBuild, importLin
 
 	-- Controls: top bar, left side
 	self.anchorTopBarLeft = new("Control", nil, {4, 4, 0, 20})
-	self.controls.back = new("ButtonControl", {"LEFT",self.anchorTopBarLeft,"RIGHT"}, {0, 0, 60, 20}, "<< Back", function()
+	self.controls.back = new("ButtonControl", {"LEFT",self.anchorTopBarLeft,"RIGHT"}, {0, 0, 68, 20}, "<< Back", function()
 		if self.unsaved then
 			self:OpenSavePopup("LIST")
 		else
 			self:CloseBuild()
 		end
 	end)
-	self.controls.save = new("ButtonControl", {"LEFT",self.controls.back,"RIGHT"}, {8, 0, 50, 20}, "Save", function()
+	self.controls.save = new("ButtonControl", {"LEFT",self.controls.back,"RIGHT"}, {8, 0, 80, 20}, "Save", function()
 		self:SaveDBFile()
 	end)
 	self.controls.save.enabled = function()
 		return not self.dbFileName or self.unsaved
 	end
-	self.controls.saveAs = new("ButtonControl", {"LEFT",self.controls.save,"RIGHT"}, {8, 0, 70, 20}, "Save As", function()
+	self.controls.saveAs = new("ButtonControl", {"LEFT",self.controls.save,"RIGHT"}, {8, 0, 110, 20}, "Save As", function()
 		self:OpenSaveAsPopup()
 	end)
 	self.controls.saveAs.enabled = function()
 		return self.dbFileName
 	end
 
-	-- conditional for smaller screens to move "Current build" to the side bar
-	local function buildNameConditional()
-		return self.anchorTopBarRight:GetPos() < 900
+	local buildCaption = "Current build:"
+	local function buildNameTopX()
+		return self.controls.saveAs:GetPos() + self.controls.saveAs:GetProperty("width") + 8
 	end
-	self.controls.buildName = new("Control", {"LEFT",self.controls.saveAs,"RIGHT"}, {4, 36, 0, 20})
-	self.controls.buildName.width = function(control)
-		local limit = buildNameConditional() and 203 or
-			(self.anchorTopBarRight:GetPos() - 98 - 58
-			- self.controls.pointDisplay:GetSize() - self.controls.levelScalingButton:GetSize() - self.controls.characterLevel:GetSize()
-			- self.controls.back:GetSize() - self.controls.save:GetSize() - self.controls.saveAs:GetSize())
-		local bnw = DrawStringWidth(16, "VAR", self.buildName)
-		self.strWidth = m_min(bnw, limit)
-		self.strLimited = bnw > limit
-		return self.strWidth + 98
+	local function buildNameTopWidth()
+		return self.controls.pointDisplay:GetPos() - buildNameTopX() - 8
+	end
+	local function buildNameCaptionWidth()
+		return DrawStringWidth(16, "VAR", buildCaption) + 8
+	end
+	local function buildNameConditional()
+		return buildNameTopWidth() < buildNameCaptionWidth() + 110
+	end
+	local function buildNameLayout()
+		local name = self.buildName
+		if not self.dbFileName and name == "Unnamed build" then
+			name = UILocale.translate(name)
+		end
+		local captionWidth = buildNameCaptionWidth()
+		local available = buildNameConditional() and 300 or buildNameTopWidth()
+		local nameWidth = UILocale.measureRaw(16, "VAR", name)
+		local textWidth = m_min(nameWidth, available - captionWidth - 8)
+		return name, captionWidth, textWidth, textWidth < nameWidth
+	end
+	self.controls.buildName = new("Control", nil, {0, 4, 0, 20})
+	self.controls.buildName.width = function()
+		local _, captionWidth, textWidth = buildNameLayout()
+		return captionWidth + textWidth + 8
+	end
+	self.controls.buildName.x = function(control)
+		return buildNameConditional() and 304 - control:GetProperty("width") or buildNameTopX()
+	end
+	self.controls.buildName.y = function()
+		return buildNameConditional() and 36 or 4
 	end
 	self.controls.buildName.Draw = function(control)
 		local x, y = control:GetPos()
-		local width, height = control:GetSize()
+		local name, captionWidth, textWidth, truncated = buildNameLayout()
+		local frameX, frameWidth = x + captionWidth, textWidth + 8
 		SetDrawColor(0.5, 0.5, 0.5)
-		DrawImage(nil, x + 91, y, self.strWidth + 6, 20)
+		DrawImage(nil, frameX, y, frameWidth, 20)
 		SetDrawColor(0, 0, 0)
-		DrawImage(nil, x + 92, y + 1, self.strWidth + 4, 18)
+		DrawImage(nil, frameX + 1, y + 1, frameWidth - 2, 18)
 		SetDrawColor(1, 1, 1)
-		SetViewport(x, y + 2, self.strWidth + 94, 16)
-		DrawString(0, 0, "LEFT", 16, "VAR", "Current build:  "..self.buildName)
+		DrawString(x, y + 2, "LEFT", 16, "VAR", buildCaption)
+		SetViewport(frameX + 4, y + 2, textWidth + 1, 16)
+		UILocale.drawRaw(0, 0, "LEFT", 16, "VAR", name)
 		SetViewport()
 		if control:IsMouseInBounds() then
 			SetDrawLayer(nil, 10)
 			miscTooltip:Clear()
 			if self.dbFileSubPath and self.dbFileSubPath ~= "" then
-				miscTooltip:AddLine(16, self.dbFileSubPath..self.buildName)
-			elseif self.strLimited then
-				miscTooltip:AddLine(16, self.buildName)
+				miscTooltip:AddLine(16, self.dbFileSubPath..name)
+			elseif truncated then
+				miscTooltip:AddLine(16, name)
 			end
-			miscTooltip:Draw(x, y, width, height, main.viewPort)
+			miscTooltip:Draw(x, y, control:GetProperty("width"), 20, main.viewPort)
 			SetDrawLayer(nil, 0)
 		end
-	end
-	self.controls.buildName.x = function()
-		return buildNameConditional() and -196 or 8
-	end
-	self.controls.buildName.y = function()
-		return buildNameConditional() and 32 or 0
 	end
 
 	-- Controls: top bar, right side
@@ -418,17 +435,17 @@ function buildMode:Init(dbFileName, buildName, buildXML, convertBuild, importLin
 			srcInstance.skillMinionItemSet = value.itemSetId
 			srcInstance.skillMinionItemSetCalcs = value.itemSetId
 			if srcInstance.nameSpec:match("^Spectre:") then
-				srcInstance.nameSpec = "Spectre: ".. value.label
+				srcInstance.nameSpec = "Spectre: ".. (value.originalName or value.label)
 			elseif srcInstance.nameSpec:match("^Companion:") then
-				srcInstance.nameSpec = "Companion: ".. value.label
+				srcInstance.nameSpec = "Companion: ".. (value.originalName or value.label)
 			end
 		else
 			srcInstance.skillMinion = value.minionId
 			srcInstance.skillMinionCalcs = value.minionId
 			if srcInstance.nameSpec:match("^Spectre:") then
-				srcInstance.nameSpec = "Spectre: ".. value.label
+				srcInstance.nameSpec = "Spectre: ".. (value.originalName or value.label)
 			elseif srcInstance.nameSpec:match("^Companion:") then
-				srcInstance.nameSpec = "Companion: ".. value.label
+				srcInstance.nameSpec = "Companion: ".. (value.originalName or value.label)
 			end
 		end
 		self.modFlag = true
@@ -476,6 +493,7 @@ function buildMode:Init(dbFileName, buildName, buildXML, convertBuild, importLin
 	end)
 	self.controls.statBoxAnchor = new("Control", {"TOPLEFT",self.controls.mainSkillMinionSkillStatSet,"BOTTOMLEFT",true}, {0, 2, 0, 0})
 	self.controls.statBox = new("TextListControl", {"TOPLEFT",self.controls.statBoxAnchor,"BOTTOMLEFT"}, {0, 2, 300, 0}, {{x=170,align="RIGHT_X"},{x=174,align="LEFT"}})
+	self.controls.statBox.wrapStatColumns = true
 	self.controls.statBox.height = function(control)
 		local x, y = control:GetPos()
 		local warnHeight = main.showWarnings and #self.controls.warnings.lines > 0 and 18 or 0
@@ -497,7 +515,10 @@ function buildMode:Init(dbFileName, buildName, buildXML, convertBuild, importLin
 			if control:IsMouseInBounds() then
 				SetDrawLayer(nil, 10)
 				miscTooltip:Clear()
-				for k,v in pairs(self.controls.warnings.lines) do miscTooltip:AddLine(16, v) end
+				miscTooltip.maxWidth = 600
+				for _, warning in ipairs(self.controls.warnings.lines) do
+					miscTooltip:AddLine(16, localizeBuildWarning(warning, self))
+				end
 				miscTooltip:Draw(x, y, width, height, main.viewPort)
 				SetDrawLayer(nil, 0)
 			end
@@ -1451,12 +1472,12 @@ function buildMode:OpenSavePopup(mode)
 	}
 	local controls = { }
 	controls.label = new("LabelControl", nil, {0, 20, 0, 16}, "^7This build has unsaved changes.\nDo you want to save them "..modeDesc[mode])
-	controls.save = new("ButtonControl", nil, {-90, 70, 80, 20}, "Save", function()
+	controls.save = new("ButtonControl", nil, {-112, 70, 94, 20}, "Save", function()
 		main:ClosePopup()
 		self.actionOnSave = mode
 		self:SaveDBFile()
 	end)
-	controls.noSave = new("ButtonControl", nil, {0, 70, 80, 20}, "Don't Save", function()
+	controls.noSave = new("ButtonControl", nil, {0, 70, 112, 20}, "Don't Save", function()
 		main:ClosePopup()
 		if mode == "LIST" then
 			self:CloseBuild()
@@ -1466,10 +1487,10 @@ function buildMode:OpenSavePopup(mode)
 			launch:ApplyUpdate(launch.updateAvailable)
 		end
 	end)
-	controls.close = new("ButtonControl", nil, {90, 70, 80, 20}, "Cancel", function()
+	controls.close = new("ButtonControl", nil, {112, 70, 94, 20}, "Cancel", function()
 		main:ClosePopup()
 	end)
-	main:OpenPopup(300, 100, "Save Changes", controls)
+	main:OpenPopup(350, 100, "Save Changes", controls)
 end
 
 function buildMode:OpenSaveAsPopup()
@@ -1936,7 +1957,7 @@ function buildMode:RefreshSkillSelectControls(controls, mainGroup, suffix)
 	controls.mainSocketGroup.selIndex = mainGroup
 	wipeTable(controls.mainSocketGroup.list)
 	for i, socketGroup in pairs(self.skillsTab.socketGroupList) do
-		controls.mainSocketGroup.list[i] = { val = i, label = socketGroup.displayLabel }
+		controls.mainSocketGroup.list[i] = { val = i, label = UILocale.skillGroupName(socketGroup) }
 	end
 	controls.mainSocketGroup:CheckDroppedWidth(true)
 	if controls.warnings then controls.warnings.shown = #controls.warnings.lines > 0 end
@@ -1959,7 +1980,9 @@ function buildMode:RefreshSkillSelectControls(controls, mainGroup, suffix)
 			local explodeSource = activeSkill.activeEffect.srcInstance.explodeSource
 			local explodeSourceName = explodeSource and (explodeSource.name or explodeSource.dn)
 			local colourCoded = explodeSourceName and ("From "..colorCodes[explodeSource.rarity or "NORMAL"]..explodeSourceName)
-			t_insert(controls.mainSkill.list, { val = i, label = colourCoded or self.calcsTab.calcs.getActiveSkillDisplayName(activeSkill) })
+			local label = self.calcsTab.calcs.getActiveSkillDisplayName(activeSkill)
+			local effect = activeSkill.activeEffect.grantedEffect
+			t_insert(controls.mainSkill.list, { val = i, label = colourCoded or UILocale.skillDisplayName(effect, label, activeSkill.activeEffect.srcInstance.skillMinion) })
 		end
 		controls.mainSkill.enabled = #displaySkillList > 1
 		controls.mainSkill.selIndex = mainActiveSkill
@@ -1978,7 +2001,7 @@ function buildMode:RefreshSkillSelectControls(controls, mainGroup, suffix)
 			if activeEffect then
 				wipeTable(controls.statSet.list)
 				for i, statSet in ipairs(activeEffect.grantedEffect.statSets) do
-					t_insert(controls.statSet.list, { val = i, label = statSet.label, grantedEffectId = activeEffect.grantedEffect.id })
+					t_insert(controls.statSet.list, { val = i, label = UILocale.skillVariantLabel(statSet.label, activeEffect.grantedEffect), grantedEffectId = activeEffect.grantedEffect.id })
 				end
 				controls.statSet.selIndex = activeEffect.srcInstance["statSet"..suffix] and activeEffect.srcInstance["statSet"..suffix][activeEffect.grantedEffect.id] or 1
 				controls.statSet.enabled = #controls.statSet.list > 1
@@ -1987,7 +2010,7 @@ function buildMode:RefreshSkillSelectControls(controls, mainGroup, suffix)
 					controls.mainSkillPart.shown = true
 					wipeTable(controls.mainSkillPart.list)
 					for i, part in ipairs(activeEffect.grantedEffect.parts) do
-						t_insert(controls.mainSkillPart.list, { val = i, label = part.name })
+						t_insert(controls.mainSkillPart.list, { val = i, label = UILocale.skillVariantLabel(part.name) })
 					end
 					controls.mainSkillPart.selIndex = activeEffect.srcInstance["skillPart"..suffix] or 1
 					if activeEffect.grantedEffect.parts[controls.mainSkillPart.selIndex].stages then
@@ -2034,7 +2057,8 @@ function buildMode:RefreshSkillSelectControls(controls, mainGroup, suffix)
 							local minion = self.data.minions[minionId]
 							if minion then
 								t_insert(controls.mainSkillMinion.list, {
-									label = minion.name,
+									label = UILocale.minionName(minionId, minion.name),
+									originalName = minion.name,
 									minionId = minionId,
 								})
 							end
@@ -2047,14 +2071,14 @@ function buildMode:RefreshSkillSelectControls(controls, mainGroup, suffix)
 					if activeSkill.minion then
 						if activeSkill.minion.activeSkillList and activeSkill.minion.activeSkillList[1] then
 							for _, minionSkill in ipairs(activeSkill.minion.activeSkillList) do
-								t_insert(controls.mainSkillMinionSkill.list, minionSkill.activeEffect.grantedEffect.name)
+								t_insert(controls.mainSkillMinionSkill.list, UILocale.effectName(minionSkill.activeEffect.grantedEffect))
 							end
 							controls.mainSkillMinionSkill.selIndex = activeEffect.srcInstance["skillMinionSkill"..suffix] or 1
 							controls.mainSkillMinionSkill.shown = true
 							controls.mainSkillMinionSkill.enabled = #controls.mainSkillMinionSkill.list > 1
 							wipeTable(controls.mainSkillMinionSkillStatSet.list)
 							for _, statSet in ipairs(activeSkill.minion.activeSkillList[controls.mainSkillMinionSkill.selIndex].activeEffect.grantedEffect.statSets) do
-								t_insert(controls.mainSkillMinionSkillStatSet.list, {label =  statSet.label, grantedEffectId = activeEffect.grantedEffect.id})
+								t_insert(controls.mainSkillMinionSkillStatSet.list, {label = UILocale.skillVariantLabel(statSet.label), grantedEffectId = activeEffect.grantedEffect.id})
 							end
 							local minionStatSetIndexLookup = activeEffect.srcInstance["skillMinionSkillStatSetIndexLookup"..suffix]
 							controls.mainSkillMinionSkillStatSet.selIndex = minionStatSetIndexLookup and minionStatSetIndexLookup[activeEffect.grantedEffect.id] and minionStatSetIndexLookup[activeEffect.grantedEffect.id][controls.mainSkillMinionSkill.selIndex] or 1
@@ -2078,7 +2102,8 @@ function buildMode:FormatStat(statData, statVal, overCapStatVal, colorOverride)
 		color = colorCodes.NEGATIVE
 	end
 
-	local valStr = s_format("%"..statData.fmt, val)
+	local valStr = UILocale.language == "ru" and math.abs(val) == math.huge and (val < 0 and "−∞" or "∞")
+		or s_format("%"..statData.fmt, val)
 	valStr:gsub("%.", main.decimalSeparator)
 	valStr = color .. formatNumSep(valStr)
 
@@ -2118,9 +2143,10 @@ function buildMode:AddDisplayStatList(statList, actor)
 								triggerStr = colorCodes.WARNING.." ("..skillData.trigger..")"..labelColor
 							end
 							local skillCount = skillData.count or 1
-							local lhsString = labelColor..skillData.name..triggerStr..":"
+							local localSkillName = UILocale.effectCaption(skillData.name)
+							local lhsString = labelColor..localSkillName..triggerStr..":"
 							if skillCount ~= 1 then
-								lhsString = labelColor..s_format("%g", skillCount).."x "..skillData.name..triggerStr..":"
+								lhsString = labelColor..s_format("%g", skillCount).."x "..localSkillName..triggerStr..":"
 							end
 							t_insert(statBoxList, {
 								height = 16,
@@ -2131,7 +2157,7 @@ function buildMode:AddDisplayStatList(statList, actor)
 								t_insert(statBoxList, {
 									height = 14,
 									align = "CENTER_X", x = 140,
-									"^8"..skillData.skillPart,
+									"^8"..UILocale.effectCaption(skillData.skillPart),
 								})
 							end
 							if skillData.source then
@@ -2164,7 +2190,7 @@ function buildMode:AddDisplayStatList(statList, actor)
 			elseif statData.label and statData.condFunc and statData.condFunc(actor.output) then
 				t_insert(statBoxList, {
 					height = 16, labelColor..statData.label..":",
-					"^7"..actor.output[statData.labelStat].."%^x808080" .. " (" .. statData.val  .. ")",})
+					"^7"..actor.output[statData.labelStat].."%^x808080" .. " (" .. UILocale.translate(statData.val) .. ")",})
 			elseif not statBoxList[#statBoxList] or statBoxList[#statBoxList][1] then
 				t_insert(statBoxList, { height = 6 })
 			end
@@ -2280,7 +2306,7 @@ function buildMode:CompareStatList(tooltip, statList, actor, baseOutput, compare
 			end
 			if (diff > 0.001 or diff < -0.001) and (not statData.condFunc or statData.condFunc(statVal1,compareOutput) or statData.condFunc(statVal2,baseOutput)) then
 				if count == 0 then
-					tooltip:AddLine(14, header)
+					tooltip:AddLine(14, UILocale.translate(header))
 				end
 				local color = ((statData.lowerIsBetter and diff < 0) or (not statData.lowerIsBetter and diff > 0)) and colorCodes.POSITIVE or colorCodes.NEGATIVE
 				local val = diff * ((statData.pc or statData.mod) and 100 or 1)
@@ -2288,7 +2314,7 @@ function buildMode:CompareStatList(tooltip, statList, actor, baseOutput, compare
 
 				valStr = formatNumSep(valStr)
 
-				local line = s_format("%s%s %s", color, valStr, statData.label)
+				local line = s_format("%s%s %s", color, valStr, UILocale.translate(statData.label))
 				local pcPerPt = ""
 				if statData.compPercent and statVal1 ~= 0 and statVal2 ~= 0 then
 					local pc = statVal1 / statVal2 * 100 - 100
@@ -2298,7 +2324,7 @@ function buildMode:CompareStatList(tooltip, statList, actor, baseOutput, compare
 					end
 				end
 				if nodeCount then
-					line = line .. s_format(" ^8[%+"..statData.fmt.."%s per point]", diff * ((statData.pc or statData.mod) and 100 or 1) / nodeCount, pcPerPt)
+					line = line .. s_format(" ^8[%+"..statData.fmt.."%s %s]", diff * ((statData.pc or statData.mod) and 100 or 1) / nodeCount, pcPerPt, UILocale.translate("per point"))
 				end
 				tooltip:AddLine(14, line)
 				count = count + 1
@@ -2331,9 +2357,9 @@ do
 	function buildMode:AddRequirementsToTooltip(tooltip, level, str, dex, int, strBase, dexBase, intBase)
 		if level and level > 0 then
 			if tooltip.tooltipHeader ~= "GEM" then
-				t_insert(req, s_format("^x7F7F7FLevel %s%d", main:StatColor(level, nil, self.characterLevel), level))
+				t_insert(req, s_format("^x7F7F7F%s %s%d", UILocale.gemText("Level", "Level"), main:StatColor(level, nil, self.characterLevel), level))
 			else
-				t_insert(req, s_format("^7Level %s%d", main:StatColor(level, nil, self.characterLevel), level))
+				t_insert(req, s_format("^7%s %s%d", UILocale.gemText("Level", "Level"), main:StatColor(level, nil, self.characterLevel), level))
 			end
 		end
 		-- Convert normal attributes to Omni attributes
@@ -2351,23 +2377,24 @@ do
 			end
 		else
 			local attrTextColor = (tooltip.tooltipHeader == "GEM") and "^7" or "^x7F7F7F"
+			local ruRequirements = UILocale.language == "ru"
 			if str and (str > 7 or str > self.calcsTab.mainOutput.Str) then
-				t_insert(req, s_format("%s%d %s%s", main:StatColor(str, strBase, self.calcsTab.mainOutput.Str), str, attrTextColor, level and "Str" or "Strength"))
+				t_insert(req, s_format("%s%d %s%s", main:StatColor(str, strBase, self.calcsTab.mainOutput.Str), str, attrTextColor, ruRequirements and UILocale.gemText("StrengthShort", "Str") or (level and "Str" or "Strength")))
 			end
 			if dex and (dex > 7 or dex > self.calcsTab.mainOutput.Dex) then
-				t_insert(req, s_format("%s%d %s%s", main:StatColor(dex, dexBase, self.calcsTab.mainOutput.Dex), dex, attrTextColor, level and "Dex" or "Dexterity"))
+				t_insert(req, s_format("%s%d %s%s", main:StatColor(dex, dexBase, self.calcsTab.mainOutput.Dex), dex, attrTextColor, ruRequirements and UILocale.gemText("DexterityShort", "Dex") or (level and "Dex" or "Dexterity")))
 			end
 			if int and (int > 7 or int > self.calcsTab.mainOutput.Int) then
-				t_insert(req, s_format("%s%d %s%s", main:StatColor(int, intBase, self.calcsTab.mainOutput.Int), int, attrTextColor, level and "Int" or "Intelligence"))
+				t_insert(req, s_format("%s%d %s%s", main:StatColor(int, intBase, self.calcsTab.mainOutput.Int), int, attrTextColor, ruRequirements and UILocale.gemText("IntelligenceShort", "Int") or (level and "Int" or "Intelligence")))
 			end
 		end
 		if req[1] then
 			local fontSizeBig = main.showFlavourText and 18 or 16
 			if tooltip.tooltipHeader ~= "GEM" then
-				tooltip:AddLine(fontSizeBig, "^x7F7F7FRequires "..table.concat(req, "^x7F7F7F, "), "FONTIN SC")
+				tooltip:AddLine(fontSizeBig, "^x7F7F7F" .. (UILocale.language == "ru" and UILocale.gemText("HeistRequiresText", "Requires") .. ": " or "Requires ") .. table.concat(req, "^x7F7F7F, "), "FONTIN SC")
 				tooltip:AddSeparator(10)
 			else
-				tooltip:AddLine(fontSizeBig, "   ^x7F7F7FRequires: "..table.concat(req, "^7, "), "FONTIN SC")
+				tooltip:AddLine(fontSizeBig, "   ^x7F7F7F" .. UILocale.gemText("HeistRequiresText", "Requires") .. ": " .. table.concat(req, "^7, "), "FONTIN SC")
 			end
 		end
 		wipeTable(req)

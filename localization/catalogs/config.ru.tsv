@@ -1,0 +1,802 @@
+# PoB configuration labels and options. These values are used only for display.
+# bolts reloaded past 6 seconds	Снарядов перезаряжено за последние 6 сек.
+# bolts reloaded past 8 seconds	Снарядов перезаряжено за последние 8 сек.
+# Carrion Golem = # Chaos Golem:	Число големов трупов равно числу големов хаоса:
+# Chaos Golem = # Stone Golem:	Число големов хаоса равно числу каменных големов:
+# different Ammo Types Shot past 10s	Типов боеприпасов выпущено за последние 10 сек.
+# different Grenade Types Shot past 10s	Типов гранат выпущено за последние 10 сек.
+# of Active Arrows:	Число активных стрел:
+# of active Brands:	Число активных клейм:
+# of Active Mist Ravens:	Число активных туманных воронов:
+# of Active Spectral Wolves:	Число активных призрачных волков:
+# of Bleeds on enemy (if not average):	Число кровотечений на противнике (если отличается от среднего):
+# of Blitz Charges (if not maximum):	Число зарядов натиска (если меньше максимума):
+# of Blood Charges (if not maximum):	Число зарядов крови (если меньше максимума):
+# of Boss's Faces Broken:	Число уничтоженных ликов боссов:
+# of Brands attached to the enemy:	Число клейм на противнике:
+# of Broken Armour (if not maximum):	Объём разрушенной брони (если меньше максимума):
+# of Casts currently waiting:	Число ожидающих сотворений чар:
+# of Challenger Charges (if not maximum):	Число зарядов претендента (если меньше максимума):
+# of Corpses Consumed Recently:	Число недавно поглощённых трупов:
+# of Corrosion Stacks:	Количество эффектов коррозии:
+# of Corrupted Blood stacks:	Количество эффектов осквернённой крови:
+# of Crab Barriers (if not maximum):	Число крабьих барьеров (если меньше максимума):
+# of Endurance Charges (if not maximum):	Число зарядов выносливости (если меньше максимума):
+# of Endurance Charges lost Recently:	Число недавно потерянных зарядов выносливости:
+# of Enemies affected:	Число затронутых противников:
+# of Enemies Killed by Minions Recently:	Число противников, недавно убитых приспешниками:
+# of Enemies Killed by Totems Recently:	Число противников, недавно убитых тотемами:
+# of Enemies Killed Recently:	Число недавно убитых противников:
+# of Ensnare Stacks:	Количество эффектов сковывания:
+# of Faerie Fire Stacks:	Количество эффектов волшебного огня:
+# of Fortification Stacks (if not maximum):	Количество эффектов укрепления (если меньше максимума):
+# of Fragile Regrowth Stacks:	Количество эффектов хрупкого восстановления:
+# of Freeze / Shock / Ignite on enemy:	Число заморозок, шоков и поджогов на противнике:
+# of Frenzy Charges (if not maximum):	Число зарядов ярости (если меньше максимума):
+# of Ghost Shrouds (if not maximum):	Число призрачных покровов (если меньше максимума):
+# of Grasping Vines affecting enemy:	Число цепких лиан на противнике:
+# of Hazards triggered recently:	Число недавно сработавших помех:
+# of Hits Suppressed Recently:	Число недавно подавленных ударов:
+# of Ignites applied Recently:	Число недавно наложенных поджогов:
+# of Ignites on enemy (if not average):	Число поджогов на противнике (если отличается от среднего):
+# of Impales on enemy (if not maximum):	Число проколов на противнике (если меньше максимума):
+# of Incision Stacks:	Количество разрезов:
+# of Incisions consumed recently:	Число недавно поглощённых разрезов:
+# of Inspiration Charges (if not maximum):	Число зарядов вдохновения (если меньше максимума):
+# of Intensity:	Стадии интенсивности:
+# of Life spent in past 8s:	Здоровья потрачено за последние 8 сек.:
+# of Life spent Recently:	Здоровья потрачено недавно:
+# of linked Targets:	Число связанных целей:
+# of Mana spent Recently:	Маны потрачено недавно:
+# of Mines Detonated Recently:	Число недавно взорванных мин:
+# of Mines per throw:	Мин за один бросок:
+# of Minions in your Presence:	Число приспешников в вашем присутствии:
+# of Nearby Allies:	Число ближайших союзников:
+# of Nearby Bleeding Enemies:	Число ближайших кровоточащих противников:
+# of Nearby Corpses:	Число ближайших трупов:
+# of nearby Enemies:	Число ближайших противников:
+# of Nearby Non-Golem Minions:	Число ближайших приспешников, кроме големов:
+# of nearby Rare or Unique Enemies:	Число ближайших редких и уникальных противников:
+# of Non-Instant Spells Cast Recently:	Число недавно сотворённых немгновенных чар:
+# of Non-Shocked Enemies Shocked  Recently:	Число противников, на которых недавно наложен шок при его отсутствии:
+# of Overlapping Beams:	Число перекрывающихся лучей:
+# of Overlapping Pods:	Число перекрывающихся стручков:
+# of Overlapping Spikes:	Число перекрывающихся шипов:
+# of Poison on You:	Число отравлений на вас:
+# of Poisons applied Recently:	Число недавно наложенных отравлений:
+# of Poisons on enemy (if not average):	Число отравлений на противнике (если отличается от среднего):
+# of Power Charges (if not maximum):	Число зарядов энергии (если меньше максимума):
+# of Rampage Kills:	Число убийств для буйства:
+# of Recently Applied Ailments:	Число недавно наложенных состояний:
+# of Rupture stacks?	Количество эффектов разрыва:
+# of Scavenged Plating Stacks:	Количество эффектов переработанной брони:
+# of seconds Affected by a Warcry Buff:	Сколько секунд действует эффект боевого клича:
+# of seconds since Inevitable Crit:	Секунд после неизбежного критического удара:
+# of Shocked Enemies Killed Recently:	Число недавно убитых противников под действием шока:
+# of Shotgunning Projectiles:	Число снарядов, попадающих в одну цель:
+# of Siphoning Charges (if not maximum):	Число зарядов вытягивания (если меньше максимума):
+# of Skills Used Recently:	Число недавно использованных умений:
+# of Soul Eater Stacks:	Количество эффектов Пожирателя душ:
+# of Spider's Web Stacks:	Количество эффектов паутины:
+# of Spiders:	Число пауков:
+# of Spirit Charges:	Число зарядов духа:
+# of Summoned Minions (if not maximum):	Число призванных приспешников (если меньше максимума):
+# of Summoned Totems (if not maximum):	Число призванных тотемов (если меньше максимума):
+# of Tailwind Stacks:	Количество эффектов Попутного ветра:
+# of times Skill has Chained:	Сколько раз умение поразило цель по цепи:
+# of times Skill has Forked:	Сколько раз снаряды умения разделились:
+# of times Skill has Pierced:	Сколько раз снаряды умения пронзили цель:
+# of times Stunned Recently:	Сколько раз вас недавно оглушали:
+# of times you have been Hit Recently:	Сколько раз вы недавно получали удар:
+# of Traps per throw:	Ловушек за один бросок:
+# of Traps Triggered Recently:	Число недавно сработавших ловушек:
+# of Trauma Stacks:	Количество эффектов травмы:
+# of Virulence Stacks:	Количество эффектов вирулентности:
+# of Warcries Used Recently:	Число недавно использованных боевых кличей:
+# of Whirlwind Stages:	Число стадий вихря:
+# of Withered Stacks on you:	Количество эффектов Истощения на вас:
+# of Withered Stacks:	Количество эффектов Истощения:
+# Stone Golem = # Carrion Golem:	Число каменных големов равно числу големов трупов:
+#% of Curse Expired on enemy:	Доля истёкшей длительности проклятия на противнике, %:
+% chance for second proj to hit:	Шанс попадания второго снаряда, %:
+% Wave of Conviction duration expired:	Доля истёкшей длительности Волны осуждения, %:
+Absolution: Count skill damage once	Отпущение грехов — учитывать урон умения один раз
+Acolyte's Unravelling:	Бесконтрольность послушника:
+Amount of Rage Sacrificed (if not maximum):	Принесено в жертву свирепости (если меньше максимума):
+Arc:	Цепь молний:
+Arcane Cloak:	Чародейский покров:
+Are you always on Full Energy Shield?	У вас всегда полный энергетический щит?
+Are you always on Full Life?	У вас всегда полное здоровье?
+Are you always on Full Mana?	У вас всегда полная мана?
+Are you always on Low Energy Shield?	У вас всегда мало энергетического щита?
+Are you always on Low Life?	У вас всегда мало здоровья?
+Are you always on Low Mana?	У вас всегда мало маны?
+Are you animating Lingering Blades?	Вы оживляете оставшиеся клинки?
+Are you Bleeding?	Вы кровоточите?
+Are you Blinded?	Вы ослеплены?
+Are you Brittle?	На вас действует хрупкость?
+Are you Burning?	Вы горите?
+Are you Channelling Cyclone?	Вы поддерживаете Вихрь?
+Are you Channelling?	Вы поддерживаете умение?
+Are you Chilled?	Вы охлаждены?
+Are you Elusive?	На вас действует Неуловимость?
+Are you Focused?	Вы сосредоточены?
+Are you Frozen?	Вы заморожены?
+Are you Ignited?	Вы подожжены?
+Are you Immune to Curses?	У вас есть иммунитет к проклятиям?
+Are you in a Bloodstorm?	Вы в кровавой буре?
+Are you in a Sandstorm?	Вы в песчаной буре?
+Are you in Demon Form?	Вы в форме демона?
+Are you in dodge roll?	Вы совершаете перекат?
+Are you in Her Embrace?	На вас действуют Её объятия?
+Are you Insane?	На вас действует Помешательство?
+Are you Leeching Energy Shield?	Вы похищаете энергетический щит?
+Are you Leeching Life?	Вы похищаете здоровье?
+Are you Leeching Mana?	Вы похищаете ману?
+Are you Leeching?	Вы похищаете ресурсы?
+Are you on Burning Ground?	Вы на горящей земле?
+Are you on Caustic Ground?	Вы на едкой земле?
+Are you on Chilled Ground?	Вы на охлаждённой земле?
+Are you on Fungal Ground?	Вы на грибной земле?
+Are you on Ignited Ground?	Вы на подожжённой земле?
+Are you on Shocked Ground?	Вы на заряженной земле?
+Are you out of Life Flask uses?	У флакона здоровья закончились применения?
+Are you Poisoned?	Вы отравлены?
+Are you Sacrificing?	Вы приносите жертву?
+Are you Sapped?	Вы ошеломлены?
+Are you Scorched?	Вы опалены?
+Are you Shocked?	Вы под действием шока?
+Are you surrounded?	Вы окружены?
+Are you Unbound?	Вы в состоянии безудержности?
+Are your Minions always on Full Life?	У ваших приспешников всегда полное здоровье?
+Armour calculation mode:	Режим расчёта брони:
+Aspect of the Avian:	Аспект птицы:
+Aspect of the Cat:	Аспект кошки:
+Aspect of the Crab:	Аспект краба:
+Aspect of the Spider:	Аспект паука:
+Augyre rotating buff:	Чередующееся усиление Аугайра:
+Banner Skills:	Умения знамён:
+Banner Valour:	Доблесть знамени:
+Blade Vortex blade count:	Число клинков Вихря клинков:
+Bladestorm:	Ураган лезвий:
+Blocked a Hit from a Unique enemy in the past 10s?	Вы блокировали удар уникального противника за последние 10 сек.?
+Blood Sacrament:	Причастие кровью:
+Brand Skills:	Умения клейм:
+Bypass CD?	Игнорировать перезарядку?
+Carrion Golem:	Голем трупов:
+Cast on Frostbolt?	Наложили чары на Морозный шар?
+Chance To Ignore PDR Mode:	Режим учёта шанса обойти снижение физического урона:
+Changed Stance in the last 1s?	Вы сменили стойку за последнюю секунду?
+Changed Stance recently?	Вы недавно меняли стойку?
+Channeling for # seconds:	Время поддержания умения, сек.:
+Chill Stacks	Количество эффектов охлаждения
+Clash Support:	Стычка:
+Cold Skill used Recently:	Вы недавно использовали умение холода?
+Cold Snap:	Укус стужи:
+Combo:	Комбо:
+Conflux Buff:	Эффект слияния:
+Consecrated Path of Endurance:	Освящённый путь выносливости:
+Consumed 12 Steel Shards Recently?	Вы недавно поглотили 12 стальных осколков?
+Consumed a corpse in the past 2s?	Вы поглотили труп за последние 2 сек.?
+Consumed a corpse Recently?	Вы недавно поглотили труп?
+Consumed an Ailment?	Вы поглотили состояние?
+Consumed Freeze	Поглощена заморозка
+Consumed Ignite	Поглощён поджог
+Consumed Shock	Поглощён шок
+Corrupting Cry:	Оскверняющий клич:
+Count Skill Reservation towards eHP?	Учитывать удержание ресурса при расчёте эфф. запаса здоровья?
+Critical weakness stacks:	Количество эффектов критической уязвимости:
+Cruelty:	Жестокость:
+Current Energy Shield percentage:	Текущий энергетический щит, %:
+Current Mana %:	Текущая мана, %:
+Curse Duration Expired on enemy:	Истекла длительность проклятия на противнике:
+Curse overlaps:	Число перекрывающихся проклятий:
+Custom PvP Damage multiplier percent:	Свой множитель урона в PvP, %:
+Cyclone:	Вихрь:
+Damage % (if not maximum):	Урон, % (если меньше максимума):
+Damage mitigated:	Предотвращённый урон:
+Dark Pact:	Тёмный договор:
+Defiance:	Непокорность:
+Demon Form:	Форма демона:
+Demonflame Stacks	Количество эффектов демонического пламени
+Did you Chill yourself?	Вы наложили на себя охлаждение?
+Disable EHP gain on block/suppress:	Отключить прибавку к эфф. запасу здоровья от блока и подавления:
+Disable Emperor's Vigilance Bypass	Выключить обход защиты «Бдительности императора»:
+Disable Slashing Horror's Enrage:	Отключить исступление Режущего ужаса:
+Do you always have Energy Shield?	У вас всегда есть энергетический щит?
+Do you have a Charm active?	На вас действует оберег?
+Do you have a Totem summoned?	У вас есть призванный тотем?
+Do you have Alchemist's Genius?	На вас действует Гений алхимика?
+Do you have Avatar Of Fire?	На вас действует Воплощение огня?
+Do you have Convergence?	На вас действует Конвергенция?
+Do you have Divinity?	На вас действует Божественность?
+Do you have Everlasting Sacrifice?	На вас действует Вечное жертвоприношение?
+Do you have Fanaticism?	На вас действует Фанатизм?
+Do you have Iron Reflexes?	На вас действуют Железные рефлексы?
+Do you have Lifetap?	На вас действует Жизнеотвод?
+Do you have Manastorm's Buff?	На вас действует эффект Манашторма?
+Do you have Phasing?	На вас действует Бестелесность?
+Do you have Quicksand Hourglass?	На вас действуют Часы зыбучих песков?
+Do you have Soul Gain Prevention?	На вас действует запрет на получение душ?
+Do you have Vaal Arc's Lucky Buff?	На вас действует удачливость от Цепи молний ваал?
+Do you use Blitz Charges?	Вы используете заряды натиска?
+Do you use Challenger Charges?	Вы используете заряды претендента?
+Do you use Ghost Shrouds?	Вы используете призрачные покровы?
+Do you use Siphoning Charges?	Вы используете заряды вытягивания?
+Do you wait for Max Seals?	Вы ждёте максимума печатей?
+Do your hits always Heavy Stun?	Ваши удары всегда вызывают сильное оглушение?
+Do your hits always Stun?	Ваши удары всегда оглушают?
+Does enemy have Open Weakness?	На противнике раскрыты уязвимости?
+Does the enemy have Energy Shield?	У противника есть энергетический щит?
+Don't disable items	Оставлять предметы включёнными
+Doom Blast Trigger Source:	Источник срабатывания Рокового взрыва:
+Doom Blast:	Роковой взрыв:
+Doom on Hex:	Рок на проклятии:
+Drain Ailments:	Поглощение состояний:
+Effect of Brittle:	Эффект хрупкости:
+Effect of Chill:	Эффект охлаждения:
+Effect of Elusive (if not average):	Эффект Неуловимости (если отличается от среднего):
+Effect of Sap:	Эффект ошеломления:
+Effect of Scorched:	Эффект опаления:
+Eldritch Empowerment:	Древнее усиление:
+Elemental Conflux Element:	Стихия стихийного слияния:
+Elemental Discharge:	Стихийный разряд:
+Embrace Madness:	Объятия безумия:
+Enable Anger Aura:	Включить ауру Гнев:
+Enable buffs:	Включить положительные эффекты:
+Enable curses:	Включить проклятия:
+Enable Hatred Aura:	Включить ауру Ненависть:
+Enable Holy Relic's Boon Aura:	Включить ауру благословения священной реликвии:
+Enable Summoned Ursa's Rallying Cry:	Включить Воодушевляющий клич призванной Урсы:
+Enable Wrath Aura:	Включить ауру Грозный гнев:
+Enemy affected by Hazard recently?	Противник недавно попал под действие помехи?
+Enemy entered Presence Recently?	Противник недавно вошёл в ваше присутствие?
+Enemy exited Presence Recently?	Противник недавно вышел из вашего присутствия?
+Enemy has Parry Debuff	На противнике действует ослабление от парирования
+Enemy hit you with Cold Damage?	Противник нанёс вам удар уроном от холода?
+Enemy hit you with Fire Damage?	Противник нанёс вам удар уроном от огня?
+Enemy hit you with Light. Damage?	Противник нанёс вам удар уроном от молнии?
+Enemy in Your Presence Duration	Время нахождения противника в вашем присутствии
+Enemy Life % higher than Player?	У противника выше процент оставшегося здоровья?
+Enemy Open Weakness Presence?	Противник с раскрытыми уязвимостями в вашем присутствии?
+Enemy radius:	Радиус противника:
+Enemy size preset:	Размер противника:
+Enemy Skill Roll Range %:	Значение урона умения противника в диапазоне, %:
+Enemy was Hit by Cold Damage?	Противник получил удар уроном от холода?
+Enemy was Hit by Fire Damage?	Противник получил удар уроном от огня?
+Enemy was Hit by Light. Damage?	Противник получил удар уроном от молнии?
+Energy Shield Recharge started Recently?	Недавно началась перезарядка энергетического щита?
+ES Recharge started past 2 seconds?	Перезарядка энергетического щита началась за последние 2 сек.?
+Eye of Winter gained Cold Damage:	Доп. урон от холода у Ока зимы:
+Eye of Winter gained Fire Damage:	Доп. урон от огня у Ока зимы:
+Eye of Winter gained Lightning Damage:	Доп. урон от молнии у Ока зимы:
+Eye of Winter:	Око зимы:
+Fire Skill used Recently:	Вы недавно использовали умение огня?
+Flame Wall:	Стена пламени:
+Flicker Strike:	Внезапный удар:
+Fresh Meat:	Свежее мясо:
+Gained a Frenzy Charge Recently?	Вы недавно получили заряд ярости?
+Gained a Power Charge Recently?	Вы недавно получили заряд энергии?
+Gamblesprint Movement Speed	Скорость передвижения при рискованном спринте
+Glorious Madness Stacks	Количество эффектов Великолепного безумия
+Greater Harbinger of Time:	Великий Предвестник времени:
+Harbinger of Time:	Предвестник времени:
+Has a Minion Died Recently?	Недавно погиб приспешник?
+Has Ravenous consumed a corpse?	Прожорливость поглотила труп?
+Have you Active Blocked Recently?	Вы недавно активно блокировали удар?
+Have you Attacked Recently?	Вы недавно атаковали?
+Have you been Crit Recently?	Вы недавно получали критический удар?
+Have you been Hit by an Attack Recently?	Вы недавно получали удар атакой?
+Have you been hit by Cold Recently?	Вы недавно получали удар уроном от холода?
+Have you been hit by Fire Recently?	Вы недавно получали удар уроном от огня?
+Have you been hit by Light. Recently?	Вы недавно получали удар уроном от молнии?
+Have you Blocked a Spell Recently?	Вы недавно блокировали чары?
+Have you Blocked an Attack Recently?	Вы недавно блокировали атаку?
+Have you Blocked Recently?	Вы недавно блокировали удар?
+Have you Cast a Spell in the last second?	Вы сотворили чары за последнюю секунду?
+Have you Cast a Spell Recently?	Вы недавно сотворили чары?
+Have you cast Dash Recently?	Вы недавно использовали Рывок?
+Have you Chilled an enemy Recently?	Вы недавно охлаждали противника?
+Have you Crit in the past 8s?	Вы наносили критический удар за последние 8 сек.?
+Have you Cursed an enemy Recently?	Вы недавно проклинали противника?
+Have you dealt a Non-Crit Recently?	Вы недавно наносили некритический удар?
+Have you Detonated a Mine Recently	Вы недавно взрывали мину?
+Have you Dodge Rolled Recently?	Вы недавно совершали перекат?
+Have you Frozen an enemy Recently?	Вы недавно замораживали противника?
+Have you Hit Recently with Your Weapon?	Вы недавно попадали по противнику оружием?
+Have you Hit with a Proj. Att. Recently?	Вы недавно попадали по противнику снарядом атаки?
+Have you Hit with a Spell Recently?	Вы недавно попадали по противнику чарами?
+Have you Ignited an enemy Recently?	Вы недавно поджигали противника?
+Have you Killed in the last 3 Seconds?	Вы убивали противника за последние 3 сек.?
+Have you Linked recently?	Вы недавно создавали связь?
+Have you Melee Hit Recently?	Вы недавно наносили удар в ближнем бою?
+Have you Parried Recently?	Вы недавно парировали удар?
+Have you Pinned an enemy Recently?	Вы недавно пригвождали противника?
+Have you Shattered an enemy Recently?	Вы недавно разбивали замороженного противника?
+Have you Shocked an enemy Recently?	Вы недавно накладывали шок на противника?
+Have you stopped taking DoT recently?	Вы недавно перестали получать постепенный урон?
+Have you Stunned an enemy Recently?	Вы недавно оглушали противника?
+Have you Summoned a Totem Recently?	Вы недавно призывали тотем?
+Have you Suppressed Recently?	Вы недавно подавляли урон от чар?
+Have you taken a Savage Hit Recently?	Вы недавно получали жестокий удар?
+Have you taken Spell Damage Recently?	Вы недавно получали урон от чар?
+Have you thrown a Trap or Mine Recently?	Вы недавно бросали ловушку или мину?
+Have you Triggered a Trap Recently?	Вы недавно активировали ловушку?
+Have you used a Brand Skill recently?	Вы недавно использовали умение клейма?
+Have you used a Cold Skill Recently?	Вы недавно использовали умение холода?
+Have you used a Fire Skill Recently?	Вы недавно использовали умение огня?
+Have you used a Mark Recently?	Вы недавно использовали метку?
+Have you used a Minion Skill Recently?	Вы недавно использовали умение приспешника?
+Have you used a Movement Skill Recently?	Вы недавно использовали умение передвижения?
+Have you used a Skill Recently?	Вы недавно использовали умение?
+Have you used a Travel Skill Recently?	Вы недавно использовали умение перемещения?
+Have you used a Vaal Skill Recently?	Вы недавно использовали умение ваал?
+Have you used a Warcry Recently?	Вы недавно использовали боевой клич?
+Have your Herald Skills Crit Recently?	Ваши умения Вестников недавно наносили критический удар?
+Have your Minions been created Recently?	Ваши приспешники были созданы недавно?
+Have your Minions Killed Recently?	Ваши приспешники недавно убивали?
+Have your Skills Crit Recently?	Ваши умения недавно наносили критический удар?
+Have your Totems Hit with a Spell Recently?	Ваши тотемы недавно попадали по противнику чарами?
+Have your Totems Killed Recently?	Ваши тотемы недавно убивали?
+Heartstopper Mode:	Режим Остановки сердца:
+Herald of Agony:	Вестник агонии:
+Herald of Ash:	Вестник пепла:
+Hex:	Проклятие:
+Highest damage type Override:	Переопределение наибольшего типа урона:
+Hoarfrost Stacks	Количество эффектов инея
+How many spells cast in the last 8 seconds?	Сколько раз сотворены чары за последние 8 сек.?
+Ice Nova:	Кольцо льда:
+Ignore Skill Hit Damage?	Игнорировать урон умения от удара?
+Impaled an enemy recently?	Вы недавно накладывали прокол на противника?
+Incision Support:	Разрез:
+Include in Mana spent Recently?	Учитывать в мане, потраченной недавно?
+Inexorable Critical Support:	Неумолимый критический удар:
+Infusion:	Интенсивность:
+Intensify:	Усиление интенсивности:
+Into the Breach:	Проход в Разлом:
+Is a Companion in your Presence?	Компаньон в вашем присутствии?
+Is Avian's Flight active?	Действует Полёт птицы?
+Is Avian's Might active?	Действует Мощь птицы?
+Is Banner Planted?	Знамя установлено?
+Is Bastion of Hope active?	Действует Бастион надежды?
+Is Cat's Agility active?	Действует Проворство кошки?
+Is Cat's Stealth active?	Действует Скрытность кошки?
+Is Champion's Intimidate active?	Действует устрашение Чемпиона?
+Is Embrace Madness active?	Действуют Объятия безумия?
+Is Fresh Meat active?	Действует Свежее мясо?
+Is Infusion active?	Действует насыщение?
+Is Magmatic Strikes active?	Действуют Магматические удары?
+Is Pendulum of Destruction active?	Действует Маятник разрушения?
+Is Physical Aegis depleted?	Физическая эгида исчерпана?
+Is Slipstream active?:	Действует Воздушный поток?
+Is the Bleed Aggravated?	Кровотечение усугублено?
+Is the enemy at Close Range?	Противник на близком расстоянии?
+Is the enemy Bleeding?	Противник кровоточит?
+Is the enemy Brittle?	На противнике действует хрупкость?
+Is the enemy Chilled by your Hits?	Противник охлаждён вашими ударами?
+Is the enemy Critically Weak	На противнике действует критическая уязвимость?
+Is the enemy Cursed?	Противник проклят?
+Is the enemy Debilitated?	Противник изнурён?
+Is the enemy Electrocuted?	Противник поражён током?
+Is the enemy Exposed to Cold?	На противнике действует восприимчивость к холоду?
+Is the enemy Exposed to Fire?	На противнике действует восприимчивость к огню?
+Is the enemy Exposed to Lightning?	На противнике действует восприимчивость к молнии?
+Is the enemy Heavy Stunned?	На противнике действует сильное оглушение?
+Is the enemy Hindered?	Противник скован?
+Is the enemy Immobilised?	Противник обездвижен?
+Is the enemy in a Chilling area?	Противник в охлаждающей области?
+Is the enemy in RF or Scorching Ray:	Противник в области Праведного огня или Опаляющего луча?
+Is the enemy in the Frost Shield area?	Противник в области Морозного щита?
+Is the enemy in your Link beams?	Противник в лучах вашей связи?
+Is the enemy Isolated?	Противник обособлен?
+Is the enemy marked with Signal Prey?	Противник отмечен Сигналом добычи?
+Is the enemy Moving?	Противник движется?
+Is the enemy near you Linked target?	Противник рядом с вашей связанной целью?
+Is the enemy near you?	Противник рядом с вами?
+Is the enemy on Brittle Ground?	Противник на хрупкой земле?
+Is the enemy on Chilled Ground?	Противник на охлаждённой земле?
+Is the enemy on Consecrated Ground?	Противник на освящённой земле?
+Is the enemy on Full Life?	У противника полное здоровье?
+Is the enemy on Fungal Ground?	Противник на грибной земле?
+Is the enemy on Profane Ground?	Противник на осквернённой земле?
+Is the enemy on Sapped Ground?	Противник на ошеломляющей земле?
+Is the enemy on Scorched Ground?	Противник на опалённой земле?
+Is the enemy on Shocked Ground?	Противник на заряженной земле?
+Is the enemy Pacified?	Противник усмирён?
+Is the enemy Poisoned?	Противник отравлен?
+Is the enemy Sapped?	Противник ошеломлён?
+Is the enemy Scorched?	Противник опалён?
+Is the enemy Stunned?	Противник оглушён?
+Is the enemy Taunted?	Противник спровоцирован?
+Is the skill Empowered?	Умение усилено?
+Killed a poisoned enemy in the last 2 Seconds?	Вы убивали отравленного противника за последние 2 сек.?
+Killed a Rare or Unique enemy Recently?	Вы недавно убивали редкого или уникального противника?
+Killed a Shocked enemy in the last 3 Seconds?	Вы убивали противника под действием шока за последние 3 сек.?
+Killed a taunted enemy recently?	Вы недавно убивали спровоцированного противника?
+Killed enemy affected by your DoT Recently?	Вы недавно убивали противника под действием вашего постепенного урона?
+Last 25% of attached duration?	Последние 25% длительности прикрепления?
+Last 50% of attached duration?	Последние 50% длительности прикрепления?
+Life regen calculation mode:	Режим расчёта регенерации здоровья:
+Lightning Infused?	Есть насыщение молнией?
+Lightning Skill used Recently:	Вы недавно использовали умение молнии:
+Linked To Minion?	Вы связаны с приспешником?
+Lost a Non-Vaal Guard Skill buff recently?	Вы недавно потеряли эффект защитного умения без ваал?
+Lost an Endurance Charge in the past 8s?	Вы потеряли заряд выносливости за последние 8 сек.?
+Manabond:	Узы маны:
+Meat Shield:	Живой щит:
+Minion is always on Full Energy Shield?	У приспешника всегда полный энергетический щит?
+Minion is Leeching Energy Shield?	Приспешник похищает энергетический щит?
+Missing Unreserved Mana %:	Недостающая неудержанная мана, %:
+Molten Shell:	Расплавленный панцирь:
+Momentum:	Разбег:
+Moved 2m during Skill use?	Вы переместились на 2 м во время применения умения?
+Multi-part area skills:	Умения с несколькими областями:
+No summoned Totems in the past 2 seconds?	За последние 2 сек. тотемы не призывались?
+Number of times you've Blocked in the past 10s	Сколько раз вы блокировали за последние 10 сек.
+Overkill damage:	Избыточный урон:
+Parry:	Парирование:
+Perforate:	Пронзающие шипы:
+Physical Aegis:	Физическая эгида:
+Plague Bearer:	Носитель чумы:
+Power of Culled Enemy?	Угроза добитого противника?
+Predator:	Хищник:
+Pride Aura Effect:	Эффект ауры Гордость:
+Pride:	Гордость:
+Projectile Travelled through?	Через что прошёл снаряд?
+Purple Flames collected:	Собрано фиолетовых языков пламени:
+PvP Tvalue override (ms):	Переопределение значения T в PvP, мс:
+Rage Vortex:	Вихрь ярости:
+Raise Spectre:	Сотворение призрака:
+Raise Spiders:	Призыв пауков:
+Raise Zombie:	Поднятие зомби:
+Random element mode:	Режим выбора случайной стихии:
+Reaper Consumed recently?	Жнец недавно поглощал приспешника?
+Repeat Mode:	Режим повторения:
+Resource gain calculation mode:	Режим расчёта получения ресурсов:
+Rising Tempest:	Поднимающийся шквал:
+Ruthless Support Mode:	Режим Беспощадности:
+Sanguimancer Demon not on Low Life:	У демона сангвиманта достаточно здоровья:
+Scavenged Plating:	Переработанная броня:
+Scorch Stacks	Количество эффектов опаления
+Scorching Ray Totem stage count:	Число стадий Опаляющего луча тотема:
+Seconds building Stoicism:	Сколько секунд накапливался Стоицизм:
+Seconds of chill on enemy?	Секунд охлаждения у противника:
+Seconds of freeze on enemy?	Секунд заморозки у противника:
+Shapeshifted to animal recently?	Вы недавно принимали облик зверя?
+Shapeshifted to human recently?	Вы недавно принимали человеческий облик?
+Shrapnel Ballista:	Осколочная баллиста:
+Siphoning Trap:	Вытягивающая ловушка:
+Skeleton Life:	Здоровье скелета:
+Skill is targeting the Branded enemy	Умение нацелено на противника с клеймом
+Source rate for Intuitive Link	Частота срабатывания источника Интуитивной связи
+Spawned a corpse Recently?	Вы недавно создали труп?
+Spear older than 0.5s?	Копьё существует дольше 0,5 сек.?
+Spearfield:	Поле копий:
+Spectral Wolf:	Призрачный волк:
+Spiraling Conspiracy:	Вьющийся заговор:
+Stance Skills:	Умения стоек:
+Stance:	Стойка:
+State:	Состояние:
+Steel Shards consumed:	Поглощено стальных осколков:
+Steel Skills:	Стальные умения:
+Steel Wards:	Стальные обереги:
+Stoicism:	Стоицизм:
+Storm Rain of the Conduit:	Грозовой дождь проводника:
+Storm Rain:	Грозовой дождь:
+Stunned while Casting Recently?	Вас недавно оглушали во время сотворения чар?
+Summon Companion:	Призыв компаньона:
+Summon Elemental Relic:	Призыв стихийной реликвии:
+Summon Holy Relic:	Призыв священной реликвии:
+Summon Lightning Golem:	Призыв голема молнии:
+Summon Reaper:	Призыв жнеца:
+Summoned Golem in past 10 Seconds?	Вы призывали голема за последние 10 сек.?
+Summoned Golem in past 8 Seconds?	Вы призывали голема за последние 8 сек.?
+Summoned Spectre in past 8 Seconds?	Вы создавали призрака за последние 8 сек.?
+Summoned Zombie in past 8 Seconds?	Вы поднимали зомби за последние 8 сек.?
+Taken Fire Damage from enemy Hit Recently?	Вы недавно получали удар противника уроном от огня?
+Taunted an enemy Recently?	Вы недавно провоцировали противника?
+Thirst for Blood:	Жажда крови:
+Time spent stationary	Время без движения
+Tornado Shot:	Вихрь стрел:
+Total Companion Life override:	Переопределение запаса здоровья компаньона:
+Total life pool of Sentinel of Radiance	Полный запас здоровья Стража сияния
+Total Resonance Count:	Общее число резонансов:
+Total Spectre Life override:	Переопределение запаса здоровья призрака:
+Total Totem Life:	Общий запас здоровья тотемов:
+Total Vaal Rejuvenation Totem Life:	Общий запас здоровья Тотема омоложения ваал:
+Toxic Rain:	Токсичный дождь:
+Trauma:	Травма:
+Trinity:	Триединство:
+Twister gained Cold Element:	Смерч получил стихию холода:
+Twister gained Fire Element:	Смерч получил стихию огня:
+Twister gained Lightning Element:	Смерч получил стихию молнии:
+Twister:	Смерч:
+Unbound Avatar:	Воплощение безудержности:
+Unhinge:	Выведение из равновесия:
+Unwilling Offering:	Вынужденное жертвоприношение:
+Used a Warcry in the past 8 seconds?	Вы использовали боевой клич за последние 8 сек.?
+Vaal Molten Shell:	Расплавленный панцирь ваал:
+Vigilant Strike:	Расчётливый удар:
+Voltaxic Burst:	Вольтаксовая вспышка:
+Vortex:	Пурга:
+Warcry Power:	Мощь боевого клича:
+Whirlwind Buffs:	Усиления вихря:
+Whirlwind gained Cold Element:	Вихрь получил стихию холода:
+Whirlwind gained Fire Element:	Вихрь получил стихию огня:
+Whirlwind gained Lightning Element:	Вихрь получил стихию молнии:
+Whirlwind Stages:	Стадии вихря:
+100% Delirious	100% Делирия
+20% Delirious	20% Делирия
+40% Delirious	40% Делирия
+60% Delirious	60% Делирия
+80% Delirious	80% Делирия
+Area of Effect	Область действия
+Atziri Flameblast	Пламенный взрыв Атзири
+Blood Stance	Стойка крови
+Chill + Shock + Ignite	Охлаждение, шок и поджог
+Chilling	Охлаждение
+Cortex Ground Degen	Постепенный урон от земли Кортекса
+Curse Expiration	Истечение проклятия
+Curse Replacement	Замена проклятия
+Damage Over Time	Постепенный урон
+Eater Beam	Луч Пожирателя миров
+Elemental Damage	Урон от стихий
+Elemental Overload	Перегрузка стихий
+Exarch Ball	Сфера Пламенного экзарха
+Final (all hits use final)	Последнее попадание для всех ударов
+Final only	Только последнее попадание
+Hexblast Replacement	Замена Взрывом порчи
+Hit	Удар
+Huge	Огромный
+Igniting	Поджог
+Incubating	Инкубация
+Infecting	Заражение
+Initial effect	Начальный эффект
+Large	Большой
+Maven Fireball	Огненный шар Мейвен
+Maven Memory Game	Испытание памяти Мейвен
+Max Effect	Макс. эффект
+Max Hit	Макс. удар
+Maximum effect	Максимальный эффект
+Medium	Средний
+Melee	Ближний бой
+Projectile	Снаряд
+Projectile Spell	Чары со снарядом
+Resolute Technique	Точные удары
+Sand Stance	Стойка песка
+Shaper Ball	Сфера Создателя
+Shaper Beam	Луч Создателя
+Shaper Slam	Мощный удар Создателя
+Shocking	Шок
+Sirus Meteor	Метеор Сируса
+Small	Малый
+Spell	Чары
+Standard Boss	Обычный босс
+Uber Pinnacle Boss	Усиленный верховный босс
+Unravelling Bolt	Бесконтрольные разряды
+Unravelling Flame	Бесконтрольное пламя
+Unravelling Frost	Бесконтрольный мороз
+Untyped	Без типа
+Vixen's Curse	Проклятие мегеры
+
+# Configuration help
+'Changing Stance' occurs by activating a Stance skill while it's toggled on	Стойка меняется при повторном применении уже включённого умения стойки.
+10 units equals 1 metre\nPlayer and Minion Attacks incur an Accuracy penalty based on distance from the origin of the damage to the target,\nwith no penalty for targets within 2 metres and up to 90% less Accuracy for targets further than 12 metres away-	10 единиц равны 1 метру.\nТочность атак игрока и приспешников снижается с расстоянием от источника урона до цели. До 2 м штрафа нет, за пределами 12 м точность может быть на 90% меньше.
+A target is immobilised if it cannot move, for example due to being Frozen, Pinned, Heavy Stunned, or Electrocuted.	Цель обездвижена, если она не может двигаться, например при заморозке, пригвождении, сильном оглушении или поражении током.
+A target is Isolated if none of its allies are within 6m of it.	Цель обособлена, если в пределах 6 м нет её союзников.
+Affects the DPS of Perforate in Blood Stance.\nMaximum is limited by the number of Spikes of Perforate.	Влияет на УВС Пронзающих шипов в стойке крови. Максимум ограничен числом шипов умения.
+Allies on your Fungal Ground gain +25% Chaos Resistance.	Союзники на вашей грибной земле получают +25% к сопротивлению хаосу.
+Also implies you've crit recently if the value is 3s or below	При значении 3 сек. или меньше также считается, что вы недавно нанесли критический удар.
+Amount of stacks of Chill applied to the enemy.	Количество эффектов охлаждения на противнике.
+Amount of stacks of Hoarfrost applied to the enemy.	Количество эффектов инея на противнике.
+Amount of stacks of Scorch applied to the enemy.	Количество эффектов опаления на противнике.
+Amount of stacks of Shock applied to the enemy.	Количество эффектов шока на противнике.
+Applies mods that use `while stationary` and `per / every second while stationary`	Применяет свойства, действующие без движения, в том числе за каждую секунду без движения.
+Base Maximum Rage is 30, and inherently grants 1% More Attack Damage per 1 Rage\nYou lose 5 Rage every second if you have not been Hit or gained Rage in the last 4 seconds.	Базовый максимум свирепости равен 30. Каждая единица свирепости даёт на 1% больше урона от атак.\nЕсли за последние 4 сек. вы не получали ударов и не получали свирепость, вы теряете 5 свирепости в секунду.
+Bleeding deals an extra 100% damage while the target is moving, or if the Bleeding is Aggravated	Кровотечение наносит 100% дополнительного урона, когда цель движется или когда кровотечение усугублено.
+Boss's Face Broken refers to unique bosses defeated in the campaign that have a skull marker on the World Screen. Rare monster encounters with the skull marker do not count.	Считаются уникальные боссы кампании, побеждённые в местах со значком черепа на экране мира. Встречи с редкими монстрами с таким значком исключены.
+Bosses' damage is monster damage scaled to an average damage of their attacks\nThis is divided by 4.40 to represent 4 damage types + some (40% as much) chaos\nFill in the exact damage numbers if more precision is needed\n\nBosses' armour and evasion multiplier are calculated using the average of the boss type\n\nStandard Boss adds the following modifiers:\n\t+30% to enemy Elemental Resistances\n\t90% of monster Damage of each type\n\t400% of monster Damage total\n\nGuardian / Pinnacle Boss adds the following modifiers:\n\t+50% to enemy Elemental Resistances\n\t150% of monster Armour\n\t124% of monster Evasion\n\t181% of monster Damage of each type\n\t800% of monster Damage total\n\t3% penetration\n\nUber Pinnacle Boss adds the following modifiers:\n\t+50% to enemy Elemental Resistances\n\t125% of monster Armour\n\t116% of monster Evasion\n\t70% less to enemy Damage taken\n\t235% of monster Damage of each type\n\t1000% of monster Damage total\n\t8% penetration	Урон боссов основан на среднем уроне атак монстров. Делитель 4,40 учитывает четыре типа урона и хаос в размере 40% от одного типа. Для большей точности введите фактический урон.\nБроня и уклонение рассчитываются по средним значениям для типа босса.\n\nОбычный босс\n  +30% к сопротивлениям стихиям\n  90% урона монстра каждого типа и 400% суммарного\nХранитель или верховный босс\n  +50% к сопротивлениям стихиям\n  150% брони, 124% уклонения, 181% урона каждого типа и 800% суммарного\n  3% пробивания\nУсиленный верховный босс\n  +50% к сопротивлениям стихиям\n  125% брони и 116% уклонения\n  Получает на 70% меньше урона\n  235% урона каждого типа и 1000% суммарного\n  8% пробивания
+Causes Damage with Arc Hits to be rolled twice, and the maximum roll used.	Урон удара Цепью молний определяется дважды. Используется большее значение.
+Configure the radius of an enemy hitbox to calculate some area overlapping (shotgunning) effects.	Радиус области попадания в противника для расчёта перекрытия эффектов.
+Configure the radius of an enemy hitbox which is used in calculating some area multi-hitting (shotgunning) effects.\n\nSmall sets the radius to 2.\n\tMost monsters and the players' character are this size.\nMedium sets the radius to 3.\n\tThis is the size of most humanoid bosses (i.e. The Maven; The Shaper; Izaro)\nLarge sets the radius to 5.\n\tThis is the size of some larger bosses (i.e. King Kaom; Vaal Oversoul)\nHuge sets the radius to 11.\n\tThis is the size of some of the largest bosses (i.e. Nucleus of the Maven; Tsoagoth, The Brine King)	Радиус области попадания в противника для расчёта нескольких попаданий перекрывающимися эффектами.\nМалый — 2. Большинство монстров и персонаж игрока.\nСредний — 3. Большинство человекоподобных боссов, например Мейвен, Создатель и Изаро.\nБольшой — 5. Например, царь Каом и Ваал Омнитект.\nОгромный — 11. Например, ядро Мейвен и Цоагот, Морской царь.
+Corpse must be the same type as the monster you're fighting.\nThis also implies you have 'Consumed a corpse Recently'	Труп должен быть того же типа, что и монстр, с которым вы сражаетесь. Также учитывается недавнее поглощение трупа.
+Covered in Ash applies the following to the enemy:\n\t20% increased Fire Damage taken\n\t20% less Movement Speed	Покрытый пеплом противник получает на 20% больше урона от огня и имеет на 20% меньше скорости передвижения.
+Covered in Frost applies the following to the enemy:\n\t20% increased Cold Damage taken\n\t50% less Critical Strike Chance	Покрытый инеем противник получает на 20% больше урона от холода и имеет на 50% меньше шанса критического удара.
+Cruelty is a buff provided by Cruelty Support which grants\nup to 40% more damage over time to the skills it supports.	Жестокость от одноимённого камня поддержки даёт усиленным умениям до 40% больше постепенного урона.
+Crushed enemies have 15% reduced Physical Damage Reduction.	У сокрушённых противников на 15% меньше снижения физического урона.
+Dazed enemies take 50% more stun buildup for 8 seconds.	Оцепеневшие противники получают на 50% больше накопления оглушения в течение 8 сек.
+Debilitated enemies deal 10% less damage.	Изнурённые противники наносят на 10% меньше урона.
+Delirium scales enemy 'less Damage Taken' as well as enemy 'increased Damage dealt'\nAt 100% effect:\nEnemies Deal 30% Increased Damage\nEnemies take 80% Less Damage	Делирий влияет на снижение получаемого урона противника и повышение наносимого им урона. При 100% Делирия противник наносит на 30% больше урона и получает на 80% меньше.
+Determines whether modifiers that depend on the highest damage type apply.	Определяет, действуют ли свойства, зависящие от типа урона с наибольшим значением.
+Does the Enemy have a higher percentage of Life remaining than the player	У противника осталось больше здоровья в процентах, чем у игрока.
+Each Faerie Fire Debuff causes Hits against the affected target to Gain 2% of damage as Extra Damage of a random Element.\nThe Debuff lasts 8 seconds, and up to 10 can be applied to each target.	Каждый эффект волшебного огня даёт ударам по цели 2% урона в виде дополнительного урона случайной стихией. Эффект длится 8 сек., на цель можно наложить до 10 эффектов.
+Each stack of Corrosion applies -5000 to total Armour and -1000 to total Evasion Rating to the enemy.\nCorrosion lasts 4 seconds and refreshes the duration of existing Corrosion stacks\nCorrosion has no stack limit	Каждый эффект коррозии даёт противнику −5000 к общей броне и −1000 к общему уклонению. Коррозия длится 4 сек., новый эффект обновляет длительность остальных. Число эффектов не ограничено.
+Each stack of critical weakness applies +0.5% to critical strike chance against the affected target	Каждый эффект критической уязвимости даёт +0,5% к шансу критического удара по цели.
+Enable any buff skills that your Companions have.	Включает умения усиления компаньонов.
+Enable any buff skills that your spectres have.	Включает умения усиления призраков.
+Enable any curse skills that your Companions have.	Включает умения проклятия компаньонов.
+Enable any curse skills that your spectres have.	Включает умения проклятия призраков.
+Enables additional damage given to Lingering Blades\nThe exact weapon is unknown but should be similar to Glass Shank	Включает дополнительный урон оставшихся клинков. Точное оружие неизвестно, расчёт использует аналог стеклянного ножа.
+Enemies are Pacified after 60% of Pacify's duration has expired	Противники считаются усмирёнными по истечении 60% длительности Усмирения.
+Enemies on Profane Ground receive the following modifiers:\n\t10% increased Effect of Curses\n\t100% increased chance to be Critically Hit	Противники на осквернённой земле имеют 10% усиление эффекта проклятий и на 100% повышенный шанс получить критический удар.
+Enemies on your Fungal Ground have -10% to all Resistances.	Противники на вашей грибной земле получают −10% ко всем сопротивлениям.
+Enemy has entered your Presence recently	Противник недавно вошёл в ваше присутствие.
+Enemy has exited your Presence recently	Противник недавно вышел из вашего присутствия.
+Enemy Maximum resistance is increased by the resistance configurations \nThis locks it at the default value	Настройки сопротивлений повышают максимум сопротивления противника. Этот флажок удерживает его на значении по умолчанию.
+Eye of Winter has passed over Cold Ground Effect or Orb.	Око зимы прошло над эффектом холодной земли или через сферу холода.
+Eye of Winter has passed over Fire Ground Effect or Orb.	Око зимы прошло над эффектом горящей земли или через сферу огня.
+Eye of Winter has passed over Lightning Ground Effect or Orb.	Око зимы прошло над эффектом заряженной земли или через сферу молнии.
+Glorious Madness Stacks grants:\n\tEroding Touch: 6% inc Damage Taken per stack\n\tParalysing Touch: 6% reduced Action Speed per stack\n\tDiluting Touch: 9% reduced Flask charges gained and 9% reduced Flask Effect per stack\n\tWasting Touch: 9% reduced Life and Energy Shield recovery rate per stack	Великолепное безумие даёт следующие эффекты за каждое накопление.\nИстощающее касание: 6% увеличение получаемого урона.\nПарализующее касание: 6% уменьшение скорости действий.\nОслабляющее касание: 9% уменьшение получения зарядов и эффекта флаконов.\nИссушающее касание: 9% уменьшение скорости восстановления здоровья и энергетического щита.
+Greater Harbinger of Time Slipstream buff grants:\n10% increased Action Speed\nBuff affects the player and allies\nBuff has a base duration of 8s with a 10s Cooldown	Поток Великого Предвестника времени даёт 10% повышение скорости действий игроку и союзникам. Длится 8 сек., перезарядка 10 сек.
+Harbinger of Time Slipstream buff grants:\n10% increased Action Speed\nBuff affects the player, allies and enemies in a small radius\nBuff has a base duration of 8s with a 20s Cooldown	Поток Предвестника времени даёт 10% повышение скорости действий игроку, союзникам и противникам в небольшом радиусе. Длится 8 сек., перезарядка 20 сек.
+Herald of Ash's base Burning damage is equal to 25% of Overkill damage.	Базовый урон от горения Вестника пепла равен 25% избыточного урона.
+Hits against Brittle enemies have up to +6% Critical Strike Chance.\nThis option will also allow you to input the effect of Brittle.	Удары по противникам с хрупкостью получают до +6% к шансу критического удара. Здесь можно указать эффект хрупкости.
+Hits against Critically Weak enemies have up to +10% Critical Strike Chance.\nThis option will also allow you to input the effect of Critical Weakness.	Удары по противникам с критической уязвимостью получают до +10% к шансу критического удара. Здесь можно указать эффект критической уязвимости.
+If you have a guaranteed source of Blind, the strongest one will apply.	Если есть гарантированный источник ослепления, применяется самый сильный эффект.
+If you have a guaranteed source of Elusive, the strongest one will apply. \nYou can change this to see various buff values	Если есть гарантированный источник Неуловимости, применяется самый сильный эффект. Значение можно менять для сравнения.
+If you have a guaranteed source of Sap,\nthe strongest one will apply instead unless this option would apply a stronger Sap.	Если есть гарантированный источник ошеломления, применяется он, когда его эффект сильнее заданного здесь.
+If you have a guaranteed source of Shock,\nthe strongest one will apply instead unless this option would apply a stronger Shock.	Если есть гарантированный источник шока, применяется он, когда его эффект сильнее заданного здесь.
+Ignore the effects of things which disable items, like Bringer of Rain	Игнорирует эффекты, отключающие предметы, например у Вестника дождя.
+Ignore the limits on jewels	Игнорирует ограничения на самоцветы.
+Ignores values outside the 0-100 range, defaults to 100% if not specified. \nA more realistic value would be to match your Arcane Cloak spend %.	Допустимые значения от 0 до 100, по умолчанию 100%. Для более точного результата укажите долю маны, потраченной Чародейским покровом.
+In addition to allowing 'against Blinded Enemies' modifiers to apply,\n Blind applies the following effects.\n -20% Less Accuracy \n -20% Less Evasion	Учитывает свойства против ослеплённых противников и эффекты ослепления. Точность и уклонение на 20% меньше.
+In addition to allowing 'against Maimed Enemies' modifiers to apply,\n Maim applies the following effects.\n -30% Reduced Movement Speed \n -15% Reduced Evasion	Учитывает свойства против увечных противников и эффекты увечья. Скорость передвижения уменьшена на 30%, уклонение на 15%.
+In addition to allowing any 'against Shocked Enemies' modifiers to apply,\nthis will allow you to input the effect of the Shock applied to the enemy.	Учитывает свойства против противников под шоком и позволяет вручную указать эффект шока.
+In addition to allowing any 'while Elusive' modifiers to apply,\nthis will enable the Elusive buff itself:\n\t15% Chance to Avoid all Damage from Hits\n\t30% increased Movement Speed\nThe effect of Elusive decays over time.	Включает свойства, действующие при Неуловимости, и сам эффект. Даёт 15% шанс избежать всего урона от ударов и 30% повышение скорости передвижения. Эффект ослабевает со временем.
+In addition to allowing any 'while on Consecrated Ground' modifiers to apply,\nConsecrated Ground grants 5% Life Regeneration to players and allies.	Включает свойства, действующие на освящённой земле. На ней игроки и союзники получают 5% регенерации здоровья.
+In addition to allowing any 'while you have Arcane Surge' modifiers to apply,\nthis will enable the Arcane Surge buff itself. (Grants 15% increased Cast Speed and 20% more Mana Regeneration rate)	Включает свойства, действующие при Колдовском выбросе, и сам эффект. Даёт 15% повышение скорости сотворения чар и на 20% больше скорости регенерации маны.
+In addition to allowing any 'while you have Onslaught' modifiers to apply,\nthis will enable the Onslaught buff itself. (Grants 20% increased Attack, Cast, and Movement Speed)	Включает свойства, действующие при Боевом раже, и сам эффект. Даёт 20% повышение скорости атаки, сотворения чар и передвижения.
+In addition to allowing any 'while your minions have Onslaught' modifiers to apply,\nthis will enable the Onslaught buff itself. (Grants 20% increased Attack, Cast, and Movement Speed)	Включает свойства, зависящие от Боевого ража приспешников, и сам эффект. Даёт 20% повышение скорости атаки, сотворения чар и передвижения.
+Incision applies 10% chance to Bleed the enemy, up to 10 stacks.	Каждый разрез даёт 10% шанс наложить кровотечение на противника. Максимум 10 разрезов.
+Intimidate is a Debuff that inflicts 10% increased damage taken and 10% reduced damage dealt.	Устрашённая цель получает на 10% больше урона и наносит на 10% меньше урона.
+Maximum is limited by the number of Projectiles.	Максимум ограничен числом снарядов.
+Maximum is limited by the number of Projectiles., default of 1, if Arrow nova then default of maximum projectiles	Максимум ограничен числом снарядов. Значение по умолчанию — 1, с Кольцом стрел — все снаряды.
+Molten Shell reflects damage to the enemy,\nbased on the amount of damage it has mitigated.	Расплавленный панцирь отражает урон противнику. Величина зависит от предотвращённого урона.
+Number of different Ammunition types used in tha past 10s	Число типов боеприпасов, использованных за последние 10 сек.
+Number of different Grenade types used in tha past 10s	Число типов гранат, использованных за последние 10 сек.
+Number of Purple Flames of Chayula collected (max 10).	Число собранных фиолетовых языков пламени Чаюлы. Максимум 10.
+Number of recently applied ailments	Число недавно наложенных состояний.
+Number of seconds the enemy has been in your presence.	Сколько секунд противник находится в вашем присутствии.
+Offerings created by culling enemies gain 1% increased effect per Power.\nUnique enemies always have 20 Power.	Жертвоприношения от добитых противников получают 1% усиление эффекта за единицу угрозы. Угроза уникального противника всегда равна 20.
+Only non-instant spells you cast count	Учитываются лишь чары, которые вы сотворили, за исключением мгновенных.
+Only the number of different spells you cast count	Учитывается число разных чар, которые вы сотворили.
+Override number of bolts reloaded in the past 6 seconds.\nUsed to calculate damage bonus from Fresh Clip I support.\nAssumes calculated average if no value is specified.	Число снарядов, перезаряженных за последние 6 сек., для расчёта бонуса урона от Сменного магазина I. Если поле пустое, используется расчётное среднее.
+Override number of bolts reloaded in the past 8 seconds.\nUsed to calculate damage bonus from Fresh Clip II support.\nAssumes calculated average if no value is specified.	Число снарядов, перезаряженных за последние 8 сек., для расчёта бонуса урона от Сменного магазина II. Если поле пустое, используется расчётное среднее.
+Override to the percent chance for the secondary projectiles to hit, default of 60% or 80% with helm enchant. (20% per secondary projectile)	Переопределяет шанс попадания дополнительных снарядов. По умолчанию 60%, с зачарованием шлема 80%, по 20% за дополнительный снаряд.
+Overrides the automatically calculated total Life of your damageable Companions\nthat can be taken before yours (e.g. Starkonja's Head, Loyalty)	Переопределяет общий запас здоровья уязвимых компаньонов, который расходуется перед вашим, например при использовании Головы Старконджи или Верности.
+Overrides the automatically calculated total Life of your damageable Spectres that can be taken before yours	Переопределяет общий запас здоровья уязвимых призраков, который расходуется перед вашим.
+Pinned enemies cannot move and cannot evade 4 seconds.\n They are also Light Stunned when they become pinned.	Пригвождённые противники не могут двигаться и уклоняться 4 сек. В момент пригвождения они также получают слабое оглушение.
+Players need a minimum of 2 Life to enter Demon Form, so you cannot use it with Chaos Inoculation	Для принятия формы демона нужно не менее 2 здоровья. При Иммунитете к хаосу условие выполнить нельзя.
+Power determines how strong your Warcry buffs will be, and is based on the total strength of nearby enemies.\nPower is assumed to be 20 if your target is a Boss, but you can override it here if necessary.\n\tEach Normal enemy grants 1 Power\n\tEach Magic enemy grants 2 Power\n\tEach Rare enemy grants 10 Power\n\tEach Unique enemy grants 20 Power	Мощь определяет силу эффектов боевого клича и зависит от угрозы ближайших противников. Для босса по умолчанию используется 20.\nОбычный противник даёт 1, волшебный 2, редкий 10, уникальный 20.
+Rampage grants the following, up to 1000 stacks:\n\t1% increased Movement Speed per 20 Rampage\n\t2% increased Damage per 20 Rampage\nYou lose Rampage if you do not get a Kill within 5 seconds.	Буйство накапливается до 1000. За каждые 20 накоплений даёт 1% повышение скорости передвижения и 2% увеличение урона. Эффект пропадает, если за 5 сек. никого не убить.
+Rupture applies more bleed damage and faster bleeds for 3 seconds, up to 3 stacks	Разрыв на 3 сек. усиливает урон от кровотечения и ускоряет его нанесение. Максимум 3 эффекта.
+Sacrifice 5% Energy Shield when you cast a Spell to give that Spell 30% more Damage.	При сотворении чар жертвует 5% энергетического щита, чтобы чары нанесли на 30% больше урона.
+Sapped enemies deal less damage, up to 20%.	Ошеломлённые противники наносят до 20% меньше урона.
+Scorched enemies have lowered elemental resistances, up to -30%.\nThis option will also allow you to input the effect of Scorched.	Опалённые противники имеют до −30% к сопротивлениям стихиям. Здесь можно указать эффект опаления.
+Seconds since last reset. Stoicism I: 1%/s (full 20s). Stoicism II: 2%/s (full 10s).	Секунд с последнего сброса. Стоицизм I даёт 1% в секунду до максимума за 20 сек. Стоицизм II даёт 2% в секунду до максимума за 10 сек.
+Sets the blade count for Blade Vortex skills used by spectres.\nDefault is 1; maximum is 5.	Число клинков Вихря клинков у призраков. По умолчанию 1, максимум 5.
+Sets the EHP calc to not apply gain on block and suppress effects	Исключает восстановление при блоке и подавлении из расчёта эффективного запаса здоровья.
+Sets the maximum Life of the Skeleton that is being targeted.	Максимум здоровья скелета, который служит целью.
+Sets the maximum life of the target corpse for Detonate Dead and similar skills.\nFor reference, a level 70 monster has 11148 base life, and a level 80 monster has 31065.	Максимум здоровья трупа для Взрыва трупа и похожих умений. Для справки, у монстра 70-го уровня 11 148 базового здоровья, а у монстра 80-го уровня 31 065.
+Sets the number of active Spectral Wolves.\nThe maximum number of Spectral Wolves is 10.	Число активных призрачных волков. Максимум 10.
+Sets the number of active Spiraling Conspiracy.\nThe maximum number of Spiraling Conspiracy is 30.	Число активных эффектов Вьющегося заговора. Максимум 30.
+Sets the number of enemies affected by Siphoning Trap.	Число противников, затронутых Вытягивающей ловушкой.
+Sets the total Resonance Count.	Общее число резонансов.
+Skills can be temporarily Empowered by certain buff skills.	Некоторые усиливающие умения могут временно усилить другие умения.
+Some skills and effects require a certain Combo count to use.\nCombo is built by successfully Striking Enemies.	Для ряда умений и эффектов требуется определённое число комбо. Комбо набираются при успешных ударах по противникам.
+Some Skills, Items, Support Gems and other effects can Break Armour, which lowers a target's Armour by a specified amount.\nIf this brings the target's Armour value to 0, their Armour is Fully Broken for 12 seconds.	Некоторые умения, предметы, камни поддержки и эффекты понижают броню цели на определённое значение. Если броня падает до 0, она полностью разрушена в течение 12 сек.
+Soul Eater grants the following, up to a base of 45 stacks:\n\t5% increased Attack Speed\n\t5% increased Cast Speed\n\t1% increased character size per stack.	Пожиратель душ даёт за каждый эффект 5% повышение скорости атаки и сотворения чар, а также 1% увеличение размера персонажа. Базовый максимум 45 эффектов.
+Steel Wards are gained from using Shattering Steel of Ammunition with at least 2 Steel Shards.\nYou can have up to 6 Steel Wards, and each grants +8% chance to Block Projectile Attack Damage.	Стальные обереги даёт Раскалывающая сталь боеприпасов при наличии хотя бы 2 стальных осколков. Максимум 6 оберегов. Каждый даёт +8% к шансу блока урона от атак снарядами.
+Tailwind grants the following, up to a base of 10 stacks:\n\t1% increased movement speed\n\t3% increased Skill Speed\n\t15% increased Evasion Rating	Попутный ветер даёт 1% повышение скорости передвижения, 3% повышение скорости умений и 15% повышение уклонения. Базовый максимум 10 эффектов.
+The amount of valour consumed for the placed banner	Доблесть, израсходованная на установку знамени.
+The enemy will automatically be considered to be Cursed if you have at least one curse enabled,\nbut you can use this option to force it if necessary.	Если включено хотя бы одно проклятие, противник считается проклятым автоматически. При необходимости укажите это вручную.
+The enemy will automatically be considered to be Unique if they are a Boss.\nUsed to set base Culling Strike Threshold.	Босс автоматически считается уникальным противником. Это значение используется для базового порога добивания.
+The Parry debuff grants:\n\tEnemies take 50% more Attack Damage	После парирования противник получает на 50% больше урона от атак.
+The percentage of the roll range the enemy hits for \n eg at 100% the enemy deals its maximum damage	Выбранная доля диапазона урона противника. При 100% противник наносит максимальный урон.
+The total life of your Totems (excluding Vaal Rejuvenation Totem) that can be taken before yours (used by totem mastery)	Суммарное здоровье тотемов, кроме Тотема омоложения ваал, которое расходуется перед вашим. Используется для мастерства тотемов.
+The total life of your Vaal Rejuvenation Totems that can be taken before yours	Суммарное здоровье Тотемов омоложения ваал, которое расходуется перед вашим.
+This also implies that the enemy is Brittle.	Противник также считается хрупким.
+This also implies that the enemy is Burning.	Противник также считается горящим.
+This also implies that the enemy is Chilled.	Противник также считается охлаждённым.
+This also implies that the enemy is Sapped.	Противник также считается ошеломлённым.
+This also implies that the enemy is Scorched.	Противник также считается опалённым.
+This also implies that the enemy is Shocked.	Противник также считается под действием шока.
+This also implies that the enemy is stunned.	Противник также считается оглушённым.
+This also implies that you are Burning.	Вы также считаетесь горящим.
+This also implies that you are channelling	Вы также считаетесь поддерживающим умение.
+This also implies that you are Chilled.	Вы также считаетесь охлаждённым.
+This also implies that you are Ignited.	Вы также считаетесь подожжённым.
+This also implies that you are Poisoned.	Вы также считаетесь отравленным.
+This also implies that you are Shocked.	Вы также считаетесь под действием шока.
+This also implies that you have a Totem summoned.\nThis will affect all 'per Summoned Totem' modifiers, even for non-Totem skills.	У вас также считается призванным тотем. Действует на все свойства за призванный тотем, в том числе у умений без тотемов.
+This also implies that you have been Hit Recently.	Также считается, что вы недавно получили удар.
+This also implies that you have Blocked Recently.	Также считается, что вы недавно блокировали удар.
+This also implies that you have Hit Recently.	Также считается, что вы недавно нанесли удар.
+This also implies that you have killed and taunted recently.	Также считается, что вы недавно убили и спровоцировали противников.
+This also implies that you have Killed Recently.	Также считается, что вы недавно убили противника.
+This also implies that you have Suppressed Recently.	Также считается, что вы недавно подавили урон от чар.
+This also implies that you have used a Skill Recently.	Также считается, что вы недавно использовали умение.
+This also implies that you have used a Skill Recently.\nYou will automatically be considered to have Attacked Recently if your main skill is an attack,\nbut you can use this option to force it if necessary.	Также считается, что вы недавно использовали умение. При выбранном основном умении атаки недавняя атака учитывается автоматически. Этот флажок позволяет указать её вручную.
+This also implies that you have used a Skill Recently.\nYou will automatically be considered to have Cast a Spell Recently if your main skill is a spell,\nbut you can use this option to force it if necessary.	Также считается, что вы недавно использовали умение. При выбранном основном умении чар недавнее сотворение учитывается автоматически. Этот флажок позволяет указать его вручную.
+This also implies that you have used a Skill Recently.\nYou will automatically be considered to have used a Minion skill Recently if your main skill is a Minion skill,\nbut you can use this option to force it if necessary.	Также считается, что вы недавно использовали умение. При выбранном основном умении приспешника его недавнее использование учитывается автоматически. Здесь его можно указать вручную.
+This also implies that you have used a Skill Recently.\nYou will automatically be considered to have used a Movement skill Recently if your main skill is a movement skill,\nbut you can use this option to force it if necessary.	Также считается, что вы недавно использовали умение. При выбранном основном умении передвижения его недавнее использование учитывается автоматически. Здесь его можно указать вручную.
+This also implies that you have used a Skill Recently.\nYou will automatically be considered to have used a Vaal skill Recently if your main skill is a Vaal skill,\nbut you can use this option to force it if necessary.	Также считается, что вы недавно использовали умение. При выбранном основном умении ваал его недавнее использование учитывается автоматически. Здесь его можно указать вручную.
+This also implies that you have used a Skill Recently..	Также считается, что вы недавно использовали умение.
+This also implies that you Totems have Hit Recently.	Также считается, что ваши тотемы недавно наносили удар.
+This also implies that your Minions have Killed Recently.	Также считается, что ваши приспешники недавно убивали.
+This also implies that your Skills have Crit Recently.	Также считается, что ваши умения недавно наносили критический удар.
+This also implies that your Totems have Killed Recently.	Также считается, что ваши тотемы недавно убивали.
+This also implies you have 'Consumed a corpse Recently'	Также считается, что вы недавно поглотили труп.
+This applies -20% Cold Resistance to the enemy.	Даёт противнику −20% к сопротивлению холоду.
+This applies -20% Fire Resistance to the enemy.	Даёт противнику −20% к сопротивлению огню.
+This applies -20% Lightning Resistance to the enemy.	Даёт противнику −20% к сопротивлению молнии.
+This effect will only be applied while you can inflict Brittle.	Действует, только если вы можете наложить хрупкость.
+This effect will only be applied while you can inflict Scorched.	Действует, только если вы можете наложить опаление.
+This is automatically enabled if you have a charm active,\nbut you can use this option to force it if necessary.	Включается автоматически, когда действует оберег. При необходимости это можно указать вручную.
+This is automatically enabled if you have a flask active,\nbut you can use this option to force it if necessary.	Включается автоматически, когда действует флакон. При необходимости это можно указать вручную.
+This multiplies the damage of a given skill in pvp, for instance any with damage multiplier specific to pvp (from skill or support or item like sire of shards)	Умножает урон умения в PvP. Например, применяется к умениям, камням поддержки и предметам со своим множителем PvP, таким как Повелитель осколков.
+This option enables Manastorm's Lightning Damage Buff.\n(When you cast a Spell, Sacrifice all Mana to gain Added Maximum Lightning Damage\nequal to 50% of Sacrificed Mana for 4 seconds)	Включает усиление урона от молнии Манашторма. При сотворении чар вся мана приносится в жертву. Максимальный дополнительный урон от молнии равен 50% пожертвованной маны. Длительность 4 сек.
+This option enables the Everlasting Sacrifice buff that grants +5% to all maximum resists.	Включает Вечное жертвоприношение, дающее +5% ко всем максимальным сопротивлениям.
+This option is specific to Arborix.	Параметр для лука Арборикс.
+This option is specific to Augyre.	Параметр для Аугайра.
+This option is specific to Oni-Goroshi.	Параметр для Они-Гороси.
+This option is specific to Vulconus.	Параметр для Вулконуса.
+This option prevents EE from being reset by the hit damage of your main skill.	Основное умение своим уроном от удара перестаёт сбрасывать Равновесие стихий.
+This option sets the Movement Speed from Gamblesprint boots.	Задаёт скорость передвижения от сапог с рискованным спринтом.
+This option sets whether an enemy is between you and your linked target.	Указывает, что противник находится между вами и связанной целью.
+This option sets whether or not the enemy has hit you with Cold Damage in the last 4 seconds.	Указывает, что противник нанёс вам удар уроном от холода за последние 4 сек.
+This option sets whether or not the enemy has hit you with Fire Damage in the last 4 seconds.	Указывает, что противник нанёс вам удар уроном от огня за последние 4 сек.
+This option sets whether or not the enemy has hit you with Lightning Damage in the last 4 seconds.	Указывает, что противник нанёс вам удар уроном от молнии за последние 4 сек.
+This overrides the default damage amount used to estimate your damage reduction from armour.\nThe default is 1.5 times the enemy's base damage, which is the same value\nused in-game to calculate the estimate shown on the character sheet.	Переопределяет урон, по которому оценивается снижение урона от брони. По умолчанию используется 1,5 базового урона противника, как в оценке на экране персонажа в игре.
+This overrides the default enemy level used to estimate your hit, evade chance, and damage reduction.\n\nThe maximum level for normal enemies and all bosses is 85.\n\nThe default level of normal enemies and bosses scales with player level unless manually set.\n\nThe default and minimum level for pinnacle bosses and uber pinnacle bosses is 82.	Переопределяет уровень противника для оценки попаданий, уклонения и снижения урона.\nОбычные противники и боссы имеют уровень максимум 85. По умолчанию их уровень зависит от уровня игрока.\nУ верховных и усиленных верховных боссов минимальный и начальный уровень равен 82.
+This will enable the Adrenaline buff, which grants:\n\t100% increased Damage\n\t25% increased Attack, Cast and Movement Speed\n\t10% additional Physical Damage Reduction	Включает Адреналин. Даёт 100% увеличение урона, 25% повышение скорости атаки, сотворения чар и передвижения и 10% дополнительного снижения физического урона.
+This will enable the Alchemist's Genius buff:\n20% increased Flask Charges gained\n10% increased effect of Flasks	Включает Гения алхимика. Даёт 20% повышение получения зарядов флаконов и 10% усиление эффекта флаконов.
+This will enable the Chaotic Might buff on your minions.\n(Grants 30% of Physical Damage as Extra Chaos Damage)	Включает мощь хаоса у ваших приспешников. Даёт 30% физического урона в виде дополнительного урона хаосом.
+This will enable the Chaotic Might buff.\n(Grants 30% of Physical Damage as Extra Chaos Damage)	Включает мощь хаоса. Даёт 30% физического урона в виде дополнительного урона хаосом.
+This will enable the Divinity buff, which grants:\n\t50% more Elemental Damage\n\t20% less Elemental Damage taken	Включает Божественность. Даёт на 50% больше урона от стихий и на 20% меньше получаемого урона от стихий.
+This will enable the Fanaticism buff itself. (Grants 75% more cast speed, reduced skill cost, and increased area of effect)	Включает Фанатизм. Даёт на 75% больше скорости сотворения чар, уменьшает расход умений и увеличивает область действия.
+this will enable the Quicksand Hourglass buff itself.	Включает эффект Часов зыбучих песков.
+This will enable the Unholy Might buff on your minions.\n\n(Grants 30% of All Damage as extra Chaos Damage)	Включает нечестивую мощь у ваших приспешников. Даёт 30% всего урона в виде дополнительного урона хаосом.
+This will enable the Unholy Might buff.\n(Grants 30% of All Damage as extra Chaos Damage)	Включает нечестивую мощь. Даёт 30% всего урона в виде дополнительного урона хаосом.
+This will override the number of Mines per throw	Переопределяет число мин за один бросок.
+This will override the number of Traps per throw	Переопределяет число ловушек за один бросок.
+Tvalue in milliseconds. This overrides the Tvalue of a given skill, for instance any with fixed Tvalues, or modified Tvalues	Значение T в миллисекундах. Переопределяет значение T умения, в том числе если у него фиксированное или изменённое значение.
+Twister has passed over Cold Ground or consumed a Cold Whirlwind.	Смерч прошёл над холодной землёй или поглотил вихрь холода.
+Twister has passed over Fire Ground or consumed a Fire Whirlwind.	Смерч прошёл над горящей землёй или поглотил вихрь огня.
+Twister has passed over Lightning Ground or consumed a Lightning Whirlwind.	Смерч прошёл над заряженной землёй или поглотил вихрь молнии.
+Unnerved enemies take 10% increased Spell Damage.	Обескураженные противники получают на 10% больше урона от чар.
+Use this field to set a custom Armour Break value.\nIf left empty or set to 0, Fully Broken Armour will be assumed.\nArmour cannot be broken below 0 unless stated otherwise.\nIf so, Armour can be broken up to the inverse of its original value.	Введите своё значение разрушения брони. Если поле пустое или равно 0, предполагается полное разрушение. Броню нельзя снизить ниже 0, кроме специально оговорённых случаев. В таком случае её можно снизить до исходного значения с обратным знаком.
+Use this option to disable the skill reservation factoring into eHP calculations	Исключает удержание ресурсов умениями из расчёта эффективного запаса здоровья.
+Use this to override the count if you do not have all your minions summoned	Переопределяет число приспешников, если вызваны не все.
+Used in calculations for Silks of Veneration and The Mutable Star.\nOverflowed Energy Shield is allowed, up to 150%.	Используется для расчётов Облачения почитания и Изменчивой звезды. Допускается переполнение энергетического щита до 150%.
+Vaal Molten Shell reflects damage to the enemy,\nbased on the amount of damage it has mitigated in the last second.	Расплавленный панцирь ваал отражает урон противнику в зависимости от урона, предотвращённого за последнюю секунду.
+When enabled, the mana spent by Arcane Cloak used at full mana \nwill be added to the value provided in # of Mana spent Recently.	Добавляет ману, потраченную Чародейским покровом при полной мане, к значению поля «Маны потрачено недавно».
+While affected by Unravelling, your Chaos Damage randomly either also contributes to Freeze buildup,\nIgnite chance and magnitude, or Shock chance - changing which it contributes to every two seconds.	Под действием Бесконтрольности ваш урон хаосом дополнительно влияет на накопление заморозки, шанс и силу поджога либо шанс наложить шок. Выбранное состояние меняется случайным образом каждые 2 сек.
+While ensnared, enemies take increased Projectile Damage from Attack Hits\nEnsnared enemies always count as moving, and have less movement speed while trying to break the snare.	Скованные противники получают повышенный урон от ударов атаками снарядами. Они считаются движущимися и медленнее передвигаются, пытаясь освободиться.
+Whirlwind has passed over Cold Ground.	Вихрь прошёл над холодной землёй.
+Whirlwind has passed over Fire Ground.	Вихрь прошёл над горящей землёй.
+Whirlwind has passed over Lightning Ground.	Вихрь прошёл над заряженной землёй.
+Withered applies 5% increased Chaos Damage Taken to the enemy, up to 10 stacks.	Истощение даёт противнику 5% увеличение получаемого урона хаосом за эффект. Максимум 10 эффектов.
+Withered applies 5% increased Chaos Damage Taken to the self, up to 10 stacks.	Истощение даёт вам 5% увеличение получаемого урона хаосом за эффект. Максимум 10 эффектов.
+You are surrounded if there are at least 5 Enemies within 3 metres of you	Вы окружены, когда в пределах 3 м есть хотя бы 5 противников.
+You have 1% less damage taken from hits per stack of fortification:\nHas a default cap of 20 stacks.	Даёт на 1% меньше получаемого урона от ударов за каждый эффект укрепления. Предел по умолчанию 20 эффектов.
+You will automatically be considered to be Channeling if your main skill is a channelled skill,\nbut you can use this option to force it if necessary.	Если ваше основное умение поддерживается, оно считается поддерживаемым автоматически. Это также можно указать вручную.
+You will automatically be considered to be Leeching if you have 'Life Leech effects are not removed at Full Life',\nbut you can use this option to force it if necessary.	Если эффекты похищения здоровья сохраняются при полном здоровье, похищение считается активным автоматически. Это также можно указать вручную.
+You will automatically be considered to be on Low Energy Shield if you have at least 50% ES reserved,\nbut you can use this option to force it if necessary.	При удержании хотя бы 50% энергетического щита он автоматически считается низким. Это также можно указать вручную.
+You will automatically be considered to be on Low Mana if you have at least 50% mana reserved,\nbut you can use this option to force it if necessary.	При удержании хотя бы 50% маны она автоматически считается низкой. Это также можно указать вручную.
+You will automatically be considered to have a Totem if your main skill is a Totem,\nbut you can use this option to force it if necessary.	Если основное умение призывает тотем, он автоматически считается призванным. Это также можно указать вручную.
+You will automatically be considered to have Hit Recently if your main skill Hits and is self-cast,\nbut you can use this option to force it if necessary.	Если вы самостоятельно применяете основное умение и оно наносит удары, недавний удар учитывается автоматически. Это также можно указать вручную.
+You will automatically be considered to have Summoned a Totem Recently if your main skill is a Totem,\nbut you can use this option to force it if necessary.	Если основное умение призывает тотем, его недавний призыв учитывается автоматически. Это также можно указать вручную.
+Your Absolution Skill Damage will not be scaled with Count setting.\nBy default it multiplies both minion count and skill hit count which leads to incorrect\nTotal DPS calculation since Absolution cannot inherently shotgun.\nDo not enable if you use Spell Totem support, Spell Cascade support or similar supports	Множитель числа применений не влияет на урон от Отпущения грехов. По умолчанию он умножает и число приспешников, и число попаданий, завышая суммарный УВС, поскольку само умение не наносит несколько попаданий по одной цели. Оставьте флажок снятым при использовании Тотема чар, Каскада чар или аналогичной поддержки.
+
+# Boss presets
+Used to fill in defaults for specific boss skills if the boss config is not set\n\nBosses' damage is modified by roll range configuration, defaulted at a 70% roll, at the normal monster level for your character level (capped at 85)\nFill in the exact damage numbers if more precision is needed	Заполняет значения для выбранного умения босса, если параметры босса не заданы вручную.\nУрон зависит от выбранной доли диапазона, по умолчанию 70%, и от уровня обычного монстра для вашего уровня (не выше 85). Введите точные значения урона для более точного расчёта.
+The Uber variant has 10 Fire penetration (Applied on Pinnacle And Uber)	У усиленного варианта 10% пробивания сопротивления огню. Применяется к верховной и усиленной версии.
+Allocating Cosmic Wounds increases the penetration to 40% (Applied on Uber) and adds 2 projectiles	Космические раны повышают пробивание до 40% для усиленного босса и добавляют 2 снаряда.
+Cannot be Evaded.  Allocating Cosmic Wounds increases Damage by a further 100% (Applied on Uber) and cannot be blocked or dodged	От удара нельзя уклониться. Космические раны увеличивают урон ещё на 100% для усиленного босса. Удар нельзя блокировать или увернуться от него.
+Damage Over Time skill	Умение наносит постепенный урон.
+Earlier ones with less walls do less damage. Allocating The Perfect Storm increases Damage by a further 50% (Applied on Uber)	В ранних фазах меньше стен и урона. Идеальная буря увеличивает урон ещё на 50% для усиленного босса.
+Spawns 8-18 waves of balls depending on which fight and which ball phase, Cannot be Blocked, Dodged, or Suppressed	Выпускает от 8 до 18 волн сфер в зависимости от версии боя и фазы. Урон нельзя блокировать, подавить или избежать уворотом.
+Allocating Insatiable Appetite causes the beam to always shock for at least 30%	Ненасытный аппетит заставляет луч всегда накладывать шок с эффектом не менее 30%.
+Allocating Throw the Gauntlet increases Damage by a further 100% (Applied on Uber) and causes the fireball to have 30 Fire penetration (Applied on Uber)	Бросить перчатку увеличивает урон ещё на 100% и добавляет огненному шару 30% пробивания сопротивления огню для усиленного босса.
+Cannot be Blocked, Dodged, or Suppressed. \n\tIt is three separate hits, and has a large DoT effect.  Neither is taken into account here.  \n\t\ti.e. Hits before death should be more than 3 to survive	Урон нельзя блокировать, подавить или избежать уворотом. Умение наносит три отдельных удара и сильный постепенный урон. Эти особенности здесь не учитываются. Для выживания число выдерживаемых ударов должно быть больше трёх.

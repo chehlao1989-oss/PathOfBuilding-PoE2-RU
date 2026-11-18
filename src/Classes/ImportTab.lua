@@ -12,6 +12,7 @@ local m_max = math.max
 local dkjson = require "dkjson"
 
 local tradeHelpers = LoadModule("Classes/TradeHelpers")
+local importLocale = LoadModule("Modules/CharacterImportLocale")
 
 local realmList = {
 	{ label = "PoE2", id = "PoE2", realmCode = "poe2", hostName = "https://www.pathofexile.com/", profileURL = "account/view-profile/" },
@@ -31,7 +32,7 @@ local ImportTabClass = newClass("ImportTab", "ControlHost", "Control", function(
 	self.charImportStatus = colorCodes.WARNING.."Not authenticated"
 	self.controls.sectionCharImport = new("SectionControl", {"TOPLEFT",self,"TOPLEFT"}, {10, 18, 650, 200}, "Character Import")
 	self.controls.charImportStatusLabel = new("LabelControl", {"TOPLEFT",self.controls.sectionCharImport,"TOPLEFT"}, {6, 14, 200, 16}, function()
-		return "^7Character import status: "..(type(self.charImportStatus) == "function" and self.charImportStatus() or self.charImportStatus)
+		return "^7"..UILocale.translate("Character import status:").." "..importLocale.statusText(type(self.charImportStatus) == "function" and self.charImportStatus() or self.charImportStatus)
 	end)
 
 	self.controls.logoutApiButton = new("ButtonControl", {"TOPLEFT",self.controls.charImportStatusLabel,"TOPRIGHT"}, {4, 0, 180, 16}, "^7Logout from Path of Exile API", function()
@@ -132,7 +133,9 @@ local ImportTabClass = newClass("ImportTab", "ControlHost", "Control", function(
 	self.controls.generateCode = new("ButtonControl", {"LEFT",self.controls.generateCodeLabel,"RIGHT"}, {4, 0, 80, 20}, "Generate", function()
 		self.controls.generateCodeOut:SetText(common.base64.encode(Deflate(self.build:SaveDB("code"))):gsub("+","-"):gsub("/","_"))
 	end)
-	self.controls.enablePartyExportBuffs = new("CheckBoxControl", {"LEFT",self.controls.generateCode,"RIGHT"}, {100, 0, 18}, "Export Support", function(state)
+	self.controls.enablePartyExportBuffs = new("CheckBoxControl", {"LEFT",self.controls.generateCode,"RIGHT"}, {function()
+		return UILocale.measureRaw(14, "VAR", UILocale.translate("Export Support")) + 12
+	end, 0, 18}, "Export Support", function(state)
 		self.build.partyTab.enableExportBuffs = state
 		self.build.buildFlag = true
 	end, "This is for party play, to export support character, it enables the exporting of auras, curses and modifiers to the enemy", false)
@@ -144,6 +147,8 @@ local ImportTabClass = newClass("ImportTab", "ControlHost", "Control", function(
 		Copy(self.controls.generateCodeOut.buf)
 		self.controls.generateCodeOut:SetText("")
 	end)
+	UILocale.fitButton(self.controls.generateCode)
+	UILocale.fitButton(self.controls.generateCodeCopy)
 	self.controls.generateCodeCopy.enabled = function()
 		return #self.controls.generateCodeOut.buf > 0
 	end
@@ -348,6 +353,8 @@ local ImportTabClass = newClass("ImportTab", "ControlHost", "Control", function(
 		end
 	end
 
+	importLocale.prepare(self)
+
 	-- validate the status of the api the first time
 	self:RefreshAuthStatus()
 end)
@@ -417,6 +424,8 @@ function ImportTabClass:Draw(viewPort, inputEvents)
 	self.y = viewPort.y
 	self.width = viewPort.width
 	self.height = viewPort.height
+
+	importLocale.layout(self)
 
 	self:ProcessControlsInput(inputEvents, viewPort)
 
@@ -559,14 +568,14 @@ function ImportTabClass:BuildCharacterList(league)
 
 			local detail
 			if league == nil then
-				detail = string.format("%s%s ^x808080lvl %d in %s", classColor, charClass, charLvl, charLeague)
+				detail = importLocale.characterDetail(classColor, charClass, charLvl, charLeague)
 			else
-				detail = string.format("%s%s ^x808080lvl %d", classColor, charClass, charLvl)
+				detail = importLocale.characterDetail(classColor, charClass, charLvl)
 			end
 			t_insert(self.controls.charSelect.list, {
 				label = charName,
 				char = char,
-				searchFilter = charName.." "..charClass,
+				searchFilter = charName.." "..charClass.." "..UILocale.translate(charClass),
 				detail = detail
 			})
 		end

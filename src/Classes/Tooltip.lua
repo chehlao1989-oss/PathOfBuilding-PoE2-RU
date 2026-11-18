@@ -135,7 +135,12 @@ function TooltipClass:AddLine(size, text, font, background)
 end
 
 function TooltipClass:SetRecipe(recipe)
-	self.recipe = recipe
+	self.recipe = nil
+	if not recipe then return end
+	self.recipe = {}
+	for index, entry in ipairs(recipe) do
+		self.recipe[index] = { name = UILocale.emotionName(entry.name), sprite = entry.sprite }
+	end
 end
 
 function TooltipClass:AddSeparator(size)
@@ -198,13 +203,7 @@ function TooltipClass:GetSize()
 		local imageX = DrawStringWidth(title.size, font, title.text) + title.size
 		local recipeTextSize = (title.size * 3) / 4
 		for _, recipeInfo in ipairs(self.recipe) do
-			local recipeName = recipeInfo.name
-			-- Trim "Oil" from the recipe name, which normally looks like "GoldenOil"
-			local recipeNameShort = recipeName
-			if #recipeNameShort > 3 and recipeNameShort:sub(-3) == "Oil" then
-				recipeNameShort = recipeNameShort:sub(1, #recipeNameShort - 3)
-			end
-			imageX = imageX + DrawStringWidth(recipeTextSize, font, recipeNameShort) + title.size * 1.25
+			imageX = imageX + DrawStringWidth(recipeTextSize, font, recipeInfo.name) + title.size * 1.25
 		end
 		ttW = m_max(ttW, imageX)
 	end
@@ -275,9 +274,6 @@ function TooltipClass:CalculateColumns(ttY, ttX, ttH, ttW, viewPort)
 			local oilWidths = {}
 			for _, r in ipairs(self.recipe) do
 				local rn = r.name
-				if #rn > 3 and rn:sub(-3) == "Oil" then
-					rn = rn:sub(1, #rn - 3)
-				end
 				local textW = DrawStringWidth(recipeTextSize, font, rn)
 				local iconW = titleSize
 				table.insert(oilWidths, {rn, r.sprite, textW, iconW})

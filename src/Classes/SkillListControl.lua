@@ -36,7 +36,7 @@ local SkillListClass = newClass("SkillListControl", "ListControl", function(self
 	self.controls.delete.enabled = function()
 		return self.selValue ~= nil and self.selValue.source == nil
 	end
-	self.controls.deleteAll = new("ButtonControl", {"RIGHT",self.controls.delete,"LEFT"}, {-4, 0, 70, 18}, "Delete All", function()
+	self.controls.deleteAll = new("ButtonControl", {"RIGHT",self.controls.delete,"LEFT"}, {-4, 0, 82, 18}, "Delete All", function()
 		main:OpenConfirmPopup("Delete All", "Are you sure you want to delete all socket groups in this build?", "Delete", function()
 			wipeTable(self.list)
 			skillsTab:SetDisplayGroup()
@@ -70,19 +70,20 @@ end)
 
 function SkillListClass:GetRowValue(column, index, socketGroup)
 	if column == 1 then
-		local label = socketGroup.displayLabel or "?"
+		local label = UILocale.skillGroupName(socketGroup) or "?"
+		if label == "<No active skills>" then label = UILocale.translate(label) end
 		local currentMainSkill = self.skillsTab.build.mainSocketGroup == index
 		local disabled = not socketGroup.enabled or not socketGroup.slotEnabled
 		if disabled then
 			local colour = currentMainSkill and "" or "^x7F7F7F"
-			label = colour .. label .. " (Disabled)"
+			label = colour .. label .. " (" .. UILocale.translate("Disabled") .. ")"
 		end
 		if currentMainSkill then 
-			local activeLabel = disabled and " (Forced Active)" or " (Active)"
+			local activeLabel = " (" .. UILocale.translate(disabled and "Forced Active" or "Active") .. ")"
 			label = label .. colorCodes.RELIC .. activeLabel
 		end
 		if socketGroup.includeInFullDPS then 
-			label = label .. colorCodes.CUSTOM .. " (FullDPS)"
+			label = label .. colorCodes.CUSTOM .. " (" .. UILocale.translate("FullDPS") .. ")"
 		end
 		return label
 	end

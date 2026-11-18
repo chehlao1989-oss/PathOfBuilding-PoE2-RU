@@ -9,6 +9,7 @@ local m_min = math.min
 local m_max = math.max
 local m_floor = math.floor
 local s_upper = string.upper
+local utf8 = require('lua-utf8')
 
 local varList = LoadModule("Modules/ConfigOptions")
 
@@ -62,11 +63,18 @@ local ConfigTabClass = newClass("ConfigTab", "UndoHandler", "ControlHost", "Cont
 		self.toggleConfigs = not self.toggleConfigs
 	end)
 
+	UILocale.fitButton(self.controls.setManage)
+	UILocale.fitButton(self.controls.toggleConfigs)
+
 	local function searchMatch(varData)
-		local searchStr = self.controls.search.buf:lower():gsub("[%-%.%+%[%]%$%^%%%?%*]", "%%%0")
+		local searchStr = utf8.lower(self.controls.search.buf):gsub("[%-%.%+%[%]%$%^%%%?%*]", "%%%0")
 		if searchStr and searchStr:match("%S") then
-			local label = StripEscapes(varData.label or ""):lower()
-			local err, match = PCall(string.matchOrPattern, label, searchStr)
+			local source = varData.label or ""
+			local label = utf8.lower(StripEscapes(source))
+			local localized = utf8.lower(StripEscapes(UILocale.configText(source)))
+			local err, match = PCall(function()
+				return string.matchOrPattern(label, searchStr) or string.matchOrPattern(localized, searchStr)
+			end)
 			if not err and match then
 				return true
 			end
@@ -144,21 +152,12 @@ local ConfigTabClass = newClass("ConfigTab", "UndoHandler", "ControlHost", "Cont
 			lastSection = new("SectionControl", {"TOPLEFT",self.controls.search,"BOTTOMLEFT"}, {0, 0, 360, 0}, varData.section)
 			lastSection.varControlList = { }
 			lastSection.col = varData.col
-			lastSection.height = function(self)
-				local height = 20
-				for _, varControl in pairs(self.varControlList) do
-					if varControl:IsShown() then
-						height = height + m_max(varControl.height, 16) + 4
-					end
-				end
-				return m_max(height, 32)
-			end
 			t_insert(self.sectionList, lastSection)
 			t_insert(self.controls, lastSection)
 		else
 			local control
 			if varData.type == "check" then
-				control = new("CheckBoxControl", {"TOPLEFT",lastSection,"TOPLEFT"}, {234, 0, 18}, varData.label, function(state)
+				control = new("CheckBoxControl", {"TOPLEFT",lastSection,"TOPLEFT"}, {234, 0, 18}, nil, function(state)
 					self.configSets[self.activeConfigSetId].input[varData.var] = state
 					self:AddUndoState()
 					self:BuildModList()
@@ -208,6 +207,11 @@ local ConfigTabClass = newClass("ConfigTab", "UndoHandler", "ControlHost", "Cont
 				control = new("Control", {"TOPLEFT",lastSection,"TOPLEFT"}, {234, 0, 16, 16})
 			end
 
+			if varData.type == "list" then
+				control.displayLabelAccessor = function(option) return UILocale.configText(option.label) end
+				control.localizedSearchAccessor = control.displayLabelAccessor
+			end
+
 			if varData.inactiveText then
 				control.inactiveText = varData.inactiveText
 			end
@@ -232,7 +236,7 @@ local ConfigTabClass = newClass("ConfigTab", "UndoHandler", "ControlHost", "Cont
 				for i, tooltipFunc in ipairs(tooltipFuncs) do
 					local curTooltipText = type(tooltipFunc) == "string" and tooltipFunc or tooltipFunc(self.modList, self.build)
 					if curTooltipText then
-						out = (out and out .. "\n" or "") .. curTooltipText
+						out = (out and out .. "\n" or "") .. UILocale.configText(curTooltipText)
 					end
 				end
 				return out
@@ -253,7 +257,9 @@ local ConfigTabClass = newClass("ConfigTab", "UndoHandler", "ControlHost", "Cont
 					end
 				end))
 				t_insert(tooltipFuncs, listOrSingleIfTooltip(varData.ifNode, function(ifOption)
-					return "This option is specific to '"..self.build.spec.nodes[ifOption].dn.."'."
+					local node = self.build.spec.nodes[ifOption]
+					local name = node and UILocale.passiveName(self.build.spec.treeVersion, node) or tostring(ifOption)
+					return UILocale.format("This option is specific to '%s'.", name)
 				end))
 			end
 			if varData.ifOption then
@@ -548,10 +554,18 @@ local ConfigTabClass = newClass("ConfigTab", "UndoHandler", "ControlHost", "Cont
 				control.tooltipFunc = varData.tooltipFunc
 			end
 			local labelControl = control
-			if varData.label and varData.type ~= "check" then
-				labelControl = new("LabelControl", {"RIGHT",control,"LEFT"}, {-4, 0, 0, DrawStringWidth(14, "VAR", varData.label) > 228 and 12 or 14}, "^7"..varData.label)
+			if varData.label then
+				labelControl = new("LabelControl", {"TOPLEFT",lastSection,"TOPLEFT"}, {8, 0, 0, 14},
+					function() return "^7" .. UILocale.configText(varData.label) end)
+				labelControl:SetWrapWidth(220)
+				labelControl.wrapAlign = "RIGHT_X"
+				labelControl.shown = function()
+					return control:IsShown()
+				end
+				control.configLabel = labelControl
 				t_insert(self.controls, labelControl)
 			end
+			control.configType = varData.type
 			if varData.var then
 				self.configSets[self.activeConfigSetId].input[varData.var] = varData.defaultState
 				control.state = varData.defaultState
@@ -603,13 +617,14 @@ local ConfigTabClass = newClass("ConfigTab", "UndoHandler", "ControlHost", "Cont
 				end
 				local innerLabel = labelControl.label
 				labelControl.label = function()
+					local text = type(innerLabel) == "function" and innerLabel() or innerLabel
 					local shown = type(innerShown) == "boolean" and innerShown or innerShown()
 					local cur = self.configSets[self.activeConfigSetId].input[varData.var]
 					local def = self:GetDefaultState(varData.var, type(cur))
 					if not shown and cur ~= nil and cur ~= def then
-						return colorCodes.NEGATIVE..StripEscapes(innerLabel)
+						return colorCodes.NEGATIVE..StripEscapes(text)
 					end
-					return innerLabel
+					return text
 				end
 				local innerTooltipFunc = control.tooltipFunc
 				control.tooltipFunc = function (tooltip, ...)
@@ -620,6 +635,7 @@ local ConfigTabClass = newClass("ConfigTab", "UndoHandler", "ControlHost", "Cont
 					else
 						local tooltipText = control:GetProperty("tooltipText")
 						if tooltipText and tooltipText ~= '' then
+							tooltip.maxWidth = 560
 							tooltip:AddLine(14, tooltipText)
 						end
 					end
@@ -809,42 +825,81 @@ function ConfigTabClass:Draw(viewPort, inputEvents)
 		end
 	end
 
-	local maxCol = m_floor((viewPort.width - 10) / 370)
+	local inset, gap = 10, 10
+	local available = viewPort.width - 38
+	local columns = m_max(1, math.min(3, m_floor((available + gap) / 370)))
+	local sectionWidth = math.min(480, m_floor((available - (columns - 1) * gap) / columns))
+	local bottoms = { 0, 0, 0 }
 	local maxColY = 0
-	local colY = { 0 }
+	local controls = self.controls
+	controls.setSelect.x = m_max(76, controls.setLabel:GetProperty("width") + 12)
+	controls.setSelect.width = m_min(210, available - controls.setSelect.x - controls.setManage:GetProperty("width"))
+	controls.search.width = m_min(sectionWidth, available - inset - gap - controls.toggleConfigs:GetProperty("width"))
+
 	for _, section in ipairs(self.sectionList) do
-		local y = 14
 		section.shown = true
-		local doShow = false
-		for _, varControl in pairs(section.varControlList) do
-			if varControl:IsShown() then
-				doShow = true
-				local width, height = varControl:GetSize()
-				height = m_max(height, 16)
-				varControl.y = y + 2
-				y = y + height + 4
+		local y = 15
+		local fieldWidth = math.max(118, m_floor(sectionWidth * 0.34))
+		local fieldX = sectionWidth - fieldWidth - 8
+		for _, control in ipairs(section.varControlList) do
+			if control:IsShown() then
+				local label = control.configLabel
+				local fullWidth = control.configType == "text"
+				control.x = fullWidth and 8 or fieldX
+				if fullWidth then
+					control.width = sectionWidth - 16
+					if control.minWidth then
+						control.minWidth = control.width
+						control.maxWidth = control.width
+					end
+				elseif control.configType == "list" then
+					if control.width ~= fieldWidth or control.layoutLanguage ~= UILocale.language then
+						control.width = fieldWidth
+						control.layoutLanguage = UILocale.language
+						control.droppedLabelPadding = 24
+						control.fitSelectedLabel = true
+						control.maxDroppedWidth = 480
+						control:CheckDroppedWidth(true)
+					end
+				end
+				local height = control:GetProperty("height")
+				if label then
+					label.wrapWidth = (fullWidth and sectionWidth or fieldX) - 16
+					label.width = label.wrapWidth
+					local labelHeight = label:GetProperty("height")
+					if fullWidth then
+						label.y = y
+						y = y + labelHeight + 4
+					else
+						local rowHeight = m_max(height, labelHeight)
+						label.y = y + m_floor((rowHeight - labelHeight) / 2)
+						control.y = y + m_floor((rowHeight - height) / 2)
+						y = y + rowHeight + 4
+					end
+				end
+				if fullWidth or not label then
+					control.y = y
+					y = y + height + 4
+				end
 			end
 		end
-		section.shown = doShow
-		if doShow then
-			local width, height = section:GetSize()
-			local col
-			if section.col and (colY[section.col] or 0) + height + 28 <= viewPort.height and 10 + section.col * 370 <= viewPort.width then
-				col = section.col
-			else
-				col = 1
-				for c = 2, maxCol do
-					colY[c] = colY[c] or 0
-					if colY[c] < colY[col] then
-						col = c
+		section.shown = y > 15
+		if section.shown then
+			section.width = sectionWidth
+			section.height = y + 3
+			local column = section.col
+			if not column or column > columns or bottoms[column] + section.height + 78 > viewPort.height then
+				column = 1
+				for candidate = 2, columns do
+					if bottoms[candidate] < bottoms[column] then
+						column = candidate
 					end
 				end
 			end
-			colY[col] = colY[col] or 0
-			section.x = 10 + (col - 1) * 370
-			section.y = colY[col] + 18
-			colY[col] = colY[col] + height + 18
-			maxColY = m_max(maxColY, colY[col])
+			section.x = inset + (column - 1) * (sectionWidth + gap)
+			section.y = bottoms[column] + 18
+			bottoms[column] = section.y + section.height
+			maxColY = m_max(maxColY, bottoms[column])
 		end
 	end
 

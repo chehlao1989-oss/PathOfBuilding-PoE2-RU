@@ -1,0 +1,1728 @@
+Options	Настройки
+About	Справка
+Language:	Язык:
+Choose the interface language.	Выберите язык интерфейса.
+Application options	Настройки приложения
+Build-related options	Настройки билдов
+Build options	Настройки билда
+New	Новый
+Open	Открыть
+Save	Сохранить
+Save As	Сохранить как
+Save as	Сохранить как
+Cancel	Отмена
+Close	Закрыть
+Done	Готово
+Dismiss	Закрыть
+OK	ОК
+Ok	ОК
+Yes	Да
+No	Нет
+Error	Ошибка
+Warning	Предупреждение
+Confirm	Подтверждение
+Continue	Продолжить
+Back	Назад
+<< Back	<< Назад
+Help	Справка
+Version History	История версий
+Changelog	История изменений
+Version	Версия
+Current build:	Текущий билд:
+Unnamed build	Безымянный билд
+New Build	Новый билд
+New build	Новый билд
+New Folder	Новая папка
+New folder	Новая папка
+Create	Создать
+Create a new build	Создать билд
+Create a new folder	Создать папку
+Import Build	Импорт билда
+Import/Export Build	Импорт / экспорт
+Import/Export	Импорт / экспорт
+Tree	Древо
+Skills	Умения
+Items	Предметы
+Calcs	Расчёты
+Configuration	Конфигурация
+Config	Условия
+Notes	Заметки
+Party	Группа
+Compare	Сравнить
+Import	Импорт
+Export	Экспорт
+Export Build	Экспорт билда
+Import character	Импорт персонажа
+Character Import	Импорт персонажа
+Character import	Импорт персонажа
+Build Sharing	Обмен билдами
+Build sharing	Обмен билдами
+Build code	Код билда
+Build Code	Код билда
+Generate	Создать код
+Generate Code	Создать код
+Copy	Копировать
+Copy Code	Копировать код
+Copied	Скопировано
+Paste	Вставить
+Import from Website	Импорт с сайта
+Import from Character	Импорт персонажа
+Import from clipboard	Импорт из буфера
+Build code or build URL:	Код или ссылка на билд:
+Enter a build code or a URL:	Введите код или ссылку на билд:
+To share this build, generate a code and copy it.	Чтобы поделиться билдом, создайте и скопируйте его код.
+Open in Browser	Открыть в браузере
+Open in browser	Открыть в браузере
+Account name:	Имя аккаунта:
+Account Name:	Имя аккаунта:
+Account:	Аккаунт:
+Realm:	Сервер:
+League:	Лига:
+Character:	Персонаж:
+Platform:	Платформа:
+Login	Войти
+Logout	Выйти
+Log In	Войти
+Log Out	Выйти
+Authorize	Авторизоваться
+Authorize with Path of Exile	Авторизация через Path of Exile
+Start	Начать
+Fetch	Загрузить
+Refresh	Обновить
+Refresh List	Обновить список
+Retry	Повторить
+Check for Update	Проверить обновления
+Update Ready	Обновление готово
+Update Available	Доступно обновление
+Connection Protocol:	Протокол подключения:
+Proxy server:	Прокси-сервер:
+UI scaling override:	Масштаб интерфейса:
+Use system default	Как в Windows
+Build save path:	Папка для билдов:
+Change Settings Path	Сменить папку настроек
+Node Power colours:	Цвета оценки пассивок:
+Show thousands separators:	Разделять разряды:
+Thousands separator:	Разделитель разрядов:
+Decimal separator:	Десятичный разделитель:
+Show build name in window title:	Имя билда в заголовке:
+Default gem quality:	Качество новых камней:
+Default item quality:	Качество предметов по умолчанию:
+Default character level:	Уровень героя по умолчанию:
+Default item affix quality:	Ролл свойств по умолчанию:
+Show build warnings:	Показывать предупреждения:
+Show tooltips only for affected slots:	Подсказки для выбранного слота:
+Copy augments onto display item:	Учитывать улучшения при сравнении:
+Show tooltip for unsupported mods :	Отмечать неизвестные свойства:
+Invert slider scroll direction:	Обратить прокрутку ползунков:
+Disable Dev AutoSave:	Отключить автосохранение в dev:
+Use dark mode:	Тёмная тема:
+Show flavour text:	Показывать художественный текст:
+Show animations:	Показывать анимацию:
+Disable scroll control interaction:	Отключить выбор прокруткой:
+Show all item affixes:	Показывать все свойства:
+Default	По умолчанию
+Auto	Авто
+None	Нет
+Any	Любой
+All	Все
+Always	Всегда
+Never	Никогда
+On	Вкл.
+Off	Выкл.
+Unknown	Неизвестно
+Enabled	Включено
+Disabled	Отключено
+Loading...	Загрузка…
+Loading builds...	Загрузка билдов…
+Searching...	Поиск…
+Checking...	Проверка…
+Importing...	Импорт…
+Calculating...	Расчёт…
+No matches	Совпадений нет
+<No matches>	<Совпадений нет>
+No results	Ничего не найдено
+No results found	Ничего не найдено
+No items found	Предметы не найдены
+Search	Поиск
+Search:	Поиск:
+Search...	Поиск…
+Search builds	Искать билды
+Search builds...	Искать билды…
+Search by name	Поиск по названию
+Sort by:	Сортировка:
+Sort by	Сортировка
+Sort	Сортировка
+Name	Название
+Name:	Название:
+Build Name	Название билда
+Build name:	Название билда:
+Folder name:	Имя папки:
+Date	Дата
+Last Modified	Последнее изменение
+Last modified	Изменён
+Class	Класс
+Class:	Класс:
+Ascendancy	Восхождение
+Ascendancy:	Восхождение:
+Level	Уровень
+Level:	Уровень:
+Character Level	Уровень героя
+Character level:	Уровень героя:
+Auto Level	Автоуровень
+Auto level	Автоуровень
+Manual Level	Задать уровень
+Main Skill	Главное умение
+Main Skill:	Главное умение:
+Main skill:	Главное умение:
+Skill	Умение
+Skill:	Умение:
+Skill Group	Группа умений
+Skill group	Группа умений
+Skill Set	Набор умений
+Skill Set:	Набор умений:
+Skill set:	Набор умений:
+Gem name:	Название камня:
+Gem	Камень
+Gems	Камни
+Support Gem	Камень поддержки
+Quality	Качество
+Quality:	Качество:
+Socket Group	Группа гнёзд
+Socket Groups	Группы гнёзд
+Socketed Gems	Камни в гнёздах
+Default quality	Качество по умолчанию
+Set Active	Сделать активным
+Active	Активно
+Show in Calcs	Показать в расчётах
+Include in Full DPS	Учесть в общем УВС
+Count	Кол-во
+Count:	Кол-во:
+Copies	Копии
+Trigger	Срабатывание
+Label	Подпись
+Label:	Подпись:
+Enable	Включить
+Disable	Отключить
+Add	Добавить
+Add New	Добавить
+New Set	Новый набор
+Manage	Управление
+Edit	Изменить
+Edit...	Изменить…
+Rename	Переименовать
+Delete	Удалить
+Remove	Убрать
+Reset	Сбросить
+Duplicate	Дублировать
+Move Up	Выше
+Move Down	Ниже
+Cut	Вырезать
+Clear	Очистить
+Undo	Отменить
+Redo	Повторить
+Apply	Применить
+Assign	Назначить
+Enable All	Включить всё
+Disable All	Отключить всё
+Copy to Clipboard	Копировать
+Copy to clipboard	Копировать
+Paste from Clipboard	Вставить из буфера
+Reset Tree	Сбросить древо
+Reset tree	Сбросить древо
+Tree Version	Версия древа
+Tree version:	Версия древа:
+Import Tree	Импорт древа
+Export Tree	Экспорт древа
+Compare Tree	Сравнить древо
+Manage Trees	Управление древами
+Tree Search	Поиск по древу
+Search Tree:	Поиск по древу:
+Search tree...	Поиск по древу…
+Passive Skill Tree	Древо пассивных умений
+Passive skill tree	Древо пассивных умений
+Passive Points	Очки пассивных умений
+Passive Skill Points	Очки пассивных умений
+Allocated	Распределено
+Allocated Passives	Выбранные пассивки
+Ascendancy Points	Очки Восхождения
+Show Node Power	Оценка пассивок
+Node Power	Оценка пассивок
+Allocate	Выбрать
+Unallocate	Сбросить
+Skill Tree	Древо умений
+Tree URL:	Ссылка на древо:
+Weapon Set 1	Набор оружия I
+Weapon Set 2	Набор оружия II
+Weapon set 1	Набор оружия I
+Weapon set 2	Набор оружия II
+Weapon Set	Набор оружия
+Weapon Swap	Смена оружия
+Weapon set:	Набор оружия:
+Shared	Общее
+Shared Items	Общие предметы
+Item Set	Набор предметов
+Item Set:	Набор предметов:
+Item set:	Набор предметов:
+Item sets	Наборы предметов
+Manage Item Sets	Управление наборами
+Create Custom	Свой предмет
+Create...	Создать…
+Craft item	Создать предмет
+Craft Item	Создать предмет
+Add to Build	Добавить в билд
+Add to build	Добавить в билд
+Add Item	Добавить предмет
+Add Item...	Добавить предмет…
+Trade	Торговля
+Trade for Items	Поиск на рынке
+Search Trade	Поиск на рынке
+Trade Search	Поиск на рынке
+Buy Similar	Найти похожий
+Buy similar	Найти похожий
+Trade League:	Торговая лига:
+Item Slot:	Гнездо предмета:
+Slot	Ячейка
+Slot:	Ячейка:
+Price	Цена
+Price:	Цена:
+Search Items	Искать предметы
+Item filter:	Фильтр предметов:
+Type:	Тип:
+Base Type:	Базовый тип:
+Rarity:	Редкость:
+Normal	Обычный
+Magic	Волшебный
+Rare	Редкий
+Unique	Уникальный
+Uniques	Уникальные
+Rare Templates	Шаблоны редких
+Item Level:	Уровень предмета:
+Item level:	Уровень предмета:
+Item List	Предметы билда
+Item list	Предметы билда
+Unique Items	Уникальные предметы
+Rare Items	Редкие предметы
+Equipped Items	Экипировка
+Equipment	Экипировка
+Weapon	Оружие
+Helmet	Шлем
+Body Armour	Нательный доспех
+Gloves	Перчатки
+Boots	Сапоги
+Amulet	Амулет
+Ring	Кольцо
+Belt	Ремень
+Flask	Флакон
+Charm	Оберег
+Jewel	Самоцвет
+Jewels	Самоцветы
+Jewel Socket	Гнездо для самоцвета
+Helmet:	Шлем:
+Body Armour:	Нательный доспех:
+Gloves:	Перчатки:
+Boots:	Сапоги:
+Amulet:	Амулет:
+Belt:	Ремень:
+Life Flask	Флакон здоровья
+Mana Flask	Флакон маны
+Skill Selection	Выбор умения
+Calcs Breakdown	Детализация
+Offence	Атака
+Defence	Защита
+Other	Прочее
+Damage	Урон
+Speed	Скорость
+Damage per Second	Урон в секунду
+DPS	УВС
+Total DPS	Общий УВС
+Full DPS	Суммарный УВС
+Combined DPS	Итоговый УВС
+Average Damage	Средний урон
+Average Hit	Средний удар
+Hit Damage	Урон от удара
+Attack Rate	Частота атак
+Cast Rate	Частота сотворения
+Hit Rate	Частота попаданий
+Chance to Hit	Шанс попадания
+Critical Strike Chance	Шанс крит. попадания
+Critical Hit Chance	Шанс крит. попадания
+Critical Damage Bonus	Бонус крит. урона
+Critical Strike Multiplier	Множитель крит. удара
+Accuracy	Меткость
+Accuracy Rating	Меткость
+Effective Hit Pool	Эфф. запас здоровья
+Effective Health Pool	Эфф. запас здоровья
+Max Hit Taken	Макс. выдерживаемый удар
+Life	Здоровье
+Maximum Life	Максимум здоровья
+Mana	Мана
+Maximum Mana	Максимум маны
+Energy Shield	Энергетический щит
+Spirit	Дух
+Armour	Броня
+Evasion	Уклонение
+Evasion Rating	Уклонение
+Life Recovery	Восстановление здоровья
+Life Regen	Регенерация здоровья
+Life Regeneration	Регенерация здоровья
+Mana Regen	Регенерация маны
+Mana Regeneration	Регенерация маны
+Unreserved Mana	Свободная мана
+Unreserved Life	Свободное здоровье
+Unreserved Spirit	Свободный дух
+Strength	Сила
+Dexterity	Ловкость
+Intelligence	Интеллект
+Attributes	Характеристики
+Resistances	Сопротивления
+Fire Resistance	Сопротивление огню
+Cold Resistance	Сопротивление холоду
+Lightning Resistance	Сопротивление молнии
+Chaos Resistance	Сопротивление хаосу
+Fire	Огонь
+Cold	Холод
+Lightning	Молния
+Chaos	Хаос
+Physical	Физический
+Elemental	Стихийный
+Poison	Яд
+Bleeding	Кровотечение
+Ignite	Поджог
+Shock	Шок
+Chill	Охлаждение
+Freeze	Заморозка
+Enemy	Противник
+Enemy level:	Уровень противника:
+Enemy Level	Уровень противника
+Enemy Stats	Параметры противника
+Boss	Босс
+Combat	Бой
+Options for combat	Условия боя
+When in Combat	В бою
+For Effective DPS	Для эффективного УВС
+Conditions	Условия
+General	Общее
+Buffs	Усиления
+Debuffs	Ослабления
+Charges	Заряды
+Power Charges	Заряды энергии
+Frenzy Charges	Заряды ярости
+Endurance Charges	Заряды выносливости
+Custom Modifiers	Свои модификаторы
+Custom modifiers	Свои модификаторы
+Custom Mods	Свои модификаторы
+Custom	Свои
+Full Life	Полное здоровье
+Low Life	Мало здоровья
+Full Mana	Полная мана
+Low Mana	Мало маны
+Target	Цель
+Self	Ваш персонаж
+Minion	Приспешник
+Minions	Приспешники
+Totem	Тотем
+Totems	Тотемы
+Show more	Показать ещё
+Show less	Свернуть
+Expand	Развернуть
+Collapse	Свернуть
+Summary	Сводка
+Character Stats	Параметры персонажа
+Warnings	Предупреждения
+You do not meet the %s requirement of %s	Недостаточно %s для «%s».
+You do not meet the %s requirement of your support gems.	Недостаточно %s для суммарных требований камней поддержки.
+You do not have enough %s to use: %s	Недостаточно %s для использования умений «%s».
+You have too many passive points allocated	Распределено слишком много очков пассивных умений.
+You have too many ascendancy points allocated	Распределено слишком много очков Восхождения.
+You have too many secondary ascendancy points allocated	Распределено слишком много очков второго Восхождения.
+You have allocated %s too many weapon set %s passives	Лишних очков пассивных умений — %s (набор оружия %s).
+You have %s Weapon set 2 passives available	Доступно очков пассивных умений для набора оружия II — %s.
+You are exceeding jewel limit with the jewel %s	Превышен лимит самоцветов «%s».
+You have too many gems in your %s socket group	Слишком много камней в группе умений «%s».
+You have too many %s lineage support gems allocated. Max allowed is %s.	Превышен лимит династических камней поддержки «%s». Допустимо — %s.
+Locations: %s	Группы умений — %s.
+You have too many gem groups allocated. Max allowed is %s. You have %s non-item/non-granted gem groups allocated.	Слишком много групп умений. Допустимо — %s. Выбрано групп без умений от предметов и других источников — %s.
+Bleed DPS exceeds in game limit	УВС кровотечения превышает игровой предел.
+Corrupting Blood DPS exceeds in game limit	УВС осквернённой крови превышает игровой предел.
+Ignite DPS exceeds in game limit	УВС поджога превышает игровой предел.
+Burning Ground DPS exceeds in game limit	УВС горящей земли превышает игровой предел.
+Mirage Burning Ground DPS exceeds in game limit	УВС горящей земли от миража превышает игровой предел.
+Poison DPS exceeds in game limit	УВС яда превышает игровой предел.
+Caustic Ground DPS exceeds in game limit	УВС едкой земли превышает игровой предел.
+Mirage Caustic Ground DPS exceeds in game limit	УВС едкой земли от миража превышает игровой предел.
+DoT DPS exceeds in game limit	Периодический УВС превышает игровой предел.
+Full Dot DPS exceeds in game limit	Суммарный периодический УВС превышает игровой предел.
+Minion Bleed DPS exceeds in game limit	УВС кровотечения приспешника превышает игровой предел.
+Minion Ignite DPS exceeds in game limit	УВС поджога приспешника превышает игровой предел.
+Minion Poison dps exceeds in game limit	УВС яда приспешника превышает игровой предел.
+Minion DoT DPS exceeds in game limit	Периодический УВС приспешника превышает игровой предел.
+You do not have enough Accuracy for Precise Technique	Недостаточно меткости для «Precise Technique».
+Your unreserved Life is below 1	Свободный запас здоровья меньше 1.
+Your unreserved Mana is negative	Удержание маны превышает её запас.
+Your unreserved Spirit is negative	Удержание духа превышает его запас.
+You cannot pay Life costs of skills while You have Energy Shield and have Eternal Life allocated	При выбранной «Вечной жизни» и наличии энергетического щита нельзя оплачивать умения здоровьем.
+You may have too much cast speed or too little cooldown reduction to effectively use Vixen's Curse replacement	Для эффективной смены проклятий с Vixen's скорость сотворения чар может быть слишком высокой, а ускорение перезарядки — слишком низким.
+Vixen's calculation mode for Doom Blast is selected but you do not have Vixen's Entrapment Embroidered Gloves equipped	Выбран режим расчёта Doom Blast с Vixen's, но перчатки Vixen's Entrapment не надеты.
+Nothing to show	Нет данных
+Export failed	Ошибка экспорта
+Import failed	Ошибка импорта
+Invalid build code	Некорректный код билда
+Invalid URL	Некорректная ссылка
+Build is already open	Билд уже открыт
+Change Theme	Сменить тему
+Changes which protocol is used when downloading updates and importing builds.	Выбирает протокол загрузки обновлений и импорта билдов.
+Overrides Windows DPI scaling inside Path of Building.	Задаёт масштаб окон Path of Building.
+Choose a percentage between 100% and 250% or revert to the system default.	Выберите значение от 100 до 250% или используйте масштаб Windows.
+Shows comparisons in tooltips only for the slot you are currently placing the item in, instead of all slots.	В подсказке сравнивается экипировка из выбранной ячейки.
+Apply augments and anoints from current gear when comparing new gear, given they are possible to add to the new item.	При сравнении учитывает улучшения текущей вещи, если их можно применить к новой.
+Requires PoB to restart for it to take effect	Изменение вступит в силу после перезапуска PoB.
+Default scroll direction is:	Направление прокрутки по умолчанию:
+Scroll Up = Move right	Вверх — вправо
+Scroll Down = Move left	Вниз — влево
+Set the default level of your builds. If this is higher than 1, manual level mode will be enabled by default in new builds.	Уровень героя для новых билдов. При значении выше 1 уровень задаётся вручную.
+Version:	Версия:
+Manual	Вручную
+<No skills added yet>	<Нет умений>
+Hex colour for positive values:	Цвет повышения (HEX):
+Hex colour for negative values:	Цвет понижения (HEX):
+Hex colour for highlight nodes:	Цвет выделения узлов (HEX):
+Opt-in to weekly beta test builds:	Еженедельные бета-сборки:
+Show search circles at viewport edge	Отмечать результаты за краем окна
+Styled Tooltips with Flavour Text:	Подсказки с художественным текстом:
+Show Animations:	Показывать анимацию:
+Show all item affixes sliders:	Ползунки всех свойств:
+Disable control scroll interaction:	Отключить выбор прокруткой:
+Red & Blue	Красный и синий
+Rainbow	Радуга
+Red & Green	Красный и зелёный
+Crit Chance	Шанс крит. попадания
+Effective Crit Chance	Эфф. шанс крита
+Crit Multiplier	Множитель крит. урона
+Hit Chance	Шанс попадания
+Hit DPS	УВС от ударов
+Phys Max Hit	Макс. физ. удар
+Elemental Max Hit	Макс. стихийный удар
+Chaos Max Hit	Макс. удар хаосом
+Total Life	Всего здоровья
+%Inc Life	Повышение здоровья
+Total Mana	Всего маны
+%Inc Mana	Повышение маны
+Total Spirit	Всего духа
+Total Energy Shield	Всего энерг. щита
+Phys. Damage Reduction	Снижение физ. урона
+Movement Speed Modifier	Скорость движения
+Presence Radius	Радиус присутствия
+Compare:	Сравнить:
+Show Node Power:	Оценка пассивок:
+Manage Passive Trees	Управление древами
+Passive tree link:	Ссылка на древо:
+Enter passive tree link:	Введите ссылку на древо:
+Enter name for this passive tree:	Назовите древо:
+Choose Attribute	Выбор характеристики
+Convert	Преобразовать
+Copy + Convert	Копия и перенос
+Tree Converted	Древо перенесено
+Unknown Passive Tree Version	Неизвестная версия древа
+The build you are trying to load uses an unrecognised version of the passive skill tree.	В билде используется неизвестная версия древа пассивных умений.
+You may need to update the program before loading this build.	Для открытия этого билда может потребоваться обновить программу.
+This is an older tree version, which may not be fully compatible with the current game version.	Устаревшая версия древа. Возможны отличия от текущей версии игры.
+Warning: resetting your passive tree cannot be undone.	Сброс древа пассивных умений нельзя отменить.
+Limit of Node distance to search (lower = faster)	Дальность поиска в узлах. Меньшее значение ускоряет поиск.
+Uses Lua pattern matching for complex searches.	Для сложного поиска используются шаблоны Lua.
+Prefix your search with "oil:" to search by anoint recipe.	Введите «эмоции:» или «oil:» перед названиями эмоций, чтобы найти пассивки по рецепту.
+To search for multiple terms: (increased.fire.damage|increased.area.of.effect|etc)	Для нескольких вариантов используйте шаблон, например (огню|холоду).
+Game Version	Версия игры
+This build has unsaved changes.	В билде есть несохранённые изменения.
+Do you want to save them before exiting?	Сохранить изменения перед выходом?
+Do you want to save them now?	Сохранить изменения?
+Do you want to save them before updating?	Сохранить изменения перед обновлением?
+Don't Save	Не сохранять
+Save Changes	Сохранение изменений
+Enter new build name:	Введите название билда:
+Folder:	Папка:
+New Folder...	Новая папка…
+Couldn't save the build file:	Не удалось сохранить файл билда:
+Make sure the save folder exists and is writable.	Проверьте, что папка существует и доступна для записи.
+Builds	Билды
+Path of Building Community Fork	PoB Community Fork
+Name (A–Z)	По имени (А–Я)
+Search Results:	Результаты поиска:
+Copy Trade URL	Скопировать ссылку рынка
+Staging	Этапы
+Stages:	Этапы:
+Active Mines:	Активные мины:
+Manage Spectres...	Управление призраками…
+Manage Beasts...	Управление зверями…
+Spectre Library	Библиотека призраков
+Beast Library	Библиотека зверей
+Minion Stats	Параметры приспешника
+Gem Level:	Уровень камня:
+Similar Builds	Похожие билды
+Manage Loadouts	Управление комплектами
+Logout from Path of Exile API	Выйти из аккаунта PoE
+To start importing a character, select your character's realm:	Чтобы импортировать персонажа, выберите его сервер:
+Choose character to import data from:	Выберите персонажа для импорта:
+Import:	Импорт:
+Passive Tree and Jewels	Древо и самоцветы
+Delete jewels:	Удалить самоцветы:
+Delete all existing jewels when importing.	При импорте удаляются уже добавленные самоцветы.
+Items and Skills	Предметы и умения
+Delete skills:	Удалить умения:
+Delete all existing skills when importing.	При импорте удаляются уже добавленные умения.
+Delete equipment:	Удалить экипировку:
+Delete all equipped items when importing.	При импорте удаляется уже надетая экипировка.
+Ignore weapon swap:	Пропустить второй набор оружия:
+Ignore items and skills in weapon swap.	Пропускает предметы и умения второго набора оружия.
+Generate a code to share this build with other Path of Building users:	Создайте код, чтобы поделиться билдом:
+Export Support	Экспорт поддержки
+Code	Код
+Code:	Код:
+Share	Поделиться
+Error creating link:	Не удалось создать ссылку:
+Note: this code can be very long; you can use 'Share' to shrink it.	Код может быть длинным. Кнопка «Поделиться» создаст ссылку.
+To import a build, enter URL or code here:	Чтобы импортировать билд, введите ссылку или код:
+Import Error	Ошибка импорта
+Failed to import build for comparison.	Не удалось импортировать билд для сравнения.
+Import Build Code	Импорт кода билда
+Import Code	Импорт кода
+Import into current build	В текущий билд
+Import into new build	В новый билд
+Overwrite current build	Заменить текущий билд
+Base	Базовый
+Intelligence Required:	Требуемый интеллект:
+Skill Movement Speed:	Скорость движения с умением:
+Mana Cost:	Расход маны:
+Mana Cost per second:	Расход маны в секунду:
+Active Skill:	Активное умение:
+Attack/Cast Rate:	Частота атак или сотворения:
+Calculation Mode:	Режим расчёта:
+Cast time:	Время сотворения:
+Casts per second:	Сотворений в секунду:
+Combat Buffs:	Усиления в бою:
+Aura and Buff Skills:	Ауры и усиливающие умения:
+Curses and Debuffs:	Проклятия и ослабления:
+Crits:	Критические попадания:
+Inc. Crit Chance:	Повышение шанса крит. попадания:
+Crit Effect Mod:	Эффект крит. попаданий:
+Block Chance:	Шанс блока:
+Block Stun Duration:	Длительность оглушения при блоке:
+Block:	Блок:
+Dodge Chance:	Шанс уворота:
+Dodge:	Уворот:
+Evade Chance:	Шанс уклонения:
+Deflection:	Отклонение урона:
+Deflection Rating:	Рейтинг откл. урона:
+Deflect Chance:	Шанс отклонить урон:
+Deflect Effect:	Эффект отклонения урона:
+Eva. as Deflection:	Отклонение урона от уклонения:
+Arm. as Deflection:	Отклонение урона от брони:
+Damage Avoidance:	Избежание урона:
+Damage Taken:	Получаемый урон:
+Damaging Hits:	Наносящие урон удары:
+DoT taken:	Получаемый постепенный урон:
+Dots and Build Degens:	Постепенный урон и потеря ресурсов:
+Duration Mod:	Модификатор длительности:
+Effective "Health" Pool:	Эфф. запас здоровья:
+Effective DoT Pool:	Запас против постепенного урона:
+Effective DPS	Эффективный УВС
+Effective DPS Mod:	Модификатор эффективного УВС:
+Enemy Ail. Thresh.:	Порог состояний противника:
+Enemy Damage:	Урон противника:
+Enemy Degens:	Постепенный урон противника:
+Enemy miss chance:	Шанс промаха противника:
+Exposure Effect:	Эффект восприимчивости:
+Fire Resist:	Сопр. огню:
+Cold Resist:	Сопр. холоду:
+Lightning Resist:	Сопр. молнии:
+Chaos Resist:	Сопр. хаосу:
+Resists:	Сопротивления:
+Phys. Dmg. Reduct:	Снижение физ. урона:
+Hit taken Mult.:	Множитель получаемого удара:
+Hit taken:	Получаемый удар:
+Hits before death:	Ударов до гибели:
+Mitigated hits:	Удары после снижения урона:
+Maximum Hit Taken:	Макс. выдерживаемый удар:
+Time before death:	Время до гибели:
+Flasks:	Флаконы:
+Flask 1:	Флакон I:
+Flask 2:	Флакон II:
+Utility Flasks:	Вспомогательные флаконы:
+Life Flasks:	Флаконы здоровья:
+Mana Flasks:	Флаконы маны:
+Charms:	Обереги:
+Charm 1:	Оберег I:
+Charm 2:	Оберег II:
+Charm 3:	Оберег III:
+Chance to Blind:	Шанс ослепить:
+Chance to Daze:	Шанс ошеломить:
+Chance to Shock:	Шанс наложить шок:
+Shock Duration:	Длительность шока:
+Shock Effect Mod:	Модификатор эффекта шока:
+Maximum Shock:	Максимальный шок:
+Non-Damaging Ailments:	Ненаносящие урон состояния:
+Other Ailment Defences:	Прочая защита от состояний:
+Other Avoidance:	Другие способы избежать урона:
+Other Defences:	Прочая защита:
+Other Effects:	Прочие эффекты:
+Curse Limit:	Максимум проклятий:
+Curse Effect on You:	Эффект проклятий на вас:
+Wither Effect:	Эффект истощения:
+Charge on crit %:	Шанс заряда при крит. попадании:
+Charges/s:	Зарядов в секунду:
+Inc. Charges Gain:	Повышение получения зарядов:
+Inc. Charges Used:	Повышение расхода зарядов:
+% to not Consume:	Шанс не потратить:
+Added Max:	Добавленный максимум:
+Added Min:	Добавленный минимум:
+All Types:	Все типы:
+Base from Armours:	От частей доспехов:
+Base from Gear:	От экипировки:
+Global Base:	Общее базовое значение:
+Total Base:	Базовый итог:
+Total Increased:	Общее повышение:
+Total More:	Общий множитель:
+Total Pool:	Общий запас:
+Total:	Всего:
+Recovery:	Восстановление:
+Reserved:	Зарезервировано:
+Unreserved:	Свободно:
+Recharge Delay:	Задержка перезарядки:
+Recharge Rate:	Скорость перезарядки:
+Recoup and Hit Taken Over Time:	Возмещение и урон от удара со временем:
+Unmitigated %:	Доля до снижения:
+Taken As:	Получается как:
+Taken From Block:	Получается при блоке:
+Skill Average Hit:	Средний удар умения:
+Skill DPS:	УВС умения:
+Skill Hit Damage:	Урон от удара умением:
+Skill Duration:	Длительность умения:
+Skill type-specific Stats:	Параметры типа умения:
+Stat Set:	Набор параметров:
+View Skill Details:	Подробности умения:
+Spell Ddg. Chance:	Шанс увернуться от чар:
+Stun Buildup:	Накопление оглушения:
+Stun Chance:	Шанс оглушения:
+Stun Duration:	Длительность оглушения:
+Stun Threshold:	Порог оглушения:
+Surrounded Radius:	Радиус окружения:
+Rage:	Свирепость:
+Movement Speed:	Скорость передвижения:
+MS While Casting:	Движение при сотворении:
+Weap. Swap Speed:	Скорость смены оружия:
+Proj. Speed Mod:	Модификатор скорости снаряда:
+Projectile Count:	Количество снарядов:
+Inc. Cast Speed:	Повышение скорости сотворения:
+More Cast Speed:	Множитель скорости сотворения:
+Inc. Duration:	Повышение длительности:
+Inc. Effect:	Повышение эффекта:
+Inc. from Tree:	Повышение от древа:
+Inc. Item Quantity:	Повышение количества предметов:
+Inc. Item Rarity:	Повышение редкости предметов:
+Inc. Quiver Effect:	Повышение эффекта колчана:
+Light Radius Mod:	Модификатор радиуса обзора:
+Dex. Required:	Требуемая ловкость:
+Int. Required:	Требуемый интеллект:
+Str. Required:	Требуемая сила:
+Gem Req Mod:	Модификатор требований камней:
+Item Req Mod:	Модификатор требований предметов:
+Weapon Req Mod:	Модификатор требований оружия:
+Mana per second:	Мана в секунду:
+Manage...	Управление…
+Import...	Импорт…
+Compare with:	Сравнить с:
+No comparison build loaded.	Билд для сравнения не загружен.
+Click Import... above to import a build to compare against.	Нажмите «Импорт…», чтобы загрузить билд для сравнения.
+Re-import Current	Заново импортировать текущий
+Character import status:	Статус импорта персонажа:
+Not authenticated	Вход не выполнен
+Character import status: Not authenticated	Статус импорта персонажа: вход не выполнен
+Import to this build	В этот билд
+Import to new build	В новый билд
+Config set:	Условия:
+Quest Rewards	Награды за задания
+Nothing	Нет
+When In Combat	В бою
+Average	Среднее
+Show All Configurations	Показать все условия
+Boosted calc mode:	Учёт усиленных эффектов:
+Ailment calculation mode:	Режим расчёта состояний:
+Cooldown calculation mode:	Режим расчёта перезарядки:
+Boss Skill Preset	Набор умений босса
+Distance to enemy:	Расстояние до противника:
+Delirious Effect:	Эффект Делириума:
+EHP calc unlucky:	Невезение в расчёте запаса здоровья:
+Elemental Resistance penalty:	Штраф к сопротивлениям стихиям:
+Endgame (-60%)	Эндгейм (-60%)
+Enemy attack / cast time in ms:	Время атаки или сотворения (мс):
+Enemy Base Armour:	Базовая броня противника:
+Enemy Base Evasion:	Базовое уклонение противника:
+Enemy Block Chance:	Шанс блока противника:
+Enemy Chaos Resistance:	Сопротивление противника хаосу:
+Enemy Cold Resistance:	Сопротивление противника холоду:
+Enemy Fire Resistance:	Сопротивление противника огню:
+Enemy Lightning Resistance:	Сопротивление противника молнии:
+Enemy critical strike chance:	Шанс крит. попадания противника:
+Enemy critical strike multiplier:	Множитель крит. попадания противника:
+Enemy Damage Type:	Тип урона противника:
+Enemy Max Resistance is always 75%	Макс. сопр. врага всегда 75%
+Enemy Phys. Damage Reduction:	Снижение физ. урона у противника:
+Enemy Skill Chaos Damage:	Урон хаосом умения противника:
+Enemy Skill Cold Damage:	Урон холодом умения противника:
+Enemy Skill Cold Pen:	Пробивание сопротивления холоду:
+Enemy Skill Fire Damage:	Урон огнём умения противника:
+Enemy Skill Fire Pen:	Пробивание сопротивления огню:
+Enemy Skill Lightning Damage:	Урон молнией умения противника:
+Enemy Skill Lightning Pen:	Пробивание сопротивления молнии:
+Enemy Skill Physical Damage:	Физ. урон умения противника:
+Enemy Skill Physical Overwhelm:	Преодоление снижения физ. урона:
+Guardian/Pinnacle Boss	Хран./верх. босс
+Are you on Consecrated Ground?	Вы на освящённой земле?
+Are you Sprinting?	Вы бежите?
+Currently Shapeshifted?	Вы в облике зверя?
+Do you have Adrenaline?	На вас действует Адреналин?
+Do you have Arcane Surge?	На вас действует Колдовской выброс?
+Do you have Chaotic Might?	На вас действует Мощь хаоса?
+Do you have Onslaught?	На вас действует Боевой раж?
+Do you have Unholy Might?	На вас действует Нечестивая мощь?
+Do you use Endurance Charges?	Вы используете заряды выносливости?
+Do you use Frenzy Charges?	Вы используете заряды ярости?
+Do you use Power Charges?	Вы используете заряды энергии?
+Have you been Stunned Recently?	Вас недавно оглушали?
+Ignore Jewel Limits	Игнорировать предел самоцветов
+Infusion consumed recently?	Вы недавно поглотили насыщение?
+Is the enemy a Boss?	Противник — босс?
+Is the enemy Blinded?	Противник ослеплён?
+Is the enemy Burning?	Противник горит?
+Is the enemy Chilled?	Противник охлаждён?
+Is the enemy covered in Ash?	Противник покрыт пеплом?
+Is the enemy covered in Frost?	Противник покрыт инеем?
+Is the enemy Crushed?	Противник раздавлен?
+Is the enemy Dazed?	Противник ошеломлён?
+Is the enemy Frozen?	Противник заморожен?
+Is the enemy Ignited?	Противник подожжён?
+Is the enemy Intimidated?	Противник запуган?
+Is the enemy Maimed?	Противник искалечен?
+Is the enemy Pinned?	Противник пригвождён?
+Is the enemy Shocked?	На противнике шок?
+Is the enemy Unnerved?	Противник обескуражен?
+All items:	Все предметы:
+Equipped items:	Экипировка:
+Shared items:	Общие предметы:
+Passive tree:	Древо пассивок:
+Any league	Любая лига
+Any requirements	Любые требования
+Any slot	Любая ячейка
+Any type	Любой тип
+Anywhere	Везде
+Obtainable	Доступные
+Craft item...	Создать предмет…
+Create custom...	Свой предмет…
+Delete All	Удалить всё
+Delete Unused	Убрать лишние
+Sort by Name	По названию
+Trade for these items	Найти эти предметы на рынке
+Weapon 1:	Оружие I:
+Weapon 2:	Оружие II:
+Ring 1:	Кольцо I:
+Ring 2:	Кольцо II:
+Arm 1:	Рука I:
+Arm 2:	Рука II:
+Leg 1:	Нога I:
+Leg 2:	Нога II:
+Show Color Codes	Показать коды цветов
+Below are some common color codes PoB uses:	Основные коды цветов PoB:
+This field also supports different colors.  Using the caret symbol (^) followed by a Hex code or a number (0-9) will set the color.	Для цвета текста используйте знак ^ с HEX-кодом или цифрой от 0 до 9.
+You can use Ctrl +/- (or Ctrl+Scroll) to zoom in and out and Ctrl+0 to reset.	Меняйте масштаб клавишами Ctrl +/− или прокруткой с Ctrl. Ctrl+0 вернёт исходный масштаб.
+Append	Добавить
+Auras	Ауры
+Curses	Проклятия
+Enemy Conditions	Состояния противника
+Enemy Modifiers	Модификаторы противника
+Link Skills	Умения связи
+Warcry Skills	Боевые кличи
+Party Member Stats	Параметры членов группы
+Disable Party Effects	Отключить эффекты группы
+Rebuild All	Пересчитать всё
+Show Advanced Info	Подробная информация
+Enter a build code/URL below:	Введите код или ссылку на билд:
+All of these effects can be found in the Calcs tab	Эффекты указаны на вкладке «Расчёты».
+To import a build it must be exported with "Export support" enabled in the import/export tab	Импортируемый билд должен быть сохранён с флажком «Экспорт поддержки».
+Auras with the highest effect will take priority, your curses will take priority over a support's	Учитываются сильнейшие ауры. Ваши проклятия имеют приоритет.
+Corrupt:	Осквернение:
+Default gem level:	Уровень новых камней:
+Gem Options	Настройки камней
+Normal Maximum	Обычный максимум
+Not Corrupted	Без осквернения
+Show legacy gems:	Устаревшие камни:
+Show support gems:	Камни поддержки:
+Socketed in:	Вставлено в:
+Sort gems by DPS:	Сортировать камни по УВС:
+Usage Tips:	Подсказки:
+- Ctrl + Click to enable/disable socket groups.	- Ctrl+щелчок включает или отключает группу.
+- Ctrl + Right click to include/exclude in FullDPS calculations.	- Ctrl+ПКМ добавляет группу в общий УВС или убирает её.
+- Right click to set as the Main skill group.	- Правый щелчок выбирает главную группу.
+- You can copy/paste socket groups using Ctrl+C and Ctrl+V.	- Ctrl+C и Ctrl+V копируют и вставляют группы.
+Import to a new build	В новый билд
+Import as comparison	Для сравнения
+Code is valid	Код подходит
+Invalid input	Не удалось распознать введённые данные
+Retrieving paste..	Загрузка данных…
+Build Import	Импорт билда
+Warning:^7 Importing to the current build will erase ALL existing data for this build.	Внимание:^7 Импорт заменит все данные текущего билда.
+Authenticated	Вход выполнен
+Logging in... (%s)	Выполняется вход… (%s)
+Authentication failed: %s	Не удалось войти (%s)
+Retrieving character list...	Загружается список персонажей…
+Character list successfully retrieved.	Список персонажей получен.
+Retrieving character data...	Загружаются данные персонажа…
+Passive tree and jewels successfully imported.	Дерево и самоцветы импортированы.
+Items and skills successfully imported.	Предметы и умения импортированы.
+Sign-in is required.	Необходимо войти в аккаунт.
+Account profile is private.	Профиль аккаунта закрыт.
+Account name is incorrect.	Неверное имя аккаунта.
+Requests are being sent too fast, try again in %s seconds.	Слишком много запросов. Повторите через %s сек.
+Error retrieving character list, try again (%s)	Не удалось загрузить список персонажей. Повторите попытку (%s)
+Error importing character data, try again (%s)	Не удалось импортировать данные персонажа. Повторите попытку (%s)
+Error processing character list, try again later	Не удалось обработать список персонажей. Повторите позже.
+The account has no characters to import.	В аккаунте нет персонажей для импорта.
+Failed to retrieve character data, try again.	Не удалось получить данные персонажа. Повторите попытку.
+Error processing character data, try again later.	Не удалось обработать данные персонажа. Повторите позже.
+Importing the passive tree will overwrite your current tree.	Импорт дерева заменит текущее дерево пассивных умений.
+lvl %d	ур. %d
+in %s	в лиге %s
+Compared build:	Сравниваемый билд:
+Tip: Hold Shift or Ctrl to hide this tooltip.	Зажмите Shift или Ctrl, чтобы скрыть подсказку.
+Tip: Right click this socket to go to the items page and choose the jewel for this socket.	Правый щелчок по гнезду открывает выбор самоцвета на вкладке «Предметы».
+Distance to start:	Расстояние до начала:
+Import from:	Добавить из:
+Socket:	Гнездо:
+Ring 3:	Кольцо III:
+Support gem:	Камень поддержки:
+Drag an item here from another list or choose Add to Build when viewing it.	Перетащи предмет сюда из другого списка или нажми «Добавить в билд» в его карточке.
+Items in this list are available in all your builds. Drag items here from another list.	Предметы этого списка доступны во всех билдах. Чтобы добавить предмет, перетащи его сюда.
+Remove items that are not equipped or socketed.	Удалить предметы, которые не надеты и не вставлены в гнёзда.
+Double-click an item to open it. To copy a game item, hover over it in Path of Exile and press Ctrl+C, then paste it here with Ctrl+V. The same shortcuts can duplicate an item within PoB.	Дважды щёлкни по предмету, чтобы открыть его. Чтобы перенести предмет из игры, наведи на него курсор, нажми Ctrl+C и вставь его сюда через Ctrl+V. Так же можно копировать предметы внутри PoB.
+Ctrl+click an item or drag it onto a slot to equip it. Hold Shift to use the second compatible slot.	Щёлкни по предмету с Ctrl или перетащи его в ячейку, чтобы надеть. Удерживай Shift, чтобы выбрать вторую подходящую ячейку.
+Find similar or better items for this build on the official trade site.	Найти похожие или более сильные предметы для билда на официальном сайте торговли.
+Activate this flask.	Активировать флакон.
+Activate this charm.	Активировать оберег.
+Are you sure you want to delete all items in this build?	Удалить все предметы из этого билда?
+Are you sure you want to delete all socket groups in this build?	Удалить все группы гнёзд из этого билда?
+<No active skills>	<Нет активных умений>
+Forced Active	Принудительно активно
+FullDPS	Общий УВС
+Select the item in which this skill is socketed.	Выбери предмет, в который вставлено умение.
+This will allow the skill to benefit from modifiers on the item that affect socketed gems.	Умение получит бонусы предмета к вставленным камням.
+No item is equipped in this slot.	В этой ячейке нет предмета.
+# Gem options and calculation modes
+Corrupted Maximum	Макс. с осквернением
+Match Character Level	По уровню персонажа
+Lineage	Династические
+Non-Lineage	Обычные
+DoT DPS	УВС постепенного урона
+Bleed DPS	УВС кровотечения
+Ignite DPS	УВС поджога
+Poison DPS	УВС отравления
+All gems default to their highest valid non-corrupted gem level.	Для новых камней выбирается максимальный уровень без осквернения.
+Normal gems default to their highest valid corrupted gem level.	Для обычных камней выбирается максимальный уровень с осквернением.
+Awakened gems default to their highest valid non-corrupted gem level.	Для пробуждённых камней выбирается максимальный уровень без осквернения.
+All gems default to their highest valid non-corrupted gem level that your character meets the level requirement for.	Для новых камней выбирается максимальный уровень без осквернения, доступный персонажу.
+This hides gems with a minimum level requirement above your character level, preventing them from showing up in the dropdown list.	В списке скрываются камни, для которых уровень персонажа слишком низок.
+Unbuffed	Без усилений
+Buffed	С усилениями
+In Combat	В бою
+This controls the calculation of the stats shown in this tab.	Выбирает, какие эффекты учитываются в расчётах на этой вкладке.
+The stats in the sidebar are always shown in Effective DPS mode, regardless of this setting.	В боковой панели всегда показаны показатели в режиме «Эффективный УВС».
+Unbuffed: No auras, buffs, or other support skills or effects will apply. This is equivalent to standing in town.	Без усилений: ауры, усиления и другие эффекты поддержки не действуют, как в городе.
+Buffed: Aura and buff skills apply. This is equivalent to standing in your hideout with auras and buffs turned on.	С усилениями: действуют ауры и усиления, как в убежище с включёнными умениями.
+In Combat: Charges and combat buffs such as Onslaught will also apply. This will show your character sheet stats in combat.	В бою: дополнительно учитываются заряды и боевые усиления, например Боевой раж.
+Effective DPS: Curses and enemy properties (such as resistances and status conditions) will also apply. This estimates your true DPS.	Эффективный УВС: дополнительно учитываются проклятия и свойства противника, включая сопротивления и состояния.
+# Calculation sections and rows
+Skill Part	Часть умения
+Skill Stages	Стадии умения
+Show Minion Stats	Показать параметры приспешника
+Show stats for the minion instead of the player.	Показывает параметры приспешника вместо параметров персонажа.
+Minion Skill	Умение приспешника
+Minion Skill Stat Set	Набор параметров умения приспешника
+Player modifiers	Модификаторы персонажа
+Enemy modifiers	Модификаторы противника
+Conversions	Преобразования
+Main hand modifiers	Модификаторы основной руки
+Off hand modifiers	Модификаторы второй руки
+Main Hand	Основная рука
+Off Hand	Вторая рука
+Eff. DPS Mod	Множитель эфф. УВС
+PvP Average Hit	Средний удар в PvP
+Skill PvP Average Hit	Средний удар умения в PvP
+Skill PvP DPS	УВС умения в PvP
+Tvalue Override (ms)	Заданное значение T (мс)
+PvP Multiplier	Множитель PvP
+Enemy Block	Блок противника
+Block Chance Reduction	Снижение шанса блока
+Chance to Explode	Шанс взрыва
+PvP Average Dmg	Средний урон в PvP
+DPS Multiplier	Множитель УВС
+Empowered Stats	Параметры усиленных атак
+Empowered Attacks	Могущественные атаки
+Boosted Attacks	Усиленные атаки
+AncestralEmpower+	Усиление предками +
+Anc. Empowerment	Усиление предками
+Fist of War	Кулак войны
+Ancestral Call	Зов предков
+Skill Damage over Time	Постепенный урон умения
+Total Multiplier	Итоговый множитель
+Damage over Time	Постепенный урон
+Skill DoT DPS	УВС постепенного урона умения
+Inc. Att. Speed	Повышение скорости атаки
+More Att. Speed	Множитель скорости атаки
+Att. per second	Атак в секунду
+Firing Rate	Выстрелов в секунду
+Total Firing Time	Общее время стрельбы
+Inc. Reload Speed	Повышение скорости перезарядки
+More Reload Speed	Множитель скорости перезарядки
+Reload Time	Время перезарядки
+Eff. Reload Time	Эфф. время перезарядки
+Attacks per second	Атак в секунду
+Attack time	Время атаки
+Cast Time	Время сотворения
+Trigger Rate Cap	Предел частоты срабатывания
+Eff. Source Rate	Эфф. частота источника
+Skill Trigger Rate	Частота срабатывания умения
+CWDT Threshold	Порог срабатывания при получении урона
+Channel time	Время поддержания
+Crit Bifurcates	Разделение крит. попаданий
+Crit Effect Mod	Множитель эффекта крит. попадания
+Impale	Прокол
+Max Impale Stacks	Макс. эффектов прокола
+Stacks on Enemy	Эффектов на противнике
+Impale Chance	Шанс проколоть
+Crit Impale Chance	Шанс прокола при крит. попадании
+Stored Damage	Накопленный урон
+Damage Mod.	Модификатор урона
+DMG Mod.	Модификатор урона
+Impale DPS	УВС прокола
+Impale Damage	Урон прокола
+Spirit Cost	Расход духа
+Spirit % Cost	Расход духа (%)
+Mana % Cost	Расход маны (%)
+Mana % per second	Маны в секунду (%)
+Life Cost	Расход здоровья
+Life % Cost	Расход здоровья (%)
+Life per second	Здоровья в секунду
+Life % per second	Здоровья в секунду (%)
+ES Cost	Расход энергетического щита
+ES per second	Энерг. щита в секунду
+ES % per second	Энерг. щита в секунду (%)
+Rage Cost	Расход свирепости
+Rage per second	Свирепости в секунду
+Armour Break / hit	Разрушение брони за удар
+Soul Cost	Расход душ
+Active Minion Limit	Лимит активных приспешников
+Minion Revival Time	Время возрождения приспешника
+Quantity Multiplier	Множитель количества
+Skill Cooldown	Перезарядка умения
+Stored Uses	Накопленные использования
+Secondary Duration	Вторая длительность
+Tertiary Duration	Третья длительность
+Perfect Timing	Точное время активации
+Aura Duration	Длительность ауры
+Reserve Duration	Длительность удержания
+Soul Gain Prevent.	Период запрета получения душ
+Uptime	Доля времени действия
+Secondary Uptime	Доля времени второго эффекта
+Tertiary Uptime	Доля времени третьего эффекта
+Aura Uptime	Доля времени действия ауры
+Reserve Uptime	Доля времени удержания
+Sustainable Trauma	Поддерживаемые стаки травмы
+Detonation Time	Время взрыва
+Repeat Count	Число повторов
+2 Add. Proj. Chance	Шанс двух доп. снарядов
+Pierce Count	Число пробитий
+Fork Count	Число разветвлений
+Max Chain Count	Макс. число рикошетов
+Terrain Chain	Рикошет от препятствий
+Split Count	Число разделений
+Bolt Count	Число болтов
+No Ammo Consume	Шанс не расходовать боеприпасы
+Eff. Bolt Count	Эфф. число болтов
+Self hit Damage	Урон от удара по себе
+Bounces Count	Число отскоков
+Aura Effect Mod	Модификатор эффекта ауры
+Mana Reserve Mod	Модификатор удержания маны
+Life Reserve Mod	Модификатор удержания здоровья
+Spirit Reserve Mod	Модификатор удержания духа
+Curse Effect Mod	Модификатор эффекта проклятия
+Curse Delay	Задержка проклятия
+Ice Crystal Life	Здоровье ледяного кристалла
+Mark Effect Mod	Модификатор эффекта метки
+Mark Limit	Лимит меток
+Warcry Effect Mod	Модификатор эффекта боевого клича
+Link Effect Mod	Модификатор эффекта связи
+Remnant Effect Mod	Модификатор эффекта останков
+Life per Remnant	Здоровья за останки
+Mana per Remnant	Маны за останки
+Area of Effect Mod	Модификатор области действия
+Radius	Радиус
+Secondary Radius	Второй радиус
+Tertiary Radius	Третий радиус
+Area of Effect modifiers	Модификаторы области действия
+Weapon Range	Дальность оружия
+Strike Targets	Цели ударов
+Attachment Range	Дальность прикрепления
+Max Sust. Fuses	Макс. поддерживаемое число запалов
+Explosions /s	Взрывов в секунду
+Overlap Chance	Шанс перекрытия
+Trap Cooldown	Перезарядка ловушки
+Wave Pulse Rate	Частота импульсов волны
+Pulses Per Trap	Импульсов на ловушку
+Small Explosions	Малые взрывы
+Normal Hits/Cast	Обычных ударов за применение
+Super Hits/Cast	Усиленных ударов за применение
+Avg. Active Traps	Среднее число активных ловушек
+Active Trap Limit	Лимит активных ловушек
+Trap Throw Rate	Частота броска ловушек
+Trap Throw Time	Время броска ловушки
+Avg. Traps per Throw	Среднее число ловушек за бросок
+Trap Trigg. Radius	Радиус срабатывания ловушки
+Seal Gain Rate	Частота получения печатей
+Parry Effect Mod	Модификатор эффекта парирования
+Parry Magnitude	Сила парирования
+Debuff Effect	Эффект ослабления
+Parry Duration	Длительность парирования
+Parry Range	Дальность парирования
+Parry Range Proj	Дальность парирования снарядов
+Range modifiers	Модификаторы дальности
+Active Mine Limit	Лимит активных мин
+Mine Throw Rate	Частота броска мин
+Mine Throw Time	Время броска мины
+Avg. Mines per Throw	Среднее число мин за бросок
+Mine Deton. Radius	Радиус взрыва мины
+Mine Aura Radius	Радиус ауры мины
+Totem Place Time	Время установки тотема
+Active Totem Limit	Лимит активных тотемов
+Totem Dur. Mod	Модификатор длительности тотема
+Totem Duration	Длительность тотема
+Totem Life Mod	Модификатор здоровья тотема
+Totem Life	Здоровье тотема
+Totem ES	Энергетический щит тотема
+Totem Block Chance	Шанс блока тотема
+Totem Armour	Броня тотема
+Totem Fire Res	Сопротивление тотема огню
+Totem Cold Res	Сопротивление тотема холоду
+Totem Light. Res	Сопротивление тотема молнии
+Totem Chaos Res	Сопротивление тотема хаосу
+Active Brand Limit	Лимит активных клейм
+Corpse Level	Уровень трупа
+Corpse Life	Здоровье трупа
+Burst Damage	Урон за короткий период
+Enemy Evasion modifiers	Модификаторы уклонения противника
+Effect of Blind	Эффект ослепления
+Bleed	Кровотечение
+Max Bleed Stacks	Макс. число кровотечений
+Stack Potential	Возможное число эффектов
+Average Bleed Roll	Средний урон кровотечения
+Chance to Bleed	Шанс вызвать кровотечение
+Ailment modifiers	Модификаторы состояний
+Magnitude Effect	Модификатор силы эффекта
+Source Physical	Исходный физический урон
+Source Lightning	Исходный урон от молнии
+Source Cold	Исходный урон от холода
+Source Fire	Исходный урон от огня
+Source Chaos	Исходный урон от хаоса
+Bleed Duration	Длительность кровотечения
+Dmg. of all Bleeds	Урон всех кровотечений
+Max Poison Stacks	Макс. число отравлений
+Average Poison Roll	Средний урон отравления
+Chance to Poison	Шанс отравить
+Caustic Ground	Едкая земля
+Poison Duration	Длительность отравления
+Dmg. of all Poisons	Урон всех отравлений
+Max Ignite Stacks	Макс. число поджогов
+Average Ignite Roll	Средний урон поджога
+Chance to Ignite	Шанс поджечь
+Burning Ground	Горящая земля
+Ignite Duration	Длительность поджога
+Dmg. of all Ignites	Урон всех поджогов
+Decay	Распад
+Decay DPS	УВС распада
+Decay Duration	Длительность распада
+Leech & Gain on Hit	Похищение и получение ресурсов при ударе
+Life Leech Cap	Предел похищения здоровья
+Life Leech Rate	Скорость похищения здоровья
+Totem modifiers	Модификаторы тотемов
+Leech Conversion	Преобразование похищения
+Life Leech per Hit	Похищение здоровья за удар
+Life Gain Rate	Скорость получения здоровья
+Life Gain per Hit	Здоровье за удар
+Life Gain on Kill	Здоровье за убийство
+ES Leech Cap	Предел похищения энерг. щита
+ES Leech Rate	Скорость похищения энерг. щита
+ES Leech per Hit	Похищение энерг. щита за удар
+ES Gain Rate	Скорость получения энерг. щита
+ES Gain per Hit	Энерг. щит за удар
+ES Gain on Kill	Энерг. щит за убийство
+Mana Leech Cap	Предел похищения маны
+Mana Leech Rate	Скорость похищения маны
+Mana Leech per Hit	Похищение маны за удар
+Mana Gain Rate	Скорость получения маны
+Mana Gain per Hit	Мана за удар
+Mana Gain on Kill	Мана за убийство
+Effect of Chill	Эффект охлаждения
+Chill Effect Mod	Модификатор эффекта охлаждения
+Chill Duration	Длительность охлаждения
+Maximum Chill	Максимальное охлаждение
+Current Chill	Текущее охлаждение
+Configured Chill	Заданное охлаждение
+Guaranteed Chills	Гарантированное охлаждение
+Chance to Freeze	Шанс заморозить
+Freeze Duration	Длительность заморозки
+Shock Stacks	Число эффектов шока
+Current Shock	Текущий шок
+Configured Shock	Заданный шок
+Guaranteed Shocks	Гарантированный шок
+Total Shock	Итоговый шок
+Freeze Buildup	Накопление заморозки
+Electrocute Buildup	Накопление электризации
+Pin Buildup	Накопление пригвождения
+Knockback Chance	Шанс отбросить
+Knockback Dist.	Дальность отбрасывания
+K.B. Chance	Шанс отбросить
+K.B. Dist.	Дальность отбрасывания
+Presence Mod	Модификатор присутствия
+Surrounded Mod	Модификатор окружения
+Chance to Rearm	Шанс повторной активации
+IIQ for Normal Mobs	Кол-во предметов с обычных врагов
+IIR for Magic Mobs	Редкость предметов с волшебных врагов
+Culling Strike	Добивание
+Enemy Life Recovery	Восстановление здоровья противника
+Enemy Mana Recovery	Восстановление маны противника
+Enemy ES Recovery	Восстановление энерг. щита противника
+Total Recoverable	Всего можно восстановить
+Sources	Источники
+Increased Life Recovery	Повышение восстановления здоровья
+More Life Recovery	Множитель восстановления здоровья
+Increased Mana Recovery	Повышение восстановления маны
+More Mana Recovery	Множитель восстановления маны
+Increased Energy Shield Recovery	Повышение восстановления энерг. щита
+More Energy Shield Recovery	Множитель восстановления энерг. щита
+Increased Life Regeneration Rate	Повышение скорости регенерации здоровья
+More Life Regeneration Rate	Множитель скорости регенерации здоровья
+Increased Energy Shield Regeneration Rate	Повышение скорости регенерации энерг. щита
+More Energy Shield Regeneration Rate	Множитель скорости регенерации энерг. щита
+Override	Заданное значение
+Recoup	Возмещение
+Recovery modifiers	Модификаторы восстановления
+FasterRecoup	Ускорение возмещения
+Phys Recoup	Возмещение физ. урона
+Ele Recoup	Возмещение урона от стихий
+Light Recoup	Возмещение урона от молнии
+Cold Recoup	Возмещение урона от холода
+Fire Recoup	Возмещение урона от огня
+Chaos Recoup	Возмещение урона от хаоса
+Dmg. Mit. Regen	Регенерация от предотвращённого урона
+Armour Defense	Защита бронёй
+Melee Evade Ch.	Шанс уклонения в ближнем бою
+Proj. Evade Ch.	Шанс уклонения от снаряда
+Spell Evade Ch.	Шанс уклонения от чар
+Spell Proj. Evade Ch.	Шанс уклонения от снарядов чар
+Avoid All Dmg Ch.	Шанс избежать любого урона
+Avoid Physical Ch.	Шанс избежать физ. урона
+Avoid Lightning Ch.	Шанс избежать урона от молнии
+Avoid Cold Chance	Шанс избежать урона от холода
+Avoid Fire Chance	Шанс избежать урона от огня
+Avoid Chaos Chance	Шанс избежать урона от хаоса
+Avoid Proj Ch.	Шанс избежать урона от снаряда
+Life on Block	Здоровье при блоке
+Mana on Block	Мана при блоке
+ES on Block	Энерг. щит при блоке
+ES on Spell Block	Энерг. щит при блоке чар
+Spell Suppression	Подавление чар
+Suppression Ch.	Шанс подавления чар
+Suppression Effect	Эффект подавления
+Life on Suppression	Здоровье при подавлении чар
+ES on Suppression	Энерг. щит при подавлении чар
+Inc. Magic Effect	Повышение эффекта волшебных флаконов
+Magic Utility Flask Effect	Эффект волшебного вспом. флакона
+Generic Flask Effect	Общий эффект флаконов
+Utility Flask Charges/s	Зарядов вспом. флакона в секунду
+Generic Flask Charges/s	Зарядов флаконов в секунду
+Inc. Recovery	Повышение восстановления
+More Recovery	Множитель восстановления
+Inc. Recovery Rate	Повышение скорости восстановления
+Life Flask Recovery Rate	Скорость восстановления флаконом здоровья
+Generic Flask Recovery Rate	Общая скорость восстановления флаконами
+Life Flask Charges/s	Зарядов флакона здоровья в секунду
+Mana Flask Recovery Rate	Скорость восстановления флаконом маны
+Mana Flask Charges/s	Зарядов флакона маны в секунду
+Charm Limit	Лимит оберегов
+Rage Effect	Эффект свирепости
+Maximum Rage	Максимум свирепости
+Increased Rage Regeneration Rate	Повышение скорости регенерации свирепости
+More Rage Regeneration Rate	Множитель скорости регенерации свирепости
+Rage Loss Delay	Задержка до потери свирепости
+Inherent Rage Loss	Естественная потеря свирепости
+Endurance	Заряды выносливости
+Frenzy	Заряды ярости
+Power	Заряды энергии
+Max	Максимум
+Current	Текущее значение
+Spendable	Можно потратить
+Duration	Длительность
+Debuff Dur. Mult.	Множитель длительности ослабления
+Stun Avoid Chance	Шанс избежать оглушения
+Interrupt Avoid Ch.	Шанс избежать прерывания
+Blind Avoid Ch.	Шанс избежать ослепления
+Shock Avoid Ch.	Шанс избежать шока
+Freeze Avoid Ch.	Шанс избежать заморозки
+Chill Avoid Ch.	Шанс избежать охлаждения
+Ignite Avoid Ch.	Шанс избежать поджога
+Bleed Avoid Ch.	Шанс избежать кровотечения
+Poison Avoid Ch.	Шанс избежать отравления
+Impale Avoid Ch.	Шанс избежать прокола
+Curse Avoid Ch.	Шанс избежать проклятия
+Silence Avoid Ch.	Шанс избежать безмолвия
+Crit Reduction	Снижение эффекта крит. попаданий
+Corr Blood Immune	Иммунитет к осквернённой крови
+Maim Immune	Иммунитет к увечью
+Hinder Immune	Иммунитет к скованности
+Knockback Immune	Иммунитет к отбрасыванию
+Blind Duration	Длительность ослепления
+Ailment Threshold	Порог состояний
+Freeze Effect	Эффект заморозки
+Chill Effect	Эффект охлаждения
+Shock Effect	Эффект шока
+Ignite Effect	Эффект поджога
+Bleed Effect	Эффект кровотечения
+Poison Effect	Эффект отравления
+Enemy Conversion modifiers	Модификаторы преобразования урона противника
+Physical Taken as	Физ. урон получен как
+Lightning Taken as	Урон от молнии получен как
+Cold Taken as	Урон от холода получен как
+Fire Taken as	Урон от огня получен как
+Chaos Taken as	Урон от хаоса получен как
+Taken as Physical	Получено как физ. урон
+Taken as Lightning	Получено как урон от молнии
+Taken as Cold	Получено как урон от холода
+Taken as Fire	Получено как урон от огня
+Taken as Chaos	Получено как урон от хаоса
+Reflect taken	Полученный отражённый урон
+PvP Hit taken	Полученный удар в PvP
+Enemy PvP Multiplier	Множитель PvP противника
+ES Bypass %	Доля урона в обход энерг. щита
+Prevented Life Loss	Предотвращённая потеря здоровья
+Mind over Matter %	Разум превыше материи (%)
+Guard	Оборона
+Aegis	Эгида
+Frost Shield	Морозный щит
+Spectre Ally	Союзный призрак
+Totem Ally	Союзный тотем
+Vaal Rejuv. Totem	Тотем омоложения ваал
+Companion Ally	Союзный спутник
+Soul Link	Связь душ
+Recoup Max.	Макс. возмещение
+Faster Recoup	Ускорение возмещения
+Recoup Avg.	Среднее возмещение
+Hit Over Time Max.	Макс. урон от удара, получаемый постепенно
+Hit Over Time Avg.	Средний урон от удара, получаемый постепенно
+Net Max.	Максимальный итог
+Net Avg.	Средний итог
+Degens	Постепенная потеря ресурсов
+Total Degen	Общая потеря ресурсов
+Total Net Recovery	Итоговое чистое восстановление
+Net Life Recovery	Чистое восстановление здоровья
+Net Mana Recovery	Чистое восстановление маны
+Net ES Recovery	Чистое восстановление энерг. щита
+# Configuration choices and quest rewards
+Skill Options	Параметры умений
+This config option is conditional with missing source and is invalid.	Условие недоступно, поскольку отсутствует его источник.
+One of the following:	Одна награда на выбор:
+Crits Only	Только крит. попадания
+Minimum	Минимум
+Maximum	Максимум
+Burst	За короткий период
+Unlucky	Невезение
+Very Unlucky	Двойное невезение
+Act 1 (0%)	Акт 1 (0%)
+Act 2 (-10%)	Акт 2 (−10%)
+Act 3 (-20%)	Акт 3 (−20%)
+Act 4 (-30%)	Акт 4 (−30%)
+Act 5 (-40%)	Акт 5 (−40%)
+Act 6 (-50%)	Акт 6 (−50%)
++1 Charm Slot	+1 ячейка для оберегов
++10% to Cold Resistance	+10% к сопротивлению холоду
++10% to Fire Resistance	+10% к сопротивлению огню
++10% to Lightning Resistance	+10% к сопротивлению молнии
++15% of Armour also applies to Elemental Damage	+15% брони также применяется к получаемому урону от стихий
++20 to maximum Life	+20 к максимуму здоровья
++30 to Spirit	+30 к духу
++40 to Spirit	+40 к духу
++5 to Dexterity	+5 к ловкости
++5 to Intelligence	+5 к интеллекту
++5 to Strength	+5 к силе
++5 to all Attributes	+5 ко всем характеристикам
++5% to Cold Resistance	+5% к сопротивлению холоду
++5% to Fire Resistance	+5% к сопротивлению огню
++5% to Lightning Resistance	+5% к сопротивлению молнии
++5% to all Elemental Resistances	+5% к сопротивлению всем стихиям
+-5% to all Elemental Resistances	-5% к сопротивлению всем стихиям
+12% faster start of Energy Shield Recharge	12% ускорение начала перезарядки энергетического щита
+12% increased Cooldown Recovery Rate	12% повышение скорости перезарядки умений
+12% reduced Cooldown Recovery Rate	12% снижение скорости перезарядки умений
+15% increased Global Armour, Evasion and Energy Shield	15% увеличение глобальной брони, уклонения и энергетического щита
+15% reduced Global Armour, Evasion and Energy Shield	15% уменьшение глобальной брони, уклонения и энергетического щита
+20% increased Presence Area Of Effect	20% увеличение области присутствия
+20% reduced Presence Area Of Effect	20% уменьшение области присутствия
+25% increased Mana Regeneration Rate	25% повышение скорости регенерации маны
+25% increased Stun Threshold	25% увеличение порога оглушения
+3% increased Movement Speed	3% повышение скорости передвижения
+3% reduced Movement Speed	3% снижение скорости передвижения
+30% increased Charm Charges Gained	30% увеличение получаемых зарядов оберегов
+30% increased Charm Effect Duration	30% увеличение длительности эффекта оберега
+30% increased Elemental Ailment Threshold	30% увеличение порога стихийных состояний
+30% increased Global Armour, Evasion and Energy Shield	30% увеличение глобальной брони, уклонения и энергетического щита
+30% increased Life Recovery from Flasks	30% увеличение восстановления здоровья от флаконов
+30% increased Mana Recovery from Flasks	30% увеличение восстановления маны от флаконов
+5% increased Experience Gain	5% увеличение получаемого опыта
+5% increased Maximum Mana	5% увеличение максимума маны
+5% increased maximum Life	5% увеличение максимума здоровья
+5% reduced Attributes	5% уменьшение характеристик
+Gain Deflection Rating equal to 12% of Evasion Rating	Дарует отклонение урона в размере 12% от уклонения
+# Conditional calculation rows
+Seismic Cry	Сейсмический клич
+Intimidating Cry	Устрашающий клич
+Rallying Cry	Клич сплочения
+Infernal Cry	Клич преисподней
+Battlemage's Cry	Клич боевого мага
+Ancestral Cry	Клич предков
+Chaos Gain/Flame	Доп. урон хаосом за пламя
+Life Leech/Flame	Похищение здоровья за пламя
+Mana Leech/Flame	Похищение маны за пламя
+Scorch Effect Mod	Модификатор эффекта опаления
+Chance to Scorch	Шанс опалить
+Scorch Duration	Длительность опаления
+Maximum Scorch	Максимальное опаление
+Current Scorch	Текущее опаление
+Configured Scorch	Заданное опаление
+Guaranteed Scorches	Гарантированное опаление
+Total Scorch	Итоговое опаление
+Brittle Effect Mod	Модификатор эффекта хрупкости
+Chance to Brittle	Шанс наложить хрупкость
+Brittle Duration	Длительность хрупкости
+Maximum Brittle	Максимальная хрупкость
+Current Brittle	Текущая хрупкость
+Configured Brittle	Заданная хрупкость
+Guaranteed Brittles	Гарантированная хрупкость
+Sap Effect Mod	Модификатор эффекта ошеломления
+Chance to Sap	Шанс ошеломить от молнии
+Sap Duration	Длительность ошеломления от молнии
+Maximum Sap	Максимальное ошеломление от молнии
+Current Sap	Текущее ошеломление от молнии
+Configured Sap	Заданное ошеломление от молнии
+Guaranteed Saps	Гарантированное ошеломление от молнии
+Effect of Elusive	Эффект Неуловимости
+Sap Avoid Ch.	Шанс избежать ошеломления от молнии
+Brittle Avoid Ch.	Шанс избежать хрупкости
+Scorch Avoid Ch.	Шанс избежать опаления
+Sap Effect	Эффект ошеломления от молнии
+Brittle Effect	Эффект хрупкости
+Scorch Effect	Эффект опаления
+Fire Dmg. Reduct	Снижение урона от огня
+Cold Dmg. Reduct	Снижение урона от холода
+Light. Dmg. Reduct	Снижение урона от молнии
+Chaos Dmg. Reduct	Снижение урона от хаоса
+{2:output:TheoreticalOffensiveWarcryEffect} Avg Combined Impact  |  {2:output:TheoreticalMaxOffensiveWarcryEffect} Max Combined Impact	Средний общий эффект {2:output:TheoreticalOffensiveWarcryEffect}  |  Максимальный {2:output:TheoreticalMaxOffensiveWarcryEffect}
+{1:output:TotalDotCalcSection} total DoT	{1:output:TotalDotCalcSection} общего постепенного урона
+# Item database filters
+Current level	По уровню персонажа
+Current attributes	По характеристикам
+Current useable	Можно экипировать
+Any source	Любой источник
+Unobtainable	Недоступные
+Vendor Recipe	Рецепт торговца
+Upgraded	Улучшенные
+Boss Item	Добыча с боссов
+Corruption	Осквернение
+No league	Без лиги
+Names	Названия
+Modifiers	Свойства
+Weapon 1	Оружие I
+Weapon 2	Оружие II
+Sort by Full DPS	По суммарному УВС
+Sort by Combined DPS	По итоговому УВС
+Sort by Hit DPS	По УВС от ударов
+Sort by Impale + Hit DPS	По УВС ударов и прокола
+Sort by Average Hit	По среднему удару
+Sort by Attack/Cast Speed	По скорости атак и чар
+Sort by DoT DPS	По постепенному УВС
+Sort by Bleed DPS	По УВС кровотечения
+Sort by Ignite DPS	По УВС поджога
+Sort by Poison DPS	По УВС отравления
+Sort by Life	По здоровью
+Sort by Life regen	По регенерации здоровья
+Sort by Life leech	По похищению здоровья
+Sort by Armour	По броне
+Sort by Evasion	По уклонению
+Sort by Energy Shield	По энергетическому щиту
+Sort by Recoverable ES	По восстанавливаемому энерг. щиту
+Sort by Energy Shield regen	По регенерации энерг. щита
+Sort by Energy Shield leech	По похищению энерг. щита
+Sort by Mana	По мане
+Sort by Mana regen	По регенерации маны
+Sort by Mana leech	По похищению маны
+Sort by Ward	По руническому барьеру
+Sort by Spirit	По духу
+Sort by Strength	По силе
+Sort by Dexterity	По ловкости
+Sort by Intelligence	По интеллекту
+Sort by Total Attributes	По сумме характеристик
+Sort by Melee avoid chance	По шансу избежать ударов ближнего боя
+Sort by Spell avoid chance	По шансу избежать урона от чар
+Sort by Projectile avoid chance	По шансу избежать урона от снарядов
+Sort by Effective Hit Pool	По эфф. запасу здоровья
+Sort by Eff. Maximum Hit Taken	По макс. выдерживаемому удару
+Sort by Taken Phys dmg	По получаемому физ. урону
+Sort by Taken Lightning dmg	По получаемому урону от молнии
+Sort by Taken Cold dmg	По получаемому урону от холода
+Sort by Taken Fire dmg	По получаемому урону от огня
+Sort by Taken Chaos dmg	По получаемому урону от хаоса
+Sort by Crit Chance	По шансу крит. попадания
+Sort by Crit Multiplier	По множителю крит. урона
+Sort by Bleed Chance	По шансу кровотечения
+Sort by Freeze Chance	По шансу заморозки
+Sort by Ignite Chance	По шансу поджога
+Sort by Shock Chance	По шансу шока
+Sort by Move speed	По скорости передвижения
+Sort by Block Chance	По шансу блока
+Sort by Spell Block Chance	По шансу блока чар
+Sort by Spell Suppression Chance	По шансу подавления чар
+Sort by Rarity of Items found	По редкости найденных предметов
+Sorting... (%d%%)	Сортировка… (%d%%)
+# Passive tree and anointment panel
+Requires allocation of node: %s	Требуется узел «%s»
+Anoint Item	Зачарование предмета
+Anoint...	Зачаровать…
+Anoint 2...	Зачар. 2…
+Anoint 3...	Зачар. 3…
+Anoint 4...	Зачар. 4…
+Anoint %s	Зачаровать «%s»
+Remove %s	Убрать «%s»
+No Anoint	Без зачарования
+Emotions:	Жидкие эмоции:
+Anointing	Зачарование
+%s %s changes nothing because this node is already allocated on the tree.	%s «%s» ничего не меняет. Умение уже выбрано в дереве.
+%s %s changes nothing because this node is already anointed.	%s «%s» ничего не меняет. Умение уже получено от зачарования.
+%s %s will give you: 	После действия «%s» с умением «%s» параметры изменятся так:
+%s nothing will give you: 	Без зачарования (%s) параметры изменятся так:
+%s %s changes nothing.	%s «%s» ничего не меняет.
+Tip: Hold Ctrl to hide this tooltip.	Зажмите Ctrl, чтобы скрыть подсказку.
+Tip: Press Ctrl+C to copy this node's text.	Нажмите Ctrl+C, чтобы скопировать текст узла.
+Tip: Press Ctrl+D to disable the display of stat differences.	Нажмите Ctrl+D, чтобы скрыть изменения параметров.
+Tip: Press Ctrl+D to enable the display of stat differences.	Нажмите Ctrl+D, чтобы показать изменения параметров.
+(Not supported in PoB yet)	(Пока не учитывается в PoB)
+
+# Passive tree comparison tooltips
+Reallocating this node will give you:	При перераспределении узла:
+Unallocating this node will give you:	При снятии узла:
+This node is granted by an item. Removing it will give you:	При отключении узла от предмета:
+Allocating this node will give you:	При выборе узла:
+Unallocating this node and all nodes depending on it will give you:	При снятии узла и зависимых пассивок:
+Allocating this node and all nodes leading to it will give you:	При выборе узла и всего пути к нему:
+This node is granted by an item. Removing it will cause no changes	Отключение узла от предмета не изменит показатели.
+No changes from %s this node%s.	Показатели не изменятся при %s этого узла%s.
+unallocating	снятии
+allocating	выборе
+or the nodes leading to it	или ведущих к нему узлов
+%d nodes in trace path	Узлов на выбранном пути: %d
+%s points to node	Очков до узла: %s
+(Can be allocated without pathing to it)	(Можно выбрать без соединения с деревом)
+Tip: To reach this node by a different path, hold Shift, then trace the path and click this node	Чтобы выбрать другой путь, зажмите Shift, проведите по узлам пути и нажмите на этот узел.
+%d points gained from unallocating these nodes	Вернётся очков пассивок: %d
+%s Gold ^7required to unallocate these nodes	%s золота ^7за сброс этих узлов
+%s Gold ^7required to unallocate this node	%s золота ^7за сброс узла
+per point	на очко
+Player:	Персонаж:
+
+# Additional build comparison statistics
+Average Burst Damage	Средний взрывной урон
+PvP Average Damage	Средний урон в PvP
+Effective Trigger Rate	Эфф. частота срабатывания
+Channel Time	Время поддержания
+Trap Throwing Time	Время броска ловушки
+Mine Throwing Time	Время броска мины
+Totem Placement Time	Время установки тотема
+Crit Bifurcate Chance	Шанс раздвоения крита
+Uncap. Hit Chance	Шанс попадания без ограничения
+PvP Hit DPS	УВС от ударов в PvP
+Total DPS inc. DoT	Итоговый УВС с постепенным уроном
+Corrupting Blood DPS	УВС осквернённой крови
+Total Damage per Bleed	Урон за одно кровотечение
+Total DPS inc. Bleed	Итоговый УВС с кровотечением
+Total Damage per Ignite	Урон за один поджог
+Burning Ground DPS	УВС горящей земли
+Mirage Burning Ground DPS	УВС горящей земли миража
+Total DPS inc. Ignite	Итоговый УВС с поджогом
+Caustic Ground DPS	УВС едкой земли
+Mirage Caustic Ground DPS	УВС едкой земли миража
+Total Damage per Poison	Урон за одно отравление
+Total DPS inc. Poison	Итоговый УВС с отравлением
+Total DoT DPS	Суммарный УВС постепенного урона
+Damage inc. Impale	Урон с пронзанием
+Total DPS inc. Impale	Итоговый УВС с пронзанием
+Total Mirage DPS	Суммарный УВС миражей
+Total Wisp DPS	Суммарный УВС огоньков
+Culling DPS	УВС от добивания
+Reservation DPS	УВС от удержания
+Combined Total Damage	Суммарный урон
+Total Explode Chance	Общий шанс взрыва
+Enemy Life Equivalent	Эквивалент здоровья противника
+Seal Gain Frequency	Частота получения печатей
+Max Number of Seals	Максимум печатей
+Time to Gain Max Seals	Время набора всех печатей
+AoE Radius	Радиус области действия
+Activations per Brand	Срабатываний на клеймо
+Mana Cost	Расход маны
+Mana Cost per second	Расход маны в секунду
+Life Cost per second	Расход здоровья в секунду
+Energy Shield Cost	Расход энергетического щита
+ES Cost per second	Расход эн. щита в секунду
+Rage Cost per second	Расход свирепости в секунду
+Strength Required	Требуемая сила
+Dexterity Required	Требуемая ловкость
+Intelligence Required	Требуемый интеллект
+Devotion	Преданность
+Tribute	Дань
+PvP Hit Taken	Получаемый удар в PvP
+Fire Max Hit	Макс. удар огнём
+Cold Max Hit	Макс. удар холодом
+Lightning Max Hit	Макс. удар молнией
+MH Accuracy	Меткость (осн. рука)
+OH Accuracy	Меткость (втор. рука)
+Total Darkness	Всего тьмы
+Reserved Darkness	Удержано тьмы
+Life Recoverable	Восстанавливаемое здоровье
+Life Leech/On Hit Rate	Скорость похищения / получения здоровья за удар
+Life Leech/Gain per Hit	Похищение / получение здоровья за удар
+%Inc Mana from Tree	Повышение маны от дерева
+Mana Recovery	Восстановление маны
+Mana Leech/On Hit Rate	Скорость похищения / получения маны за удар
+Mana Leech/Gain per Hit	Похищение / получение маны за удар
+Recoverable ES	Восстанавливаемый эн. щит
+%Inc ES from Tree	Повышение эн. щита от дерева
+ES Regen	Регенерация эн. щита
+ES Recovery	Восстановление эн. щита
+ES Leech/On Hit Rate	Скорость похищения / получения эн. щита за удар
+ES Leech/Gain per Hit	Похищение / получение эн. щита за удар
+Rage	Свирепость
+Rage Regen	Регенерация свирепости
+%Inc Evasion from Tree	Повышение уклонения от дерева
+Evade Chance	Шанс уклонения
+Melee Evade Chance	Шанс уклонения от ближних атак
+Projectile Evade Chance	Шанс уклонения от снарядов
+Spell Evade Chance	Шанс уклонения от чар
+Spell Proj. Evade Chance	Шанс уклонения от снарядов чар
+Deflection Rating	Рейтинг откл. урона
+Deflect Chance	Шанс отклонить урон
+%Inc Armour from Tree	Повышение брони от дерева
+Block Chance	Шанс блока
+Spell Block Chance	Шанс блока чар
+Attack Dodge Chance	Шанс увернуться от атак
+Spell Dodge Chance	Шанс увернуться от чар
+Spell Suppression Chance	Шанс подавления чар
+Fire Res. Over Max	Сопр. огню сверх максимума
+Cold Res. Over Max	Сопр. холоду сверх максимума
+Lightning Res. Over Max	Сопр. молнии сверх максимума
+Chaos Res. Over Max	Сопр. хаосу сверх максимума
+Skill Movement Speed	Скорость передвижения при применении умения
+Skill Duration	Длительность умения
+Projectile Count	Количество снарядов
+Proj, Split Count	Количество разделений снаряда
+Proj. Speed Mod	Множитель скорости снарядов
+Item Quantity	Количество предметов
+Item Rarity	Редкость предметов
+Full Dot DPS	Полный УВС постепенного урона
+Skill DPS	УВС умения
+Attack/Cast Rate	Частота атак или сотворения чар
+
+# Gem tooltip captions supplied by PoB
+At +20% Quality:	При качестве +20%:
+Setting to 20 quality will give you:	Изменения при качестве 20%:
+New Item	Новый предмет
+
+# Item cards and import states
+Variant: %s	Вариант: %s
+Variant: %s (%d variants)	Вариант: %s (всего %d)
+Exclusive to: %s	Лига: %s
+Not yet available	Пока недоступно
+Source: %s	Источник: %s
+Elemental DPS:	Стихийный УВС:
+Total DPS:	Общий УВС:
+metres	м
+Mirrored	Отражено
+Sanctified	Освящено
+Twice Corrupted	Дважды осквернено
+Item base is not supported by the current version.	Текущая версия не поддерживает эту базу предмета.
+Authentication failed:	Ошибка входа:
+Level %d %s	Уровень %d · %s
+Loadouts:	Комплекты:
+Immune	Иммунитет
+On Kill Monster Explosion	Взрыв монстров при убийстве
+Gale Force	Ураганная мощь
+Thorns	Шипы
+ArmourBreak	Разрушение брони
+EternalRage	Вечная ярость
+Are you always moving?	Вы постоянно двигаетесь?
+Do you have a Flask active?	На вас действует флакон?
+Effect of Blind (if not maximum):	Эффект ослепления (если ниже максимума):
+Effect of Shock (if not maximum):	Эффект шока (если ниже максимума):
+Enemy Corpse Life:	Здоровье трупа противника:
+Have you Crit Recently?	Вы недавно наносили критический удар?
+Have you Hit Recently?	Вы недавно наносили удар?
+Have you Killed Recently?	Вы недавно убивали?
+Have you Reloaded Recently?	Вы недавно перезаряжали оружие?
+Have you Triggered a skill Recently?	У вас недавно срабатывало умение?
+Have you been Hit Recently?	Вы недавно получали удар?
+Have your Totems Hit Recently?	Ваши тотемы недавно наносили удар?
+Is enemy Armour Broken?	Броня противника разрушена?
+Is the enemy Rare?	Противник редкий?
+Is the enemy on Low Life?	У противника мало здоровья?
+Sigil of Power:	Печать силы:
+Wind Dancer:	Танцующий с ветром:
+# of Wind Dancer Stacks:	Число стадий «Танцующего с ветром»:
+Basic Attack	Обычная атака
+Do your Minions use Endur. Charges?	Ваши приспешники используют заряды выносливости?
+Do your Minions use Frenzy Charges?	Ваши приспешники используют заряды ярости?
+Do your Minions use Power Charges?	Ваши приспешники используют заряды энергии?
+Do your minions have Chaotic Might?	Ваши приспешники обладают мощью хаоса?
+Do your minions have Onslaught?	На ваших приспешников действует Боевой раж?
+Do your minions have Unholy Might?	Ваши приспешники обладают нечестивой мощью?
+Convert all trees to %s	Обновить все деревья до %s
+Convert to %s	Обновить до %s
+You will automatically be considered to be on Low Life if you have at least %s%% Life reserved. You can force it here.	При удержании не менее %s%% здоровья оно автоматически считается низким. При необходимости это можно указать вручную.
+PoB can use the Full Life condition when at least %s%% Life remains. Chaos Inoculation enables it automatically. You can also force it here.	При остатке здоровья не менее %s%% PoB может считать его полным. При Иммунитете к хаосу условие включается автоматически. Его также можно указать вручную.
+This option is specific to '%s'.	Параметр относится к узлу «%s».
+(Unused)	(Не используется)
+Socket #%s	Гнездо №%s
+Rune #%s	Руна №%s
+Removing this item from %s will give you:	Изменения при снятии предмета (ячейка «%s»):
+Equipping this item in %s will give you:	Изменения при экипировке предмета (ячейка «%s»):
+(replacing %s)	(вместо %s)
+Deactivating this flask will give you:	Изменения при отключении флакона:
+Activating this flask will give you:	Изменения при активации флакона:
+Deactivating this charm will give you:	Изменения при отключении оберега:
+Activating this charm will give you:	Изменения при активации оберега:
+(%s uses)	(использований: %s)
+of base	от базового значения
+%s%% of base	%s%%
+Category:	Категория:
+Active Skill #%d:	Активное умение №%d:
+Active Skill #%d's Main Minion Skill:	Главное умение приспешника для умения №%d:
+Inactive Gems:	Неактивные камни:
+(Unsupported)	(Расчёт недоступен)
+(Disabled)	(Отключено)
+(Superseded)	(Заменено)
+(Cannot apply to any of the active skills)	(Не подходит ни к одному активному умению)
+Available Spectres:	Доступные призраки:
+Spectres in Build:	Призраки в билде:
+<No spectres in build>	<В билде нет призраков>
+Spectre Reservation:	Удержание духа призраком:
+Companion Reservation:	Удержание духа компаньоном:

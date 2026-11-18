@@ -1100,7 +1100,7 @@ function TradeQueryGeneratorClass:RequestQuery(slot, context, statWeights, callb
 	local controls = { }
 	local options = { }
 	local popupHeight = 80
-	local popupWidth = 400
+	local popupWidth = UILocale.language == "ru" and 560 or 400
 
 	local isJewelSlot = slot and slot.slotName:find("Jewel") ~= nil
 
@@ -1174,6 +1174,7 @@ Remove: anoints are completely ignored, and removed from items.]]
 			return a.label < b.label
 		end)
 		controls.jewelSlot = new("DropDownControl", {"TOPLEFT", lastItemAnchor, "BOTTOMLEFT"}, {0, 5, 100, 18}, activeSocketList, function(idx, value) end)
+		controls.jewelSlot.displayLabelAccessor = function(slot) return UILocale.itemSlotLabel(slot.label) end
 		controls.jewelSlotLabel = new("LabelControl", {"RIGHT",controls.jewelSlot,"LEFT"}, {-5, 0, 0, 16}, "Jewel Slot:")
 		for index, jewelSlot in ipairs(activeSocketList) do
 			if jewelSlot.nodeId == context.slotTbl.selectedJewelNodeId then
@@ -1206,7 +1207,7 @@ Remove: anoints are completely ignored, and removed from items.]]
 	end
 	controls.maxPrice = new("EditControl", {"TOPLEFT",lastItemAnchor,"BOTTOMLEFT"}, {0, 5, 70, 18}, nil, nil, "%D")
 	controls.maxPrice.buf = self.lastMaxPrice and tostring(self.lastMaxPrice) or ""
-	controls.maxPriceType = new("DropDownControl", {"LEFT",controls.maxPrice,"RIGHT"}, {5, 0, 150, 18}, currencyDropdownNames, nil, "The trade site will filter out listings with other currencies,\nif anything other than \"Exalted Orb Equivalent\" is chosen and a maximum is specified.")
+	controls.maxPriceType = new("DropDownControl", {"LEFT",controls.maxPrice,"RIGHT"}, {5, 0, UILocale.language == "ru" and 230 or 150, 18}, currencyDropdownNames, nil, "The trade site will filter out listings with other currencies,\nif anything other than \"Exalted Orb Equivalent\" is chosen and a maximum is specified.")
 	controls.maxPriceType.selIndex = self.lastMaxPriceTypeIndex or 1
 	controls.maxPriceLabel = new("LabelControl", {"RIGHT",controls.maxPrice,"LEFT"}, {-5, 0, 0, 16}, "^7Max Price:")
 	updateLastAnchor(controls.maxPrice)
@@ -1225,9 +1226,10 @@ Remove: anoints are completely ignored, and removed from items.]]
 	end
 
 	for i, stat in ipairs(statWeights) do
-		controls["sortStatType"..tostring(i)] = new("LabelControl", {"TOPLEFT",lastItemAnchor,"BOTTOMLEFT"}, {0, i == 1 and 5 or 3, 70, 16}, i < (#statWeights < 6 and 10 or 5) and s_format("^7%.2f: %s", stat.weightMult, stat.label) or ("+ "..tostring(#statWeights - 4).." Additional Stats"))
+		controls["sortStatType"..tostring(i)] = new("LabelControl", {"TOPLEFT",lastItemAnchor,"BOTTOMLEFT"}, {0, i == 1 and 5 or 3, 70, 16}, i < (#statWeights < 6 and 10 or 5) and s_format("^7%.2f: %s", stat.weightMult, UILocale.translate(stat.label)) or ("+ "..tostring(#statWeights - 4).." Additional Stats"))
 		lastItemAnchor = controls["sortStatType"..tostring(i)]
-		popupHeight = popupHeight + 19
+		lastItemAnchor:SetWrapWidth(popupWidth / 2 + 20)
+		popupHeight = popupHeight + lastItemAnchor:GetProperty("height") + 3
 		if i == 1 then
 			controls.sortStatLabel = new("LabelControl", {"RIGHT",lastItemAnchor,"LEFT"}, {-5, 0, 0, 16}, "^7Stat to Sort By:")
 		elseif i == 5 then
@@ -1238,7 +1240,7 @@ Remove: anoints are completely ignored, and removed from items.]]
 				tooltip:AddLine(16, "Currently sorting by:")
 				for i, stat in ipairs(statWeights) do
 					if i > 4 then
-						tooltip:AddLine(16, s_format("%s: %.2f", stat.label, stat.weightMult))
+						tooltip:AddLine(16, s_format("%s: %.2f", UILocale.translate(stat.label), stat.weightMult))
 					end
 				end
 			end
@@ -1248,7 +1250,7 @@ Remove: anoints are completely ignored, and removed from items.]]
 	popupHeight = popupHeight + 4
 
 	local selectedMods = {}
-	controls.generateQuery = new("ButtonControl", { "BOTTOM", nil, "BOTTOM" }, {-45, -10, 80, 20}, "Execute", function()
+	controls.generateQuery = new("ButtonControl", { "BOTTOM", nil, "BOTTOM" }, {UILocale.language == "ru" and -55 or -45, -10, UILocale.language == "ru" and 100 or 80, 20}, "Execute", function()
 		local selectedJewelSlot = controls.jewelSlot and controls.jewelSlot:GetSelValue()
 		if controls.jewelSlot and not selectedJewelSlot then
 			return
@@ -1310,18 +1312,19 @@ Remove: anoints are completely ignored, and removed from items.]]
 		return not controls.jewelSlot or controls.jewelSlot:GetSelValue() ~= nil
 	end
 	controls.generateQuery.tooltipText = controls.jewelSlot and "Requires an active Jewel Socket." or nil
-	controls.cancel = new("ButtonControl", { "BOTTOM", nil, "BOTTOM" }, {45, -10, 80, 20}, "Cancel", function()
+	controls.cancel = new("ButtonControl", { "BOTTOM", nil, "BOTTOM" }, {UILocale.language == "ru" and 55 or 45, -10, UILocale.language == "ru" and 100 or 80, 20}, "Cancel", function()
 		main:ClosePopup()
 	end)
 
 	if context.slotTbl.unique then
-		main:OpenPopup(popupWidth, popupHeight, "Query Options", controls)
+		UILocale.prepareTradeTooltips(controls)
+	main:OpenPopup(popupWidth, popupHeight, "Query Options", controls)
 		return
 	end
 
 	local _, headerYPos = lastItemAnchor:GetPos()
 	-- intended width of the whole row, including dropdown and aux controls
-	local totalWidth = 340
+	local totalWidth = popupWidth - 60
 	-- size of min value input
 	local fieldWidth = 60
 	-- size of clear button
@@ -1400,6 +1403,10 @@ Remove: anoints are completely ignored, and removed from items.]]
 				end
 				setModSelectors(controls)
 			end)
+		dropdown.displayLabelAccessor = UILocale.tradeModLabel
+		dropdown.localizedSearchAccessor = UILocale.tradeModLabel
+		dropdown.fitSelectedLabel = true
+		dropdown.showFullLabelTooltip = true
 		dropdown.shown = function()
 			return not not selectedMods[i - 1] or i == 1
 		end
@@ -1430,5 +1437,6 @@ Remove: anoints are completely ignored, and removed from items.]]
 	end
 	setModSelectors(controls, getModList())
 
+	UILocale.prepareTradeTooltips(controls)
 	main:OpenPopup(popupWidth, popupHeight, "Query Options", controls)
 end

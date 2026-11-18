@@ -3488,7 +3488,7 @@ function CompareTabClass:DrawItemExpanded(item, x, startY, colWidth, otherModMap
 
 	-- Item name
 	local rarityColor = tradeHelpers.getRarityColor(item)
-	DrawString(x, drawY, "LEFT", 16, "VAR", rarityColor .. item.name)
+	DrawString(x, drawY, "LEFT", 16, "VAR", rarityColor .. UILocale.itemName(item))
 	drawY = drawY + 18
 
 	-- Base type label

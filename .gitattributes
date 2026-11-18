@@ -67,3 +67,13 @@
 # (https://git-scm.com/docs/gitattributes#_executable)
 ###############################################################################
 runtime/*.exe binary
+# Deterministic RU release text files
+*.lua text eol=lf
+*.md text eol=lf
+*.txt text eol=lf
+*.json text eol=lf
+*.xml text eol=lf
+*.tsv text eol=lf
+*.cfg text eol=lf
+*.tgf text eol=lf
+*.py text eol=lf

@@ -4,6 +4,8 @@
 -- Search host
 --
 
+local utf8 = require('lua-utf8')
+
 local SearchHostClass = newClass("SearchHost", function(self, listAccessor, valueAccessor)
 	self.searchListAccessor = listAccessor
 	self.valueAccessor = valueAccessor
@@ -88,7 +90,7 @@ function SearchHostClass:OnSearchKeyDown(key)
 		self:ResetSearch()
 		return self
 	elseif self:IsSearchActive() and key == "BACK" then
-		self.searchTerm = self.searchTerm:sub(1, -2)
+		self.searchTerm = utf8.sub(self.searchTerm, 1, -2)
 		self:UpdateSearch()
 		return self
 	end
@@ -110,7 +112,21 @@ end
 
 function SearchHostClass:UpdateSearch()
 	if self.searchListAccessor then
-		self.searchInfos = matchTerm(self.searchTerm, self.searchListAccessor(), self.valueAccessor)
+		local list = self.searchListAccessor()
+		self.searchInfos = matchTerm(self.searchTerm, list, self.valueAccessor)
+		if self.localizedSearchAccessor and self:IsSearchActive() then
+			local localized = matchTerm(utf8.lower(self.searchTerm), list, function(entry)
+				return utf8.lower(self.localizedSearchAccessor(entry))
+			end)
+			for index, info in ipairs(localized) do
+				-- English matches still select the same row, while highlight ranges follow the visible text.
+				if not info.matches and self.searchInfos[index].matches then
+					info.matches = true
+					info.ranges = {}
+				end
+				self.searchInfos[index] = info
+			end
+		end
 		self:UpdateMatchCount()
 	end
 end

@@ -1,0 +1,170 @@
+# PoB 0.23.1 trading dialogs. Currency names checked against client 0.5.5g BaseItemTypes.
+Trader	Торговля
+Query Options	Параметры поиска
+Instant buyout	Мгновенный выкуп
+Instant buyout and in person	Выкуп и личный обмен
+In person (online in league)	Личный обмен — в лиге
+In person (online)	Личный обмен — в сети
+Any (includes offline)	Все, включая не в сети
+Fetch Pages	Страниц
+Fetch Pages:	Страниц:
+Adjust search weights	Веса поиска
+Sort By:	Сортировка:
+(Highest) Stat Value	Лучшее улучшение
+Stat Value / Price	Улучшение / цена
+(Lowest) Price	Сначала дешевле
+(Highest) Weighted Sum	Больший вес
+Find best	Подбор
+Paste trade URL here...	Вставьте ссылку на поиск…
+Price Item	Оценить
+<< Search	<< Поиск
+Import Item	Импорт
+Other trades:	Другие предметы:
+Get Currency Conversion Rates	Загрузить курсы валют
+Update Currency Conversion Rates	Обновить курсы валют
+Currency Rates are very recent	Курсы обновлены недавно
+Currency Rates are recent	Курсы актуальны
+Currency Conversion rates are pulled from PoE Ninja	Курсы валют загружаются с PoE Ninja.
+Updates are limited to once per hour and not necessary more than once per day	Обновление доступно раз в час. Обычно достаточно одного обновления в день.
+Specify maximum number of item pages to retrieve per search from PoE Trade.	Максимум страниц с предметами для одного запроса к торговой площадке.
+Each page fetches up to 10 items.	На каждой странице до 10 предметов.
+Acceptable Range is: 1 to 10	Допустимое количество — от 1 до 10.
+Sorts the weights by the stats selected multiplied by a value	Вес предмета учитывает выбранные показатели и их множители.
+Currently sorting by:	Выбранные показатели:
+Stat Weight Multipliers	Веса показателей
+Click to modify this stats weight multiplier.	Щёлкните, чтобы изменить множитель веса показателя.
+Corrupted Mods:	Осквернённые свойства:
+Mirrored Items:	Отражённые предметы:
+Rune Behaviour:	Руны:
+Anoint Behaviour:	Зачарование:
+Copy Current	Как в билде
+Keep	Оставить
+Jewel Slot:	Гнездо самоцвета:
+Jewel Type:	Тип самоцвета:
+Max Price:	Макс. цена:
+Max Level:	Макс. уровень:
+# of Empty Sockets:	Пустых гнёзд:
+Stat to Sort By:	Сортировка по:
++ Add Required Stat	+ Обязательное свойство
+Execute	Выполнить
+Min	Мин.
+Exalted Orb Equivalent	В сферах возвышения
+Exalted Orb	Сфера возвышения
+Chaos Orb	Сфера хаоса
+Divine Orb	Божественная сфера
+Orb of Augmentation	Сфера усиления
+Orb of Transmutation	Сфера превращения
+Regal Orb	Сфера царей
+Vaal Orb	Сфера ваал
+Orb of Annulment	Сфера отмены
+Orb of Alchemy	Сфера алхимии
+Mirror of Kalandra	Зеркало Каландры
+Includes corruption implicit modifiers in the weighted sum.\nNote that there is a maximum search filter count which means this might cause other weights to not be included.	Учитывать осквернённые встроенные свойства в весе предмета.\nТорговая площадка ограничивает количество фильтров, поэтому для части остальных свойств может не хватить места.
+The trade site will filter out listings with other currencies,\nif anything other than "Exalted Orb Equivalent" is chosen and a maximum is specified.	При выборе конкретной валюты и максимальной цены торговая площадка исключит предложения в других валютах.\nДля сравнения цен в разных валютах выберите «В сферах возвышения».
+Requires an active Jewel Socket.	Нужно активное гнездо самоцвета.
+Requires an active Jewel Socket	Нужно активное гнездо самоцвета.
+Control + click to open in web-browser	Ctrl + щелчок — открыть в браузере.
+You must log in to use the search feature	Для поиска в программе необходимо войти в аккаунт.
+Enter a valid trade URL	Введите корректную ссылку на поиск предметов.
+Copies the item purchase whisper to the clipboard	Копирует сообщение продавцу в буфер обмена.
+Opens the search page to show the item	Открывает страницу поиска с этим предметом.
+Whisper	Сообщение
+Total Price:	Общая цена:
+Failed to Get PoE League List response	Не удалось получить список лиг.
+Failed to Get PoE Ninja response	Не удалось получить ответ PoE Ninja.
+Currencies not updated: malformed PoE Ninja response	Курсы не обновлены — неверный формат ответа PoE Ninja.
+No currencies received from PoE Ninja	PoE Ninja не вернул курсы валют.
+No Matching Results Found	Подходящие предметы не найдены.
+Could not generate search, found no mods to search for	Не удалось создать поиск — подходящие свойства не найдены.
+Querying...	Подготовка запроса…
+Logging in... (%s)	Вход… (%s)
+Sorted by %s	Сортировка — %s
+Conversion Rates are less than an hour old (%s seconds old)	Курсы обновлены меньше часа назад (%s сек.).
+Rate limited. Retrying after %s seconds...	Достигнут лимит запросов. Повтор через %s сек…
++ %s Additional Stats	+ Дополнительных показателей — %s
+Whisper for %s	Сообщение за %s
+Search for %s	Поиск за %s
+Weapon 1 Swap:	Оружие I (смена):
+Weapon 2 Swap:	Оружие II (смена):
+The Trader feature supports two modes of operation depending on the authorization availability.	Окно торговли поддерживает два режима в зависимости от авторизации.
+You can click this button to authorize PoB by logging in.	Нажмите эту кнопку, чтобы войти в аккаунт и авторизовать PoB.
+Session Mode	Режим с авторизацией
+- Requires authorization on pathofexile.com.	- Требуется авторизация на pathofexile.com.
+- You can search, compare, and quickly import items without leaving Path of Building.	- Поиск, сравнение и быстрый импорт предметов доступны прямо в Path of Building.
+- You can select an item and search it directly.	- Можно выбрать предмет и сразу выполнить поиск.
+- You can generate and perform searches for the private leagues you are participating.	- Доступен поиск в частных лигах, в которых вы участвуете.
+No Session Mode	Режим без авторизации
+- Doesn't require authorization.	- Авторизация не требуется.
+- You cannot search and compare items in Path of Building.	- Поиск и сравнение предметов внутри Path of Building недоступны.
+- You can generate weighted search URLs but have to visit the trade site and manually import items.	- Можно создать ссылку на поиск с весами, открыть её на торговой площадке и импортировать предмет вручную.
+- You can only generate weighted searches for public leagues. (Generated searches can be modified	- Ссылки создаются для общедоступных лиг. Для другой лиги или сервера измените параметры
+on trade site to work on other leagues and realms)	на торговой площадке.
+Weighted Sum searches will always sort using descending weighted sum	Торговая площадка возвращает результаты по убыванию суммарного веса.
+Additional post filtering options can be done these include:	Полученные результаты можно дополнительно отсортировать.
+Highest Stat Value - Sort from highest to lowest Stat Value change of equipping item	Лучшее улучшение — по убыванию прироста выбранных показателей при надевании предмета.
+Highest Stat Value / Price - Sorts from highest to lowest by estimated Stat Value per currency	Улучшение / цена — по убыванию оценённого прироста показателей на единицу валюты.
+Lowest Price - Sorts from lowest to highest price of retrieved items	Сначала дешевле — по возрастанию цены полученных предметов.
+Highest Weight - Displays the order retrieved from trade	Больший вес — в порядке, полученном от торговой площадки.
+Controls how augments are used in the search.	Определяет, как при поиске учитываются вставленные в гнёзда предметы.
+Copy Current: augments in weights are skipped and augments are replaced with the current augments when possible.	Как в билде — вставленные предметы исключаются из весов и по возможности заменяются на используемые в билде.
+Usually the best opinion as this ensures the augments makes sense for your build.	Обычно этот вариант позволяет оценить предмет с подходящими для билда рунами.
+Keep: augments will be included in weights and will not be changed on items.	Оставить — вставленные предметы учитываются в весах и сохраняются в найденной экипировке.
+Best used when you value an augment greatly, and cannot add it yourself.	Подходит, если вставленный предмет важен для билда и вы не можете добавить его самостоятельно.
+Remove: augments are completely ignored, and removed from items.	Убрать — вставленные предметы исключаются из оценки и удаляются из найденной экипировки в PoB.
+Controls how anoints are used in the search.	Определяет, как при поиске учитывается зачарование амулета.
+Copy Current: anoints are replaced with the current anoint when possible.	Как в билде — зачарование по возможности заменяется на используемое в билде.
+Usually the best opinion as this ensures the anoint makes sense for your build.	Обычно этот вариант позволяет оценить амулет с подходящим для билда зачарованием.
+Keep: anoints will not be changed on items.	Оставить — сохранить зачарование найденного предмета.
+Best used when you cannot add one yourself. Note that weights cannot be generated for anoints.	Подходит, если вы не можете добавить зачарование самостоятельно. Веса для зачарований не рассчитываются.
+Remove: anoints are completely ignored, and removed from items.	Убрать — зачарования исключаются из оценки и удаляются из найденных предметов в PoB.
+Creates a weighted search to find the highest Stat Value items for this slot.	Создаёт поиск с весами для подбора лучших предметов в эту ячейку по выбранным показателям.
+Note that even if you are authenticated, you can click this button again to show the search link.	Повторное нажатие показывает ссылку на поиск, в том числе после авторизации.
+If you have additional requirements that the trade tool doesn't cover (e.g. Adorned Magic jewels),	Дополнительные требования, которые не поддерживает этот инструмент, можно задать на торговой площадке.
+you can add them, copy the link here, and press "Price Item" to evaluate the items.	Скопируйте полученную ссылку сюда и нажмите «Оценить», чтобы сравнить предметы.
+# Trade filters with ambiguous English templates. Russian text checked by stat ID.
+# spell_damage_+%_during_flask_effect
+#% increased Spell Damage during any Flask Effect	#% увеличение урона от чар во время действия эффекта любого флакона
+# essence_grants_armour_evasion_energy_shield_+% and local_armour_and_evasion_and_energy_shield_+%
+#% increased Armour, Evasion and Energy Shield	#% увеличение брони, уклонения и энергетического щита
+#% increased Armour, Evasion and Energy Shield (Local)	#% повышение брони, уклонения и энергетического щита
+# cannot_be_poisoned
+Cannot be Poisoned	Не может быть отравлен
+# accuracy_rating_+% and local_accuracy_rating_+%
+#% increased Accuracy Rating	#% повышение глобальной меткости
+#% increased Accuracy Rating (Local)	#% повышение меткости
+# base_enemy_critical_strike_chance_+%_against_self and generate_x_charges_for_charms_per_minute
+Hits have #% increased Critical Hit Chance against you	#% увеличение шанса критического удара ударами по вам
+Charms gain # charge per Second	Обереги получают зарядов в секунду: #
+Notable Passive Skills in Radius also grant Hits have #% increased Critical Hit Chance against you	Значимые пассивные умения в радиусе также даруют #% увеличение шанса критического удара ударами по вам
+Notable Passive Skills in Radius also grant Charms gain # charge per Second	Значимые пассивные умения в радиусе также даруют Обереги получают зарядов в секунду: #
+Impale + Hit DPS	УВС ударов и прокола
+Attack/Cast Speed	Скорость атак и чар
+Life regen	Регенерация здоровья
+Life leech	Похищение здоровья
+Energy Shield regen	Регенерация эн. щита
+Energy Shield leech	Похищение эн. щита
+Mana regen	Регенерация маны
+Mana leech	Похищение маны
+Ward	Рунический барьер
+Total Attributes	Сумма характеристик
+Melee avoid chance	Избежание ударов ближнего боя
+Spell avoid chance	Избежание чар
+Projectile avoid chance	Избежание снарядов
+Eff. Maximum Hit Taken	Эфф. макс. получаемый удар
+Taken Phys dmg	Получаемый физ. урон
+Taken Lightning dmg	Получаемый урон молнией
+Taken Cold dmg	Получаемый урон холодом
+Taken Fire dmg	Получаемый урон огнём
+Taken Chaos dmg	Получаемый урон хаосом
+Bleed Chance	Шанс кровотечения
+Freeze Chance	Шанс заморозки
+Ignite Chance	Шанс поджога
+Shock Chance	Шанс шока
+Move speed	Скорость передвижения
+Rarity of Items found	Редкость найденных предметов
+Recoverable ES	Восстанавливаемый эн. щит
+Crit Chance	Шанс крит. попадания
+Crit Multiplier	Множитель крит. урона
+Block Chance	Шанс блока
+Spell Block Chance	Шанс блока чар
+Spell Suppression Chance	Шанс подавления чар

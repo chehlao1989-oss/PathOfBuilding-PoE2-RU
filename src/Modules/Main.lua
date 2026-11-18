@@ -199,10 +199,10 @@ function main:Init()
 	self.anchorMain.y = function()
 		return self.screenH - 4
 	end
-	self.controls.options = new("ButtonControl", {"BOTTOMLEFT",self.anchorMain,"BOTTOMLEFT"}, {0, 0, 68, 20}, "Options", function()
+	self.controls.options = new("ButtonControl", {"BOTTOMLEFT",self.anchorMain,"BOTTOMLEFT"}, {0, 0, 99, 20}, "Options", function()
 		self:OpenOptionsPopup()
 	end)
-	self.controls.about = new("ButtonControl", {"BOTTOMLEFT",self.anchorMain,"BOTTOMLEFT"}, {72, 0, 68, 20}, "About", function()
+	self.controls.about = new("ButtonControl", {"BOTTOMLEFT",self.anchorMain,"BOTTOMLEFT"}, {103, 0, 68, 20}, "About", function()
 		self:OpenAboutPopup()
 	end)
 	self.controls.applyUpdate = new("ButtonControl", {"BOTTOMLEFT",self.anchorMain,"BOTTOMLEFT"}, {0, -24, 140, 20}, "^x50E050Update Ready", function()
@@ -215,7 +215,7 @@ function main:Init()
 		launch:CheckForUpdate()
 	end)
 	self.controls.checkUpdate.shown = function()
-		return not launch.devMode and (not launch.updateAvailable or launch.updateAvailable == "none")
+		return not UILocale and not launch.devMode and (not launch.updateAvailable or launch.updateAvailable == "none")
 	end
 	self.controls.checkUpdate.label = function()
 		return launch.updateCheckRunning and launch.updateProgress or "Check for Update"
@@ -227,7 +227,7 @@ function main:Init()
 	self.controls.forkLabel.label = function()
 		return "^8PoB Community Fork"
 	end
-	self.controls.versionLabel = new("LabelControl", {"BOTTOMLEFT",self.anchorMain,"BOTTOMLEFT"}, {148, -2, 0, 16}, "")
+	self.controls.versionLabel = new("LabelControl", {"BOTTOMLEFT",self.anchorMain,"BOTTOMLEFT"}, {176, -2, 0, 16}, "")
 	self.controls.versionLabel.label = function()
 		return "^8Version: "..launch.versionNumber..(launch.versionBranch == "dev" and " (Dev)" or launch.versionBranch == "beta" and " (Beta)" or "")
 	end
@@ -285,7 +285,7 @@ end
 
 function main:DetectUnicodeSupport()
 	-- PoeCharm has utf8 global that normal PoB doesn't have
-	self.unicode = type(_G.utf8) == "table"
+	self.unicode = true
 	if self.unicode then
 		ConPrintf("Unicode support detected")
 	end
@@ -569,6 +569,7 @@ function main:LoadSettings(ignoreBuild)
 					end
 				end
 			elseif node.elem == "Misc" then
+				UILocale.setLanguage(node.attrib.uiLanguage)
 				if node.attrib.buildSortMode then
 					self.buildSortMode = node.attrib.buildSortMode
 				end
@@ -772,6 +773,7 @@ function main:SaveSettings()
 	end
 	t_insert(setXML, sharedItemList)
 	t_insert(setXML, { elem = "Misc", attrib = {
+		uiLanguage = UILocale.language,
 		buildSortMode = self.buildSortMode,
 		connectionProtocol = tostring(launch.connectionProtocol),
 		proxyURL = launch.proxyURL,
@@ -891,7 +893,7 @@ function main:OpenOptionsPopup(savedState)
 	}
 
 	-- NOTE: Height needs to be adjusted if more menu options are added
-	local oneColumnHeightReq = 850 -- Min height required to not split menu into two columns
+	local oneColumnHeightReq = 876 -- Min height required to not split menu into two columns
 	local columnWidth = 600
 	
 	local startingY = 20
@@ -928,6 +930,15 @@ function main:OpenOptionsPopup(savedState)
 	local defaultLabelPlacementX = columnWidth*0.45
 
 	drawSectionHeader("app", "Application options")
+
+	controls.uiLanguage = new("DropDownControl", { "TOPLEFT", controls.sectionAnchor, "TOPLEFT" }, { currentX + defaultLabelPlacementX, currentY, 150, 18 }, {
+		{ label = "Русский", language = "ru" },
+		{ label = "English", language = "en" },
+	})
+	controls.uiLanguage:SelByValue(UILocale.language, "language")
+	controls.uiLanguage.tooltipText = "Choose the interface language."
+	controls.uiLanguageLabel = new("LabelControl", { "RIGHT", controls.uiLanguage, "LEFT" }, { defaultLabelSpacingPx, 0, 0, 16 }, "^7Language:")
+	nextRow()
 
 	controls.connectionProtocol = new("DropDownControl", { "TOPLEFT", controls.sectionAnchor, "TOPLEFT" }, { currentX + defaultLabelPlacementX, currentY, 100, 18 }, {
 		{ label = "Auto", protocol = 0 },
@@ -1174,6 +1185,7 @@ function main:OpenOptionsPopup(savedState)
 		controls.disableDevAutoSave.state = self.disableDevAutoSave
 	end
 
+	controls.betaTest.enabled = false
 	controls.betaTest.state = self.betaTest
 	controls.edgeSearchHighlight.state = self.edgeSearchHighlight
 	controls.titlebarName.state = self.showTitlebarName
@@ -1191,6 +1203,7 @@ function main:OpenOptionsPopup(savedState)
 
 	-- lock the Save/Cancel buttons to the bottom so they don't scroll away
 	controls.save = new("ButtonControl", { "BOTTOM", nil, "BOTTOM" }, {-45, -10, 80, 20}, "Save", function()
+		UILocale.setLanguage(controls.uiLanguage.list[controls.uiLanguage.selIndex].language)
 		launch.connectionProtocol = tonumber(self.connectionProtocol)
 		if controls.proxyURL.buf:match("%w") then
 			launch.proxyURL = controls.proxyType.list[controls.proxyType.selIndex].scheme .. "://" .. controls.proxyURL.buf
@@ -1208,7 +1221,7 @@ function main:OpenOptionsPopup(savedState)
 		if self.mode == "LIST" then
 			self.modes.LIST:BuildList()
 		end
-		if not launch.devMode then
+		if not UILocale and not launch.devMode then
 			main:SetManifestBranch(self.betaTest and "beta" or "master")
 		end
 		SetDPIScaleOverridePercent(self.dpiScaleOverridePercent)

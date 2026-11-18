@@ -10,7 +10,9 @@ local ItemListClass = newClass("ItemListControl", "ListControl", function(self, 
 	self.ListControl(anchor, rect, 16, "VERTICAL", true, itemsTab.itemOrderList, forceTooltip)
 	self.itemsTab = itemsTab
 	self.label = "^7All items:"
-	self.defaultText = "^x7F7F7FThis is the list of items that have been added to this build.\nYou can add items to this list by dragging them from\none of the other lists, or by clicking 'Add to build' when\nviewing an item."
+	self.labelPositionOffset[2] = -22
+	self.wrapDefaultText = true
+	self.defaultText = "^x7F7F7FDrag an item here from another list or choose Add to Build when viewing it."
 	self.dragTargetList = { }
 	self.controls.delete = new("ButtonControl", {"BOTTOMRIGHT",self,"TOPRIGHT"}, {0, -2, 60, 18}, "Delete", function()
 		self:OnSelDelete(self.selIndex, self.selValue)
@@ -18,7 +20,7 @@ local ItemListClass = newClass("ItemListControl", "ListControl", function(self, 
 	self.controls.delete.enabled = function()
 		return self.selValue ~= nil
 	end
-	self.controls.deleteAll = new("ButtonControl", {"RIGHT",self.controls.delete,"LEFT"}, {-4, 0, 70, 18}, "Delete All", function()
+	self.controls.deleteAll = new("ButtonControl", {"RIGHT",self.controls.delete,"LEFT"}, {-4, 0, 82, 18}, "Delete All", function()
 		main:OpenConfirmPopup("Delete All", "Are you sure you want to delete all items in this build?", "Delete", function()
 			for _, slot in pairs(itemsTab.slots) do
 				slot:SetSelItemId(0)
@@ -40,7 +42,7 @@ local ItemListClass = newClass("ItemListControl", "ListControl", function(self, 
 	self.controls.deleteAll.enabled = function()
 		return #self.list > 0
 	end
-	self.controls.deleteUnused = new("ButtonControl", {"RIGHT",self.controls.deleteAll,"LEFT"}, {-4, 0, 100, 18}, "Delete Unused", function()
+	self.controls.deleteUnused = new("ButtonControl", {"RIGHT",self.controls.deleteAll,"LEFT"}, {-4, 0, 108, 18}, "Delete Unused", function()
 		local delList = {}
 		for _, itemId in pairs(self.list) do
 			if not itemsTab:GetEquippedSlotForItem(itemsTab.items[itemId]) and not self:FindEquippedItemSocket(itemId, false) and not self:FindSocketedJewel(itemId, false) then
@@ -59,10 +61,11 @@ local ItemListClass = newClass("ItemListControl", "ListControl", function(self, 
 		itemsTab:AddUndoState()
 		itemsTab.build.buildFlag = true
 	end)
+	self.controls.deleteUnused.tooltipText = "Remove items that are not equipped or socketed."
 	self.controls.deleteUnused.enabled = function()
 		return #self.list > 0
 	end
-	self.controls.sort = new("ButtonControl", {"RIGHT",self.controls.deleteUnused,"LEFT"}, {-4, 0, 60, 18}, "Sort", function()
+	self.controls.sort = new("ButtonControl", {"RIGHT",self.controls.deleteUnused,"LEFT"}, {-4, 0, 84, 18}, "Sort", function()
 		itemsTab:SortItemList()
 	end)
 end)
@@ -118,14 +121,14 @@ function ItemListClass:GetRowValue(column, index, itemId)
 		if used == "" then
 			local slot, itemSet = self.itemsTab:GetEquippedSlotForItem(item)
 			if not slot then
-				used = "  ^9(Unused)"
+				used = "  ^9" .. UILocale.translate("(Unused)")
 			elseif itemSet then
 				used = "  ^9(Used in '" .. (itemSet.title or "Default") .. "')"
 			end
 		else
 			used = "  ^9(Used in '" .. used .. "')"
 		end
-		return colorCodes[item.rarity] .. item.name .. used
+		return colorCodes[item.rarity] .. UILocale.itemName(item) .. used
 	end
 end
 

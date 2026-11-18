@@ -228,7 +228,7 @@ local function applySpecial(val, spec)
 	end
 end
 
-return function(stats, scopeName, quality)
+return function(stats, scopeName, quality, translateTemplate, qualityRangeStat)
 	local rootScope = getScope(scopeName)
 
 	-- Figure out which descriptions we need, and identify them by the first stat that they describe
@@ -239,7 +239,7 @@ return function(stats, scopeName, quality)
 				if scope[s] then
 					local descriptor = scope[scope[s]]
 					if descriptor[1] then
-						describeStats[descriptor.stats[1]] = { depth = depth, order = scope[s], description = scope[scope[s]] }
+						describeStats[descriptor.stats[1]] = { depth = depth, order = scope[s], description = descriptor, scopeName = scope.name }
 					end
 					break
 				end
@@ -278,41 +278,33 @@ return function(stats, scopeName, quality)
 			for _, spec in ipairs(desc) do
 				applySpecial(val, spec)
 			end
-			local statDesc = desc.text:gsub("{(%d)}", function(n) 
-				local v = val[tonumber(n)+1]
-				if v.min == v.max then
-					return s_format("%"..v.fmt, v.min)
-				else
-					return s_format("(%"..v.fmt.."-%"..v.fmt..")", v.min, v.max)
-				end
-			end):gsub("{}", function() 
-				local v = val[1]
-				if v.min == v.max then
-					return s_format("%"..v.fmt, v.min)
-				else
-					return s_format("(%"..v.fmt.."-%"..v.fmt..")", v.min, v.max)
-				end
-			end):gsub("{:%+?d}", function() 
-				local v = val[1]
-				if v.min == v.max then
-					return s_format("%"..v.fmt, v.min)
-				else
-					return s_format("(%"..v.fmt.."-%"..v.fmt..")", v.min, v.max)
-				end
-			end):gsub("{(%d):(%+?)d}", function(n, fmt)
-				local v = val[tonumber(n)+1]
-				if v.min == v.max then
-					return s_format("%"..fmt..v.fmt, v.min)
-				elseif fmt == "+" then
-					if v.max < 0 then
-						return s_format("-(%d-%d)", -v.min, -v.max)
-					else
-						return s_format("+(%d-%d)", v.min, v.max)
+			local function formatValue(index, sign)
+				local value = val[index]
+				if value.min == value.max then
+					local formatted = s_format("%" .. sign .. value.fmt, value.min)
+					if qualityRangeStat and descriptor.description.stats[index] == qualityRangeStat and type(value.min) == "number" then
+						local prefix = formatted:match("^[+-]") or ""
+						return prefix .. "(0-" .. formatted:sub(#prefix + 1) .. ")"
 					end
-				else
-					return s_format("(%"..fmt..v.fmt.."-%"..fmt..v.fmt..")", v.min, v.max)
+					return formatted
+				elseif sign == "+" then
+					if value.max < 0 then
+						return s_format("-(%d-%d)", -value.min, -value.max)
+					end
+					return s_format("+(%d-%d)", value.min, value.max)
 				end
-			end):gsub("%%%%","%%")
+				return s_format("(%" .. value.fmt .. "-%" .. value.fmt .. ")", value.min, value.max)
+			end
+			local template = translateTemplate and translateTemplate(descriptor.scopeName, descriptor.description.stats, desc) or desc.text
+			local statDesc = template:gsub("{(%d)}", function(n)
+				return formatValue(tonumber(n) + 1, "")
+			end):gsub("{}", function()
+				return formatValue(1, "")
+			end):gsub("{:%+?d}", function()
+				return formatValue(1, "")
+			end):gsub("{(%d):(%+?)d}", function(n, sign)
+				return formatValue(tonumber(n) + 1, sign)
+			end):gsub("%%%%", "%%")
 			for line in (statDesc.."\\n"):gmatch("([^\\]+)\\n") do
 				t_insert(out, line)
 				lineMap[line] = stat

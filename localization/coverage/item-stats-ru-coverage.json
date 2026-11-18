@@ -1,0 +1,1675 @@
+{
+  "ambiguousForClipboard":[{
+      "sourceShape":"+# допустимых свойств-префиксов",
+      "translations":["{0} prefix modifier allowed","{0} prefix modifiers allowed"]
+    },{
+      "sourceShape":"+# допустимых свойств-префиксов",
+      "translations":["{0} prefix modifier allowed","{0} prefix modifiers allowed"]
+    },{
+      "sourceShape":"-# допустимых свойств-префиксов",
+      "translations":["{0} prefix modifier allowed","{0} prefix modifiers allowed"]
+    },{
+      "sourceShape":"-# допустимых свойств-префиксов",
+      "translations":["{0} prefix modifier allowed","{0} prefix modifiers allowed"]
+    },{
+      "sourceShape":"+# допустимых свойств-суффиксов",
+      "translations":["{0} suffix modifier allowed","{0} suffix modifiers allowed"]
+    },{
+      "sourceShape":"+# допустимых свойств-суффиксов",
+      "translations":["{0} suffix modifier allowed","{0} suffix modifiers allowed"]
+    },{
+      "sourceShape":"-# допустимых свойств-суффиксов",
+      "translations":["{0} suffix modifier allowed","{0} suffix modifiers allowed"]
+    },{
+      "sourceShape":"-# допустимых свойств-суффиксов",
+      "translations":["{0} suffix modifier allowed","{0} suffix modifiers allowed"]
+    },{
+      "sourceShape":"может иметь дополнительных ремесленных свойств: #",
+      "translations":["can have {0} additional crafted modifier","can have {0} additional crafted modifiers"]
+    },{
+      "sourceShape":"может иметь дополнительных ремесленных свойств: #",
+      "translations":["can have {0} additional crafted modifier","can have {0} additional crafted modifiers"]
+    },{
+      "sourceShape":"поглощает размещённые неосквернённые камни поддержки при достижении ими максимального уровня может поглотить дополнительных неосквернённых камней поддержки: # не было поглощено ни одного камня",
+      "translations":["consumes socketed uncorrupted support gems when they reach maximum level\ncan consume {0} uncorrupted support gem\nhas not consumed any gems","consumes socketed uncorrupted support gems when they reach maximum level\ncan consume {0} uncorrupted support gems\nhas not consumed any gems"]
+    },{
+      "sourceShape":"поглощает размещённые неосквернённые камни поддержки при достижении ими максимального уровня может поглотить дополнительных неосквернённых камней поддержки: # не было поглощено ни одного камня",
+      "translations":["consumes socketed uncorrupted support gems when they reach maximum level\ncan consume {0} uncorrupted support gem\nhas not consumed any gems","consumes socketed uncorrupted support gems when they reach maximum level\ncan consume {0} uncorrupted support gems\nhas not consumed any gems"]
+    },{
+      "sourceShape":"поглощает размещённые неосквернённые камни поддержки при достижении ими максимального уровня может поглотить дополнительных неосквернённых камней поддержки: #",
+      "translations":["consumes socketed uncorrupted support gems when they reach maximum level\ncan consume {0} additional uncorrupted support gem","consumes socketed uncorrupted support gems when they reach maximum level\ncan consume {0} additional uncorrupted support gems"]
+    },{
+      "sourceShape":"поглощает размещённые неосквернённые камни поддержки при достижении ими максимального уровня может поглотить дополнительных неосквернённых камней поддержки: #",
+      "translations":["consumes socketed uncorrupted support gems when they reach maximum level\ncan consume {0} additional uncorrupted support gem","consumes socketed uncorrupted support gems when they reach maximum level\ncan consume {0} additional uncorrupted support gems"]
+    },{
+      "sourceShape":"в сущностях пленены бродячие изгнанники",
+      "translations":["essences contain rogue exiles","essences imprison a rogue exile"]
+    },{
+      "sourceShape":"+# к зарядам размещенных умений боевых кличей",
+      "translations":["socketed warcry skills have {0} cooldown use","socketed warcry skills have {0} cooldown uses"]
+    },{
+      "sourceShape":"+# к зарядам размещенных умений боевых кличей",
+      "translations":["socketed warcry skills have {0} cooldown use","socketed warcry skills have {0} cooldown uses"]
+    },{
+      "sourceShape":"-# к зарядам размещенных умений боевых кличей",
+      "translations":["socketed warcry skills have {0} cooldown use","socketed warcry skills have {0} cooldown uses"]
+    },{
+      "sourceShape":"-# к зарядам размещенных умений боевых кличей",
+      "translations":["socketed warcry skills have {0} cooldown use","socketed warcry skills have {0} cooldown uses"]
+    },{
+      "sourceShape":"дает зарядов флакона при получении удара от врага: #",
+      "translations":["gain {0} charge when you are hit by an enemy","gain {0} charges when you are hit by an enemy"]
+    },{
+      "sourceShape":"дает зарядов флакона при получении удара от врага: #",
+      "translations":["gain {0} charge when you are hit by an enemy","gain {0} charges when you are hit by an enemy"]
+    },{
+      "sourceShape":"восстанавливает зарядов, когда вы наносите критический удар: #",
+      "translations":["recharges {0} charge when you deal a critical hit","recharges {0} charges when you deal a critical hit"]
+    },{
+      "sourceShape":"восстанавливает зарядов, когда вы наносите критический удар: #",
+      "translations":["recharges {0} charge when you deal a critical hit","recharges {0} charges when you deal a critical hit"]
+    },{
+      "sourceShape":"восстанавливает зарядов при получении критического удара: #",
+      "translations":["recharges {0} charge when you take a critical hit","recharges {0} charges when you take a critical hit"]
+    },{
+      "sourceShape":"восстанавливает зарядов при получении критического удара: #",
+      "translations":["recharges {0} charge when you take a critical hit","recharges {0} charges when you take a critical hit"]
+    },{
+      "sourceShape":"#% от максимума здоровья наносится в виде урона хаосом в секунду",
+      "translations":["{0}% of maximum life taken as chaos damage per second","{0}% of maximum life taken per second as chaos damage"]
+    },{
+      "sourceShape":"#% от максимума здоровья наносится в виде урона хаосом в секунду",
+      "translations":["{0}% of maximum life taken as chaos damage per second","{0}% of maximum life taken per second as chaos damage"]
+    },{
+      "sourceShape":"нет энергетического щита",
+      "translations":["cannot have energy shield","has no energy shield"]
+    },{
+      "sourceShape":"#% физического урона от атак похищается в виде здоровья",
+      "translations":["leech {0}% of physical attack damage as life","leeches {0}% of physical damage as life"]
+    },{
+      "sourceShape":"#% физического урона от атак похищается в виде здоровья",
+      "translations":["leech {0}% of physical attack damage as life","leeches {0}% of physical damage as life"]
+    },{
+      "sourceShape":"#% физического урона от атак похищается в виде маны",
+      "translations":["leech {0}% of physical attack damage as mana","leeches {0}% of physical damage as mana"]
+    },{
+      "sourceShape":"#% физического урона от атак похищается в виде маны",
+      "translations":["leech {0}% of physical attack damage as mana","leeches {0}% of physical damage as mana"]
+    },{
+      "sourceShape":"вызывает увеличенное на #% накопление оглушения",
+      "translations":["causes {0}% increased stun buildup","causes {0}% reduced stun buildup"]
+    },{
+      "sourceShape":"вызывает увеличенное на #% накопление оглушения",
+      "translations":["causes {0}% increased stun buildup","causes {0}% reduced stun buildup"]
+    },{
+      "sourceShape":"#% увеличение длительности кровотечения на вас",
+      "translations":["{0}% increased bleeding duration on you","{0}% increased duration of bleeding on you"]
+    },{
+      "sourceShape":"#% увеличение длительности кровотечения на вас",
+      "translations":["{0}% increased bleeding duration on you","{0}% increased duration of bleeding on you"]
+    },{
+      "sourceShape":"#% уменьшение длительности кровотечения на вас",
+      "translations":["{0}% reduced bleeding duration on you","{0}% reduced duration of bleeding on you"]
+    },{
+      "sourceShape":"#% уменьшение длительности кровотечения на вас",
+      "translations":["{0}% reduced bleeding duration on you","{0}% reduced duration of bleeding on you"]
+    },{
+      "sourceShape":"из редких монстров нашествия выпадает дополнительных самоцветов бездны: #",
+      "translations":["rare scourge monsters drop {0} additional abyssal jewel","rare scourge monsters drop {0} additional abyssal jewels"]
+    },{
+      "sourceShape":"из редких монстров нашествия выпадает дополнительных самоцветов бездны: #",
+      "translations":["rare scourge monsters drop {0} additional abyssal jewel","rare scourge monsters drop {0} additional abyssal jewels"]
+    },{
+      "sourceShape":"из редких монстров нашествия выпадает дополнительной обычной валюты: #",
+      "translations":["rare scourge monsters drop {0} additional basic currency item","rare scourge monsters drop {0} additional basic currency items"]
+    },{
+      "sourceShape":"из редких монстров нашествия выпадает дополнительной обычной валюты: #",
+      "translations":["rare scourge monsters drop {0} additional basic currency item","rare scourge monsters drop {0} additional basic currency items"]
+    },{
+      "sourceShape":"из редких монстров нашествия выпадает дополнительных масел скверны: #",
+      "translations":["rare scourge monsters drop {0} additional blight oil","rare scourge monsters drop {0} additional blight oils"]
+    },{
+      "sourceShape":"из редких монстров нашествия выпадает дополнительных масел скверны: #",
+      "translations":["rare scourge monsters drop {0} additional blight oil","rare scourge monsters drop {0} additional blight oils"]
+    },{
+      "sourceShape":"из редких монстров нашествия выпадает дополнительных осколков разлома: #",
+      "translations":["rare scourge monsters drop {0} additional stack of breach splinters","rare scourge monsters drop {0} additional stacks of breach splinters"]
+    },{
+      "sourceShape":"из редких монстров нашествия выпадает дополнительных осколков разлома: #",
+      "translations":["rare scourge monsters drop {0} additional stack of breach splinters","rare scourge monsters drop {0} additional stacks of breach splinters"]
+    },{
+      "sourceShape":"из редких монстров нашествия выпадает дополнительных стопок осколков симулякра: #",
+      "translations":["rare scourge monsters drop {0} additional stack of simulacrum splinters","rare scourge monsters drop {0} additional stacks of simulacrum splinters"]
+    },{
+      "sourceShape":"из редких монстров нашествия выпадает дополнительных стопок осколков симулякра: #",
+      "translations":["rare scourge monsters drop {0} additional stack of simulacrum splinters","rare scourge monsters drop {0} additional stacks of simulacrum splinters"]
+    },{
+      "sourceShape":"из редких монстров нашествия выпадает дополнительных ископаемых: #",
+      "translations":["rare scourge monsters drop {0} additional fossil","rare scourge monsters drop {0} additional fossils"]
+    },{
+      "sourceShape":"из редких монстров нашествия выпадает дополнительных ископаемых: #",
+      "translations":["rare scourge monsters drop {0} additional fossil","rare scourge monsters drop {0} additional fossils"]
+    },{
+      "sourceShape":"из редких монстров нашествия выпадает дополнительных предметов с зачарованием: #",
+      "translations":["rare scourge monsters drop {0} additional enchanted item","rare scourge monsters drop {0} additional enchanted items"]
+    },{
+      "sourceShape":"из редких монстров нашествия выпадает дополнительных предметов с зачарованием: #",
+      "translations":["rare scourge monsters drop {0} additional enchanted item","rare scourge monsters drop {0} additional enchanted items"]
+    },{
+      "sourceShape":"из редких монстров нашествия выпадает дополнительных сущностей: #",
+      "translations":["rare scourge monsters drop {0} additional essence","rare scourge monsters drop {0} additional essences"]
+    },{
+      "sourceShape":"из редких монстров нашествия выпадает дополнительных сущностей: #",
+      "translations":["rare scourge monsters drop {0} additional essence","rare scourge monsters drop {0} additional essences"]
+    },{
+      "sourceShape":"из редких монстров нашествия выпадает дополнительных стопок валюты экспедиции: #",
+      "translations":["rare scourge monsters drop {0} additional stack of expedition currency","rare scourge monsters drop {0} additional stacks of expedition currency"]
+    },{
+      "sourceShape":"из редких монстров нашествия выпадает дополнительных стопок валюты экспедиции: #",
+      "translations":["rare scourge monsters drop {0} additional stack of expedition currency","rare scourge monsters drop {0} additional stacks of expedition currency"]
+    },{
+      "sourceShape":"из редких монстров нашествия выпадает дополнительных расколотых предметов: #",
+      "translations":["rare scourge monsters drop {0} additional fractured item","rare scourge monsters drop {0} additional fractured items"]
+    },{
+      "sourceShape":"из редких монстров нашествия выпадает дополнительных расколотых предметов: #",
+      "translations":["rare scourge monsters drop {0} additional fractured item","rare scourge monsters drop {0} additional fractured items"]
+    },{
+      "sourceShape":"из редких монстров нашествия выпадает дополнительных камней: #",
+      "translations":["rare scourge monsters drop {0} additional gem","rare scourge monsters drop {0} additional gems"]
+    },{
+      "sourceShape":"из редких монстров нашествия выпадает дополнительных камней: #",
+      "translations":["rare scourge monsters drop {0} additional gem","rare scourge monsters drop {0} additional gems"]
+    },{
+      "sourceShape":"из редких монстров нашествия выпадает дополнительных инкубаторов: #",
+      "translations":["rare scourge monsters drop {0} additional incubator","rare scourge monsters drop {0} additional incubators"]
+    },{
+      "sourceShape":"из редких монстров нашествия выпадает дополнительных инкубаторов: #",
+      "translations":["rare scourge monsters drop {0} additional incubator","rare scourge monsters drop {0} additional incubators"]
+    },{
+      "sourceShape":"из редких монстров нашествия выпадает дополнительных предметов с влиянием: #",
+      "translations":["rare scourge monsters drop {0} additional influenced item","rare scourge monsters drop {0} additional influenced items"]
+    },{
+      "sourceShape":"из редких монстров нашествия выпадает дополнительных предметов с влиянием: #",
+      "translations":["rare scourge monsters drop {0} additional influenced item","rare scourge monsters drop {0} additional influenced items"]
+    },{
+      "sourceShape":"из редких монстров нашествия выпадает дополнительных стопок осколков легиона: #",
+      "translations":["rare scourge monsters drop {0} additional stack of legion splinters","rare scourge monsters drop {0} additional stacks of legion splinters"]
+    },{
+      "sourceShape":"из редких монстров нашествия выпадает дополнительных стопок осколков легиона: #",
+      "translations":["rare scourge monsters drop {0} additional stack of legion splinters","rare scourge monsters drop {0} additional stacks of legion splinters"]
+    },{
+      "sourceShape":"из редких монстров нашествия выпадает дополнительных карт: #",
+      "translations":["rare scourge monsters drop {0} additional map","rare scourge monsters drop {0} additional maps"]
+    },{
+      "sourceShape":"из редких монстров нашествия выпадает дополнительных карт: #",
+      "translations":["rare scourge monsters drop {0} additional map","rare scourge monsters drop {0} additional maps"]
+    },{
+      "sourceShape":"из редких монстров нашествия выпадает дополнительных катализаторов: #",
+      "translations":["rare scourge monsters drop {0} additional catalyst","rare scourge monsters drop {0} additional catalysts"]
+    },{
+      "sourceShape":"из редких монстров нашествия выпадает дополнительных катализаторов: #",
+      "translations":["rare scourge monsters drop {0} additional catalyst","rare scourge monsters drop {0} additional catalysts"]
+    },{
+      "sourceShape":"из редких монстров нашествия выпадает дополнительных скарабеев: #",
+      "translations":["rare scourge monsters drop {0} additional scarab","rare scourge monsters drop {0} additional scarabs"]
+    },{
+      "sourceShape":"из редких монстров нашествия выпадает дополнительных скарабеев: #",
+      "translations":["rare scourge monsters drop {0} additional scarab","rare scourge monsters drop {0} additional scarabs"]
+    },{
+      "sourceShape":"из редких монстров нашествия выпадает дополнительных предметов нашествия: #",
+      "translations":["rare scourge monsters drop {0} additional scourged item","rare scourge monsters drop {0} additional scourged items"]
+    },{
+      "sourceShape":"из редких монстров нашествия выпадает дополнительных предметов нашествия: #",
+      "translations":["rare scourge monsters drop {0} additional scourged item","rare scourge monsters drop {0} additional scourged items"]
+    },{
+      "sourceShape":"из редких монстров нашествия выпадает дополнительных колод карт: #",
+      "translations":["rare scourge monsters drop {0} additional stacked deck","rare scourge monsters drop {0} additional stacked decks"]
+    },{
+      "sourceShape":"из редких монстров нашествия выпадает дополнительных колод карт: #",
+      "translations":["rare scourge monsters drop {0} additional stacked deck","rare scourge monsters drop {0} additional stacked decks"]
+    },{
+      "sourceShape":"из редких монстров нашествия выпадает дополнительной порочной валюты: #",
+      "translations":["rare scourge monsters drop {0} additional tainted currency item","rare scourge monsters drop {0} additional tainted currency items"]
+    },{
+      "sourceShape":"из редких монстров нашествия выпадает дополнительной порочной валюты: #",
+      "translations":["rare scourge monsters drop {0} additional tainted currency item","rare scourge monsters drop {0} additional tainted currency items"]
+    },{
+      "sourceShape":"из редких монстров нашествия выпадает дополнительных уникальных предметов: #",
+      "translations":["rare scourge monsters drop {0} additional unique item","rare scourge monsters drop {0} additional unique items"]
+    },{
+      "sourceShape":"из редких монстров нашествия выпадает дополнительных уникальных предметов: #",
+      "translations":["rare scourge monsters drop {0} additional unique item","rare scourge monsters drop {0} additional unique items"]
+    },{
+      "sourceShape":"#% увеличение урона от холода атаками со щитом в руках",
+      "translations":["{0}% increased cold attack damage while holding a shield","{0}% reduced cold attack damage while holding a shield"]
+    },{
+      "sourceShape":"#% увеличение урона от холода атаками со щитом в руках",
+      "translations":["{0}% increased cold attack damage while holding a shield","{0}% reduced cold attack damage while holding a shield"]
+    },{
+      "sourceShape":"#% увеличение урона при малом количестве здоровья",
+      "translations":["{0}% increased damage when not on low life","{0}% increased damage when on low life"]
+    },{
+      "sourceShape":"#% увеличение урона при малом количестве здоровья",
+      "translations":["{0}% increased damage when not on low life","{0}% increased damage when on low life"]
+    },{
+      "sourceShape":"#% уменьшение урона при малом количестве здоровья",
+      "translations":["{0}% reduced damage when not on low life","{0}% reduced damage when on low life"]
+    },{
+      "sourceShape":"#% уменьшение урона при малом количестве здоровья",
+      "translations":["{0}% reduced damage when not on low life","{0}% reduced damage when on low life"]
+    },{
+      "sourceShape":"#% увеличение урона от атак с парным оружием в руках",
+      "translations":["{0}% increased attack damage while dual wielding","{0}% reduced attack damage while dual wielding"]
+    },{
+      "sourceShape":"#% увеличение урона от атак с парным оружием в руках",
+      "translations":["{0}% increased attack damage while dual wielding","{0}% reduced attack damage while dual wielding"]
+    },{
+      "sourceShape":"отбрасывает врагов при нанесении удара",
+      "translations":["knocks back enemies on hit","knocks enemies back on hit"]
+    },{
+      "sourceShape":"приспешники имеют #% повышение скорости передвижения",
+      "translations":["instead grant: minions have {0}% increased movement speed","minions have {0}% increased movement speed"]
+    },{
+      "sourceShape":"приспешники имеют #% повышение скорости передвижения",
+      "translations":["instead grant: minions have {0}% increased movement speed","minions have {0}% increased movement speed"]
+    },{
+      "sourceShape":"приспешники имеют #% снижение скорости передвижения",
+      "translations":["instead grant: minions have {0}% reduced movement speed","minions have {0}% reduced movement speed"]
+    },{
+      "sourceShape":"приспешники имеют #% снижение скорости передвижения",
+      "translations":["instead grant: minions have {0}% reduced movement speed","minions have {0}% reduced movement speed"]
+    },{
+      "sourceShape":"стрелы пронзают дополнительную цель",
+      "translations":["arrows pierce an additional target","projectiles pierce an additional target"]
+    },{
+      "sourceShape":"стрелы пронзают # дополнительных цели(-ей)",
+      "translations":["arrows pierce {0} additional targets","projectiles pierce {0} additional targets"]
+    },{
+      "sourceShape":"стрелы пронзают # дополнительных цели(-ей)",
+      "translations":["arrows pierce {0} additional targets","projectiles pierce {0} additional targets"]
+    },{
+      "sourceShape":"снаряды имеют #% шанс ударить по цепи при столкновении с окружающей средой",
+      "translations":["projectiles have {0}% chance to be able to chain when colliding with terrain","projectiles have {0}% chance to be able to chain when colliding with terrain per"]
+    },{
+      "sourceShape":"снаряды имеют #% шанс ударить по цепи при столкновении с окружающей средой",
+      "translations":["projectiles have {0}% chance to be able to chain when colliding with terrain","projectiles have {0}% chance to be able to chain when colliding with terrain per"]
+    },{
+      "sourceShape":"накладываемые поджоги распространяются на других врагов, находящихся в радиусе # м в течение # секунды",
+      "translations":["ignites you inflict spread to other enemies that stay within {0} metre for 1 second","ignites you inflict spread to other enemies that stay within {0} metres for 1 second"]
+    },{
+      "sourceShape":"накладываемые поджоги распространяются на других врагов, находящихся в радиусе # м в течение # секунды",
+      "translations":["ignites you inflict spread to other enemies that stay within {0} metre for 1 second","ignites you inflict spread to other enemies that stay within {0} metres for 1 second"]
+    },{
+      "sourceShape":"можно установить ловушек: #",
+      "translations":["can have up to {0} trap placed at a time","can have up to {0} traps placed at a time"]
+    },{
+      "sourceShape":"можно установить ловушек: #",
+      "translations":["can have up to {0} trap placed at a time","can have up to {0} traps placed at a time"]
+    },{
+      "sourceShape":"можно установить мин: #",
+      "translations":["can have up to {0} remote mine placed at a time","can have up to {0} remote mines placed at a time"]
+    },{
+      "sourceShape":"можно установить мин: #",
+      "translations":["can have up to {0} remote mine placed at a time","can have up to {0} remote mines placed at a time"]
+    },{
+      "sourceShape":"можно установить дополнительных ловушек: #",
+      "translations":["can have up to {0} additional trap placed at a time","can have up to {0} additional traps placed at a time"]
+    },{
+      "sourceShape":"можно установить дополнительных ловушек: #",
+      "translations":["can have up to {0} additional trap placed at a time","can have up to {0} additional traps placed at a time"]
+    },{
+      "sourceShape":"можно установить дополнительных мин: #",
+      "translations":["can have up to {0} additional remote mine placed at a time","can have up to {0} additional remote mines placed at a time"]
+    },{
+      "sourceShape":"можно установить дополнительных мин: #",
+      "translations":["can have up to {0} additional remote mine placed at a time","can have up to {0} additional remote mines placed at a time"]
+    },{
+      "sourceShape":"можно установить дополнительных мин: -#",
+      "translations":["can have {0} fewer remote mine placed at a time","can have {0} fewer remote mines placed at a time"]
+    },{
+      "sourceShape":"можно установить дополнительных мин: -#",
+      "translations":["can have {0} fewer remote mine placed at a time","can have {0} fewer remote mines placed at a time"]
+    },{
+      "sourceShape":"в области можно встретить дополнительных духов азмири: #",
+      "translations":["area contains {0} additional azmeri spirit","area contains {0} additional azmeri spirits"]
+    },{
+      "sourceShape":"в области можно встретить дополнительных духов азмири: #",
+      "translations":["area contains {0} additional azmeri spirit","area contains {0} additional azmeri spirits"]
+    },{
+      "sourceShape":"на #% больше здоровья монстров",
+      "translations":["monsters have {0}% more life","{0}% more monster life"]
+    },{
+      "sourceShape":"на #% больше здоровья монстров",
+      "translations":["monsters have {0}% more life","{0}% more monster life"]
+    },{
+      "sourceShape":"на #% меньше здоровья монстров",
+      "translations":["monsters have {0}% less life","{0}% less monster life"]
+    },{
+      "sourceShape":"на #% меньше здоровья монстров",
+      "translations":["monsters have {0}% less life","{0}% less monster life"]
+    },{
+      "sourceShape":"#% шанс наложить кровотечение при нанесении удара",
+      "translations":["{0}% chance to cause bleeding on hit","{0}% chance to inflict bleeding on hit"]
+    },{
+      "sourceShape":"#% шанс наложить кровотечение при нанесении удара",
+      "translations":["{0}% chance to cause bleeding on hit","{0}% chance to inflict bleeding on hit"]
+    },{
+      "sourceShape":"кольцо в правом слоте: #% ослабление эффекта проклятий на вас",
+      "translations":["left ring slot: {0}% reduced effect of curses on you","right ring slot: {0}% reduced effect of curses on you"]
+    },{
+      "sourceShape":"кольцо в правом слоте: #% ослабление эффекта проклятий на вас",
+      "translations":["left ring slot: {0}% reduced effect of curses on you","right ring slot: {0}% reduced effect of curses on you"]
+    },{
+      "sourceShape":"#% увеличение урона от стихий умениями атак во время действия эффекта любого флакона",
+      "translations":["{0}% increased elemental damage with attack skills during any flask effect","{0}% reduced elemental damage with attack skills during any flask effect"]
+    },{
+      "sourceShape":"#% увеличение урона от стихий умениями атак во время действия эффекта любого флакона",
+      "translations":["{0}% increased elemental damage with attack skills during any flask effect","{0}% reduced elemental damage with attack skills during any flask effect"]
+    },{
+      "sourceShape":"вы не наносите урон от холода",
+      "translations":["deal no cold damage","deal no non-cold damage"]
+    },{
+      "sourceShape":"#% увеличение длительности действия живого оружия",
+      "translations":["{0}% increased animate weapon duration","{0}% more animate weapon duration"]
+    },{
+      "sourceShape":"#% увеличение длительности действия живого оружия",
+      "translations":["{0}% increased animate weapon duration","{0}% more animate weapon duration"]
+    },{
+      "sourceShape":"#% уменьшение длительности действия живого оружия",
+      "translations":["{0}% less animate weapon duration","{0}% reduced animate weapon duration"]
+    },{
+      "sourceShape":"#% уменьшение длительности действия живого оружия",
+      "translations":["{0}% less animate weapon duration","{0}% reduced animate weapon duration"]
+    },{
+      "sourceShape":"вас невозможно охладить в течение # секунд после окончания предыдущего охлаждения",
+      "translations":["you cannot be chilled for {0} second after being chilled","you cannot be chilled for {0} seconds after being chilled"]
+    },{
+      "sourceShape":"вас невозможно охладить в течение # секунд после окончания предыдущего охлаждения",
+      "translations":["you cannot be chilled for {0} second after being chilled","you cannot be chilled for {0} seconds after being chilled"]
+    },{
+      "sourceShape":"вас невозможно заморозить в течение # секунд после окончания предыдущей заморозки",
+      "translations":["you cannot be frozen for {0} second after being frozen","you cannot be frozen for {0} seconds after being frozen"]
+    },{
+      "sourceShape":"вас невозможно заморозить в течение # секунд после окончания предыдущей заморозки",
+      "translations":["you cannot be frozen for {0} second after being frozen","you cannot be frozen for {0} seconds after being frozen"]
+    },{
+      "sourceShape":"вас невозможно поджечь в течение # секунд после окончания предыдущего поджога",
+      "translations":["you cannot be ignited for {0} second after being ignited","you cannot be ignited for {0} seconds after being ignited"]
+    },{
+      "sourceShape":"вас невозможно поджечь в течение # секунд после окончания предыдущего поджога",
+      "translations":["you cannot be ignited for {0} second after being ignited","you cannot be ignited for {0} seconds after being ignited"]
+    },{
+      "sourceShape":"на вас невозможно наложить шок в течение # секунд после окончания предыдущего шока",
+      "translations":["you cannot be shocked for {0} second after being shocked","you cannot be shocked for {0} seconds after being shocked"]
+    },{
+      "sourceShape":"на вас невозможно наложить шок в течение # секунд после окончания предыдущего шока",
+      "translations":["you cannot be shocked for {0} second after being shocked","you cannot be shocked for {0} seconds after being shocked"]
+    },{
+      "sourceShape":"#% увеличение урона от ударов за каждое проклятье на враге",
+      "translations":["{0}% increased damage with hits per curse on enemy","{0}% reduced damage with hits per curse on enemy"]
+    },{
+      "sourceShape":"#% увеличение урона от ударов за каждое проклятье на враге",
+      "translations":["{0}% increased damage with hits per curse on enemy","{0}% reduced damage with hits per curse on enemy"]
+    },{
+      "sourceShape":"эффект боевой раж на # сек., если на вас накладывается поджог",
+      "translations":["you gain onslaught for {0} second on being ignited","you gain onslaught for {0} seconds on being ignited"]
+    },{
+      "sourceShape":"эффект боевой раж на # сек., если на вас накладывается поджог",
+      "translations":["you gain onslaught for {0} second on being ignited","you gain onslaught for {0} seconds on being ignited"]
+    },{
+      "sourceShape":"#% увеличение характеристик за выбранное ключевое умение в радиусе",
+      "translations":["{0}% increased attributes per allocated keystone","{0}% reduced attributes per allocated keystone"]
+    },{
+      "sourceShape":"#% увеличение характеристик за выбранное ключевое умение в радиусе",
+      "translations":["{0}% increased attributes per allocated keystone","{0}% reduced attributes per allocated keystone"]
+    },{
+      "sourceShape":"#% повышение шанса критического удара, если вы недавно совершали убийство",
+      "translations":["{0}% increased critical hit chance if you have killed recently","{0}% increased critical hit chance if you've killed recently"]
+    },{
+      "sourceShape":"#% повышение шанса критического удара, если вы недавно совершали убийство",
+      "translations":["{0}% increased critical hit chance if you have killed recently","{0}% increased critical hit chance if you've killed recently"]
+    },{
+      "sourceShape":"уровень предметов, выпадающих из монстров, повышен на #",
+      "translations":["monsters drop items {0} level higher","monsters drop items {0} levels higher"]
+    },{
+      "sourceShape":"уровень предметов, выпадающих из монстров, повышен на #",
+      "translations":["monsters drop items {0} level higher","monsters drop items {0} levels higher"]
+    },{
+      "sourceShape":"#% увеличение урона кольца молний",
+      "translations":["shock nova ring deals {0}% increased damage","{0}% increased shock nova damage"]
+    },{
+      "sourceShape":"#% увеличение урона кольца молний",
+      "translations":["shock nova ring deals {0}% increased damage","{0}% increased shock nova damage"]
+    },{
+      "sourceShape":"#% уменьшение урона кольца молний",
+      "translations":["shock nova ring deals {0}% reduced damage","{0}% reduced shock nova damage"]
+    },{
+      "sourceShape":"#% уменьшение урона кольца молний",
+      "translations":["shock nova ring deals {0}% reduced damage","{0}% reduced shock nova damage"]
+    },{
+      "sourceShape":"при нанесении удара едкая стрела имеет #% шанс наложить истощение с базовой длительностью # сек.",
+      "translations":["caustic arrow has {0}% chance to inflict withered on hit for {1} second base duration","caustic arrow has {0}% chance to inflict withered on hit for {1} seconds base duration"]
+    },{
+      "sourceShape":"при нанесении удара едкая стрела имеет #% шанс наложить истощение с базовой длительностью # сек.",
+      "translations":["caustic arrow has {0}% chance to inflict withered on hit for {1} second base duration","caustic arrow has {0}% chance to inflict withered on hit for {1} seconds base duration"]
+    },{
+      "sourceShape":"при нанесении удара едкая стрела имеет #% шанс наложить истощение с базовой длительностью # сек.",
+      "translations":["caustic arrow has {0}% chance to inflict withered on hit for {1} second base duration","caustic arrow has {0}% chance to inflict withered on hit for {1} seconds base duration"]
+    },{
+      "sourceShape":"при нанесении удара едкая стрела имеет #% шанс наложить истощение с базовой длительностью # сек.",
+      "translations":["caustic arrow has {0}% chance to inflict withered on hit for {1} second base duration","caustic arrow has {0}% chance to inflict withered on hit for {1} seconds base duration"]
+    },{
+      "sourceShape":"при нанесении удара едкая стрела накладывает истощение с базовой длительностью # сек.",
+      "translations":["caustic arrow inflicts withered on hit for {1} second base duration","caustic arrow inflicts withered on hit for {1} seconds base duration"]
+    },{
+      "sourceShape":"при нанесении удара едкая стрела накладывает истощение с базовой длительностью # сек.",
+      "translations":["caustic arrow inflicts withered on hit for {1} second base duration","caustic arrow inflicts withered on hit for {1} seconds base duration"]
+    },{
+      "sourceShape":"#% увеличение урона парирования",
+      "translations":["{0}% increased parry damage","{0}% increased riposte damage"]
+    },{
+      "sourceShape":"#% увеличение урона парирования",
+      "translations":["{0}% increased parry damage","{0}% increased riposte damage"]
+    },{
+      "sourceShape":"#% уменьшение урона парирования",
+      "translations":["{0}% reduced parry damage","{0}% reduced riposte damage"]
+    },{
+      "sourceShape":"#% уменьшение урона парирования",
+      "translations":["{0}% reduced parry damage","{0}% reduced riposte damage"]
+    },{
+      "sourceShape":"обращенные враги имеют #% увеличение урона",
+      "translations":["converted enemies have {0}% increased damage","converted enemies have {0}% reduced damage"]
+    },{
+      "sourceShape":"обращенные враги имеют #% увеличение урона",
+      "translations":["converted enemies have {0}% increased damage","converted enemies have {0}% reduced damage"]
+    },{
+      "sourceShape":"кинетический взрыв вызывает дополнительных взрывов: #",
+      "translations":["kinetic blast creates {0} additional explosion","kinetic blast creates {0} additional explosions"]
+    },{
+      "sourceShape":"кинетический взрыв вызывает дополнительных взрывов: #",
+      "translations":["kinetic blast creates {0} additional explosion","kinetic blast creates {0} additional explosions"]
+    },{
+      "sourceShape":"+# м к дистанции кувырка, если недавно вы не совершали кувырок",
+      "translations":["{0} metre to dodge roll distance if you haven't dodge rolled recently","{0} metres to dodge roll distance if you haven't dodge rolled recently"]
+    },{
+      "sourceShape":"+# м к дистанции кувырка, если недавно вы не совершали кувырок",
+      "translations":["{0} metre to dodge roll distance if you haven't dodge rolled recently","{0} metres to dodge roll distance if you haven't dodge rolled recently"]
+    },{
+      "sourceShape":"-# м к дистанции кувырка, если недавно вы не совершали кувырок",
+      "translations":["{0} metre to dodge roll distance if you haven't dodge rolled recently","{0} metres to dodge roll distance if you haven't dodge rolled recently"]
+    },{
+      "sourceShape":"-# м к дистанции кувырка, если недавно вы не совершали кувырок",
+      "translations":["{0} metre to dodge roll distance if you haven't dodge rolled recently","{0} metres to dodge roll distance if you haven't dodge rolled recently"]
+    },{
+      "sourceShape":"+# м к дистанции кувырка, если недавно вы совершали кувырок",
+      "translations":["{0} metre to dodge roll distance if you've dodge rolled recently","{0} metres to dodge roll distance if you've dodge rolled recently"]
+    },{
+      "sourceShape":"+# м к дистанции кувырка, если недавно вы совершали кувырок",
+      "translations":["{0} metre to dodge roll distance if you've dodge rolled recently","{0} metres to dodge roll distance if you've dodge rolled recently"]
+    },{
+      "sourceShape":"-# м к дистанции кувырка, если недавно вы совершали кувырок",
+      "translations":["{0} metre to dodge roll distance if you've dodge rolled recently","{0} metres to dodge roll distance if you've dodge rolled recently"]
+    },{
+      "sourceShape":"-# м к дистанции кувырка, если недавно вы совершали кувырок",
+      "translations":["{0} metre to dodge roll distance if you've dodge rolled recently","{0} metres to dodge roll distance if you've dodge rolled recently"]
+    },{
+      "sourceShape":"немгновенные умения с временем перезарядки имеют +# к количеству зарядов, если у вас есть как минимум # даров",
+      "translations":["non-instant skills with cooldowns have {0} cooldown use if you have at least 100 tribute","non-instant skills with cooldowns have {0} cooldown uses if you have at least 100 tribute"]
+    },{
+      "sourceShape":"немгновенные умения с временем перезарядки имеют +# к количеству зарядов, если у вас есть как минимум # даров",
+      "translations":["non-instant skills with cooldowns have {0} cooldown use if you have at least 100 tribute","non-instant skills with cooldowns have {0} cooldown uses if you have at least 100 tribute"]
+    },{
+      "sourceShape":"немгновенные умения с временем перезарядки имеют -# к количеству зарядов, если у вас есть как минимум # даров",
+      "translations":["non-instant skills with cooldowns have {0} cooldown use if you have at least 100 tribute","non-instant skills with cooldowns have {0} cooldown uses if you have at least 100 tribute"]
+    },{
+      "sourceShape":"немгновенные умения с временем перезарядки имеют -# к количеству зарядов, если у вас есть как минимум # даров",
+      "translations":["non-instant skills with cooldowns have {0} cooldown use if you have at least 100 tribute","non-instant skills with cooldowns have {0} cooldown uses if you have at least 100 tribute"]
+    },{
+      "sourceShape":"клич предков улучшает дополнительных атак #",
+      "translations":["ancestral cry exerts {0} additional attack","ancestral cry exerts {0} additional attacks"]
+    },{
+      "sourceShape":"клич предков улучшает дополнительных атак #",
+      "translations":["ancestral cry exerts {0} additional attack","ancestral cry exerts {0} additional attacks"]
+    },{
+      "sourceShape":"парирование накладывает зарядов критической уязвимости: #",
+      "translations":["parrying applies {0} stack of critical weakness","parrying applies {0} stacks of critical weakness"]
+    },{
+      "sourceShape":"парирование накладывает зарядов критической уязвимости: #",
+      "translations":["parrying applies {0} stack of critical weakness","parrying applies {0} stacks of critical weakness"]
+    },{
+      "sourceShape":"дарует # заряд(-ов) свирепости при нанесении удара",
+      "translations":["gain {0} rage on hit","grants {0} rage on hit"]
+    },{
+      "sourceShape":"дарует # заряд(-ов) свирепости при нанесении удара",
+      "translations":["gain {0} rage on hit","grants {0} rage on hit"]
+    },{
+      "sourceShape":"+# к лимиту зарядов умения",
+      "translations":["skills have +{0} to limit","storm skills have +{0} to limit"]
+    },{
+      "sourceShape":"+# к лимиту зарядов умения",
+      "translations":["skills have +{0} to limit","storm skills have +{0} to limit"]
+    },{
+      "sourceShape":"максимум призванных ползунов агонии: #",
+      "translations":["maximum {0} summoned agony crawler","maximum {0} summoned agony crawlers"]
+    },{
+      "sourceShape":"максимум призванных ползунов агонии: #",
+      "translations":["maximum {0} summoned agony crawler","maximum {0} summoned agony crawlers"]
+    },{
+      "sourceShape":"клич боевого мага улучшает дополнительных атак #",
+      "translations":["battlemage's cry exerts {0} additional attack","battlemage's cry exerts {0} additional attacks"]
+    },{
+      "sourceShape":"клич боевого мага улучшает дополнительных атак #",
+      "translations":["battlemage's cry exerts {0} additional attack","battlemage's cry exerts {0} additional attacks"]
+    },{
+      "sourceShape":"ваши башни цепи молний наносят уменьшенный на #% урон",
+      "translations":["your arc towers dea {0}% reduced damage","your arc towers deal {0}% reduced damage"]
+    },{
+      "sourceShape":"ваши башни цепи молний наносят уменьшенный на #% урон",
+      "translations":["your arc towers dea {0}% reduced damage","your arc towers deal {0}% reduced damage"]
+    },{
+      "sourceShape":"ваши усиливающие башни также даруют #% увеличение урона",
+      "translations":["your empowering towers also grant {0}% increased damage","your empowering towers also grant {0}% reduced damage"]
+    },{
+      "sourceShape":"ваши усиливающие башни также даруют #% увеличение урона",
+      "translations":["your empowering towers also grant {0}% increased damage","your empowering towers also grant {0}% reduced damage"]
+    },{
+      "sourceShape":"#% повышение скорости броска шквальной мины",
+      "translations":["icicle mine has {0}% increased throwing speed","{0}% increased icicle mine throwing speed"]
+    },{
+      "sourceShape":"#% повышение скорости броска шквальной мины",
+      "translations":["icicle mine has {0}% increased throwing speed","{0}% increased icicle mine throwing speed"]
+    },{
+      "sourceShape":"#% снижение скорости броска шквальной мины",
+      "translations":["icicle mine has {0}% reduced throwing speed","{0}% reduced icicle mine throwing speed"]
+    },{
+      "sourceShape":"#% снижение скорости броска шквальной мины",
+      "translations":["icicle mine has {0}% reduced throwing speed","{0}% reduced icicle mine throwing speed"]
+    },{
+      "sourceShape":"модификаторы количества предметов влияют на количество выпадающих из босса наград в размере #% от их значения",
+      "translations":["modifiers to item quantity affect the amount of rewards dropped by the boss by {0}% of their value","modifiers to item quantity will affect the number of encounter rewards dropped by {0}% of their value"]
+    },{
+      "sourceShape":"модификаторы количества предметов влияют на количество выпадающих из босса наград в размере #% от их значения",
+      "translations":["modifiers to item quantity affect the amount of rewards dropped by the boss by {0}% of their value","modifiers to item quantity will affect the number of encounter rewards dropped by {0}% of their value"]
+    },{
+      "sourceShape":"модификаторы количества предметов влияют на количество выпадающих из босса наград",
+      "translations":["modifiers to item quantity affect the amount of rewards dropped by the boss","modifiers to item quantity will affect the number of encounter rewards dropped"]
+    },{
+      "sourceShape":"+# м к расстоянию кувырка",
+      "translations":["{0} metre to dodge roll distance","{0} metres to dodge roll distance"]
+    },{
+      "sourceShape":"+# м к расстоянию кувырка",
+      "translations":["{0} metre to dodge roll distance","{0} metres to dodge roll distance"]
+    },{
+      "sourceShape":"-# м к расстоянию кувырка",
+      "translations":["{0} metre to dodge roll distance","{0} metres to dodge roll distance"]
+    },{
+      "sourceShape":"-# м к расстоянию кувырка",
+      "translations":["{0} metre to dodge roll distance","{0} metres to dodge roll distance"]
+    },{
+      "sourceShape":"+# м к дальности кувырка пока вы окружены",
+      "translations":["{0} metre to dodge roll distance while surrounded","{0} metres to dodge roll distance while surrounded"]
+    },{
+      "sourceShape":"+# м к дальности кувырка пока вы окружены",
+      "translations":["{0} metre to dodge roll distance while surrounded","{0} metres to dodge roll distance while surrounded"]
+    },{
+      "sourceShape":"-# м к дальности кувырка пока вы окружены",
+      "translations":["{0} metre to dodge roll distance while surrounded","{0} metres to dodge roll distance while surrounded"]
+    },{
+      "sourceShape":"-# м к дальности кувырка пока вы окружены",
+      "translations":["{0} metre to dodge roll distance while surrounded","{0} metres to dodge roll distance while surrounded"]
+    },{
+      "sourceShape":"клич стойкости дарует дополнительных зарядов выносливости: #",
+      "translations":["enduring cry grants {0} additional endurance charge","enduring cry grants {0} additional endurance charges"]
+    },{
+      "sourceShape":"клич стойкости дарует дополнительных зарядов выносливости: #",
+      "translations":["enduring cry grants {0} additional endurance charge","enduring cry grants {0} additional endurance charges"]
+    },{
+      "sourceShape":"#% увеличение энергетического щита от надетого шлема",
+      "translations":["{0}% increased energy shield from equipped helmet","{0}% reduced energy shield from equipped helmet"]
+    },{
+      "sourceShape":"#% увеличение энергетического щита от надетого шлема",
+      "translations":["{0}% increased energy shield from equipped helmet","{0}% reduced energy shield from equipped helmet"]
+    },{
+      "sourceShape":"+# к зарядам ловушки-огнемета, сейсмической ловушки и ловушки шпиля молний",
+      "translations":["flamethrower, seismic and lightning spire trap have +{0} cooldown use","flamethrower, seismic and lightning spire trap have +{0} cooldown uses"]
+    },{
+      "sourceShape":"+# к зарядам ловушки-огнемета, сейсмической ловушки и ловушки шпиля молний",
+      "translations":["flamethrower, seismic and lightning spire trap have +{0} cooldown use","flamethrower, seismic and lightning spire trap have +{0} cooldown uses"]
+    },{
+      "sourceShape":"зарядов у ловушки-огнемета, сейсмической ловушки и ловушки шпиля молний: #",
+      "translations":["flamethrower, seismic and lightning spire trap have {0} cooldown use","flamethrower, seismic and lightning spire trap have {0} cooldown uses"]
+    },{
+      "sourceShape":"зарядов у ловушки-огнемета, сейсмической ловушки и ловушки шпиля молний: #",
+      "translations":["flamethrower, seismic and lightning spire trap have {0} cooldown use","flamethrower, seismic and lightning spire trap have {0} cooldown uses"]
+    },{
+      "sourceShape":"на #% больше урона ударами от взрывов, исходящих от уникального врага",
+      "translations":["{0}% more damage with hits for blasts originating from a unique enemy","{0}% more damage with hits for explosions originating from a unique enemy"]
+    },{
+      "sourceShape":"на #% больше урона ударами от взрывов, исходящих от уникального врага",
+      "translations":["{0}% more damage with hits for blasts originating from a unique enemy","{0}% more damage with hits for explosions originating from a unique enemy"]
+    },{
+      "sourceShape":"на #% меньше урона ударами от взрывов, исходящих от уникального врага",
+      "translations":["{0}% less damage with hits for blasts originating from a unique enemy","{0}% less damage with hits for explosions originating from a unique enemy"]
+    },{
+      "sourceShape":"на #% меньше урона ударами от взрывов, исходящих от уникального врага",
+      "translations":["{0}% less damage with hits for blasts originating from a unique enemy","{0}% less damage with hits for explosions originating from a unique enemy"]
+    },{
+      "sourceShape":"+# к количеству зарядов ледяного легиона",
+      "translations":["frozen legion has {0} cooldown use","frozen legion has {0} cooldown uses"]
+    },{
+      "sourceShape":"+# к количеству зарядов ледяного легиона",
+      "translations":["frozen legion has {0} cooldown use","frozen legion has {0} cooldown uses"]
+    },{
+      "sourceShape":"-# к количеству зарядов ледяного легиона",
+      "translations":["frozen legion has {0} cooldown use","frozen legion has {0} cooldown uses"]
+    },{
+      "sourceShape":"-# к количеству зарядов ледяного легиона",
+      "translations":["frozen legion has {0} cooldown use","frozen legion has {0} cooldown uses"]
+    },{
+      "sourceShape":"дарует зарядов выносливости каждую секунду, если вы недавно получали удар: #",
+      "translations":["gain {0} endurance charge every second if you've been hit recently","gain {0} endurance charges every second if you've been hit recently"]
+    },{
+      "sourceShape":"дарует зарядов выносливости каждую секунду, если вы недавно получали удар: #",
+      "translations":["gain {0} endurance charge every second if you've been hit recently","gain {0} endurance charges every second if you've been hit recently"]
+    },{
+      "sourceShape":"дарует зарядов выносливости каждую секунду, если недавно вы использовали боевой клич: #",
+      "translations":["gain {0} endurance charge every second if you've used a warcry recently","gain {0} endurance charges every second if you've used a warcry recently"]
+    },{
+      "sourceShape":"дарует зарядов выносливости каждую секунду, если недавно вы использовали боевой клич: #",
+      "translations":["gain {0} endurance charge every second if you've used a warcry recently","gain {0} endurance charges every second if you've used a warcry recently"]
+    },{
+      "sourceShape":"флаконы получают зарядов в секунду, если недавно вы наносили удар по уникальному врагу: #",
+      "translations":["flasks gain {0} charge per second if you've hit a unique enemy recently","flasks gain {0} charges per second if you've hit a unique enemy recently"]
+    },{
+      "sourceShape":"флаконы получают зарядов в секунду, если недавно вы наносили удар по уникальному врагу: #",
+      "translations":["flasks gain {0} charge per second if you've hit a unique enemy recently","flasks gain {0} charges per second if you've hit a unique enemy recently"]
+    },{
+      "sourceShape":"дарует # заряда(-ов) фанатизма каждую секунду, если вы атаковали за последнюю секунду",
+      "translations":["gain {0} fanatic charge every second if you've attacked in the past second","gain {0} fanatic charges every second if you've attacked the past second"]
+    },{
+      "sourceShape":"дарует # заряда(-ов) фанатизма каждую секунду, если вы атаковали за последнюю секунду",
+      "translations":["gain {0} fanatic charge every second if you've attacked in the past second","gain {0} fanatic charges every second if you've attacked the past second"]
+    },{
+      "sourceShape":"теряет # заряда(-ов) фанатизма каждую секунду, если вы атаковали за последнюю секунду",
+      "translations":["lose {0} fanatic charge every second if you've attacked the past second","lose {0} fanatic charges every second if you've attacked the past second"]
+    },{
+      "sourceShape":"теряет # заряда(-ов) фанатизма каждую секунду, если вы атаковали за последнюю секунду",
+      "translations":["lose {0} fanatic charge every second if you've attacked the past second","lose {0} fanatic charges every second if you've attacked the past second"]
+    },{
+      "sourceShape":"можно открыть механических сундуков за крыло после изоляции области: #",
+      "translations":["can unlock {} mechanical chest after lockdown per wing","can unlock {} mechanical chests after lockdown per wing"]
+    },{
+      "sourceShape":"можно открыть механических сундуков за крыло после изоляции области: #",
+      "translations":["can unlock {} mechanical chest after lockdown per wing","can unlock {} mechanical chests after lockdown per wing"]
+    },{
+      "sourceShape":"можно открыть волшебных сундуков за крыло после изоляции области: #",
+      "translations":["can unlock {} magical chest after lockdown per wing","can unlock {} magical chests after lockdown per wing"]
+    },{
+      "sourceShape":"можно открыть волшебных сундуков за крыло после изоляции области: #",
+      "translations":["can unlock {} magical chest after lockdown per wing","can unlock {} magical chests after lockdown per wing"]
+    },{
+      "sourceShape":"максимум улучшенных атак: #",
+      "translations":["maximum of {0} empowered attack","maximum of {0} empowered attacks"]
+    },{
+      "sourceShape":"максимум улучшенных атак: #",
+      "translations":["maximum of {0} empowered attack","maximum of {0} empowered attacks"]
+    },{
+      "sourceShape":"#% увеличение длительности положительного эффекта призыва к бессмертию за каждый снятый заряд выносливости",
+      "translations":["immortal call has {0}% increased buff duration per endurance charge removed","immortal call has {0}% reduced buff duration per endurance charge removed"]
+    },{
+      "sourceShape":"#% увеличение длительности положительного эффекта призыва к бессмертию за каждый снятый заряд выносливости",
+      "translations":["immortal call has {0}% increased buff duration per endurance charge removed","immortal call has {0}% reduced buff duration per endurance charge removed"]
+    },{
+      "sourceShape":"наносит дополнительных ударов по цепи: #",
+      "translations":["chain {0} additional time","chain {0} additional times"]
+    },{
+      "sourceShape":"наносит дополнительных ударов по цепи: #",
+      "translations":["chain {0} additional time","chain {0} additional times"]
+    },{
+      "sourceShape":"если в радиусе есть минимум # силы, снаряды магмового удара отскакивают раз: +#",
+      "translations":["with at least 40 strength in radius, molten strike projectiles chain {0} time","with at least 40 strength in radius, molten strike projectiles chain {0} times"]
+    },{
+      "sourceShape":"если в радиусе есть минимум # силы, снаряды магмового удара отскакивают раз: +#",
+      "translations":["with at least 40 strength in radius, molten strike projectiles chain {0} time","with at least 40 strength in radius, molten strike projectiles chain {0} times"]
+    },{
+      "sourceShape":"если в радиусе есть минимум # силы, снаряды магмового удара отскакивают раз: -#",
+      "translations":["with at least 40 strength in radius, molten strike projectiles chain {0} time","with at least 40 strength in radius, molten strike projectiles chain {0} times"]
+    },{
+      "sourceShape":"если в радиусе есть минимум # силы, снаряды магмового удара отскакивают раз: -#",
+      "translations":["with at least 40 strength in radius, molten strike projectiles chain {0} time","with at least 40 strength in radius, molten strike projectiles chain {0} times"]
+    },{
+      "sourceShape":"#% усиление эффекта гнёзд самоцветов в древе пассивных умений, содержащих оскверненные волшебные самоцветы",
+      "translations":["{0}% increased effect of jewel socket passive skills\ncontaining corrupted magic jewels","{0}% reduced effect of jewel socket passive skills\ncontaining corrupted magic jewels"]
+    },{
+      "sourceShape":"#% усиление эффекта гнёзд самоцветов в древе пассивных умений, содержащих оскверненные волшебные самоцветы",
+      "translations":["{0}% increased effect of jewel socket passive skills\ncontaining corrupted magic jewels","{0}% reduced effect of jewel socket passive skills\ncontaining corrupted magic jewels"]
+    },{
+      "sourceShape":"дарует # маны за каждый удар атаками по проклятому врагу",
+      "translations":["gain {0} mana per cursed enemy hit with attacks","lose {0} mana per cursed enemy hit with attacks"]
+    },{
+      "sourceShape":"дарует # маны за каждый удар атаками по проклятому врагу",
+      "translations":["gain {0} mana per cursed enemy hit with attacks","lose {0} mana per cursed enemy hit with attacks"]
+    },{
+      "sourceShape":"карта имеет дополнительных глобальных свойств синтеза: #",
+      "translations":["map has {0} additional synthesis global modifier","map has {0} additional synthesis global modifiers"]
+    },{
+      "sourceShape":"карта имеет дополнительных глобальных свойств синтеза: #",
+      "translations":["map has {0} additional synthesis global modifier","map has {0} additional synthesis global modifiers"]
+    },{
+      "sourceShape":"в области можно встретить зеркало делириума",
+      "translations":["area contains a mirror of delirium","areas contain a mirror of delirium"]
+    },{
+      "sourceShape":"из сундуков скверны выпадает дополнительная награда",
+      "translations":["blight chests contain an additional reward","blight chests drop an additional reward"]
+    },{
+      "sourceShape":"разломы расширяются минимум на # м в радиусе разломы остаются открытыми, пока есть живые монстры разлома",
+      "translations":["breaches expand to at least {0} metre in radius\nbreaches remain open while there are alive breach monsters","breaches expand to at least {0} metres in radius\nbreaches remain open while there are alive breach monsters"]
+    },{
+      "sourceShape":"разломы расширяются минимум на # м в радиусе разломы остаются открытыми, пока есть живые монстры разлома",
+      "translations":["breaches expand to at least {0} metre in radius\nbreaches remain open while there are alive breach monsters","breaches expand to at least {0} metres in radius\nbreaches remain open while there are alive breach monsters"]
+    },{
+      "sourceShape":"в областях можно встретить дополнительных групп оскверненных монстров ваал: #",
+      "translations":["area contains {0} additional pack of corrupted vaal monsters","area contains {0} additional packs of corrupted vaal monsters"]
+    },{
+      "sourceShape":"в областях можно встретить дополнительных групп оскверненных монстров ваал: #",
+      "translations":["area contains {0} additional pack of corrupted vaal monsters","area contains {0} additional packs of corrupted vaal monsters"]
+    },{
+      "sourceShape":"область содержит дополнительных знаков с сундуками: #",
+      "translations":["area contains {0} additional chest marker","area contains {0} additional chest markers"]
+    },{
+      "sourceShape":"область содержит дополнительных знаков с сундуками: #",
+      "translations":["area contains {0} additional chest marker","area contains {0} additional chest markers"]
+    },{
+      "sourceShape":"область содержит дополнительных маркеров обычных сундуков: #",
+      "translations":["area contains {0} additional common chest marker","area contains {0} additional common chest markers"]
+    },{
+      "sourceShape":"область содержит дополнительных маркеров обычных сундуков: #",
+      "translations":["area contains {0} additional common chest marker","area contains {0} additional common chest markers"]
+    },{
+      "sourceShape":"область содержит дополнительных маркеров редких сундуков: #",
+      "translations":["area contains {0} additional rare chest marker","area contains {0} additional rare chest markers"]
+    },{
+      "sourceShape":"область содержит дополнительных маркеров редких сундуков: #",
+      "translations":["area contains {0} additional rare chest marker","area contains {0} additional rare chest markers"]
+    },{
+      "sourceShape":"область содержит дополнительных знаков с монстрами: #",
+      "translations":["area contains {0}% increased number of monster markers","area contains {0}% reduced number of monster markers"]
+    },{
+      "sourceShape":"область содержит дополнительных знаков с монстрами: #",
+      "translations":["area contains {0}% increased number of monster markers","area contains {0}% reduced number of monster markers"]
+    },{
+      "sourceShape":"область содержит дополнительных маркеров необычных сундуков: #",
+      "translations":["area contains {0} additional uncommon chest marker","area contains {0} additional uncommon chest markers"]
+    },{
+      "sourceShape":"область содержит дополнительных маркеров необычных сундуков: #",
+      "translations":["area contains {0} additional uncommon chest marker","area contains {0} additional uncommon chest markers"]
+    },{
+      "sourceShape":"в области можно встретить реликтов: +#",
+      "translations":["area contains {0} verisium remnant","area contains {0} verisium remnants"]
+    },{
+      "sourceShape":"в области можно встретить реликтов: +#",
+      "translations":["area contains {0} verisium remnant","area contains {0} verisium remnants"]
+    },{
+      "sourceShape":"в области можно встретить реликтов: -#",
+      "translations":["area contains {0} verisium remnant","area contains {0} verisium remnants"]
+    },{
+      "sourceShape":"в области можно встретить реликтов: -#",
+      "translations":["area contains {0} verisium remnant","area contains {0} verisium remnants"]
+    },{
+      "sourceShape":"в области можно встретить дополнительных групп очищенных монстров: #",
+      "translations":["area contains {0} additional pack of cleansed monsters","area contains {0} additional packs of cleansed monsters"]
+    },{
+      "sourceShape":"в области можно встретить дополнительных групп очищенных монстров: #",
+      "translations":["area contains {0} additional pack of cleansed monsters","area contains {0} additional packs of cleansed monsters"]
+    },{
+      "sourceShape":"монстры накладывают цепких лиан при нанесении удара: #",
+      "translations":["monsters inflict {0} grasping vine on hit","monsters inflict {0} grasping vines on hit"]
+    },{
+      "sourceShape":"монстры накладывают цепких лиан при нанесении удара: #",
+      "translations":["monsters inflict {0} grasping vine on hit","monsters inflict {0} grasping vines on hit"]
+    },{
+      "sourceShape":"#% повышение скорости умений монстров",
+      "translations":["monsters have {0}% increased skill speed","monsters have {0}% reduced skill speed"]
+    },{
+      "sourceShape":"#% повышение скорости умений монстров",
+      "translations":["monsters have {0}% increased skill speed","monsters have {0}% reduced skill speed"]
+    },{
+      "sourceShape":"из монстров немезиды выпадает дополнительной обычной валюты: #",
+      "translations":["nemesis monsters drop {0} additional basic currency item","nemesis monsters drop {0} additional basic currency items"]
+    },{
+      "sourceShape":"из монстров немезиды выпадает дополнительной обычной валюты: #",
+      "translations":["nemesis monsters drop {0} additional basic currency item","nemesis monsters drop {0} additional basic currency items"]
+    },{
+      "sourceShape":"дополнительных свойств у редких монстров: #",
+      "translations":["rare monsters have {0} additional modifier","rare monsters have {0} additional modifiers"]
+    },{
+      "sourceShape":"дополнительных свойств у редких монстров: #",
+      "translations":["rare monsters have {0} additional modifier","rare monsters have {0} additional modifiers"]
+    },{
+      "sourceShape":"из синтезированных волшебных монстров выпадает валюта, повышающая качество",
+      "translations":["synthesised magic monsters drop a quality currency item","synthesised magic monsters drop an additional quality currency item"]
+    },{
+      "sourceShape":"уникальные монстры имеют дополнительных свойств: #",
+      "translations":["unique monsters have {0} additional rare modifier","unique monsters have {0} additional rare modifiers"]
+    },{
+      "sourceShape":"уникальные монстры имеют дополнительных свойств: #",
+      "translations":["unique monsters have {0} additional rare modifier","unique monsters have {0} additional rare modifiers"]
+    },{
+      "sourceShape":"на #% больше максимального физического урона от критических ударов атаками",
+      "translations":["{0}% more maximum physical attack damage with critical hits","{0}% more minimum physical attack damage with critical hits"]
+    },{
+      "sourceShape":"на #% больше максимального физического урона от критических ударов атаками",
+      "translations":["{0}% more maximum physical attack damage with critical hits","{0}% more minimum physical attack damage with critical hits"]
+    },{
+      "sourceShape":"на #% меньше максимального физического урона от критических ударов атаками",
+      "translations":["{0}% less maximum physical attack damage with critical hits","{0}% less minimum physical attack damage with critical hits"]
+    },{
+      "sourceShape":"на #% меньше максимального физического урона от критических ударов атаками",
+      "translations":["{0}% less maximum physical attack damage with critical hits","{0}% less minimum physical attack damage with critical hits"]
+    },{
+      "sourceShape":"приспешники получают увеличенный на #% урон",
+      "translations":["instead grant: minions take {0}% increased damage","minions take {0}% increased damage"]
+    },{
+      "sourceShape":"приспешники получают увеличенный на #% урон",
+      "translations":["instead grant: minions take {0}% increased damage","minions take {0}% increased damage"]
+    },{
+      "sourceShape":"приспешники получают уменьшенный на #% урон",
+      "translations":["instead grant: minions take {0}% reduced damage","minions take {0}% reduced damage"]
+    },{
+      "sourceShape":"приспешники получают уменьшенный на #% урон",
+      "translations":["instead grant: minions take {0}% reduced damage","minions take {0}% reduced damage"]
+    },{
+      "sourceShape":"приспешники не могут получать урон в течение # секунд(-ы) после призыва",
+      "translations":["minions can't be damaged for {} second after being summoned","minions can't be damaged for {} seconds after being summoned"]
+    },{
+      "sourceShape":"приспешники не могут получать урон в течение # секунд(-ы) после призыва",
+      "translations":["minions can't be damaged for {} second after being summoned","minions can't be damaged for {} seconds after being summoned"]
+    },{
+      "sourceShape":"приспешники теряют #% здоровья за кадые # ваших даров при выполнении приказов",
+      "translations":["minions lose {0}% life per 10 tribute you have when following commands","minions lose {0}% life per 10 tribute you have when following commands per 10 tribute"]
+    },{
+      "sourceShape":"приспешники теряют #% здоровья за кадые # ваших даров при выполнении приказов",
+      "translations":["minions lose {0}% life per 10 tribute you have when following commands","minions lose {0}% life per 10 tribute you have when following commands per 10 tribute"]
+    },{
+      "sourceShape":"снаряды магмового удара отскакивают раз: +#",
+      "translations":["molten strike projectiles chain {0} time","molten strike projectiles chain {0} times"]
+    },{
+      "sourceShape":"снаряды магмового удара отскакивают раз: +#",
+      "translations":["molten strike projectiles chain {0} time","molten strike projectiles chain {0} times"]
+    },{
+      "sourceShape":"снаряды магмового удара отскакивают раз: -#",
+      "translations":["molten strike projectiles chain {0} time","molten strike projectiles chain {0} times"]
+    },{
+      "sourceShape":"снаряды магмового удара отскакивают раз: -#",
+      "translations":["molten strike projectiles chain {0} time","molten strike projectiles chain {0} times"]
+    },{
+      "sourceShape":"лимит облаков яда: #",
+      "translations":["limit {0} poison cloud","limit {0} poison clouds"]
+    },{
+      "sourceShape":"лимит облаков яда: #",
+      "translations":["limit {0} poison cloud","limit {0} poison clouds"]
+    },{
+      "sourceShape":"лимит растений: #",
+      "translations":["limit {0} plant","limit {0} plants"]
+    },{
+      "sourceShape":"лимит растений: #",
+      "translations":["limit {0} plant","limit {0} plants"]
+    },{
+      "sourceShape":"#% увеличение количества ресурсов, удержанных точностью",
+      "translations":["precision has {0}% increased reservation","precision has {0}% reduced reservation"]
+    },{
+      "sourceShape":"#% увеличение количества ресурсов, удержанных точностью",
+      "translations":["precision has {0}% increased reservation","precision has {0}% reduced reservation"]
+    },{
+      "sourceShape":"#% уменьшение эффективности удержания маны спасением от холода",
+      "translations":["purity of ice has {0}% reduced mana reservation efficiency","purity of lightning has {0}% reduced mana reservation efficiency"]
+    },{
+      "sourceShape":"#% уменьшение эффективности удержания маны спасением от холода",
+      "translations":["purity of ice has {0}% reduced mana reservation efficiency","purity of lightning has {0}% reduced mana reservation efficiency"]
+    },{
+      "sourceShape":"#% увеличение эффективности удержания маны спасением от холода",
+      "translations":["purity of ice has {0}% increased mana reservation efficiency","purity of lightning has {0}% increased mana reservation efficiency"]
+    },{
+      "sourceShape":"#% увеличение эффективности удержания маны спасением от холода",
+      "translations":["purity of ice has {0}% increased mana reservation efficiency","purity of lightning has {0}% increased mana reservation efficiency"]
+    },{
+      "sourceShape":"+# к зарядам рывка",
+      "translations":["dash has {0} cooldown use","dash has {0} cooldown uses"]
+    },{
+      "sourceShape":"+# к зарядам рывка",
+      "translations":["dash has {0} cooldown use","dash has {0} cooldown uses"]
+    },{
+      "sourceShape":"-# к зарядам рывка",
+      "translations":["dash has {0} cooldown use","dash has {0} cooldown uses"]
+    },{
+      "sourceShape":"-# к зарядам рывка",
+      "translations":["dash has {0} cooldown use","dash has {0} cooldown uses"]
+    },{
+      "sourceShape":"пока вы в форме призрака, ближайшие враги имеют на #% меньше меткости",
+      "translations":["nearby enemies have {0}% less accuracy rating while you have phasing","nearby enemies have {0}% more accuracy rating while you have phasing"]
+    },{
+      "sourceShape":"пока вы в форме призрака, ближайшие враги имеют на #% меньше меткости",
+      "translations":["nearby enemies have {0}% less accuracy rating while you have phasing","nearby enemies have {0}% more accuracy rating while you have phasing"]
+    },{
+      "sourceShape":"клич сплочения улучшает дополнительных атак #",
+      "translations":["rallying cry exerts {0} additional attack","rallying cry exerts {0} additional attacks"]
+    },{
+      "sourceShape":"клич сплочения улучшает дополнительных атак #",
+      "translations":["rallying cry exerts {0} additional attack","rallying cry exerts {0} additional attacks"]
+    },{
+      "sourceShape":"лимит застрявших наконечников копья в каждой цели: #",
+      "translations":["limit {0} spearhead stuck in each target","limit {0} spearheads stuck in each target"]
+    },{
+      "sourceShape":"лимит застрявших наконечников копья в каждой цели: #",
+      "translations":["limit {0} spearhead stuck in each target","limit {0} spearheads stuck in each target"]
+    },{
+      "sourceShape":"максимум поглощенных душ: #",
+      "translations":["maximum {0} eaten soul","maximum {0} eaten souls"]
+    },{
+      "sourceShape":"максимум поглощенных душ: #",
+      "translations":["maximum {0} eaten soul","maximum {0} eaten souls"]
+    },{
+      "sourceShape":"побеги молний выпускают на # меньше пульсов перед более сильным пульсом при сотворении тотемом, если у вас уже есть колдовской тотем с искрой",
+      "translations":["lightning tendrils releases {0} fewer pulse between stronger pulses when cast by a totem while you also have a spark spell totem","lightning tendrils releases {0} fewer pulses between stronger pulses when cast by a totem while you also have a spark spell totem"]
+    },{
+      "sourceShape":"побеги молний выпускают на # меньше пульсов перед более сильным пульсом при сотворении тотемом, если у вас уже есть колдовской тотем с искрой",
+      "translations":["lightning tendrils releases {0} fewer pulse between stronger pulses when cast by a totem while you also have a spark spell totem","lightning tendrils releases {0} fewer pulses between stronger pulses when cast by a totem while you also have a spark spell totem"]
+    },{
+      "sourceShape":"+# секунд(-ы) к перезарядке сотворения скелета",
+      "translations":["{0} second to summon skeleton cooldown","{0} seconds to summon skeleton cooldown"]
+    },{
+      "sourceShape":"+# секунд(-ы) к перезарядке сотворения скелета",
+      "translations":["{0} second to summon skeleton cooldown","{0} seconds to summon skeleton cooldown"]
+    },{
+      "sourceShape":"-# секунд(-ы) к перезарядке сотворения скелета",
+      "translations":["{0} second to summon skeleton cooldown","{0} seconds to summon skeleton cooldown"]
+    },{
+      "sourceShape":"-# секунд(-ы) к перезарядке сотворения скелета",
+      "translations":["{0} second to summon skeleton cooldown","{0} seconds to summon skeleton cooldown"]
+    },{
+      "sourceShape":"усиленные умения наносят на #% меньше урона",
+      "translations":["supported skills deal {0}% less damage","supported skills have {0}% less damage"]
+    },{
+      "sourceShape":"усиленные умения наносят на #% меньше урона",
+      "translations":["supported skills deal {0}% less damage","supported skills have {0}% less damage"]
+    },{
+      "sourceShape":"усиленные умения наносят на #% больше урона",
+      "translations":["supported skills deal {0}% more damage","supported skills have {0}% more damage"]
+    },{
+      "sourceShape":"усиленные умения наносят на #% больше урона",
+      "translations":["supported skills deal {0}% more damage","supported skills have {0}% more damage"]
+    },{
+      "sourceShape":"размещенные в этом участке памяти воспоминания имеют увеличенный на # уровень",
+      "translations":["memories placed on this location are {0} level higher","memories placed on this location are {0} levels higher"]
+    },{
+      "sourceShape":"размещенные в этом участке памяти воспоминания имеют увеличенный на # уровень",
+      "translations":["memories placed on this location are {0} level higher","memories placed on this location are {0} levels higher"]
+    },{
+      "sourceShape":"магмовый удар выпускает на #% больше снарядов",
+      "translations":["molten strike fires {0}% less projectiles","molten strike fires {0}% more projectiles"]
+    },{
+      "sourceShape":"магмовый удар выпускает на #% больше снарядов",
+      "translations":["molten strike fires {0}% less projectiles","molten strike fires {0}% more projectiles"]
+    },{
+      "sourceShape":"добавляет бездны на карту осталось зарядов - #",
+      "translations":["adds abysses to a map \n{0} use remaining","adds abysses to a map \n{0} uses remaining"]
+    },{
+      "sourceShape":"добавляет бездны на карту осталось зарядов - #",
+      "translations":["adds abysses to a map \n{0} use remaining","adds abysses to a map \n{0} uses remaining"]
+    },{
+      "sourceShape":"добавляет потусторонний разлом на карту осталось зарядов - #",
+      "translations":["adds an otherworldy breach to a map \n{0} use remaining","adds an otherworldy breach to a map \n{0} uses remaining"]
+    },{
+      "sourceShape":"добавляет потусторонний разлом на карту осталось зарядов - #",
+      "translations":["adds an otherworldy breach to a map \n{0} use remaining","adds an otherworldy breach to a map \n{0} uses remaining"]
+    },{
+      "sourceShape":"добавляет зеркало делириума на карту осталось зарядов - #",
+      "translations":["adds a mirror of delirium to a map \n{0} use remaining","adds a mirror of delirium to a map \n{0} uses remaining"]
+    },{
+      "sourceShape":"добавляет зеркало делириума на карту осталось зарядов - #",
+      "translations":["adds a mirror of delirium to a map \n{0} use remaining","adds a mirror of delirium to a map \n{0} uses remaining"]
+    },{
+      "sourceShape":"добавляет калгууранскую экспедицию на карту осталось зарядов - #",
+      "translations":["adds a kalguuran expedition to a map \n{0} use remaining","adds a kalguuran expedition to a map \n{0} uses remaining"]
+    },{
+      "sourceShape":"добавляет калгууранскую экспедицию на карту осталось зарядов - #",
+      "translations":["adds a kalguuran expedition to a map \n{0} use remaining","adds a kalguuran expedition to a map \n{0} uses remaining"]
+    },{
+      "sourceShape":"добавляет маяки ваал на карту осталось зарядов - #",
+      "translations":["adds vaal beacons to a map \n{0} use remaining","adds vaal beacons to a map \n{0} uses remaining"]
+    },{
+      "sourceShape":"добавляет маяки ваал на карту осталось зарядов - #",
+      "translations":["adds vaal beacons to a map \n{0} use remaining","adds vaal beacons to a map \n{0} uses remaining"]
+    },{
+      "sourceShape":"добавляет заражение на карту осталось зарядов - #",
+      "translations":["adds irradiated to a map \n{0} use remaining","adds irradiated to a map \n{0} uses remaining"]
+    },{
+      "sourceShape":"добавляет заражение на карту осталось зарядов - #",
+      "translations":["adds irradiated to a map \n{0} use remaining","adds irradiated to a map \n{0} uses remaining"]
+    },{
+      "sourceShape":"усиливает босса карты на карте осталось зарядов - #",
+      "translations":["empowers the map boss of a map \n{0} use remaining","empowers the map boss of a map \n{0} uses remaining"]
+    },{
+      "sourceShape":"усиливает босса карты на карте осталось зарядов - #",
+      "translations":["empowers the map boss of a map \n{0} use remaining","empowers the map boss of a map \n{0} uses remaining"]
+    },{
+      "sourceShape":"добавляет алтари ритуала на карту осталось зарядов - #",
+      "translations":["adds ritual altars to a map \n{0} use remaining","adds ritual altars to a map \n{0} uses remaining"]
+    },{
+      "sourceShape":"добавляет алтари ритуала на карту осталось зарядов - #",
+      "translations":["adds ritual altars to a map \n{0} use remaining","adds ritual altars to a map \n{0} uses remaining"]
+    },{
+      "sourceShape":"бросающие ловушки умения имеют +# к зарядам",
+      "translations":["skills which throw traps have +{0} cooldown use","skills which throw traps have +{0} cooldown uses"]
+    },{
+      "sourceShape":"бросающие ловушки умения имеют +# к зарядам",
+      "translations":["skills which throw traps have +{0} cooldown use","skills which throw traps have +{0} cooldown uses"]
+    },{
+      "sourceShape":"атаки наносят дополнительный максимум урона от молнии в размере #% от максимума маны",
+      "translations":["attacks have added maximum lightning damage equal to {0}% of maximum mana","attacks have added minimum lightning damage equal to {0}% of maximum mana"]
+    },{
+      "sourceShape":"атаки наносят дополнительный максимум урона от молнии в размере #% от максимума маны",
+      "translations":["attacks have added maximum lightning damage equal to {0}% of maximum mana","attacks have added minimum lightning damage equal to {0}% of maximum mana"]
+    },{
+      "sourceShape":"может поглотить дополнительных неосквернённых камней поддержки: #",
+      "translations":["can consume {0} additional uncorrupted support gem","can consume {0} additional uncorrupted support gems","can consume {0} uncorrupted support gem","can consume {0} uncorrupted support gems"]
+    },{
+      "sourceShape":"может поглотить дополнительных неосквернённых камней поддержки: #",
+      "translations":["can consume {0} additional uncorrupted support gem","can consume {0} additional uncorrupted support gems","can consume {0} uncorrupted support gem","can consume {0} uncorrupted support gems"]
+    },{
+      "sourceShape":"от их максимума здоровья в виде физического урона",
+      "translations":["of their maximum life as physical damage","their maximum life as physical damage"]
+    },{
+      "sourceShape":"стихийных состояний",
+      "translations":["by elemental ailments","by no elemental ailments"]
+    },{
+      "sourceShape":"удаляет все заряды взрывного ритма при достижении # зарядов и дарует взрывную горячность на # секунд",
+      "translations":[" remove all explosive rhythm on reaching 10 to gain explosive fervour for 10 seconds","remove all explosive rhythm on reaching 10 to gain explosive fervour for 10 seconds"]
+    },{
+      "sourceShape":"если в радиусе есть минимум # ловкости, парный удар имеет #% повышение",
+      "translations":["with at least 40 dexterity in radius, dual strike has {0}% increased","with at least 40 dexterity in radius, dual strike has {0}% increased attack"]
+    },{
+      "sourceShape":"если в радиусе есть минимум # ловкости, парный удар имеет #% повышение",
+      "translations":["with at least 40 dexterity in radius, dual strike has {0}% increased","with at least 40 dexterity in radius, dual strike has {0}% increased attack"]
+    },{
+      "sourceShape":"если в радиусе есть минимум # ловкости, парный удар имеет #% снижение",
+      "translations":["with at least 40 dexterity in radius, dual strike has {0}% reduced","with at least 40 dexterity in radius, dual strike has {0}% reduced attack"]
+    },{
+      "sourceShape":"если в радиусе есть минимум # ловкости, парный удар имеет #% снижение",
+      "translations":["with at least 40 dexterity in radius, dual strike has {0}% reduced","with at least 40 dexterity in radius, dual strike has {0}% reduced attack"]
+    },{
+      "sourceShape":"действующий на вас самоцвет кровожадного глаза, вплоть до максимума в #%",
+      "translations":["murderous eye jewel affecting you","murderous eye jewel affecting you, up to a maximum of 200%"]
+    },{
+      "sourceShape":"разломы расширяются минимум на # м в радиусе",
+      "translations":["breaches expand to at least {0} metre in radius","breaches expand to at least {0} metres in radius"]
+    },{
+      "sourceShape":"разломы расширяются минимум на # м в радиусе",
+      "translations":["breaches expand to at least {0} metre in radius","breaches expand to at least {0} metres in radius"]
+    },{
+      "sourceShape":"осталось зарядов - #",
+      "translations":["{0} use remaining","{0} uses remaining"]
+    },{
+      "sourceShape":"осталось зарядов - #",
+      "translations":["{0} use remaining","{0} uses remaining"]
+    },{
+      "sourceShape":"восстанавливает # здоровья за # сек.",
+      "translations":["recovers {0} life over {1} second","recovers {0} life over {1} seconds"]
+    },{
+      "sourceShape":"восстанавливает # здоровья за # сек.",
+      "translations":["recovers {0} life over {1} second","recovers {0} life over {1} seconds"]
+    },{
+      "sourceShape":"восстанавливает # здоровья за # сек.",
+      "translations":["recovers {0} life over {1} second","recovers {0} life over {1} seconds"]
+    },{
+      "sourceShape":"восстанавливает # здоровья за # сек.",
+      "translations":["recovers {0} life over {1} second","recovers {0} life over {1} seconds"]
+    },{
+      "sourceShape":"восстанавливает # маны за # сек.",
+      "translations":["recovers {0} mana over {1} second","recovers {0} mana over {1} seconds"]
+    },{
+      "sourceShape":"восстанавливает # маны за # сек.",
+      "translations":["recovers {0} mana over {1} second","recovers {0} mana over {1} seconds"]
+    },{
+      "sourceShape":"восстанавливает # маны за # сек.",
+      "translations":["recovers {0} mana over {1} second","recovers {0} mana over {1} seconds"]
+    },{
+      "sourceShape":"восстанавливает # маны за # сек.",
+      "translations":["recovers {0} mana over {1} second","recovers {0} mana over {1} seconds"]
+    },{
+      "sourceShape":"длится # сек.",
+      "translations":["lasts {0} second","lasts {0} seconds"]
+    },{
+      "sourceShape":"длится # сек.",
+      "translations":["lasts {0} second","lasts {0} seconds"]
+    },{
+      "sourceShape":"расходует # из # зарядов при использовании",
+      "translations":["consumes {0} of {1} charge on use","consumes {0} of {1} charges on use"]
+    },{
+      "sourceShape":"расходует # из # зарядов при использовании",
+      "translations":["consumes {0} of {1} charge on use","consumes {0} of {1} charges on use"]
+    },{
+      "sourceShape":"расходует # из # зарядов при использовании",
+      "translations":["consumes {0} of {1} charge on use","consumes {0} of {1} charges on use"]
+    },{
+      "sourceShape":"расходует # из # зарядов при использовании",
+      "translations":["consumes {0} of {1} charge on use","consumes {0} of {1} charges on use"]
+    },{
+      "sourceShape":"содержит зарядов: #",
+      "translations":["currently has {0} charge","currently has {0} charges"]
+    },{
+      "sourceShape":"содержит зарядов: #",
+      "translations":["currently has {0} charge","currently has {0} charges"]
+    },{
+      "sourceShape":"содержит # из # зарядов",
+      "translations":["currently has {0} of {1} charge","currently has {0} of {1} charges"]
+    },{
+      "sourceShape":"содержит # из # зарядов",
+      "translations":["currently has {0} of {1} charge","currently has {0} of {1} charges"]
+    },{
+      "sourceShape":"содержит # из # зарядов",
+      "translations":["currently has {0} of {1} charge","currently has {0} of {1} charges"]
+    },{
+      "sourceShape":"содержит # из # зарядов",
+      "translations":["currently has {0} of {1} charge","currently has {0} of {1} charges"]
+    }],
+  "ambiguousForDisplay":[{
+      "sourceShape":"has no sockets",
+      "translations":["не имеет гнезд","не имеет гнёзд"]
+    },{
+      "sourceShape":"gain a flask charge when you deal a critical hit",
+      "translations":["дарует заряд флакона, когда вы наносите критический удар","получает заряд флакона, когда вы наносите критический удар"]
+    },{
+      "sourceShape":"creates consecrated ground on use",
+      "translations":["при использовании создаёт освящённую землю","создает освященную землю при использовании"]
+    },{
+      "sourceShape":"#% increased armour, evasion and energy shield",
+      "translations":["{0}% повышение брони, уклонения и энергетического щита","{0}% увеличение брони, уклонения и энергетического щита"]
+    },{
+      "sourceShape":"#% increased armour, evasion and energy shield",
+      "translations":["{0}% повышение брони, уклонения и энергетического щита","{0}% увеличение брони, уклонения и энергетического щита"]
+    },{
+      "sourceShape":"#% reduced armour, evasion and energy shield",
+      "translations":["{0}% снижение брони, уклонения и энергетического щита","{0}% уменьшение брони, уклонения и энергетического щита"]
+    },{
+      "sourceShape":"#% reduced armour, evasion and energy shield",
+      "translations":["{0}% снижение брони, уклонения и энергетического щита","{0}% уменьшение брони, уклонения и энергетического щита"]
+    },{
+      "sourceShape":"#% increased accuracy rating",
+      "translations":["{0}% повышение глобальной меткости","{0}% повышение меткости"]
+    },{
+      "sourceShape":"#% increased accuracy rating",
+      "translations":["{0}% повышение глобальной меткости","{0}% повышение меткости"]
+    },{
+      "sourceShape":"#% reduced accuracy rating",
+      "translations":["{0}% снижение глобальной меткости","{0}% снижение меткости"]
+    },{
+      "sourceShape":"#% reduced accuracy rating",
+      "translations":["{0}% снижение глобальной меткости","{0}% снижение меткости"]
+    },{
+      "sourceShape":"lose # mana per second",
+      "translations":["отнимает {0} маны в секунду","теряет {0} маны в секунду"]
+    },{
+      "sourceShape":"lose # mana per second",
+      "translations":["отнимает {0} маны в секунду","теряет {0} маны в секунду"]
+    },{
+      "sourceShape":"#% increased experience gain",
+      "translations":["{0}% увеличение количества получаемого опыта","{0}% увеличение получаемого опыта"]
+    },{
+      "sourceShape":"#% increased experience gain",
+      "translations":["{0}% увеличение количества получаемого опыта","{0}% увеличение получаемого опыта"]
+    },{
+      "sourceShape":"lose #% of maximum life on kill",
+      "translations":["вы теряете {0}% здоровья при убийстве","теряет {0}% здоровья при убийстве"]
+    },{
+      "sourceShape":"lose #% of maximum life on kill",
+      "translations":["вы теряете {0}% здоровья при убийстве","теряет {0}% здоровья при убийстве"]
+    },{
+      "sourceShape":"lose #% of maximum energy shield on kill",
+      "translations":["вы теряете {0}% энергетического щита при убийстве","теряет {0}% энергетического щита при убийстве"]
+    },{
+      "sourceShape":"lose #% of maximum energy shield on kill",
+      "translations":["вы теряете {0}% энергетического щита при убийстве","теряет {0}% энергетического щита при убийстве"]
+    },{
+      "sourceShape":"minions have #% more maximum life",
+      "translations":["на {0}% больше максимума здоровья приспешников","приспешники имеют на {0}% больше максимума здоровья"]
+    },{
+      "sourceShape":"minions have #% more maximum life",
+      "translations":["на {0}% больше максимума здоровья приспешников","приспешники имеют на {0}% больше максимума здоровья"]
+    },{
+      "sourceShape":"minions have #% less maximum life",
+      "translations":["на {0}% меньше максимума здоровья приспешников","приспешники имеют на {0}% меньше максимума здоровья"]
+    },{
+      "sourceShape":"minions have #% less maximum life",
+      "translations":["на {0}% меньше максимума здоровья приспешников","приспешники имеют на {0}% меньше максимума здоровья"]
+    },{
+      "sourceShape":"projectiles pierce an additional target",
+      "translations":["снаряды пронзают дополнительную цель","стрелы пронзают дополнительную цель"]
+    },{
+      "sourceShape":"projectiles pierce # additional targets",
+      "translations":["снаряды пронзают {0} дополнительных цели(-ей)","стрелы пронзают {0} дополнительных цели(-ей)"]
+    },{
+      "sourceShape":"projectiles pierce # additional targets",
+      "translations":["снаряды пронзают {0} дополнительных цели(-ей)","стрелы пронзают {0} дополнительных цели(-ей)"]
+    },{
+      "sourceShape":"gain a frenzy charge on critical hit",
+      "translations":["дарует заряд ярости при нанесении критического удара","заряд ярости при нанесении критического удара"]
+    },{
+      "sourceShape":"cannot be poisoned",
+      "translations":["не может быть отравлен","невозможно отравить"]
+    },{
+      "sourceShape":"bleeding cannot be inflicted on you",
+      "translations":["кровотечение не может быть наложено на вас","на вас нельзя наложить кровотечение"]
+    },{
+      "sourceShape":"+# to maximum number of skeletons",
+      "translations":["{0} к максимальному количеству скелетов","{0} к максимальному числу скелетов"]
+    },{
+      "sourceShape":"+# to maximum number of skeletons",
+      "translations":["{0} к максимальному количеству скелетов","{0} к максимальному числу скелетов"]
+    },{
+      "sourceShape":"-# to maximum number of skeletons",
+      "translations":["{0} к максимальному количеству скелетов","{0} к максимальному числу скелетов"]
+    },{
+      "sourceShape":"-# to maximum number of skeletons",
+      "translations":["{0} к максимальному количеству скелетов","{0} к максимальному числу скелетов"]
+    },{
+      "sourceShape":"#% reduced effect of curses on monsters",
+      "translations":["{0}% ослабление эффекта проклятий на монстрах","{0}% ослабление эффекта проклятий на приспешниках"]
+    },{
+      "sourceShape":"#% reduced effect of curses on monsters",
+      "translations":["{0}% ослабление эффекта проклятий на монстрах","{0}% ослабление эффекта проклятий на приспешниках"]
+    },{
+      "sourceShape":"gain a power charge on non-critical hit",
+      "translations":["заряд энергии при нанесении некритического удара","получает заряд энергии при нанесении некритического удара"]
+    },{
+      "sourceShape":"#% chance to gain onslaught for # seconds on kill",
+      "translations":["{0}% шанс получить эффект боевого ража на 4 секунды при убийстве","{0}% шанс получить эффект боевой раж на 4 секунды при убийстве"]
+    },{
+      "sourceShape":"#% chance to gain onslaught for # seconds on kill",
+      "translations":["{0}% шанс получить эффект боевого ража на 4 секунды при убийстве","{0}% шанс получить эффект боевой раж на 4 секунды при убийстве"]
+    },{
+      "sourceShape":"gain onslaught for # seconds on kill",
+      "translations":["боевой раж на 4 секунды при убийстве","получает эффект боевого ража на 4 секунды при убийстве"]
+    },{
+      "sourceShape":"hits have #% increased critical hit chance against you",
+      "translations":["{0}% увеличение шанса критического удара ударами по вам","удары по вам имеют на {0}% повышенный шанс критического удара"]
+    },{
+      "sourceShape":"hits have #% increased critical hit chance against you",
+      "translations":["{0}% увеличение шанса критического удара ударами по вам","удары по вам имеют на {0}% повышенный шанс критического удара"]
+    },{
+      "sourceShape":"hits have #% reduced critical hit chance against you",
+      "translations":["{0}% уменьшение шанса критического удара ударами по вам","удары по вам имеют на {0}% сниженный шанс критического удара"]
+    },{
+      "sourceShape":"hits have #% reduced critical hit chance against you",
+      "translations":["{0}% уменьшение шанса критического удара ударами по вам","удары по вам имеют на {0}% сниженный шанс критического удара"]
+    },{
+      "sourceShape":"spark fires # additional projectiles",
+      "translations":["искра выпускает {0} дополнительных снаряда","искра выпускает дополнительных снарядов: {0}"]
+    },{
+      "sourceShape":"spark fires # additional projectiles",
+      "translations":["искра выпускает {0} дополнительных снаряда","искра выпускает дополнительных снарядов: {0}"]
+    },{
+      "sourceShape":"#% increased damage if you've killed a cursed enemy recently",
+      "translations":["{0}% увеличение урона, если недавно вы убили проклятого врага","{0}% уменьшение урона, если недавно вы убили проклятого врага"]
+    },{
+      "sourceShape":"#% increased damage if you've killed a cursed enemy recently",
+      "translations":["{0}% увеличение урона, если недавно вы убили проклятого врага","{0}% уменьшение урона, если недавно вы убили проклятого врага"]
+    },{
+      "sourceShape":"inflict exposure on hit",
+      "translations":["накладывает восприимчивость к молнии при нанесении удара","накладывает восприимчивостьь к молнии при нанесении удара"]
+    },{
+      "sourceShape":"minions summoned by your summoning towers have #% increased life",
+      "translations":["приспешники, призванные вашими призывающими башнями, имеют увеличенное на {0}% здоровье","приспешники, призванные вашими призывающими башнями, имеют уменьшенное на {0}% здоровье"]
+    },{
+      "sourceShape":"minions summoned by your summoning towers have #% increased life",
+      "translations":["приспешники, призванные вашими призывающими башнями, имеют увеличенное на {0}% здоровье","приспешники, призванные вашими призывающими башнями, имеют уменьшенное на {0}% здоровье"]
+    },{
+      "sourceShape":"#% increased cast speed while affected by zealotry",
+      "translations":["{0}% повышение скорости сотворения чар под действием фанатизма","{0}% снижение скорости сотворения чар под действием фанатизма"]
+    },{
+      "sourceShape":"#% increased cast speed while affected by zealotry",
+      "translations":["{0}% повышение скорости сотворения чар под действием фанатизма","{0}% снижение скорости сотворения чар под действием фанатизма"]
+    },{
+      "sourceShape":"#% chance to intimidate enemies for # seconds on hit",
+      "translations":["{0}% шанс при нанесении удара устрашить врагов на 4 секунды","{0}% шанс устрашить врагов на 4 секунды при нанесении удара"]
+    },{
+      "sourceShape":"#% chance to intimidate enemies for # seconds on hit",
+      "translations":["{0}% шанс при нанесении удара устрашить врагов на 4 секунды","{0}% шанс устрашить врагов на 4 секунды при нанесении удара"]
+    },{
+      "sourceShape":"you have consecrated ground around you while stationary",
+      "translations":["вокруг вас действует освященная земля, пока вы неподвижны","пока вы находитесь на одном месте, вокруг вас создаётся освящённая земля"]
+    },{
+      "sourceShape":"link skills have #% increased buff effect if you have linked to a target recently",
+      "translations":["{0}% ослабление положительного эффекта умений связей, если недавно вы связали себя с целью","{0}% усиление положительного эффекта умений связей, если недавно вы связали себя с целью"]
+    },{
+      "sourceShape":"link skills have #% increased buff effect if you have linked to a target recently",
+      "translations":["{0}% ослабление положительного эффекта умений связей, если недавно вы связали себя с целью","{0}% усиление положительного эффекта умений связей, если недавно вы связали себя с целью"]
+    },{
+      "sourceShape":"area contains ritual altars",
+      "translations":["в области можно встретить алтари ритуала","в области можно встретить ритуалы алтаря"]
+    },{
+      "sourceShape":"magic monsters have #% increased effectiveness",
+      "translations":["{0}% увеличение эффективности волшебных монстров","{0}% уменьшение эффективности волшебных монстров"]
+    },{
+      "sourceShape":"magic monsters have #% increased effectiveness",
+      "translations":["{0}% увеличение эффективности волшебных монстров","{0}% уменьшение эффективности волшебных монстров"]
+    },{
+      "sourceShape":"players have #% increased movement speed",
+      "translations":["{0}% повышение скорости передвижения игроков","скорость передвижения игроков повышена на {0}%"]
+    },{
+      "sourceShape":"players have #% increased movement speed",
+      "translations":["{0}% повышение скорости передвижения игроков","скорость передвижения игроков повышена на {0}%"]
+    },{
+      "sourceShape":"synthesised rare monsters drop # additional currency shards",
+      "translations":["из синтезированных редких монстров выпадает {0} дополнительных осколков валюты","из синтезированных редких монстров выпадает дополнительно осколков валюты: {0}"]
+    },{
+      "sourceShape":"synthesised rare monsters drop # additional currency shards",
+      "translations":["из синтезированных редких монстров выпадает {0} дополнительных осколков валюты","из синтезированных редких монстров выпадает дополнительно осколков валюты: {0}"]
+    },{
+      "sourceShape":"monsters from verisium remnants drop #% increased verisium",
+      "translations":["{0}% увеличение количества веризия, выпадающего из монстров веризиевых реликтов","{0}% уменьшение количества веризия, выпадающего из монстров веризиевых реликтов"]
+    },{
+      "sourceShape":"monsters from verisium remnants drop #% increased verisium",
+      "translations":["{0}% увеличение количества веризия, выпадающего из монстров веризиевых реликтов","{0}% уменьшение количества веризия, выпадающего из монстров веризиевых реликтов"]
+    },{
+      "sourceShape":"purity of lightning has #% increased mana reservation efficiency",
+      "translations":["{0}% увеличение эффективности удержания маны спасением от молний","{0}% увеличение эффективности удержания маны спасением от холода"]
+    },{
+      "sourceShape":"purity of lightning has #% increased mana reservation efficiency",
+      "translations":["{0}% увеличение эффективности удержания маны спасением от молний","{0}% увеличение эффективности удержания маны спасением от холода"]
+    },{
+      "sourceShape":"#% increased brand damage per # devotion",
+      "translations":["{0}% увеличение урона клеймами за каждые 10 набожности","{0}% увеличение урона от клейм за каждые 10 набожности"]
+    },{
+      "sourceShape":"#% increased brand damage per # devotion",
+      "translations":["{0}% увеличение урона клеймами за каждые 10 набожности","{0}% увеличение урона от клейм за каждые 10 набожности"]
+    },{
+      "sourceShape":"#% reduced brand damage per # devotion",
+      "translations":["{0}% уменьшение урона клеймами за каждые 10 набожности","{0}% уменьшение урона от клейм за каждые 10 набожности"]
+    },{
+      "sourceShape":"#% reduced brand damage per # devotion",
+      "translations":["{0}% уменьшение урона клеймами за каждые 10 набожности","{0}% уменьшение урона от клейм за каждые 10 набожности"]
+    },{
+      "sourceShape":"#% increased spell damage during any flask effect",
+      "translations":["{0}% увеличение урона от чар во время действия любого эффекта флакона","{0}% увеличение урона от чар во время действия эффекта любого флакона"]
+    },{
+      "sourceShape":"#% increased spell damage during any flask effect",
+      "translations":["{0}% увеличение урона от чар во время действия любого эффекта флакона","{0}% увеличение урона от чар во время действия эффекта любого флакона"]
+    },{
+      "sourceShape":"#% increased effect of arcane surge on you per",
+      "translations":["{0}% усиление эффекта колдовского выброса на вас за каждые","{0}% усиление эффекта колдовского выброса на вас за каждый действующий на вас"]
+    },{
+      "sourceShape":"#% increased effect of arcane surge on you per",
+      "translations":["{0}% усиление эффекта колдовского выброса на вас за каждые","{0}% усиление эффекта колдовского выброса на вас за каждый действующий на вас"]
+    },{
+      "sourceShape":"#% reduced effect of arcane surge on you per",
+      "translations":["{0}% ослабление эффекта колдовского выброса на вас за каждые","{0}% ослабление эффекта колдовского выброса на вас за каждый действующий"]
+    },{
+      "sourceShape":"#% reduced effect of arcane surge on you per",
+      "translations":["{0}% ослабление эффекта колдовского выброса на вас за каждые","{0}% ослабление эффекта колдовского выброса на вас за каждый действующий"]
+    },{
+      "sourceShape":"per # of your dexterity",
+      "translations":["за {0} от вашей ловкости","за каждые {0} вашей ловкости"]
+    },{
+      "sourceShape":"per # of your dexterity",
+      "translations":["за {0} от вашей ловкости","за каждые {0} вашей ловкости"]
+    },{
+      "sourceShape":"areas contain additional essences",
+      "translations":["в области можно встретить дополнительные сущности","в областях можно найти дополнительные сущности"]
+    },{
+      "sourceShape":"passives granting fire resistance or all elemental resistances in radius",
+      "translations":["пассивные умения в радиусе также дают шанс блокировать урон от атак","пассивные умения, дающие сопротивление огню или сопротивление всем стихиям в радиусе,"]
+    },{
+      "sourceShape":"other modifiers to movement speed except for sprinting do not apply",
+      "translations":["другие модификаторы скорости передвижения, кроме бега, не применяются","другие свойства скорости передвижения, кроме бега, не применяются"]
+    },{
+      "sourceShape":"notable passive skills in radius are transformed to",
+      "translations":["значимые пассивные умения в радиусе изменены и","эффект значимых пассивных умений в радиусе заменяется на:"]
+    }],
+  "gameVersion":"0.5.5g",
+  "officialTemplatePairs":15676,
+  "pobCatalog":{
+    "importedFixture":{
+      "total":380,
+      "translated":380,
+      "untranslated":[],
+      "untranslatedOccurrences":[]
+    },
+    "rareTemplates":{
+      "total":165,
+      "translated":165,
+      "untranslated":[],
+      "untranslatedOccurrences":[]
+    },
+    "uniques":{
+      "total":3339,
+      "translated":3339,
+      "untranslated":[],
+      "untranslatedOccurrences":[]
+    }
+  },
+  "pobVersion":"0.23.1",
+  "reviewedItemTemplates":[{
+      "items":["Sine Aequo","Ab Aeterno","Solus Ipse","Morior Invictus","Atziri's Splendour"],
+      "russian":"{0}% повышение брони, уклонения и энергетического щита",
+      "source":"{0}% increased Armour, Evasion and Energy Shield",
+      "statId":"local_armour_and_evasion_and_energy_shield_+%"
+    },{
+      "items":["Loreweave","Blackheart"],
+      "russian":"{0}% шанс устрашить врагов на 4 секунды при нанесении удара",
+      "source":"{0}% chance to Intimidate Enemies for 4 seconds on Hit",
+      "statId":"chance_to_intimidate_on_hit_%"
+    },{
+      "items":["Arvil's Wheel","Aurseize"],
+      "russian":"Теряет {0}% здоровья при убийстве",
+      "source":"Lose {0}% of maximum Life on Kill",
+      "statId":"recover_%_maximum_life_on_kill"
+    },{
+      "items":["Gifts from Above","Loreweave"],
+      "russian":"Вокруг вас действует освященная земля, пока вы неподвижны",
+      "source":"You have Consecrated Ground around you while stationary",
+      "statId":"gifts_from_above_consecrated_ground_while_stationary"
+    },{
+      "items":["Nocturne"],
+      "russian":"{0}% повышение глобальной меткости",
+      "source":"{0}% increased Accuracy Rating",
+      "statId":"accuracy_rating_+%"
+    },{
+      "items":["Cornathaum"],
+      "russian":"{0}% увеличение количества получаемого опыта",
+      "source":"{0}% increased Experience gain",
+      "statId":"experience_gain_+%"
+    },{
+      "items":["Quatl's Molt"],
+      "russian":"Не может быть отравлен",
+      "source":"Cannot be Poisoned",
+      "statId":"cannot_be_poisoned"
+    },{
+      "items":["Sanguis Heroum"],
+      "russian":"Создает освященную землю при использовании",
+      "source":"Creates Consecrated Ground on use",
+      "statId":"charm_create_consecrated_ground_when_used"
+    },{
+      "items":[],
+      "russian":"{0}% увеличение эффективности удержания духа умениями",
+      "source":"{0}% increased Spirit Reservation Efficiency",
+      "statId":"base_spirit_reservation_efficiency_+%"
+    },{
+      "items":[],
+      "russian":"Обереги получают зарядов в секунду: 1",
+      "source":"Charms gain 1 charge per Second",
+      "statId":"generate_x_charges_for_charms_per_minute"
+    },{
+      "items":["The Bringer of Rain","Greymake"],
+      "russian":"Имеет гнезд: 4",
+      "source":"Has 4 Augment Sockets",
+      "statId":"local_has_X_sockets"
+    },{
+      "items":["Sire of Shards"],
+      "russian":"Чары выпускают дополнительных снарядов: {0:d}",
+      "source":"Spells fire {0:d} additional Projectiles",
+      "statId":"spell_projectile_skills_fire_X_additional_projectiles_in_a_circle"
+    },{
+      "items":["Queen of the Forest"],
+      "russian":"Другие свойства скорости передвижения, кроме бега, не применяются",
+      "source":"Other Modifiers to Movement Speed except for Sprinting do not apply",
+      "statId":"movement_speed_is_only_base_+1%_per_x_evasion_rating"
+    },{
+      "items":["Window to Paradise"],
+      "russian":"Накладывает восприимчивость к стихиям на врагов на расстоянии 3 м перед вами",
+      "source":"Inflict Elemental Exposure to Enemies 3 metres in front of you",
+      "statId":"unique_shield_window_of_paradise_apply_elemental_exposure_while_raised"
+    },{
+      "items":["Window to Paradise"],
+      "russian":"на 4 секунды каждые 0.25 секунды, если поднят",
+      "source":"for 4 seconds, every 0.25 seconds while raised",
+      "statId":"unique_shield_window_of_paradise_apply_elemental_exposure_while_raised"
+    },{
+      "items":["Font of Power"],
+      "russian":"Когда член группы в вашем присутствии сотворяет чары, вы",
+      "source":"When a Party Member in your Presence Casts a Spell, you",
+      "statId":"unique_%_maximum_mana_to_sacrifice_to_party_members_in_your_presence_when_they_cast_a_spell"
+    },{
+      "items":["Font of Power"],
+      "russian":"жертвуете {0}% маны и он похищает эту ману",
+      "source":"Sacrifice {0}% of Mana and they Leech that Mana",
+      "statId":"unique_%_maximum_mana_to_sacrifice_to_party_members_in_your_presence_when_they_cast_a_spell"
+    },{
+      "items":["Olrovasara"],
+      "russian":"При нанесении удара, на 20 секунд увеличивает наносимый максимум дополнительного урона от молнии",
+      "source":"On Hitting an enemy, gains maximum added Lightning damage equal to",
+      "statId":"local_maximum_added_lightning_damage_equal_to_total_monster_power_of_enemies_hit_in_past_20_seconds_up_to_X"
+    },{
+      "items":["Olrovasara"],
+      "russian":"на уровень угрозы монстра, вплоть до максимума в {0}",
+      "source":"the enemy's Power for 20 seconds, up to a total of {0}",
+      "statId":"local_maximum_added_lightning_damage_equal_to_total_monster_power_of_enemies_hit_in_past_20_seconds_up_to_X"
+    },{
+      "items":["Widow's Reign"],
+      "russian":"Теряемое в результате получения урона здоровье вместо этого удерживается",
+      "source":"Life that would be lost by taking Damage is instead Reserved",
+      "statId":"reserve_life_instead_of_loss_from_damage_for_x_ms"
+    },{
+      "items":["Widow's Reign"],
+      "russian":"до тех пор, пока вы не перестанете получать урон здоровью в течение {0} секунд",
+      "source":"until you take no Damage to Life for {0} seconds",
+      "statId":"reserve_life_instead_of_loss_from_damage_for_x_ms"
+    },{
+      "items":["The Flesh Poppet"],
+      "russian":"Копирует случайное свойство каждого врага в вашем присутствии когда",
+      "source":"Copy a random Modifier from each enemy in your Presence when",
+      "statId":"gain_a_modifier_from_enemies_in_presence_when_shapeshifting_ms"
+    },{
+      "items":["The Flesh Poppet"],
+      "russian":"вы принимаете животную форму",
+      "source":"you Shapeshift to an Animal form",
+      "statId":"gain_a_modifier_from_enemies_in_presence_when_shapeshifting_ms"
+    },{
+      "items":["The Flesh Poppet"],
+      "russian":"Полученные таким образом свойства пропадают через {0} секунд(-ы) или при вашем следующем превращении",
+      "source":"Modifiers gained this way are lost after {0} seconds or when you next Shapeshift",
+      "statId":"gain_a_modifier_from_enemies_in_presence_when_shapeshifting_ms"
+    },{
+      "items":["The Lethal Draw"],
+      "russian":"Атаки луком поглощают {0}% от вашего максимума зарядов флакона здоровья, если это возможно, чтобы нанести дополнительный физический урон в размере {1}% от восстанавливаемого флаконом здоровья",
+      "source":"Bow Attacks consume {0}% of your maximum Life Flask Charges if possible to deal added Physical damage equal to {1}% of Flask's Life Recovery amount",
+      "statId":"consume_%_of_maximum_life_flask_charges_on_bow_attack,bow_attacks_deal_added_physical_damage_equal_to_x%_of_life_flask_recovery_amount"
+    },{
+      "items":["Mageblood"],
+      "russian":"Наследие - Аметист",
+      "source":"Legacy of Amethyst",
+      "statId":"local_unique_mages_legacy_1,local_unique_mages_legacy_2,local_unique_mages_legacy_3,local_unique_mages_legacy_4"
+    },{
+      "items":["Mageblood"],
+      "russian":"Наследие - Базальт",
+      "source":"Legacy of Basalt",
+      "statId":"local_unique_mages_legacy_1,local_unique_mages_legacy_2,local_unique_mages_legacy_3,local_unique_mages_legacy_4"
+    },{
+      "items":["Mageblood"],
+      "russian":"Наследие - Висмут",
+      "source":"Legacy of Bismuth",
+      "statId":"local_unique_mages_legacy_1,local_unique_mages_legacy_2,local_unique_mages_legacy_3,local_unique_mages_legacy_4"
+    },{
+      "items":["Mageblood"],
+      "russian":"Наследие - Алмаз",
+      "source":"Legacy of Diamond",
+      "statId":"local_unique_mages_legacy_1,local_unique_mages_legacy_2,local_unique_mages_legacy_3,local_unique_mages_legacy_4"
+    },{
+      "items":["Mageblood"],
+      "russian":"Наследие - Золото",
+      "source":"Legacy of Gold",
+      "statId":"local_unique_mages_legacy_1,local_unique_mages_legacy_2,local_unique_mages_legacy_3,local_unique_mages_legacy_4"
+    },{
+      "items":["Mageblood"],
+      "russian":"Наследие - Гранит",
+      "source":"Legacy of Granite",
+      "statId":"local_unique_mages_legacy_1,local_unique_mages_legacy_2,local_unique_mages_legacy_3,local_unique_mages_legacy_4"
+    },{
+      "items":["Mageblood"],
+      "russian":"Наследие - Нефрит",
+      "source":"Legacy of Jade",
+      "statId":"local_unique_mages_legacy_1,local_unique_mages_legacy_2,local_unique_mages_legacy_3,local_unique_mages_legacy_4"
+    },{
+      "items":["Mageblood"],
+      "russian":"Наследие - Ртуть",
+      "source":"Legacy of Quicksilver",
+      "statId":"local_unique_mages_legacy_1,local_unique_mages_legacy_2,local_unique_mages_legacy_3,local_unique_mages_legacy_4"
+    },{
+      "items":["Mageblood"],
+      "russian":"Наследие - Рубин",
+      "source":"Legacy of Ruby",
+      "statId":"local_unique_mages_legacy_1,local_unique_mages_legacy_2,local_unique_mages_legacy_3,local_unique_mages_legacy_4"
+    },{
+      "items":["Mageblood"],
+      "russian":"Наследие - Сапфир",
+      "source":"Legacy of Sapphire",
+      "statId":"local_unique_mages_legacy_1,local_unique_mages_legacy_2,local_unique_mages_legacy_3,local_unique_mages_legacy_4"
+    },{
+      "items":["Mageblood"],
+      "russian":"Наследие - Серебро",
+      "source":"Legacy of Silver",
+      "statId":"local_unique_mages_legacy_1,local_unique_mages_legacy_2,local_unique_mages_legacy_3,local_unique_mages_legacy_4"
+    },{
+      "items":["Mageblood"],
+      "russian":"Наследие - Стибнит",
+      "source":"Legacy of Stibnite",
+      "statId":"local_unique_mages_legacy_1,local_unique_mages_legacy_2,local_unique_mages_legacy_3,local_unique_mages_legacy_4"
+    },{
+      "items":["Mageblood"],
+      "russian":"Наследие - Сера",
+      "source":"Legacy of Sulphur",
+      "statId":"local_unique_mages_legacy_1,local_unique_mages_legacy_2,local_unique_mages_legacy_3,local_unique_mages_legacy_4"
+    },{
+      "items":["Mageblood"],
+      "russian":"Наследие - Топаз",
+      "source":"Legacy of Topaz",
+      "statId":"local_unique_mages_legacy_1,local_unique_mages_legacy_2,local_unique_mages_legacy_3,local_unique_mages_legacy_4"
+    },{
+      "clientValues":[-15,-10],
+      "items":["Grip of Kulemak"],
+      "modId":"PassageUniqueAmanamuAbyssalWastingReducesFireRes",
+      "reason":"PoB source omits the value",
+      "russian":"Истощение Бездны также накладывает …% к сопротивлению огню",
+      "source":"Abyssal Wasting also applies % to Fire Resistance",
+      "statId":"abyssal_wasting_fire_resistance_%"
+    },{
+      "clientValues":[-15,-10],
+      "items":["Grip of Kulemak"],
+      "modId":"PassageUniqueKurgalAbyssalWastingReducesColdRes",
+      "reason":"PoB source omits the value",
+      "russian":"Истощение Бездны также накладывает …% к сопротивлению холоду",
+      "source":"Abyssal Wasting also applies % to Cold Resistance",
+      "statId":"abyssal_wasting_cold_resistance_%"
+    },{
+      "clientValues":[-15,-10],
+      "items":["Grip of Kulemak"],
+      "modId":"PassageUniqueUlamanAbyssalWastingReducesLightningRes",
+      "reason":"PoB source omits the value",
+      "russian":"Истощение Бездны также накладывает …% к сопротивлению молнии",
+      "source":"Abyssal Wasting also applies % to Lightning Resistance",
+      "statId":"abyssal_wasting_lightning_resistance_%"
+    }],
+  "sources":["stat_descriptions","advanced_mod_stat_descriptions","utility_flask_buff_stat_descriptions","clientstrings"],
+  "statGroups":10705,
+  "steamBuildId":26650308
+}

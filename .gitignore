@@ -45,3 +45,10 @@ runtime/imgui.ini
 
 
 src/poe_api_response.json
+
+# RU release output and private user data
+/dist*/
+**/Settings.xml
+**/poe_api_response.json
+**/Builds/
+**/__pycache__/

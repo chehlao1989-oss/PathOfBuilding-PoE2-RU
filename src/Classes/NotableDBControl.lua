@@ -3,6 +3,7 @@
 -- Class: Notable DB
 -- Notable DB control.
 --
+local utf8 = require('lua-utf8')
 local pairs = pairs
 local ipairs = ipairs
 local t_insert = table.insert
@@ -58,7 +59,7 @@ local NotableDBClass = newClass("NotableDBControl", "ListControl", function(self
 	end
 	self.emotionImages = getEmotionImages()
 
-	self.controls.emotionLabel = new("LabelControl", {"TOPLEFT", self.controls.search, "BOTTOMLEFT"}, {0, 6, 100, 16}, "Emotions: ")
+	self.controls.emotionLabel = new("LabelControl", {"TOPLEFT", self.controls.search, "BOTTOMLEFT"}, {0, 6, function() return m_max(100, UILocale.measureRaw(16, "VAR", UILocale.translate("Emotions:")) + 6) end, 16}, "Emotions: ")
 	self.emotionsAvailable = { }
 	local function emoCheckOnChange(name)
 		self.emotionsAvailable[name] = true
@@ -70,7 +71,7 @@ local NotableDBClass = newClass("NotableDBControl", "ListControl", function(self
 	local function emoCheck(name, relTo)
 		local anchor = {"LEFT", relTo, "RIGHT"}
 		local rect = {2, 0, 26, 26}
-		local ctl = new("CheckBoxControl", anchor, rect, "", emoCheckOnChange(name), "Distilled "..name, true)
+		local ctl = new("CheckBoxControl", anchor, rect, "", emoCheckOnChange(name), function() return UILocale.emotionName(name, true) end, true)
 		if self.emotionImages then ctl:SetCheckImage(self.emotionImages[name]) end
 		return ctl
 	end
@@ -78,8 +79,8 @@ local NotableDBClass = newClass("NotableDBControl", "ListControl", function(self
 	local emotionCheckBoxes = {}
 	for i,emo in ipairs(emotionList) do
 		local emoCtl
-		if i == 11 then
-			local ctl = new("CheckBoxControl", {"TOPLEFT", emotionCheckBoxes[1], "BOTTOMLEFT"}, {0, 2, 26, 26}, "", emoCheckOnChange(emo), "Distilled "..emo, true)
+		if i == 8 then
+			local ctl = new("CheckBoxControl", {"TOPLEFT", emotionCheckBoxes[1], "BOTTOMLEFT"}, {0, 2, 26, 26}, "", emoCheckOnChange(emo), function() return UILocale.emotionName(emo, true) end, true)
 			if self.emotionImages then ctl:SetCheckImage(self.emotionImages[emo]) end
 			emoCtl = ctl
 		else
@@ -107,28 +108,27 @@ function NotableDBClass:DoesNotableMatchFilters(node)
 		end
 	end
 
-	local searchStr = self.controls.search.buf:lower():gsub("[%-%.%+%[%]%$%^%%%?%*]", "%%%0")
+	local searchStr = utf8.lower(self.controls.search.buf):gsub("[%-%.%+%[%]%$%^%%%?%*]", "%%%0")
 	if searchStr:match("%S") then
-		local found = false
+		local version = self.itemsTab.build.spec.treeVersion
+		local entry = UILocale.passive(version, node.id, node.dn)
+		local function matches(text)
+			local err, match = PCall(string.matchOrPattern, utf8.lower(text), searchStr)
+			return not err and match
+		end
 		local mode = self.controls.searchMode.selIndex
-		if mode == 1 or mode == 2 then
-			local err, match = PCall(string.matchOrPattern, node.dn:lower(), searchStr)
-			if not err and match then
-				found = true
-			end
+		if (mode == 1 or mode == 2) and (matches(node.dn) or (entry and matches(entry.name))) then
+			return true
 		end
 		if mode == 1 or mode == 3 then
-			for _, line in ipairs(node.sd) do
-				local err, match = PCall(string.matchOrPattern, line:lower(), searchStr)
-				if not err and match then
-					found = true
-					break
+			for index, line in ipairs(node.sd) do
+				local translated = UILocale.passiveStat(entry, node.sd, index, true)
+				if matches(line) or (translated ~= line and matches(translated)) then
+					return true
 				end
 			end
 		end
-		if not found then
-			return false
-		end
+		return false
 	end
 	return true
 end
@@ -269,17 +269,18 @@ end
 ---@return string
 function NotableDBClass:GetRowValue(column, index, node)
 	if column == 1 then
+		local nodeName = UILocale.passiveName(self.itemsTab.build.spec.treeVersion, node)
 		if self.sortDetail and self.sortDetail.stat then
 			if self.sortMaxPower and self.sortMaxPower > 0 and node.measuredPower and node.measuredPower > 0 then
 				local scaledPower = node.measuredPower / self.sortMaxPower
 				local powerRed = scaledPower * (0xFF - 0x80) + 0x80
 				local powerColor = s_format("^x%X8080", powerRed)
-				return powerColor..node.dn
+				return powerColor..nodeName
 			else
-				return "^x808080"..node.dn
+				return "^x808080"..nodeName
 			end
 		else
-			return colorCodes.ENCHANTED..node.dn
+			return colorCodes.ENCHANTED..nodeName
 		end
 	end
 end
@@ -300,14 +301,18 @@ function NotableDBClass:AddValueTooltip(tooltip, index, node)
 		-- Node description
 		if node.sd[1] then
 			tooltip:AddLine(16, "")
-			for i, line in ipairs(node.sd) do
+			local entry = UILocale.passive(self.itemsTab.build.spec.treeVersion, node.id, node.dn)
+			local i = 1
+			while node.sd[i] do
+				local line, length = UILocale.passiveStat(entry, node.sd, i, true)
 				if line ~= " " and (node.mods[i].extra or not node.mods[i].list) then
 					local line = colorCodes.UNSUPPORTED..line
-					line = main.notSupportedModTooltips and (line .. main.notSupportedTooltipText) or line
+					line = main.notSupportedModTooltips and (line .. UILocale.translate(main.notSupportedTooltipText)) or line
 					tooltip:AddLine(16, line)
 				else
 					tooltip:AddLine(16, colorCodes.MAGIC..line)
 				end
+				i = i + length
 			end
 		end
 

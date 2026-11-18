@@ -248,11 +248,13 @@ end
 --- Clean item text by removing or replacing unsupported or redundant characters or sequences
 ---@param text string
 ---@return string
-function sanitiseText(text)
+function sanitiseText(text, preserveUnicode)
 	if not text then return nil end
 	-- Something something unicode support something grumble
 	-- Only do these replacements if a char from 128-255 or '<' is found first
-	return text:find("[\128-\255<]") and text
+	if not text:find("[\128-\255<]") then return text end
+	local preserveUtf8 = preserveUnicode and utf8.len(text)
+	text = text
 		:gsub("%b<>", "")
 		:gsub("\226\128\144", "-") -- U+2010 HYPHEN
 		:gsub("\226\128\145", "-") -- U+2011 NON-BREAKING HYPHEN
@@ -266,6 +268,9 @@ function sanitiseText(text)
 		:gsub("\195\182", "o") -- U+00F6 LATIN SMALL LETTER O WITH DIAERESIS
 		:gsub("\195\173", "i") -- U+00ED LATIN SMALL LETTER I WITH ACUTE
 		:gsub("\195\179", "o") -- U+00F3 LATIN SMALL LETTER O WITH ACUTE
+	-- Keep valid item names and untranslated modifiers readable.
+	if preserveUtf8 then return text end
+	return text
 		-- single-byte: Windows-1252 and similar
 		:gsub("\150", "-") -- U+2013 EN DASH
 		:gsub("\151", "-") -- U+2014 EM DASH
@@ -273,7 +278,6 @@ function sanitiseText(text)
 		:gsub("\246", "o") -- U+00F6 LATIN SMALL LETTER O WITH DIAERESIS
 		-- unsupported
 		:gsub("[\128-\255]", "?")
-		or text
 end
 
 -- Convert int to 4 bytes string

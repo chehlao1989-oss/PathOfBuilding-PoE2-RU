@@ -109,6 +109,8 @@ local SkillsTabClass = newClass("SkillsTab", "UndoHandler", "ControlHost", "Cont
 		self:OpenSkillSetManagePopup()
 	end)
 
+	UILocale.fitButton(self.controls.setManage)
+
 	-- Socket group list
 	self.controls.groupList = new("SkillListControl", { "TOPLEFT", self, "TOPLEFT" }, { 20, 54, 360, 300 }, self)
 	self.controls.groupTip = new("LabelControl", { "TOPLEFT", self.controls.groupList, "BOTTOMLEFT" }, { 0, 8, 0, 14 },
@@ -121,17 +123,18 @@ local SkillsTabClass = newClass("SkillsTab", "UndoHandler", "ControlHost", "Cont
 ]]
 	)
 
+	self.controls.groupTip:SetWrapWidth(function() return self.controls.groupList:GetProperty("width") end)
+
 	-- Gem options
 	local optionInputsX = 170
-	local optionInputsY = 45
-	self.controls.optionSection = new("SectionControl", { "TOPLEFT", self.controls.groupList, "BOTTOMLEFT" }, { 0, optionInputsY + 50, 360, 150 }, "Gem Options")
-	self.controls.sortGemsByDPS = new("CheckBoxControl", { "TOPLEFT", self.controls.groupList, "BOTTOMLEFT" }, { optionInputsX, optionInputsY + 70, 20 }, "Sort gems by DPS:", function(state)
+	self.controls.optionSection = new("SectionControl", { "TOPLEFT", self.controls.groupTip, "BOTTOMLEFT" }, { 0, 14, 360, 150 }, "Gem Options")
+	self.controls.sortGemsByDPS = new("CheckBoxControl", { "TOPLEFT", self.controls.optionSection, "TOPLEFT" }, { optionInputsX, 20, 20 }, "Sort gems by DPS:", function(state)
 		self.sortGemsByDPS = state
 	end, nil, true)
 	self.controls.sortGemsByDPSFieldControl = new("DropDownControl", { "LEFT", self.controls.sortGemsByDPS, "RIGHT" }, { 10, 0, 140, 20 }, sortGemTypeList, function(index, value)
 		self.sortGemsByDPSField = value.type
 	end)
-	self.controls.defaultLevel = new("DropDownControl", { "TOPLEFT", self.controls.groupList, "BOTTOMLEFT" }, { optionInputsX, optionInputsY + 94, 170, 20 }, defaultGemLevelList, function(index, value)
+	self.controls.defaultLevel = new("DropDownControl", { "TOPLEFT", self.controls.optionSection, "TOPLEFT" }, { optionInputsX, 44, 170, 20 }, defaultGemLevelList, function(index, value)
 		self.defaultGemLevel = value.gemLevel
 	end)
 	self.controls.defaultLevel.tooltipFunc = function(tooltip, mode, index, value)
@@ -141,15 +144,15 @@ local SkillsTabClass = newClass("SkillsTab", "UndoHandler", "ControlHost", "Cont
 		end
 	end
 	self.controls.defaultLevelLabel = new("LabelControl", { "RIGHT", self.controls.defaultLevel, "LEFT" }, { -4, 0, 0, 16 }, "^7Default gem level:")
-	self.controls.defaultQuality = new("EditControl", { "TOPLEFT", self.controls.groupList, "BOTTOMLEFT" }, { optionInputsX, optionInputsY + 118, 60, 20 }, nil, nil, "%D", 2, function(buf)
+	self.controls.defaultQuality = new("EditControl", { "TOPLEFT", self.controls.optionSection, "TOPLEFT" }, { optionInputsX, 68, 60, 20 }, nil, nil, "%D", 2, function(buf)
 		self.defaultGemQuality = m_min(tonumber(buf) or 0, 23)
 	end)
 	self.controls.defaultQualityLabel = new("LabelControl", { "RIGHT", self.controls.defaultQuality, "LEFT" }, { -4, 0, 0, 16 }, "^7Default gem quality:")
-	self.controls.showSupportGemTypes = new("DropDownControl", { "TOPLEFT", self.controls.groupList, "BOTTOMLEFT" }, { optionInputsX, optionInputsY + 142, 170, 20 }, showSupportGemTypeList, function(index, value)
+	self.controls.showSupportGemTypes = new("DropDownControl", { "TOPLEFT", self.controls.optionSection, "TOPLEFT" }, { optionInputsX, 92, 170, 20 }, showSupportGemTypeList, function(index, value)
 		self.showSupportGemTypes = value.show
 	end)
 	self.controls.showSupportGemTypesLabel = new("LabelControl", { "RIGHT", self.controls.showSupportGemTypes, "LEFT" }, { -4, 0, 0, 16 }, "^7Show support gems:")
-	self.controls.showLegacyGems = new("CheckBoxControl", { "TOPLEFT", self.controls.groupList, "BOTTOMLEFT" }, { optionInputsX, optionInputsY + 166, 20 }, "^7Show legacy gems:", function(state)
+	self.controls.showLegacyGems = new("CheckBoxControl", { "TOPLEFT", self.controls.optionSection, "TOPLEFT" }, { optionInputsX, 116, 20 }, "^7Show legacy gems:", function(state)
 		self.showLegacyGems = state
 	end)
 
@@ -169,7 +172,7 @@ local SkillsTabClass = newClass("SkillsTab", "UndoHandler", "ControlHost", "Cont
 		self.build.buildFlag = true
 	end)
 	self.controls.groupSlotLabel = new("LabelControl", { "TOPLEFT", self.anchorGroupDetail, "TOPLEFT" }, { 0, 30, 0, 16 }, "^7Socketed in:")
-	self.controls.groupSlot = new("DropDownControl", { "TOPLEFT", self.anchorGroupDetail, "TOPLEFT" }, { 85, 28, 130, 20 }, groupSlotDropList, function(index, value)
+	self.controls.groupSlot = new("DropDownControl", { "LEFT", self.controls.groupSlotLabel, "RIGHT" }, { 8, 0, 130, 20 }, groupSlotDropList, function(index, value)
 		self.displayGroup.slot = value.slotName
 		self:AddUndoState()
 		self.build.buildFlag = true
@@ -192,7 +195,7 @@ local SkillsTabClass = newClass("SkillsTab", "UndoHandler", "ControlHost", "Cont
 	self.controls.groupSlot.enabled = function()
 		return self.displayGroup.source == nil
 	end
-	self.controls.groupEnabled = new("CheckBoxControl", { "LEFT", self.controls.groupSlot, "RIGHT" }, { 70, 0, 20 }, "Enabled:", function(state)
+	self.controls.groupEnabled = new("CheckBoxControl", { "LEFT", self.controls.groupSlot, "RIGHT" }, { function() return m_max(70, DrawStringWidth(16, "VAR", "Enabled:") + 14) end, 0, 20 }, "Enabled:", function(state)
 		self.displayGroup.enabled = state
 		self:AddUndoState()
 		self.build.buildFlag = true
@@ -210,7 +213,7 @@ local SkillsTabClass = newClass("SkillsTab", "UndoHandler", "ControlHost", "Cont
 			end
 		end
 	end
-	self.controls.includeInFullDPS = new("CheckBoxControl", { "LEFT", self.controls.groupEnabled, "RIGHT" }, { 145, 0, 20 }, "Include in Full DPS:", function(state)
+	self.controls.includeInFullDPS = new("CheckBoxControl", { "LEFT", self.controls.groupEnabled, "RIGHT" }, { function() return m_max(145, DrawStringWidth(16, "VAR", "Include in Full DPS:") + 14) end, 0, 20 }, "Include in Full DPS:", function(state)
 		self.displayGroup.includeInFullDPS = state
 		self:AddUndoState()
 		self.build.buildFlag = true
@@ -244,7 +247,7 @@ which comes from the following sources:]]
 			local activeGem = self.displayGroup.gemList[1]
 			local sourceName
 			if self.displayGroup.sourceItem then
-				sourceName = "'" .. colorCodes[self.displayGroup.sourceItem.rarity] .. self.displayGroup.sourceItem.name
+				sourceName = "'" .. colorCodes[self.displayGroup.sourceItem.rarity] .. UILocale.itemName(self.displayGroup.sourceItem)
 			elseif self.displayGroup.sourceNode then
 				sourceName = "'" .. colorCodes["NORMAL"] .. self.displayGroup.sourceNode.name
 			else
@@ -277,11 +280,11 @@ will automatically apply to the skill.]]
 	self.gemSlots = { }
 	self:CreateGemSlot(1)
 	self.controls.gemNameHeader = new("LabelControl", {"BOTTOMLEFT", self.gemSlots[1].nameSpec, "TOPLEFT"}, {0, -2, 0, 16}, "^7Gem name:")
-	self.controls.gemLevelHeader = new("LabelControl", {"BOTTOMLEFT", self.gemSlots[1].level, "TOPLEFT"}, {0, -2, 0, 16}, "^7Level:")
-	self.controls.gemQualityHeader = new("LabelControl", {"BOTTOMLEFT", self.gemSlots[1].quality, "TOPLEFT"}, {0, -2, 0, 16}, "^7Quality:")
+	self.controls.gemLevelHeader = new("LabelControl", {"BOTTOM", self.gemSlots[1].level, "TOP"}, {0, -2, 0, 16}, "^7Level:")
+	self.controls.gemQualityHeader = new("LabelControl", {"BOTTOM", self.gemSlots[1].quality, "TOP"}, {0, -2, 0, 16}, "^7Quality:")
 	self.controls.gemCorruptHeader = new("LabelControl", {"BOTTOMLEFT", self.gemSlots[1].corruptLevel, "TOPLEFT"}, {0, -2, 0, 16}, "^7Corrupt:")
-	self.controls.gemEnableHeader = new("LabelControl", {"BOTTOMLEFT", self.gemSlots[1].enabled, "TOPLEFT"}, {-16, -2, 0, 16}, "^7Enabled:")
-	self.controls.gemCountHeader = new("LabelControl", {"BOTTOMLEFT", self.gemSlots[1].count, "TOPLEFT"}, {18, -2, 0, 16}, "^7Count:")
+	self.controls.gemEnableHeader = new("LabelControl", {"BOTTOM", self.gemSlots[1].enabled, "TOP"}, {0, -2, 0, 16}, "^7On")
+	self.controls.gemCountHeader = new("LabelControl", {"BOTTOM", self.gemSlots[1].count, "TOP"}, {0, -2, 0, 16}, "^7Count:")
 end)
 
 function SkillsTabClass:GetCorruptIndex(gemInstance)
@@ -544,7 +547,42 @@ function SkillsTabClass:Save(xml)
 	end
 end
 
+function SkillsTabClass:LayoutLocalizedControls()
+	if self.layoutLanguage == UILocale.language then
+		return
+	end
+	self.layoutLanguage = UILocale.language
+	local controls = self.controls
+	controls.setSelect.x = m_max(76, controls.setLabel:GetProperty("width") + 16)
+
+	local inputX = m_max(170,
+		controls.defaultLevelLabel:GetProperty("width") + 16,
+		controls.defaultQualityLabel:GetProperty("width") + 16,
+		controls.showSupportGemTypesLabel:GetProperty("width") + 16,
+		DrawStringWidth(16, "VAR", controls.sortGemsByDPS.label) + 16,
+		DrawStringWidth(16, "VAR", controls.showLegacyGems.label) + 16)
+	for _, control in ipairs({ controls.sortGemsByDPS, controls.defaultLevel, controls.defaultQuality,
+		controls.showSupportGemTypes, controls.showLegacyGems }) do
+		control.x = inputX
+	end
+	local right = inputX
+	for _, dropdown in ipairs({ controls.sortGemsByDPSFieldControl, controls.defaultLevel, controls.showSupportGemTypes }) do
+		local width = 170
+		for _, option in ipairs(dropdown.list) do
+			width = m_max(width, DrawStringWidth(dropdown.height - 4, "VAR", option.label) + dropdown.height + 8)
+		end
+		dropdown.width = width
+		dropdown.droppedLabelPadding = 24
+		dropdown:CheckDroppedWidth(true)
+		local offset = dropdown == controls.sortGemsByDPSFieldControl and controls.sortGemsByDPS.width + 10 or 0
+		right = m_max(right, inputX + offset + width)
+	end
+	controls.groupList.width = m_max(360, right + 12)
+	controls.optionSection.width = controls.groupList.width
+end
+
 function SkillsTabClass:Draw(viewPort, inputEvents)
+	self:LayoutLocalizedControls()
 	self.x = viewPort.x
 	self.y = viewPort.y
 	self.width = viewPort.width
@@ -554,7 +592,12 @@ function SkillsTabClass:Draw(viewPort, inputEvents)
 	self.controls.scrollBarH.y = viewPort.y + viewPort.height - 18
 
 	do
-		local maxX = self.controls.gemCountHeader:GetPos() + self.controls.gemCountHeader:GetSize() + 25
+		local maxX = m_max(
+			self.controls.groupList:GetPos() + self.controls.groupList:GetProperty("width"),
+			self.controls.setManage:GetPos() + self.controls.setManage:GetProperty("width"))
+		if self.displayGroup then
+			maxX = m_max(maxX, self.controls.gemCountHeader:GetPos() + self.controls.gemCountHeader:GetProperty("width") + 25)
+		end
 		local contentWidth = maxX - self.x
 		self.controls.scrollBarH:SetContentDimension(contentWidth, viewPort.width)
 	end
@@ -739,7 +782,7 @@ function SkillsTabClass:CreateGemSlot(index)
 		for index2 = index, #self.displayGroup.gemList do
 			-- Update the other gem slot controls
 			local gemInstance = self.displayGroup.gemList[index2]
-			self.gemSlots[index2].nameSpec:SetText(gemInstance.nameSpec)
+			self.gemSlots[index2].nameSpec:SetText(UILocale.gemInstanceName(gemInstance))
 			self.gemSlots[index2].level:SetText(gemInstance.level)
 			self.gemSlots[index2].quality:SetText(gemInstance.quality)
 			self.gemSlots[index2].enabled.state = gemInstance.enabled
@@ -834,11 +877,15 @@ function SkillsTabClass:CreateGemSlot(index)
 			self.build.buildFlag = true
 		end
 	end, true)
+	slot.nameSpec.inactiveText = function(text)
+		local gem = self.displayGroup and self.displayGroup.gemList[index]
+		return (gem and text == gem.nameSpec and UILocale.gemDisplayName(gem)) or text
+	end
 	slot.nameSpec:AddToTabGroup(self.controls.groupLabel)
 	self.controls["gemSlot"..index.."Name"] = slot.nameSpec
 
 	-- Gem level
-	slot.level = new("EditControl", { "LEFT", slot.nameSpec, "RIGHT" }, { 2, 0, 60, 20 }, nil, nil, "%D", 2, function(buf)
+	slot.level = new("EditControl", { "LEFT", slot.nameSpec, "RIGHT" }, { 6, 0, function() return m_max(60, DrawStringWidth(16, "VAR", "Level:") + 10) end, 20 }, nil, nil, "%D", 2, function(buf)
 		local gemInstance = self.displayGroup.gemList[index]
 		if not gemInstance then
 			gemInstance = { nameSpec = "", level = self.defaultGemLevel or 20, quality = self.defaultGemQuality or 0, enabled = true, enableGlobal1 = true, enableGlobal2 = true, count = 1, new = true, corruptLevel = 0, corrupted = false }
@@ -861,7 +908,7 @@ function SkillsTabClass:CreateGemSlot(index)
 	self.controls["gemSlot"..index.."Level"] = slot.level
 
 	-- Gem quality
-	slot.quality = new("EditControl", {"LEFT",slot.level,"RIGHT"}, {2, 0, 60, 20}, nil, nil, "%D", 2, function(buf)
+	slot.quality = new("EditControl", {"LEFT",slot.level,"RIGHT"}, {6, 0, function() return m_max(60, DrawStringWidth(16, "VAR", "Quality:") + 10) end, 20}, nil, nil, "%D", 2, function(buf)
 		local gemInstance = self.displayGroup.gemList[index]
 		if not gemInstance then
 			gemInstance = { nameSpec = "", level = self.defaultGemLevel or 20, quality = self.defaultGemQuality or 0, enabled = true, enableGlobal1 = true, enableGlobal2 = true, count = 1, new = true, corruptLevel = 0, corrupted = false }
@@ -915,16 +962,16 @@ function SkillsTabClass:CreateGemSlot(index)
 				if grantedEffect.name == "" then
 					tooltip:AddLine(18, colorCodes.GEM..grantedEffect.statSets[1].label)
 				else
-					tooltip:AddLine(18, colorCodes.GEM..grantedEffect.name)
+					tooltip:AddLine(18, colorCodes.GEM..UILocale.effectName(grantedEffect))
 				end
 				-- Hardcoded to use 20% quality instead of grabbing from gem, this is for consistency and so we always show something
-				tooltip:AddLine(16, colorCodes.NORMAL.."At +20% Quality:")
+				tooltip:AddLine(16, colorCodes.NORMAL..UILocale.translate("At +20% Quality:"))
 				for _, qual in ipairs(qualityList) do
 					-- Do the stats one at a time because we're not guaranteed to get the descriptions in the same order we look at them here
 					local stats = { }
 					stats[qual.stat] = qual.value * 20
 					local statSet = grantedEffect.statSets[(qual.statSetIndexes[1] or 0) + 1] or grantedEffect.statSets[1]
-					local descriptions, lineMap = self.build.data.describeStats(stats, statSet.statDescriptionScope, true)
+					local descriptions, lineMap = self.build.data.describeStats(stats, statSet.statDescriptionScope, true, UILocale.gemStatTemplate)
 					-- line may be nil if the value results in no line due to not being enough quality
 					for _, line in ipairs(descriptions) do
 						if line then
@@ -1330,7 +1377,7 @@ function SkillsTabClass:SetDisplayGroup(socketGroup)
 		-- Update the gem slot controls
 		self:UpdateGemSlots()
 		for index, gemInstance in pairs(socketGroup.gemList) do
-			self.gemSlots[index].nameSpec:SetText(gemInstance.nameSpec)
+			self.gemSlots[index].nameSpec:SetText(UILocale.gemInstanceName(gemInstance))
 			self.gemSlots[index].level:SetText(gemInstance.level)
 			self.gemSlots[index].quality:SetText(gemInstance.quality)
 			self.gemSlots[index].enabled.state = gemInstance.enabled
@@ -1362,11 +1409,11 @@ function SkillsTabClass:AddSocketGroupTooltip(tooltip, socketGroup)
 		if index > 1 then
 			tooltip:AddSeparator(10)
 		end
-		tooltip:AddLine(16, "^7Active Skill #"..index..":")
+		tooltip:AddLine(16, "^7" .. UILocale.format("Active Skill #%d:", index))
 		for _, skillEffect in ipairs(activeSkill.effectList) do
 			tooltip:AddLine(20, string.format("%s%s ^7%d%s/%d%s%s",
 				data.skillColorMap[skillEffect.grantedEffect.color or skillEffect.gemData and skillEffect.gemData.grantedEffect.color],
-				skillEffect.srcInstance.nameSpec or skillEffect.grantedEffect.name,
+				UILocale.gemDisplayName(skillEffect.srcInstance) or UILocale.effectName(skillEffect.grantedEffect),
 				skillEffect.srcInstance and skillEffect.srcInstance.level or skillEffect.level,
 				(skillEffect.srcInstance and skillEffect.level > skillEffect.srcInstance.level) and colorCodes.MAGIC.."+"..(skillEffect.level - skillEffect.srcInstance.level).."^7" or "",
 				skillEffect.srcInstance and skillEffect.srcInstance.quality or skillEffect.quality,
@@ -1379,11 +1426,11 @@ function SkillsTabClass:AddSocketGroupTooltip(tooltip, socketGroup)
 		end
 		if activeSkill.minion and activeSkill.minion.mainSkill then
 			tooltip:AddSeparator(10)
-			tooltip:AddLine(16, "^7Active Skill #" .. index .. "'s Main Minion Skill:")
+			tooltip:AddLine(16, "^7" .. UILocale.format("Active Skill #%d's Main Minion Skill:", index))
 			local activeEffect = activeSkill.minion.mainSkill.effectList[1]
 			tooltip:AddLine(20, string.format("%s%s ^7%d/%d",
 				data.skillColorMap[activeEffect.grantedEffect.color] or colorCodes.NORMAL,
-				activeEffect.grantedEffect.name,
+				UILocale.effectName(activeEffect.grantedEffect),
 				activeEffect.level,
 				activeEffect.quality
 			))
@@ -1417,12 +1464,12 @@ function SkillsTabClass:AddSocketGroupTooltip(tooltip, socketGroup)
 			end
 			tooltip:AddLine(20, string.format("%s%s ^7%d%s/%d%s %s",
 				gemInstance.color,
-				(gemInstance.grantedEffect and gemInstance.grantedEffect.name) or (gemInstance.gemData and gemInstance.gemData.name) or gemInstance.nameSpec,
+				UILocale.gemDisplayName(gemInstance),
 				displayEffect.srcInstance and displayEffect.srcInstance.level or displayEffect.level,
 				displayEffect.level > gemInstance.level and colorCodes.MAGIC .. "+" .. (displayEffect.level - gemInstance.level) .. "^7" or "",
 				displayEffect.srcInstance and displayEffect.srcInstance.quality or displayEffect.quality,
 				displayEffect.quality > gemInstance.quality and colorCodes.MAGIC .. "+" .. (displayEffect.quality - gemInstance.quality) .. "^7" or "",
-				reason
+				UILocale.translate(reason)
 			))
 		end
 	end

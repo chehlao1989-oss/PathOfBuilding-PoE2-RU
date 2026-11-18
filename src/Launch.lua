@@ -6,7 +6,7 @@
 --
 
 local startTime = GetTime()
-APP_NAME = "Path of Building (PoE2)"
+APP_NAME = "Path of Building (PoE2) RU"
 
 SetWindowTitle(APP_NAME)
 ConExecute("set vid_mode 8")
@@ -66,6 +66,7 @@ function launch:OnInit()
 		installedFile:close()
 	end
 	RenderInit("DPI_AWARE")
+	UILocale = LoadModule("Modules/UILocale")
 	ConPrintf("Loading main script...")
 	local errMsg
 	errMsg, self.main = PLoadModule("Modules/Main")
@@ -333,7 +334,8 @@ function launch:ApplyUpdate(mode)
 end
 
 function launch:CheckForUpdate(inBackground)
-	if self.updateCheckRunning then
+	-- Official releases would overwrite this localized installation.
+	if UILocale or self.updateCheckRunning then
 		return
 	end
 	self.updateCheckBackground = inBackground

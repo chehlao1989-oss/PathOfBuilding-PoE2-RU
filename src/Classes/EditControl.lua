@@ -8,6 +8,8 @@ local m_min = math.min
 local m_floor = math.floor
 local protected_replace = "*"
 local utf8 = require('lua-utf8')
+local DrawString = UILocale.drawRaw
+local DrawStringWidth = UILocale.measureRaw
 
 local function lastLine(str)
 	local lastLineIndex = 1
@@ -211,7 +213,7 @@ function EditClass:UpdateScrollBars()
 		self.controls.scrollBarH:SetContentDimension(DrawStringWidth(textHeight, self.font, self.buf) + 2, width - 18)
 		self.controls.scrollBarV:SetContentDimension(newlineCount(self.buf.."\n") * textHeight, height - (self.controls.scrollBarH.enabled and 18 or 4))
 	else
-		self.controls.scrollBarH:SetContentDimension(DrawStringWidth(textHeight, self.font, self.buf) + 2, width - 4 - (self.prompt and DrawStringWidth(textHeight, self.font, self.prompt) + textHeight/2 or 0))
+		self.controls.scrollBarH:SetContentDimension(DrawStringWidth(textHeight, self.font, self.buf) + 2, width - 4 - (self.prompt and DrawStringWidth(textHeight, self.font, UILocale.translate(self.prompt)) + textHeight/2 or 0))
 	end
 end
 
@@ -271,11 +273,11 @@ function EditClass:Draw(viewPort, noTooltip)
 	local textHeight = self.lineHeight or (height - 4)
 	if self.prompt then
 		if not enabled then
-			DrawString(textX, textY, "LEFT", textHeight, self.font, self.disableCol..self.prompt)
+			DrawString(textX, textY, "LEFT", textHeight, self.font, self.disableCol..UILocale.translate(self.prompt))
 		else
-			DrawString(textX, textY, "LEFT", textHeight, self.font, self.textCol..self.prompt..":")
+			DrawString(textX, textY, "LEFT", textHeight, self.font, self.textCol..UILocale.translate(self.prompt..":"))
 		end
-		textX = textX + DrawStringWidth(textHeight, self.font, self.prompt) + textHeight/2
+		textX = textX + DrawStringWidth(textHeight, self.font, UILocale.translate(self.prompt..":")) + textHeight/2
 	end
 	if not enabled then
 		return
@@ -293,7 +295,7 @@ function EditClass:Draw(viewPort, noTooltip)
 	if not self.hasFocus then
 		if self.buf == '' and self.placeholder then
 			SetDrawColor(self.disableCol)
-			DrawString(-self.controls.scrollBarH.offset, -self.controls.scrollBarV.offset, "LEFT", textHeight, self.font, self.placeholder)
+			DrawString(-self.controls.scrollBarH.offset, -self.controls.scrollBarV.offset, "LEFT", textHeight, self.font, UILocale.translate(self.placeholder))
 		else
 			SetDrawColor(self.inactiveCol)
 			if self.inactiveText then
@@ -489,7 +491,7 @@ function EditClass:OnKeyDown(key, doubleClick)
 			local textY = y + 2
 			local textHeight = self.lineHeight or (height - 4)
 			if self.prompt then
-				textX = textX + DrawStringWidth(textHeight, self.font, self.prompt) + textHeight/2
+				textX = textX + DrawStringWidth(textHeight, self.font, UILocale.translate(self.prompt..":")) + textHeight/2
 			end
 			local cursorX, cursorY = GetCursorPos()
 			self.caret = DrawStringCursorIndex(textHeight, self.font, self.buf, cursorX - textX + self.controls.scrollBarH.offset, cursorY - textY + self.controls.scrollBarV.offset)

@@ -43,7 +43,7 @@ end
 function MinionListClass:GetRowValue(column, index, minionId)
 	local minion = self.data.minions[minionId]
 	if column == 1 then
-		return minion.name
+		return UILocale.minionName(minionId, minion.name)
 	end
 end
 
@@ -55,7 +55,7 @@ function MinionListClass:AddValueTooltip(tooltip, index, minionId)
 		local lightningResist = self.showCompanionStats and minion.companionLightningResist or minion.lightningResist
 		local chaosResist = self.showCompanionStats and minion.companionChaosResist or minion.chaosResist
 		tooltip.center = true
-		tooltip:AddLine(20, "^7"..minion.name, "FONTIN SC")
+		tooltip:AddLine(20, "^7"..UILocale.minionName(minionId, minion.name), "FONTIN SC")
 		tooltip.center = false
 		tooltip:AddSeparator(10)
 		tooltip:AddLine(14, s_format("^7Spectre Reservation: %s%d", colorCodes.SPIRIT, tostring(minion.spectreReservation)))
@@ -85,7 +85,7 @@ function MinionListClass:AddValueTooltip(tooltip, index, minionId)
 			for _, skillId in ipairs(minion.skillList) do
 				if self.data.skills[skillId] then
 					local color = data.skillColorMap[self.data.skills[skillId].color] or colorCodes.NORMAL
-					tooltip:AddLine(14, "^7Skill: " .. color .. self.data.skills[skillId].name)
+					tooltip:AddLine(14, "^7Skill: " .. color .. UILocale.effectName(self.data.skills[skillId]))
 				end
 			end
 		end

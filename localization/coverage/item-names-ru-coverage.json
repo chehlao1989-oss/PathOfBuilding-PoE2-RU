@@ -1,0 +1,467 @@
+{
+  "pobVersion": "0.23.1",
+  "gameVersion": "0.5.5g",
+  "steamBuildId": 26650308,
+  "source": [
+    "BaseItemTypes.Id",
+    "ItemClasses.Id",
+    "Words.HASH32",
+    "UniqueStashLayout",
+    "ItemVisualIdentity.Id"
+  ],
+  "baseNames": {
+    "total": 1755,
+    "matched": 1753,
+    "unresolved": [
+      {
+        "name": "Energy Blade One Handed",
+        "type": "One Hand Sword",
+        "visibility": "hidden",
+        "candidates": [],
+        "reason": "no client base ID"
+      },
+      {
+        "name": "Energy Blade Two Handed",
+        "type": "Two Hand Sword",
+        "visibility": "hidden",
+        "candidates": [],
+        "reason": "no client base ID"
+      }
+    ],
+    "sameLabelAcrossIds": [
+      {
+        "name": "Golden Blade",
+        "russian": "Золотой клинок",
+        "ids": [
+          "Metadata/Items/Weapons/OneHandWeapons/OneHandSwords/FourOneHandSwordDemigod",
+          "Metadata/items/Weapons/OneHandWeapons/OneHandSwords/OneHandSwordDemigods1"
+        ]
+      },
+      {
+        "name": "Golden Visage",
+        "russian": "Золотой лик",
+        "ids": [
+          "Metadata/Items/Armours/Helmets/FourHelmetDemigod",
+          "Metadata/Items/Armours/Helmets/HelmetDemigods1"
+        ]
+      },
+      {
+        "name": "Ornate Buckler",
+        "russian": "Украшенный баклер",
+        "ids": [
+          "Metadata/Items/Armours/Shields/FourShieldDex11",
+          "Metadata/Items/Armours/Shields/FourShieldDex3Endgame"
+        ]
+      },
+      {
+        "name": "Runeforged Fur Plate",
+        "russian": "Руннокованый меховой доспех",
+        "ids": [
+          "Metadata/Items/Armours/BodyArmours/FourBodyStr2Verisium",
+          "Metadata/Items/Armours/BodyArmours/FourBodyStr2VerisiumUnique1"
+        ]
+      },
+      {
+        "name": "Runeforged Gladiatorial Helm",
+        "russian": "Руннокованый шлем гладиатора",
+        "ids": [
+          "Metadata/Items/Armours/Helmets/FourHelmetStrDex5CruelVerisium",
+          "Metadata/Items/Armours/Helmets/FourHelmetStrDex6EndgameVerisium"
+        ]
+      },
+      {
+        "name": "Runeforged Grasping Mail",
+        "russian": "Руннокованая цепкая кольчуга",
+        "ids": [
+          "Metadata/Items/Armours/BodyArmours/FourBodyStrDexInt3Verisium1",
+          "Metadata/Items/Armours/BodyArmours/FourBodyStrDexInt3Verisium2",
+          "Metadata/Items/Armours/BodyArmours/FourBodyStrDexInt3Verisium3",
+          "Metadata/Items/Armours/BodyArmours/FourBodyStrDexInt3Verisium4"
+        ]
+      },
+      {
+        "name": "Runeforged Kalguuran Forgehammer",
+        "russian": "Руннокованый калгууранский кузнечный молот",
+        "ids": [
+          "Metadata/Items/Weapons/OneHandWeapons/OneHandMaces/FourOneHandMace14Verisium1",
+          "Metadata/Items/Weapons/OneHandWeapons/OneHandMaces/FourOneHandMace14Verisium2",
+          "Metadata/Items/Weapons/OneHandWeapons/OneHandMaces/FourOneHandMace14Verisium3",
+          "Metadata/Items/Weapons/OneHandWeapons/OneHandMaces/FourOneHandMace14Verisium4"
+        ]
+      },
+      {
+        "name": "Runeforged Lace Hood",
+        "russian": "Руннокованый вышитый капюшон",
+        "ids": [
+          "Metadata/Items/Armours/Helmets/FourHelmetDex3Verisium",
+          "Metadata/Items/Armours/Helmets/FourHelmetDex3VerisiumUnique1"
+        ]
+      },
+      {
+        "name": "Runeforged Ornate Buckler",
+        "russian": "Руннокованый украшенный баклер",
+        "ids": [
+          "Metadata/Items/Armours/Shields/FourShieldDex11Verisium",
+          "Metadata/Items/Armours/Shields/FourShieldDex3EndgameVerisium"
+        ]
+      },
+      {
+        "name": "Runeforged Sacrificial Regalia",
+        "russian": "Руннокованое жертвенное облачение",
+        "ids": [
+          "Metadata/Items/Armours/BodyArmours/FourBodyStrDexInt2Verisium1",
+          "Metadata/Items/Armours/BodyArmours/FourBodyStrDexInt2Verisium2",
+          "Metadata/Items/Armours/BodyArmours/FourBodyStrDexInt2Verisium3",
+          "Metadata/Items/Armours/BodyArmours/FourBodyStrDexInt2Verisium4"
+        ]
+      },
+      {
+        "name": "Runeforged Shortbow",
+        "russian": "Руннокованый короткий лук",
+        "ids": [
+          "Metadata/Items/Weapons/TwoHandWeapons/Bows/FourBowVerisium2a",
+          "Metadata/Items/Weapons/TwoHandWeapons/Bows/FourBowVerisium2b"
+        ]
+      },
+      {
+        "name": "Runeforged Shrouded Mail",
+        "russian": "Руннокованый покров с кольцами",
+        "ids": [
+          "Metadata/Items/Armours/BodyArmours/FourBodyStrDex4aEndgameVerisium",
+          "Metadata/Items/Armours/BodyArmours/FourBodyStrDex4bEndgameVerisium",
+          "Metadata/Items/Armours/BodyArmours/FourBodyStrDex4cEndgameVerisium"
+        ]
+      },
+      {
+        "name": "Runeforged Tournament Mail",
+        "russian": "Руннокованый турнирный доспех",
+        "ids": [
+          "Metadata/Items/Armours/BodyArmours/FourBodyStrDex12aVerisium",
+          "Metadata/Items/Armours/BodyArmours/FourBodyStrDex12bVerisium",
+          "Metadata/Items/Armours/BodyArmours/FourBodyStrDex12cVerisium"
+        ]
+      },
+      {
+        "name": "Runemastered Aberrant Sledge",
+        "russian": "Рунномастерский искажённый молот",
+        "ids": [
+          "Metadata/Items/Weapons/TwoHandWeapons/TwoHandMaces/FourTwoHandMaceUnique1VerisiumUnique1",
+          "Metadata/Items/Weapons/TwoHandWeapons/TwoHandMaces/FourTwoHandMaceUnique1VerisiumUnique2",
+          "Metadata/Items/Weapons/TwoHandWeapons/TwoHandMaces/FourTwoHandMaceUnique1VerisiumUnique3",
+          "Metadata/Items/Weapons/TwoHandWeapons/TwoHandMaces/FourTwoHandMaceUnique1VerisiumUnique4"
+        ]
+      },
+      {
+        "name": "Runemastered Crucible Tower Shield",
+        "russian": "Рунномастерский закалённый ростовой щит",
+        "ids": [
+          "Metadata/Items/Armours/Shields/FourShieldStr9VerisiumUnique1",
+          "Metadata/Items/Armours/Shields/FourShieldStr9VerisiumUnique2",
+          "Metadata/Items/Armours/Shields/FourShieldStr9VerisiumUnique3",
+          "Metadata/Items/Armours/Shields/FourShieldStr9VerisiumUnique4"
+        ]
+      },
+      {
+        "name": "Runemastered Grasping Mail",
+        "russian": "Рунномастерская цепкая кольчуга",
+        "ids": [
+          "Metadata/Items/Armours/BodyArmours/FourBodyStrDexInt3Verisium5",
+          "Metadata/Items/Armours/BodyArmours/FourBodyStrDexInt3Verisium6",
+          "Metadata/Items/Armours/BodyArmours/FourBodyStrDexInt3Verisium7",
+          "Metadata/Items/Armours/BodyArmours/FourBodyStrDexInt3Verisium8"
+        ]
+      },
+      {
+        "name": "Runemastered Heavy Belt",
+        "russian": "Рунномастерский тяжёлый ремень",
+        "ids": [
+          "Metadata/Items/Belts/FourBelt9VerisiumUnique1",
+          "Metadata/Items/Belts/FourBelt9VerisiumUnique2",
+          "Metadata/Items/Belts/FourBelt9VerisiumUnique3",
+          "Metadata/Items/Belts/FourBelt9VerisiumUnique4"
+        ]
+      },
+      {
+        "name": "Runemastered Revered Vestments",
+        "russian": "Рунномастерское одеяние досточтимого",
+        "ids": [
+          "Metadata/Items/Armours/BodyArmours/FourBodyStrInt11VerisiumUnique1",
+          "Metadata/Items/Armours/BodyArmours/FourBodyStrInt11VerisiumUnique2",
+          "Metadata/Items/Armours/BodyArmours/FourBodyStrInt11VerisiumUnique3"
+        ]
+      },
+      {
+        "name": "Runemastered Runic Fork",
+        "russian": "Рунномастерская руническая вилка",
+        "ids": [
+          "Metadata/Items/Weapons/OneHandWeapons/Wands/FourWandUnique2VerisiumUnique1",
+          "Metadata/Items/Weapons/OneHandWeapons/Wands/FourWandUnique2VerisiumUnique2",
+          "Metadata/Items/Weapons/OneHandWeapons/Wands/FourWandUnique2VerisiumUnique3"
+        ]
+      },
+      {
+        "name": "Runemastered Spiritbone Crown",
+        "russian": "Рунномастерская корона из костей духа",
+        "ids": [
+          "Metadata/Items/Armours/Helmets/FourHelmetStrInt6VerisiumUnique1",
+          "Metadata/Items/Armours/Helmets/FourHelmetStrInt6VerisiumUnique2",
+          "Metadata/Items/Armours/Helmets/FourHelmetStrInt6VerisiumUnique3"
+        ]
+      },
+      {
+        "name": "Runemastered Torment Club",
+        "russian": "Рунномастерская булава мучений",
+        "ids": [
+          "Metadata/Items/Weapons/OneHandWeapons/OneHandMaces/FourOneHandMace13VerisiumUnique1",
+          "Metadata/Items/Weapons/OneHandWeapons/OneHandMaces/FourOneHandMace13VerisiumUnique2",
+          "Metadata/Items/Weapons/OneHandWeapons/OneHandMaces/FourOneHandMace13VerisiumUnique3",
+          "Metadata/Items/Weapons/OneHandWeapons/OneHandMaces/FourOneHandMace13VerisiumUnique4",
+          "Metadata/Items/Weapons/OneHandWeapons/OneHandMaces/FourOneHandMace13VerisiumUnique5",
+          "Metadata/Items/Weapons/OneHandWeapons/OneHandMaces/FourOneHandMace13VerisiumUnique6"
+        ]
+      },
+      {
+        "name": "Runemastered Venerable Defender",
+        "russian": "Рунномастерский почётный защитник",
+        "ids": [
+          "Metadata/Items/Armours/Shields/FourShieldStrDexUnique1VerisiumUnique1",
+          "Metadata/Items/Armours/Shields/FourShieldStrDexUnique1VerisiumUnique2",
+          "Metadata/Items/Armours/Shields/FourShieldStrDexUnique1VerisiumUnique3",
+          "Metadata/Items/Armours/Shields/FourShieldStrDexUnique1VerisiumUnique4"
+        ]
+      },
+      {
+        "name": "Runemastered Veridical Chain",
+        "russian": "Рунномастерская цепочка истины",
+        "ids": [
+          "Metadata/Items/Amulets/FourAmuletUnique1VerisiumUnique1",
+          "Metadata/Items/Amulets/FourAmuletUnique1VerisiumUnique2",
+          "Metadata/Items/Amulets/FourAmuletUnique1VerisiumUnique3"
+        ]
+      },
+      {
+        "name": "Runemastered Warding Quarterstaff",
+        "russian": "Рунномастерский барьерный боевой посох",
+        "ids": [
+          "Metadata/Items/Weapons/TwoHandWeapons/Staves/FourQuarterstaffUnique1VerisiumUnique1",
+          "Metadata/Items/Weapons/TwoHandWeapons/Staves/FourQuarterstaffUnique1VerisiumUnique2",
+          "Metadata/Items/Weapons/TwoHandWeapons/Staves/FourQuarterstaffUnique1VerisiumUnique3"
+        ]
+      },
+      {
+        "name": "Shrine Sceptre",
+        "russian": "Храмовый скипетр",
+        "ids": [
+          "Metadata/Items/Weapons/OneHandWeapons/Sceptres/FourSceptre6a",
+          "Metadata/Items/Weapons/OneHandWeapons/Sceptres/FourSceptre6b",
+          "Metadata/Items/Weapons/OneHandWeapons/Sceptres/FourSceptre6c"
+        ]
+      },
+      {
+        "name": "Shrine Sceptre (Purity of Cold)",
+        "russian": "Храмовый скипетр",
+        "ids": [
+          "Metadata/Items/Weapons/OneHandWeapons/Sceptres/FourSceptre6a",
+          "Metadata/Items/Weapons/OneHandWeapons/Sceptres/FourSceptre6b",
+          "Metadata/Items/Weapons/OneHandWeapons/Sceptres/FourSceptre6c"
+        ]
+      },
+      {
+        "name": "Shrine Sceptre (Purity of Fire)",
+        "russian": "Храмовый скипетр",
+        "ids": [
+          "Metadata/Items/Weapons/OneHandWeapons/Sceptres/FourSceptre6a",
+          "Metadata/Items/Weapons/OneHandWeapons/Sceptres/FourSceptre6b",
+          "Metadata/Items/Weapons/OneHandWeapons/Sceptres/FourSceptre6c"
+        ]
+      },
+      {
+        "name": "Shrine Sceptre (Purity of Lighting)",
+        "russian": "Храмовый скипетр",
+        "ids": [
+          "Metadata/Items/Weapons/OneHandWeapons/Sceptres/FourSceptre6a",
+          "Metadata/Items/Weapons/OneHandWeapons/Sceptres/FourSceptre6b",
+          "Metadata/Items/Weapons/OneHandWeapons/Sceptres/FourSceptre6c"
+        ]
+      },
+      {
+        "name": "Shrouded Mail",
+        "russian": "Покров с кольцами",
+        "ids": [
+          "Metadata/Items/Armours/BodyArmours/FourBodyStrDex4aEndgame",
+          "Metadata/Items/Armours/BodyArmours/FourBodyStrDex4bEndgame",
+          "Metadata/Items/Armours/BodyArmours/FourBodyStrDex4cEndgame"
+        ]
+      },
+      {
+        "name": "Tournament Mail",
+        "russian": "Турнирный доспех",
+        "ids": [
+          "Metadata/Items/Armours/BodyArmours/FourBodyStrDex12a",
+          "Metadata/Items/Armours/BodyArmours/FourBodyStrDex12b",
+          "Metadata/Items/Armours/BodyArmours/FourBodyStrDex12c"
+        ]
+      },
+      {
+        "name": "Two-Stone Ring",
+        "russian": "Кольцо с двумя камнями",
+        "ids": [
+          "Metadata/Items/Rings/FourRing13a",
+          "Metadata/Items/Rings/FourRing13b",
+          "Metadata/Items/Rings/FourRing13c"
+        ]
+      }
+    ]
+  },
+  "uniqueTitles": {
+    "total": 443,
+    "matched": 443,
+    "unresolved": [],
+    "clientAliases": [
+      {
+        "title": "Byrnabas",
+        "clientKey": "Brynabas",
+        "wordId": 57028565,
+        "russian": "Барнабас"
+      },
+      {
+        "title": "Eshtera's Path",
+        "clientKey": "Sekhema's Resolve Cold",
+        "wordId": 1139555517,
+        "russian": "Путь Эштеры"
+      },
+      {
+        "title": "Mjolner",
+        "clientKey": "Mjölner",
+        "wordId": 3156240437,
+        "russian": "Мьёльнир"
+      },
+      {
+        "title": "Reverie",
+        "clientKey": "Husk of Dreams",
+        "wordId": 2625287128,
+        "russian": "Грёза"
+      },
+      {
+        "title": "Safrin's Resolve",
+        "clientKey": "Sekhema's Resolve Fire",
+        "wordId": 4144159853,
+        "russian": "Решимость Сафрина"
+      },
+      {
+        "title": "Splinter of Lorrata",
+        "clientKey": "Splinter of Loratta",
+        "wordId": 3055929764,
+        "russian": "Осколок Лоратты"
+      },
+      {
+        "title": "The Road Warrior",
+        "clientKey": "The Immortan",
+        "wordId": 2307535709,
+        "russian": "Воин дорог"
+      },
+      {
+        "title": "Zaida's Longevity",
+        "clientKey": "Sekhema's Resolve Lightning",
+        "wordId": 1622751406,
+        "russian": "Долгожительство Заиды"
+      }
+    ]
+  },
+  "uniqueBaseReviews": [
+    {
+      "title": "Sacred Flame",
+      "name": "Священное пламя",
+      "baseName": "Храмовый скипетр",
+      "baseIds": [
+        "Metadata/Items/Weapons/OneHandWeapons/Sceptres/FourSceptre6a"
+      ],
+      "visualIds": [
+        "FourUniquePinnacle5_"
+      ],
+      "method": "trade card, name filter and Sacred Flame icon",
+      "screenshots": [
+        "Screenshot_31.png",
+        "Screenshot_34.png"
+      ]
+    },
+    {
+      "title": "Palm of the Dreamer",
+      "name": "Длань Спящего",
+      "baseName": "Скипетр святыни",
+      "baseIds": [
+        "Metadata/Items/Weapons/OneHandWeapons/Sceptres/FourSceptreUnique1"
+      ],
+      "visualIds": [
+        "FourUniqueSceptre6d_"
+      ],
+      "method": "identified trade card",
+      "screenshots": [
+        "Screenshot_32.png"
+      ]
+    },
+    {
+      "title": "Guiding Palm of the Heart",
+      "name": "Направляющая длань сердца",
+      "baseName": "Храмовый скипетр",
+      "baseIds": [
+        "Metadata/Items/Weapons/OneHandWeapons/Sceptres/FourSceptre6a"
+      ],
+      "visualIds": [
+        "FourUniqueSceptre6a__"
+      ],
+      "method": "identified trade card",
+      "screenshots": [
+        "Screenshot_33.png"
+      ]
+    },
+    {
+      "title": "Guiding Palm of the Eye",
+      "name": "Направляющая длань ока",
+      "baseName": "Храмовый скипетр",
+      "baseIds": [
+        "Metadata/Items/Weapons/OneHandWeapons/Sceptres/FourSceptre6b"
+      ],
+      "visualIds": [
+        "FourUniqueSceptre6b"
+      ],
+      "method": "cold member of verified Guiding Palm family",
+      "screenshots": []
+    },
+    {
+      "title": "Guiding Palm of the Mind",
+      "name": "Направляющая длань разума",
+      "baseName": "Храмовый скипетр",
+      "baseIds": [
+        "Metadata/Items/Weapons/OneHandWeapons/Sceptres/FourSceptre6c"
+      ],
+      "visualIds": [
+        "FourUniqueSceptre6c"
+      ],
+      "method": "lightning member of verified Guiding Palm family",
+      "screenshots": []
+    },
+    {
+      "title": "Guiding Palm",
+      "name": "Направляющая длань",
+      "baseName": "Храмовый скипетр",
+      "baseIds": [
+        "Metadata/Items/Weapons/OneHandWeapons/Sceptres/FourSceptre6a",
+        "Metadata/Items/Weapons/OneHandWeapons/Sceptres/FourSceptre6b",
+        "Metadata/Items/Weapons/OneHandWeapons/Sceptres/FourSceptre6c"
+      ],
+      "visualIds": [
+        "FourUniqueSceptre6a__",
+        "FourUniqueSceptre6b",
+        "FourUniqueSceptre6c"
+      ],
+      "method": "all three visual IDs shared with named elemental variants",
+      "screenshots": []
+    }
+  ],
+  "pendingUniqueBaseLabels": [],
+  "socketableNames": {
+    "matched": 313,
+    "source": "SoulCores.BaseItemTypes"
+  }
+}

@@ -299,7 +299,12 @@ function ListClass:Draw(viewPort, noTooltip)
 	end
 	if #self.list == 0 and self.defaultText then
 		SetDrawColor(1, 1, 1)
-		DrawString(2, 2, "LEFT", 14, self.font, self.defaultText)
+		if self.wrapDefaultText then
+			local text = UILocale.wrap(self, self.defaultText, 14, self.font, width - (self.scroll and 26 or 8))
+			UILocale.drawRaw(2, 2, "LEFT", 14, self.font, text)
+		else
+			DrawString(2, 2, "LEFT", 14, self.font, self.defaultText)
+		end
 	end
 	if self.selDragIndex then
 		local lineY = rowHeight * (self.selDragIndex - 1) - scrollOffsetV

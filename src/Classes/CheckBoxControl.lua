@@ -22,6 +22,9 @@ function CheckBoxClass:IsMouseOver()
 	local width, height = self:GetSize()
 	local cursorX, cursorY = GetCursorPos()
 
+	if self.configLabel and self.configLabel:IsMouseInBounds() then
+		return true
+	end
 	-- move x left by label width, increase width by label width
 	local label = self:GetProperty("label")
 	if label then

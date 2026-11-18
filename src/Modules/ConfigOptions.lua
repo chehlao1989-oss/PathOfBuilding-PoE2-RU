@@ -13,28 +13,26 @@ local function bossSkillsTooltip(tooltip, mode, index, value)
 	local applyModes = { BODY = true, HOVER = true }
 	tooltip:Clear()
 	if applyModes[mode] then
-		tooltip:AddLine(14, [[
+		tooltip.maxWidth = 560
+		tooltip:AddLine(14, UILocale.configText([[
 ^7Used to fill in defaults for specific boss skills if the boss config is not set
 
 Bosses' damage is modified by roll range configuration, defaulted at a 70% roll, at the normal monster level for your character level (capped at 85)
-Fill in the exact damage numbers if more precision is needed]])
+Fill in the exact damage numbers if more precision is needed]]))
 		if value.val ~= "None" then
-			tooltip:AddLine(14, '\n^7'..value.val..": "..data.bossSkills[value.val].tooltip)
+			tooltip:AddLine(14, '\n^7'..UILocale.configText(value.label)..": "..UILocale.configText(data.bossSkills[value.val].tooltip))
 		end
 	end
 end
 
 local function LowLifeTooltip(modList, build)
-	local out = 'You will automatically be considered to be on Low ^xE05030Life ^7if you have at least '..100 - build.calcsTab.mainOutput.LowLifePercentage..'% ^xE05030Life ^7reserved'
-	out = out..'\nbut you can use this option to force it if necessary.'
-	return out
+	return UILocale.format("You will automatically be considered to be on Low Life if you have at least %s%% Life reserved. You can force it here.",
+		100 - build.calcsTab.mainOutput.LowLifePercentage)
 end
 
 local function FullLifeTooltip(modList, build)
-	local out = 'You can be considered to be on Full ^xE05030Life ^7if you have at least '..build.calcsTab.mainOutput.FullLifePercentage..'% ^xE05030Life ^7left.'
-	out = out..'\nYou will automatically be considered to be on Full ^xE05030Life ^7if you have Chaos Inoculation,'
-	out = out..'\nbut you can use this option to force it if necessary.'
-	return out
+	return UILocale.format("PoB can use the Full Life condition when at least %s%% Life remains. Chaos Inoculation enables it automatically. You can also force it here.",
+		build.calcsTab.mainOutput.FullLifePercentage)
 end
 
 local function questModsRewards(source, line, modList)
@@ -86,7 +84,8 @@ local function addQuestModsRewardsConfigOptions(configSettings)
 		elseif quest.Options then
 			local listOptions = { { label = "^1Nothing^7", val = "None" } }
 			for _, option in ipairs(quest.Options) do
-				table.insert(listOptions, { label = option, val = option })
+				local firstLine = option:match("^[^\r\n]+") or option
+				table.insert(listOptions, { label = firstLine, val = option })
 			end
 			table.insert(configSettings, {
 				var = key,

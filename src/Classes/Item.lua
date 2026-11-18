@@ -70,7 +70,7 @@ end
 
 local ItemClass = newClass("Item", function(self, raw, rarity, highQuality)
 	if raw then
-		self:ParseRaw(sanitiseText(raw), rarity, highQuality)
+		self:ParseRaw(sanitiseText(raw, true), rarity, highQuality)
 	end
 end)
 
@@ -543,6 +543,7 @@ function ItemClass:ParseRaw(raw, rarity, highQuality)
 			else
 				specName, specVal = line:match("^(Requires %a+) (.+)$")
 			end
+			local isItemProperty = specName ~= nil
 			if specName then
 				if specName == "Unique ID" then
 					self.uniqueID = specVal
@@ -565,6 +566,15 @@ function ItemClass:ParseRaw(raw, rarity, highQuality)
 				elseif specName == "Quality" then
 					self.quality = specToNumber(specVal)
 				elseif specName == "Sockets" then
+					-- A repeated socket header replaces the same kind of socket block.
+					-- Older saves can contain a stale copy among the modifiers.
+					if specVal:find("S", 1, true) then
+						self.sockets = { }
+						self.runes = { }
+					end
+					if specVal:find("J", 1, true) then
+						self.jewelSocketCount = 0
+					end
 					local group = 0
 					for c in specVal:gmatch(".") do
 						if c:match("[S]") then
@@ -605,7 +615,7 @@ function ItemClass:ParseRaw(raw, rarity, highQuality)
 					end
 				elseif specName == "Talisman Tier" then
 					self.talismanTier = specToNumber(specVal)
-				elseif specName == "Armour" or specName == "Evasion Rating" or specName == "Evasion" or specName == "Energy Shield" or specName == "Ward" then
+				elseif specName == "Armour" or specName == "Evasion Rating" or specName == "Evasion" or specName == "Energy Shield" or specName == "Ward" or specName == "Runic Ward" then
 					if specName == "Evasion Rating" then
 						specName = "Evasion"
 						if self.baseName == "Two-Toned Boots (Armour/Energy Shield)" then
@@ -620,6 +630,9 @@ function ItemClass:ParseRaw(raw, rarity, highQuality)
 							self.baseName = "Two-Toned Boots (Evasion/Energy Shield)"
 							self.base = data.itemBases[self.baseName]
 						end
+					end
+					if specName == "Runic Ward" then
+						specName = "Ward"
 					end
 					self.armourData = self.armourData or { }
 					self.armourData[specName] = specToNumber(specVal)
@@ -714,10 +727,17 @@ function ItemClass:ParseRaw(raw, rarity, highQuality)
 					   specName == "Armour" or specName == "Energy Shield" or specName == "Evasion" or specName == "Requires" then
 					self.hidden_specs = true
 				-- Anything else is an explicit with a colon in it (Fortress Covenant, Pure Talent, etc) unless it's part of the custom name
-				elseif not lineIsBaseImplicit and not (self.name:match(specName) and self.name:match(specVal)) then
-					foundExplicit = true
-					gameModeStage = "EXPLICIT"
+				else
+					isItemProperty = false
+					if not lineIsBaseImplicit and not (self.name:match(specName) and self.name:match(specVal)) then
+						foundExplicit = true
+						gameModeStage = "EXPLICIT"
+					end
 				end
+			end
+			-- Item properties have already been consumed, even after a modifier.
+			if isItemProperty then
+				goto continue
 			end
 			if line == "Prefixes:" then
 				foundExplicit = true

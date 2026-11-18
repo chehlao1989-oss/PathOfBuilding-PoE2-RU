@@ -2558,7 +2558,7 @@ function PassiveSpecClass:RestoreUndoState(state, treeVersion)
 end
 
 function PassiveSpecClass:SetWindowTitleWithBuildClass()
-	main:SetWindowTitleSubtext(string.format("%s (%s)", self.build.buildName, self.curAscendClassId == 0 and self.curClassName or self.curAscendClassName))
+	main:SetWindowTitleSubtext(string.format("%s (%s)", self.build.buildName, UILocale.translate(self.curAscendClassId == 0 and self.curClassName or self.curAscendClassName)))
 end
 
 --- Adds a line to or replaces a node given a line to add/replace with

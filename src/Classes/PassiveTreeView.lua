@@ -8,6 +8,7 @@ local pairs = pairs
 local ipairs = ipairs
 local t_insert = table.insert
 local t_remove = table.remove
+local utf8 = require('lua-utf8')
 local m_min = math.min
 local m_max = math.max
 local m_floor = math.floor
@@ -809,11 +810,12 @@ function PassiveTreeViewClass:Draw(build, viewPort, inputEvents)
 	end
 
 	-- Update cached node data
-	if self.searchStrCached ~= self.searchStr then
+	if self.searchStrCached ~= self.searchStr or self.searchLanguage ~= UILocale.language then
 		self.searchStrCached = self.searchStr
+		self.searchLanguage = UILocale.language
 
 		local function prepSearch(search)
-			search = search:lower()
+			search = utf8.lower(search)
 			--gsub("([%[%]%%])", "%%%1")
 			local searchWords = {}
 			for matchstring, v in search:gmatch('"([^"]*)"') do
@@ -1464,12 +1466,15 @@ function PassiveTreeViewClass:DoesNodeMatchSearchParams(build, node)
 	end
 
 	-- Check recipes
-	if needMatches[1] == "oil:" then
+	local recipePrefix = needMatches[1]
+	if recipePrefix == "oil:" or recipePrefix == "эмоции:" then
 		if node.recipe then
 			for _, recipeName in ipairs(node.recipe) do
-				err, needMatches = PCall(search, recipeName:gsub("Oil",""):lower(), needMatches)
+				err, needMatches = PCall(search, recipeName:gsub("Oil$", ""):lower(), needMatches)
 				if err then return false end
-				if #needMatches == 1 and needMatches[1] == "oil:" then
+				err, needMatches = PCall(search, utf8.lower(UILocale.emotionName(recipeName)), needMatches)
+				if err then return false end
+				if #needMatches == 1 and needMatches[1] == recipePrefix then
 					return true
 				end
 			end
@@ -1482,6 +1487,21 @@ function PassiveTreeViewClass:DoesNodeMatchSearchParams(build, node)
 	if err then return false end
 	if #needMatches == 0 then
 		return true
+	end
+
+	local translatedNode = UILocale.passive(build.spec.treeVersion, node.id, node.dn)
+	if translatedNode then
+		err, needMatches = PCall(search, utf8.lower(translatedNode.name), needMatches)
+		if err then return false end
+		if #needMatches == 0 then return true end
+		local index = 1
+		while node.sd and node.sd[index] do
+			local description, length = UILocale.passiveStat(translatedNode, node.sd, index, true)
+			err, needMatches = PCall(search, utf8.lower(description), needMatches)
+			if err then return false end
+			if #needMatches == 0 then return true end
+			index = index + length
+		end
 	end
 
 	-- Check node description
@@ -1552,9 +1572,9 @@ function PassiveTreeViewClass:AddNodeName(tooltip, node, build)
 	if node.unlockConstraint then
 		tooltip.tooltipHeader = "ORACLE_" .. tooltip.tooltipHeader
 	end
-	local nodeName = node.dn
+	local nodeName = UILocale.passiveName(build.spec.treeVersion, node)
 	if main.showFlavourText then
-		nodeName = "^xF8E6CA" .. node.dn
+		nodeName = "^xF8E6CA" .. nodeName
 	end
 	tooltip.center = true
 	tooltip:AddLine(24, nodeName..(launch.devModeAlt and " ["..node.id.."]" or ""), "FONTIN")
@@ -1674,6 +1694,7 @@ function PassiveTreeViewClass:AddNodeTooltip(tooltip, node, build, incSmallPassi
 		tooltip:AddSeparator(14)
 	end
 
+	local translatedNode = UILocale.passive(build.spec.treeVersion, node.id, node.dn)
 	local function addModInfoToTooltip(node, i, line, localIncEffect)
 		if node.mods[i] then
 			if launch.devModeAlt and node.mods[i].list then
@@ -1716,9 +1737,10 @@ function PassiveTreeViewClass:AddNodeTooltip(tooltip, node, build, incSmallPassi
 				-- line = line .. "  ^8(Effect increased by "..incSmallPassiveSkillEffect.."%)"
 			end
 
+			line = UILocale.passiveLine(translatedNode, line)
 			if line ~= " " and (node.mods[i].extra or not node.mods[i].list) then
 				local line = colorCodes.UNSUPPORTED..line
-				line = main.notSupportedModTooltips and (line .. main.notSupportedTooltipText) or line
+				line = main.notSupportedModTooltips and (line .. UILocale.translate(main.notSupportedTooltipText)) or line
 				tooltip:AddLine(fontSizeBig, line, "FONTIN SC")
 			else
 				tooltip:AddLine(fontSizeBig, colorCodes.MAGIC..line, "FONTIN SC")
@@ -1821,8 +1843,12 @@ function PassiveTreeViewClass:AddNodeTooltip(tooltip, node, build, incSmallPassi
 		if not (mNode.isAttribute and not mNode.conqueredBy) and (mNode.type == "Normal" or mNode.type == "Notable") and isNodeInARadius(node) then
 			localIncEffect = processTimeLostModsAndGetLocalEffect(mNode, build)
 		end
-		for i, line in ipairs(mNode.sd) do
-			addModInfoToTooltip(mNode, i, line, localIncEffect)
+		local combine = not launch.devModeAlt and localIncEffect == 0 and not (incSmallPassiveSkillEffect > 0 and mNode.type == "Normal")
+		local index = 1
+		while mNode.sd[index] do
+			local text, length = UILocale.passiveStat(translatedNode, mNode.sd, index, combine)
+			addModInfoToTooltip(mNode, index, length > 1 and text or mNode.sd[index], localIncEffect)
+			index = index + length
 		end
 		-- add child tooltip for skills
 		self.skillTooltip:Clear()
@@ -1869,7 +1895,11 @@ function PassiveTreeViewClass:AddNodeTooltip(tooltip, node, build, incSmallPassi
 	-- Flavour text
 	if node.flavourText and main.showFlavourText then
 		tooltip:AddSeparator(14)
-		tooltip:AddLine(fontSizeBig, colorCodes.UNIQUE..node.flavourText, "FONTIN ITALIC")
+		tooltip:AddLine(fontSizeBig, colorCodes.UNIQUE..(translatedNode and translatedNode.flavour or node.flavourText), "FONTIN ITALIC")
+	end
+
+	if translatedNode and translatedNode.versionNote then
+		tooltip:AddLine(14, colorCodes.WARNING .. translatedNode.versionNote)
 	end
 
 	-- Mod differences
@@ -1906,9 +1936,10 @@ function PassiveTreeViewClass:AddNodeTooltip(tooltip, node, build, incSmallPassi
 		end
 		if count == 0 then
 			if isGranted then
-				tooltip:AddLine(14, string.format("^7This node is granted by an item. Removing it will cause no changes"))
+				tooltip:AddLine(14, UILocale.translate("^7This node is granted by an item. Removing it will cause no changes"))
 			else
-				tooltip:AddLine(14, string.format("^7No changes from %s this node%s.", node.alloc and "unallocating" or "allocating", node.intuitiveLeapLikesAffecting == 0 and pathLength > 1 and " or the nodes leading to it" or ""))
+				tooltip:AddLine(14, UILocale.format("^7No changes from %s this node%s.", UILocale.translate(node.alloc and "unallocating" or "allocating"),
+					node.intuitiveLeapLikesAffecting == 0 and pathLength > 1 and " " .. UILocale.translate("or the nodes leading to it") or ""))
 			end
 		end
 		tooltip:AddLine(14, colorCodes.TIP.."Tip: Press Ctrl+D to disable the display of stat differences.")
@@ -1921,10 +1952,11 @@ function PassiveTreeViewClass:AddNodeTooltip(tooltip, node, build, incSmallPassi
 	tooltip:AddSeparator(14)
 	if node.path and #node.path > 0 then
 		if self.traceMode and isValueInArray(self.tracePath, node) then
-			tooltip:AddLine(14, "^7"..#self.tracePath .. " nodes in trace path")
+			tooltip:AddLine(14, UILocale.format("^7%d nodes in trace path", #self.tracePath))
 			tooltip:AddLine(14, colorCodes.TIP)
 		else
-			tooltip:AddLine(14, "^7"..node.pathDist .. " points to node" .. (#node.intuitiveLeapLikesAffecting > 0 and " ^8(Can be allocated without pathing to it)" or ""))
+			tooltip:AddLine(14, UILocale.format("^7%s points to node", node.pathDist)
+				.. (#node.intuitiveLeapLikesAffecting > 0 and " ^8" .. UILocale.translate("(Can be allocated without pathing to it)") or ""))
 			tooltip:AddLine(14, colorCodes.TIP)
 			if #node.path > 1 then
 				-- Handy hint!
@@ -1956,12 +1988,12 @@ function PassiveTreeViewClass:AddNodeTooltip(tooltip, node, build, incSmallPassi
 		end
 		if dependCount > 0 then
 			tooltip:AddSeparator(14)
-			tooltip:AddLine(14, "^7"..dependCount .. " points gained from unallocating these nodes")
-			tooltip:AddLine(14, "^xFFD700"..formatNumSep(dependCount * goldCost) .. " Gold ^7required to unallocate these nodes")
+			tooltip:AddLine(14, UILocale.format("^7%d points gained from unallocating these nodes", dependCount))
+			tooltip:AddLine(14, UILocale.format("^xFFD700%s Gold ^7required to unallocate these nodes", formatNumSep(dependCount * goldCost)))
 			tooltip:AddLine(14, colorCodes.TIP)
 		end
 	elseif node.alloc then
-		tooltip:AddLine(14, "^xFFD700"..formatNumSep(#node.depends * goldCost) .. " Gold ^7required to unallocate this node")
+		tooltip:AddLine(14, UILocale.format("^xFFD700%s Gold ^7required to unallocate this node", formatNumSep(#node.depends * goldCost)))
 		tooltip:AddLine(14, colorCodes.TIP)
 	end
 
@@ -1976,7 +2008,7 @@ function PassiveTreeViewClass:AddNodeTooltip(tooltip, node, build, incSmallPassi
 					addedSeparator = true
 					tooltip:AddSeparator(14)
 				end
-				tooltip:AddLine(14, colorCodes.WARNING.."Requires allocation of node: "..reqNode.dn)
+				tooltip:AddLine(14, colorCodes.WARNING..UILocale.format("Requires allocation of node: %s", UILocale.passiveName(build.spec.treeVersion, reqNode)))
 			end
 		end
 

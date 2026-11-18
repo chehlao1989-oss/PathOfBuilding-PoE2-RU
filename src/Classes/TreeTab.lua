@@ -115,7 +115,7 @@ local TreeTabClass = newClass("TreeTab", "ControlHost", function(self, build)
 	end
 
 	-- Compare checkbox
-	self.controls.compareCheck = new("CheckBoxControl", { "LEFT", self.controls.specSelect, "RIGHT" }, { 74, 0, 20 }, "Compare:", function(state)
+	self.controls.compareCheck = new("CheckBoxControl", { "LEFT", self.controls.specSelect, "RIGHT" }, { function() return m_max(74, DrawStringWidth(16, "VAR", "Compare:") + 14) end, 0, 20 }, "Compare:", function(state)
 		self.isComparing = state
 		self:SetCompareSpec(self.activeCompareSpec)
 		self.controls.compareSelect.shown = state
@@ -155,6 +155,8 @@ local TreeTabClass = newClass("TreeTab", "ControlHost", function(self, build)
 		end)
 		main:OpenPopup(470, 100, "Reset Tree", controls, nil, "edit", "cancel")
 	end)
+
+	UILocale.fitButton(self.controls.reset)
 
 	-- Tree Version Dropdown
 	self.treeVersions = { }
@@ -327,10 +329,10 @@ local TreeTabClass = newClass("TreeTab", "ControlHost", function(self, build)
 		return latestTreeVersion .. (self.specList[self.activeSpec].treeVersion:match("^" .. latestTreeVersion .. "(.*)") or "")
 	end
 	local function buildConvertButtonLabel()
-		return colorCodes.POSITIVE.."Convert to "..treeVersions[getLatestTreeVersion()].display
+		return colorCodes.POSITIVE .. UILocale.format("Convert to %s", treeVersions[getLatestTreeVersion()].display)
 	end
 	local function buildConvertAllButtonLabel()
-		return colorCodes.POSITIVE.."Convert all trees to "..treeVersions[getLatestTreeVersion()].display
+		return colorCodes.POSITIVE .. UILocale.format("Convert all trees to %s", treeVersions[getLatestTreeVersion()].display)
 	end
 	self.controls.specConvert = new("ButtonControl", { "LEFT", self.controls.specConvertText, "RIGHT" }, { 8, 0, function() return DrawStringWidth(16, "VAR", buildConvertButtonLabel()) + 20 end, 20 }, buildConvertButtonLabel, function()
 		self:ConvertToVersion(getLatestTreeVersion(), false, true)
@@ -382,8 +384,8 @@ function TreeTabClass:Draw(viewPort, inputEvents)
 	local linesHeight = 24
 	local rightMargin = 10
 	local widthFirstLineControls = self.controls.specSelect.width + 8
-								+ self.controls.compareCheck.width + self.controls.compareCheck.x
-								+ self.controls.reset.width + self.controls.reset.x
+								+ self.controls.compareCheck.width + self.controls.compareCheck:GetProperty("x")
+								+ self.controls.reset:GetProperty("width") + self.controls.reset.x
 								+ self.controls.versionText.width() + self.controls.versionText.x
 								+ self.controls.versionSelect.width + self.controls.versionSelect.x
 								+ (self.isComparing and (self.controls.compareSelect.width + self.controls.compareSelect.x) or 0)
@@ -480,7 +482,7 @@ end
 function TreeTabClass:GetSpecList()
 	local newSpecList = { }
 	for _, spec in ipairs(self.specList) do
-		t_insert(newSpecList, (spec.treeVersion ~= latestTreeVersion and ("["..treeVersions[spec.treeVersion].display.."] ") or "")..(spec.title or "Default"))
+		t_insert(newSpecList, (spec.treeVersion ~= latestTreeVersion and ("["..treeVersions[spec.treeVersion].display.."] ") or "")..(spec.title or UILocale.translate("Default")))
 	end
 	return newSpecList
 end

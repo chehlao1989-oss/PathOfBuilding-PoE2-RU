@@ -27,9 +27,22 @@ function TextListClass:Draw(viewPort)
 	local x, y = self:GetPos()
 	local width, height = self:GetSize()
 	local scrollBar = self.controls.scrollBar
+	local fitted = {}
+	local lineHeight, labelRight, valueLeft = 14, math.floor((width - 20) * 0.68)
+	valueLeft = labelRight + 4
+	if self.wrapStatColumns then
+		for _, line in ipairs(self.list) do
+			if line[2] then
+				line.valueWrap = line.valueWrap or {}
+				local name, nameLines = UILocale.wrap(line, line[1], lineHeight, "VAR", labelRight - 3)
+				local value, valueLines = UILocale.wrap(line.valueWrap, line[2], lineHeight, "VAR", width - 22 - valueLeft)
+				fitted[line] = { name, value, height = math.max(line.height, math.max(nameLines, valueLines) * lineHeight + 2) }
+			end
+		end
+	end
 	local contentHeight = 0
 	for _, lineInfo in pairs(self.list) do
-		contentHeight = contentHeight + lineInfo.height
+		contentHeight = contentHeight + (fitted[lineInfo] or lineInfo).height
 	end
 	scrollBar:SetContentDimension(contentHeight, height - 4)
 	SetDrawColor(0.66, 0.66, 0.66)
@@ -41,10 +54,18 @@ function TextListClass:Draw(viewPort)
 	for colIndex, colInfo in pairs(self.columns) do
 		local lineY = -scrollBar.offset
 		for _, lineInfo in ipairs(self.list) do
-			if lineInfo[colIndex] then
+			local fit = fitted[lineInfo]
+			if fit then
+				local anchor = colIndex == 1 and labelRight or valueLeft
+				local top = lineY + 1
+				for line in (fit[colIndex] .. "\n"):gmatch("(.-)\n") do
+					UILocale.drawRaw(anchor, top, colInfo.align, lineHeight, "VAR", line)
+					top = top + lineHeight
+				end
+			elseif lineInfo[colIndex] then
 				DrawString(lineInfo.x or colInfo.x, lineY, lineInfo.align or colInfo.align, lineInfo.height, lineInfo.font or "VAR", lineInfo[colIndex])
 			end
-			lineY = lineY + lineInfo.height
+			lineY = lineY + (fit or lineInfo).height
 		end
 	end
 	SetViewport()

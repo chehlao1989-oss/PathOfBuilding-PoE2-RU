@@ -1,0 +1,2527 @@
+{
+  "pob": "0.23.1",
+  "tree": "0_5",
+  "steamBuildId": "26650308",
+  "names": {
+    "translated": 4544,
+    "total": 4544
+  },
+  "lines": {
+    "translated": 6056,
+    "total": 6056
+  },
+  "classes": {
+    "Monk": "Монах",
+    "Martial Artist": "Мастер боевых искусств",
+    "Invoker": "Заклинатель стихий",
+    "Acolyte of Chayula": "Служитель Чаюлы",
+    "Huntress": "Копейщица",
+    "Amazon": "Амазонка",
+    "Spirit Walker": "Ходящая среди духов",
+    "Ritualist": "Ритуалист",
+    "Druid": "Друид",
+    "Shaman": "Шаман",
+    "Oracle": "Оракул",
+    "Warrior": "Воин",
+    "Titan": "Титан",
+    "Warbringer": "Вестник войны",
+    "Smith of Kitava": "Кузнец Китавы",
+    "Sorceress": "Чародейка",
+    "Stormweaver": "Ткач бурь",
+    "Chronomancer": "Хрономант",
+    "Disciple of Varashta": "Ученица Варашты",
+    "Ranger": "Охотница",
+    "Pathfinder": "Следопыт",
+    "Deadeye": "Снайпер",
+    "Mercenary": "Наёмник",
+    "Tactician": "Тактик",
+    "Witchhunter": "Охотник на ведьм",
+    "Gemling Legionnaire": "Легионер каменитов",
+    "Witch": "Ведьма",
+    "Abyssal Lich": "Лич Бездны",
+    "Infernalist": "Инферналист",
+    "Blood Mage": "Маг крови",
+    "Lich": "Лич"
+  },
+  "recipeEmotions": {
+    "Contempt": {
+      "id": "Metadata/Items/Currency/EndgameDistilledEmotion3",
+      "name": "Густое жидкое презрение",
+      "short": "Презрение"
+    },
+    "Despair": {
+      "id": "Metadata/Items/Currency/DistilledEmotion7",
+      "name": "Жидкое отчаяние",
+      "short": "Отчаяние"
+    },
+    "Disgust": {
+      "id": "Metadata/Items/Currency/DistilledEmotion6",
+      "name": "Жидкое отвращение",
+      "short": "Отвращение"
+    },
+    "Envy": {
+      "id": "Metadata/Items/Currency/DistilledEmotion5",
+      "name": "Жидкая зависть",
+      "short": "Зависть"
+    },
+    "Fear": {
+      "id": "Metadata/Items/Currency/DistilledEmotion8",
+      "name": "Концентрированный жидкий страх",
+      "short": "Страх"
+    },
+    "Ferocity": {
+      "id": "Metadata/Items/Currency/EndgameDistilledEmotion2",
+      "name": "Густая жидкая свирепость",
+      "short": "Свирепость"
+    },
+    "Greed": {
+      "id": "Metadata/Items/Currency/DistilledEmotion3",
+      "name": "Разбавленная жидкая жадность",
+      "short": "Жадность"
+    },
+    "Guilt": {
+      "id": "Metadata/Items/Currency/DistilledEmotion2",
+      "name": "Разбавленная жидкая вина",
+      "short": "Вина"
+    },
+    "Ire": {
+      "id": "Metadata/Items/Currency/DistilledEmotion1",
+      "name": "Разбавленный жидкий гнев",
+      "short": "Гнев"
+    },
+    "Isolation": {
+      "id": "Metadata/Items/Currency/DistilledEmotion10",
+      "name": "Концентрированное жидкое отчуждение",
+      "short": "Отчуждение"
+    },
+    "Melancholy": {
+      "id": "Metadata/Items/Currency/EndgameDistilledEmotion1",
+      "name": "Густая жидкая меланхолия",
+      "short": "Меланхолия"
+    },
+    "Paranoia": {
+      "id": "Metadata/Items/Currency/DistilledEmotion4",
+      "name": "Жидкая паранойя",
+      "short": "Паранойя"
+    },
+    "Suffering": {
+      "id": "Metadata/Items/Currency/DistilledEmotion9",
+      "name": "Концентрированное жидкое страдание",
+      "short": "Страдание"
+    }
+  },
+  "special": {
+    "anointOnly": [
+      {
+        "id": 3663,
+        "en": "Kaom's Blessing",
+        "ru": "Благословение Каома",
+        "lines": {
+          "translated": 1,
+          "total": 1
+        },
+        "recipe": [
+          "Ferocity",
+          "Fear",
+          "Isolation"
+        ]
+      },
+      {
+        "id": 10169,
+        "en": "Unfettered",
+        "ru": "Необузданный",
+        "lines": {
+          "translated": 2,
+          "total": 2
+        },
+        "recipe": [
+          "Contempt",
+          "Envy",
+          "Despair"
+        ]
+      },
+      {
+        "id": 11184,
+        "en": "Zarokh's Gift",
+        "ru": "Дар Зарока",
+        "lines": {
+          "translated": 1,
+          "total": 1
+        },
+        "recipe": [
+          "Melancholy",
+          "Ferocity",
+          "Contempt"
+        ]
+      },
+      {
+        "id": 13844,
+        "en": "Growing Peril",
+        "ru": "Растущая опасность",
+        "lines": {
+          "translated": 1,
+          "total": 1
+        },
+        "recipe": [
+          "Melancholy",
+          "Suffering",
+          "Despair"
+        ]
+      },
+      {
+        "id": 17696,
+        "en": "Augmented Flesh",
+        "ru": "Дополненная плоть",
+        "lines": {
+          "translated": 1,
+          "total": 1
+        },
+        "recipe": [
+          "Contempt",
+          "Suffering",
+          "Suffering"
+        ]
+      },
+      {
+        "id": 20495,
+        "en": "Dark Entropy",
+        "ru": "Тёмная энтропия",
+        "lines": {
+          "translated": 1,
+          "total": 1
+        },
+        "recipe": [
+          "Ferocity",
+          "Isolation",
+          "Disgust"
+        ]
+      },
+      {
+        "id": 20686,
+        "en": "Paragon",
+        "ru": "Эталон",
+        "lines": {
+          "translated": 2,
+          "total": 2
+        },
+        "recipe": [
+          "Ferocity",
+          "Isolation",
+          "Despair"
+        ]
+      },
+      {
+        "id": 21251,
+        "en": "Replenishing Horde",
+        "ru": "Восполняющая орда",
+        "lines": {
+          "translated": 2,
+          "total": 2
+        },
+        "recipe": [
+          "Melancholy",
+          "Isolation",
+          "Disgust"
+        ]
+      },
+      {
+        "id": 22726,
+        "en": "Storm's Rebuke",
+        "ru": "Отпор бури",
+        "lines": {
+          "translated": 1,
+          "total": 1
+        },
+        "recipe": [
+          "Melancholy",
+          "Suffering",
+          "Suffering"
+        ]
+      },
+      {
+        "id": 26214,
+        "en": "Dominion",
+        "ru": "Господство",
+        "lines": {
+          "translated": 2,
+          "total": 2
+        },
+        "recipe": [
+          "Contempt",
+          "Suffering",
+          "Isolation"
+        ]
+      },
+      {
+        "id": 27704,
+        "en": "Grace of the Ancestors",
+        "ru": "Милость предков",
+        "lines": {
+          "translated": 2,
+          "total": 2
+        },
+        "recipe": [
+          "Melancholy",
+          "Envy",
+          "Fear"
+        ]
+      },
+      {
+        "id": 27779,
+        "en": "Lord of the Squall",
+        "ru": "Повелитель шквала",
+        "lines": {
+          "translated": 1,
+          "total": 1
+        },
+        "recipe": [
+          "Contempt",
+          "Isolation",
+          "Despair"
+        ]
+      },
+      {
+        "id": 35046,
+        "en": "Mystic Avalanche",
+        "ru": "Мистический камнепад",
+        "lines": {
+          "translated": 1,
+          "total": 1
+        },
+        "recipe": [
+          "Ferocity",
+          "Isolation",
+          "Suffering"
+        ]
+      },
+      {
+        "id": 37846,
+        "en": "Bastion of Light",
+        "ru": "Бастион света",
+        "lines": {
+          "translated": 2,
+          "total": 2
+        },
+        "recipe": [
+          "Contempt",
+          "Fear",
+          "Despair"
+        ]
+      },
+      {
+        "id": 37967,
+        "en": "Desert's Scorn",
+        "ru": "Презрение пустыни",
+        "lines": {
+          "translated": 2,
+          "total": 2
+        },
+        "recipe": [
+          "Contempt",
+          "Fear",
+          "Suffering"
+        ]
+      },
+      {
+        "id": 39568,
+        "en": "Magnum Opus",
+        "ru": "Магнум опус",
+        "lines": {
+          "translated": 1,
+          "total": 1
+        },
+        "recipe": [
+          "Ferocity",
+          "Despair",
+          "Isolation"
+        ]
+      },
+      {
+        "id": 56666,
+        "en": "Thaumaturgic Generator",
+        "ru": "Чародейный генератор",
+        "lines": {
+          "translated": 1,
+          "total": 1
+        },
+        "recipe": [
+          "Melancholy",
+          "Disgust",
+          "Isolation"
+        ]
+      }
+    ],
+    "oracle": [
+      {
+        "id": 479,
+        "en": "Hidden Forms",
+        "ru": "Скрытые формы",
+        "lines": {
+          "translated": 1,
+          "total": 1
+        },
+        "requires": [
+          5571
+        ]
+      },
+      {
+        "id": 483,
+        "en": "Gain Maximum Endurance Charges on Gaining Endurance Charge",
+        "ru": "Получение максимума зарядов выносливости при получении заряда выносливости",
+        "lines": {
+          "translated": 1,
+          "total": 1
+        },
+        "requires": [
+          5571
+        ]
+      },
+      {
+        "id": 761,
+        "en": "Command Skill Cooldown",
+        "ru": "Перезарядка умений приказов",
+        "lines": {
+          "translated": 1,
+          "total": 1
+        },
+        "requires": [
+          5571
+        ]
+      },
+      {
+        "id": 829,
+        "en": "Minion Duration",
+        "ru": "Время действия приспешников",
+        "lines": {
+          "translated": 1,
+          "total": 1
+        },
+        "requires": [
+          5571
+        ]
+      },
+      {
+        "id": 1628,
+        "en": "Stun Threshold",
+        "ru": "Порог оглушения",
+        "lines": {
+          "translated": 1,
+          "total": 1
+        },
+        "requires": [
+          5571
+        ]
+      },
+      {
+        "id": 1887,
+        "en": "Armour",
+        "ru": "Броня",
+        "lines": {
+          "translated": 1,
+          "total": 1
+        },
+        "requires": [
+          5571
+        ]
+      },
+      {
+        "id": 3281,
+        "en": "Powerful Casting",
+        "ru": "Могучее сотворение",
+        "lines": {
+          "translated": 1,
+          "total": 1
+        },
+        "requires": [
+          5571
+        ]
+      },
+      {
+        "id": 3544,
+        "en": "Lightning Damage",
+        "ru": "Урон от молнии",
+        "lines": {
+          "translated": 1,
+          "total": 1
+        },
+        "requires": [
+          5571
+        ]
+      },
+      {
+        "id": 3681,
+        "en": "Elemental Threshold",
+        "ru": "Порог наложения состояний",
+        "lines": {
+          "translated": 1,
+          "total": 1
+        },
+        "requires": [
+          5571
+        ]
+      },
+      {
+        "id": 3896,
+        "en": "Vale Dweller",
+        "ru": "Житель долин",
+        "lines": {
+          "translated": 2,
+          "total": 2
+        },
+        "requires": [
+          5571
+        ]
+      },
+      {
+        "id": 4621,
+        "en": "Stun and Elemental Threshold",
+        "ru": "Порог оглушения и наложения состояний",
+        "lines": {
+          "translated": 2,
+          "total": 2
+        },
+        "requires": [
+          5571
+        ]
+      },
+      {
+        "id": 4681,
+        "en": "Gain Maximum Frenzy Charges on Gaining Frenzy Charge",
+        "ru": "Получение максимума зарядов ярости при получении заряда ярости",
+        "lines": {
+          "translated": 1,
+          "total": 1
+        },
+        "requires": [
+          5571
+        ]
+      },
+      {
+        "id": 4873,
+        "en": "Energy",
+        "ru": "Энергия",
+        "lines": {
+          "translated": 1,
+          "total": 1
+        },
+        "requires": [
+          5571
+        ]
+      },
+      {
+        "id": 6088,
+        "en": "First Sting",
+        "ru": "Первое жжение",
+        "lines": {
+          "translated": 2,
+          "total": 2
+        },
+        "requires": [
+          5571
+        ]
+      },
+      {
+        "id": 6100,
+        "en": "Critical Damage",
+        "ru": "Критический урон",
+        "lines": {
+          "translated": 1,
+          "total": 1
+        },
+        "requires": [
+          5571
+        ]
+      },
+      {
+        "id": 6874,
+        "en": "Channelling Life Recoup",
+        "ru": "Восполнение здоровья при поддержании",
+        "lines": {
+          "translated": 1,
+          "total": 1
+        },
+        "requires": [
+          5571
+        ]
+      },
+      {
+        "id": 6999,
+        "en": "Totem Elemental Resistance",
+        "ru": "Тотемы: сопротивление стихиям",
+        "lines": {
+          "translated": 1,
+          "total": 1
+        },
+        "requires": [
+          5571
+        ]
+      },
+      {
+        "id": 7066,
+        "en": "Bow Attack Speed",
+        "ru": "Скорость атаки луком",
+        "lines": {
+          "translated": 1,
+          "total": 1
+        },
+        "requires": [
+          5571
+        ]
+      },
+      {
+        "id": 7258,
+        "en": "Strength and Spell Damage",
+        "ru": "Сила и урон от чар",
+        "lines": {
+          "translated": 2,
+          "total": 2
+        },
+        "requires": [
+          5571
+        ]
+      },
+      {
+        "id": 7553,
+        "en": "Trusted Partner",
+        "ru": "Доверенный партнёр",
+        "lines": {
+          "translated": 2,
+          "total": 2
+        },
+        "requires": [
+          5571
+        ]
+      },
+      {
+        "id": 8107,
+        "en": "Glory Generation",
+        "ru": "Накопление славы",
+        "lines": {
+          "translated": 1,
+          "total": 1
+        },
+        "requires": [
+          5571
+        ]
+      },
+      {
+        "id": 8248,
+        "en": "Bleed Duration",
+        "ru": "Длительность кровотечения",
+        "lines": {
+          "translated": 2,
+          "total": 2
+        },
+        "requires": [
+          5571
+        ]
+      },
+      {
+        "id": 8423,
+        "en": "Bow Attack Speed",
+        "ru": "Скорость атаки луком",
+        "lines": {
+          "translated": 1,
+          "total": 1
+        },
+        "requires": [
+          5571
+        ]
+      },
+      {
+        "id": 8693,
+        "en": "Armour while Bleeding",
+        "ru": "Броня при кровотечении",
+        "lines": {
+          "translated": 1,
+          "total": 1
+        },
+        "requires": [
+          5571
+        ]
+      },
+      {
+        "id": 8723,
+        "en": "Flesh Withstands",
+        "ru": "Терпеливая плоть",
+        "lines": {
+          "translated": 5,
+          "total": 5
+        },
+        "requires": [
+          5571
+        ]
+      },
+      {
+        "id": 9414,
+        "en": "Elemental Damage",
+        "ru": "Урон от стихий",
+        "lines": {
+          "translated": 1,
+          "total": 1
+        },
+        "requires": [
+          5571
+        ]
+      },
+      {
+        "id": 9554,
+        "en": "Life Costs and Chaos Damage",
+        "ru": "Расход здоровья и урон хаосом",
+        "lines": {
+          "translated": 3,
+          "total": 3
+        },
+        "requires": [
+          5571
+        ]
+      },
+      {
+        "id": 10636,
+        "en": "Block Chance",
+        "ru": "Шанс блока",
+        "lines": {
+          "translated": 1,
+          "total": 1
+        },
+        "requires": [
+          5571
+        ]
+      },
+      {
+        "id": 10713,
+        "en": "Armour",
+        "ru": "Броня",
+        "lines": {
+          "translated": 1,
+          "total": 1
+        },
+        "requires": [
+          5571
+        ]
+      },
+      {
+        "id": 11160,
+        "en": "Relinquish Your Life",
+        "ru": "Откажись от жизни",
+        "lines": {
+          "translated": 2,
+          "total": 2
+        },
+        "requires": [
+          5571
+        ]
+      },
+      {
+        "id": 11428,
+        "en": "Exhaust All Power",
+        "ru": "Истощение всех сил",
+        "lines": {
+          "translated": 3,
+          "total": 3
+        },
+        "requires": [
+          5571
+        ]
+      },
+      {
+        "id": 11464,
+        "en": "Movement Speed",
+        "ru": "Скорость передвижения",
+        "lines": {
+          "translated": 1,
+          "total": 1
+        },
+        "requires": [
+          5571
+        ]
+      },
+      {
+        "id": 11580,
+        "en": "Life Regeneration Rate",
+        "ru": "Скорость регенерации здоровья",
+        "lines": {
+          "translated": 1,
+          "total": 1
+        },
+        "requires": [
+          5571
+        ]
+      },
+      {
+        "id": 11666,
+        "en": "Reduced Movement Penalty",
+        "ru": "Снижение штрафа к скорости передвижения",
+        "lines": {
+          "translated": 1,
+          "total": 1
+        },
+        "requires": [
+          5571
+        ]
+      },
+      {
+        "id": 11861,
+        "en": "Strength and Spell Damage",
+        "ru": "Сила и урон от чар",
+        "lines": {
+          "translated": 2,
+          "total": 2
+        },
+        "requires": [
+          5571
+        ]
+      },
+      {
+        "id": 11984,
+        "en": "Physical Damage",
+        "ru": "Физический урон",
+        "lines": {
+          "translated": 1,
+          "total": 1
+        },
+        "requires": [
+          5571
+        ]
+      },
+      {
+        "id": 12601,
+        "en": "Gain Maximum Endurance Charges on Gaining Endurance Charge",
+        "ru": "Получение максимума зарядов выносливости при получении заряда выносливости",
+        "lines": {
+          "translated": 1,
+          "total": 1
+        },
+        "requires": [
+          5571
+        ]
+      },
+      {
+        "id": 12610,
+        "en": "Energy",
+        "ru": "Энергия",
+        "lines": {
+          "translated": 1,
+          "total": 1
+        },
+        "requires": [
+          5571
+        ]
+      },
+      {
+        "id": 12683,
+        "en": "Power of the Storm",
+        "ru": "Сила бури",
+        "lines": {
+          "translated": 1,
+          "total": 1
+        },
+        "requires": [
+          5571
+        ]
+      },
+      {
+        "id": 12940,
+        "en": "Cower Before the First Ones",
+        "ru": "Склонись перед Первыми",
+        "lines": {
+          "translated": 5,
+          "total": 5
+        },
+        "requires": [
+          5571
+        ]
+      },
+      {
+        "id": 13108,
+        "en": "Ally Attack and Cast Speed",
+        "ru": "Союзники: скорость атаки и сотворения чар",
+        "lines": {
+          "translated": 3,
+          "total": 3
+        },
+        "requires": [
+          5571
+        ]
+      },
+      {
+        "id": 13228,
+        "en": "Gain Maximum Power Charges on Gaining Power Charge",
+        "ru": "Получение максимума зарядов энергии при получении заряда энергии",
+        "lines": {
+          "translated": 2,
+          "total": 2
+        },
+        "requires": [
+          5571
+        ]
+      },
+      {
+        "id": 13468,
+        "en": "Give Up Your Essence",
+        "ru": "Отдай свою сущность",
+        "lines": {
+          "translated": 2,
+          "total": 2
+        },
+        "requires": [
+          5571
+        ]
+      },
+      {
+        "id": 13950,
+        "en": "Reduced Movement Penalty",
+        "ru": "Снижение штрафа к скорости передвижения",
+        "lines": {
+          "translated": 1,
+          "total": 1
+        },
+        "requires": [
+          5571
+        ]
+      },
+      {
+        "id": 14432,
+        "en": "Lunar Boon",
+        "ru": "Лунное покровительство",
+        "lines": {
+          "translated": 1,
+          "total": 1
+        },
+        "requires": [
+          5571
+        ]
+      },
+      {
+        "id": 15141,
+        "en": "Impale Chance",
+        "ru": "Шанс наложить Прокол",
+        "lines": {
+          "translated": 1,
+          "total": 1
+        },
+        "requires": [
+          5571
+        ]
+      },
+      {
+        "id": 15580,
+        "en": "Damage and Minion Damage",
+        "ru": "Урон и урон приспешников",
+        "lines": {
+          "translated": 2,
+          "total": 2
+        },
+        "requires": [
+          5571
+        ]
+      },
+      {
+        "id": 15672,
+        "en": "Totem Elemental Resistance",
+        "ru": "Тотемы: сопротивление стихиям",
+        "lines": {
+          "translated": 1,
+          "total": 1
+        },
+        "requires": [
+          5571
+        ]
+      },
+      {
+        "id": 16332,
+        "en": "Stun Threshold",
+        "ru": "Порог оглушения",
+        "lines": {
+          "translated": 1,
+          "total": 1
+        },
+        "requires": [
+          5571
+        ]
+      },
+      {
+        "id": 16615,
+        "en": "Unmoving Craiceann",
+        "ru": "Неподвижный Краценн",
+        "lines": {
+          "translated": 2,
+          "total": 2
+        },
+        "requires": [
+          5571
+        ]
+      },
+      {
+        "id": 16947,
+        "en": "Shelter from the Rain",
+        "ru": "Укрытие от дождя",
+        "lines": {
+          "translated": 2,
+          "total": 2
+        },
+        "requires": [
+          5571
+        ]
+      },
+      {
+        "id": 17059,
+        "en": "Channelling Stun Threshold",
+        "ru": "Порог оглушения при поддержании",
+        "lines": {
+          "translated": 1,
+          "total": 1
+        },
+        "requires": [
+          5571
+        ]
+      },
+      {
+        "id": 17729,
+        "en": "Chance to Poison and Spell Damage",
+        "ru": "Шанс отравить и урон от чар",
+        "lines": {
+          "translated": 2,
+          "total": 2
+        },
+        "requires": [
+          5571
+        ]
+      },
+      {
+        "id": 17894,
+        "en": "Her Final Bite",
+        "ru": "Её последний укус",
+        "lines": {
+          "translated": 2,
+          "total": 2
+        },
+        "requires": [
+          5571
+        ]
+      },
+      {
+        "id": 18081,
+        "en": "Call Upon the Deep",
+        "ru": "Воззвание к глубинам",
+        "lines": {
+          "translated": 1,
+          "total": 1
+        },
+        "requires": [
+          5571
+        ]
+      },
+      {
+        "id": 18353,
+        "en": "Physical and Lightning Damage",
+        "ru": "Физический урон и урон от молнии",
+        "lines": {
+          "translated": 2,
+          "total": 2
+        },
+        "requires": [
+          5571
+        ]
+      },
+      {
+        "id": 18441,
+        "en": "Maximum Rage",
+        "ru": "Максимум свирепости",
+        "lines": {
+          "translated": 1,
+          "total": 1
+        },
+        "requires": [
+          5571
+        ]
+      },
+      {
+        "id": 18972,
+        "en": "Echoes of Ferocity",
+        "ru": "Отголоски дикости",
+        "lines": {
+          "translated": 1,
+          "total": 1
+        },
+        "requires": [
+          5571
+        ]
+      },
+      {
+        "id": 19162,
+        "en": "Physical Damage and Increased Duration",
+        "ru": "Физический урон и увеличение длительности",
+        "lines": {
+          "translated": 2,
+          "total": 2
+        },
+        "requires": [
+          5571
+        ]
+      },
+      {
+        "id": 19953,
+        "en": "Lightning Damage",
+        "ru": "Урон от молнии",
+        "lines": {
+          "translated": 1,
+          "total": 1
+        },
+        "requires": [
+          5571
+        ]
+      },
+      {
+        "id": 19966,
+        "en": "Minion Duration",
+        "ru": "Время действия приспешников",
+        "lines": {
+          "translated": 1,
+          "total": 1
+        },
+        "requires": [
+          5571
+        ]
+      },
+      {
+        "id": 20391,
+        "en": "Block Chance",
+        "ru": "Шанс блока",
+        "lines": {
+          "translated": 1,
+          "total": 1
+        },
+        "requires": [
+          5571
+        ]
+      },
+      {
+        "id": 20496,
+        "en": "Physical Damage",
+        "ru": "Физический урон",
+        "lines": {
+          "translated": 1,
+          "total": 1
+        },
+        "requires": [
+          5571
+        ]
+      },
+      {
+        "id": 20963,
+        "en": "Calculated Hunter",
+        "ru": "Расчётливый охотник",
+        "lines": {
+          "translated": 2,
+          "total": 2
+        },
+        "requires": [
+          5571
+        ]
+      },
+      {
+        "id": 21218,
+        "en": "Bow Damage",
+        "ru": "Урон луком",
+        "lines": {
+          "translated": 1,
+          "total": 1
+        },
+        "requires": [
+          5571
+        ]
+      },
+      {
+        "id": 21549,
+        "en": "Physical Damage",
+        "ru": "Физический урон",
+        "lines": {
+          "translated": 1,
+          "total": 1
+        },
+        "requires": [
+          5571
+        ]
+      },
+      {
+        "id": 21809,
+        "en": "Physical Damage and Increased Duration",
+        "ru": "Физический урон и увеличение длительности",
+        "lines": {
+          "translated": 2,
+          "total": 2
+        },
+        "requires": [
+          5571
+        ]
+      },
+      {
+        "id": 22133,
+        "en": "Command Skill Cooldown",
+        "ru": "Перезарядка умений приказов",
+        "lines": {
+          "translated": 1,
+          "total": 1
+        },
+        "requires": [
+          5571
+        ]
+      },
+      {
+        "id": 22221,
+        "en": "Minion Damage",
+        "ru": "Урон приспешников",
+        "lines": {
+          "translated": 1,
+          "total": 1
+        },
+        "requires": [
+          5571
+        ]
+      },
+      {
+        "id": 23436,
+        "en": "Archon Duration and Critical Damage",
+        "ru": "Длительность состояния архонта и критический урон",
+        "lines": {
+          "translated": 2,
+          "total": 2
+        },
+        "requires": [
+          5571
+        ]
+      },
+      {
+        "id": 23708,
+        "en": "Armour while Bleeding",
+        "ru": "Броня при кровотечении",
+        "lines": {
+          "translated": 1,
+          "total": 1
+        },
+        "requires": [
+          5571
+        ]
+      },
+      {
+        "id": 23932,
+        "en": "Bow Attack Speed",
+        "ru": "Скорость атаки луком",
+        "lines": {
+          "translated": 1,
+          "total": 1
+        },
+        "requires": [
+          5571
+        ]
+      },
+      {
+        "id": 24993,
+        "en": "Life Costs and Chaos Damage",
+        "ru": "Расход здоровья и урон хаосом",
+        "lines": {
+          "translated": 3,
+          "total": 3
+        },
+        "requires": [
+          5571
+        ]
+      },
+      {
+        "id": 25058,
+        "en": "Gain Maximum Frenzy Charges on Gaining Frenzy Charge",
+        "ru": "Получение максимума зарядов ярости при получении заряда ярости",
+        "lines": {
+          "translated": 1,
+          "total": 1
+        },
+        "requires": [
+          5571
+        ]
+      },
+      {
+        "id": 25337,
+        "en": "Poison Chance",
+        "ru": "Шанс отравить",
+        "lines": {
+          "translated": 1,
+          "total": 1
+        },
+        "requires": [
+          5571
+        ]
+      },
+      {
+        "id": 25570,
+        "en": "Damage",
+        "ru": "Урон",
+        "lines": {
+          "translated": 1,
+          "total": 1
+        },
+        "requires": [
+          5571
+        ]
+      },
+      {
+        "id": 25678,
+        "en": "Life Costs and Chaos Damage",
+        "ru": "Расход здоровья и урон хаосом",
+        "lines": {
+          "translated": 3,
+          "total": 3
+        },
+        "requires": [
+          5571
+        ]
+      },
+      {
+        "id": 26228,
+        "en": "Prize of the Hunt",
+        "ru": "Охотничья добыча",
+        "lines": {
+          "translated": 2,
+          "total": 2
+        },
+        "requires": [
+          5571
+        ]
+      },
+      {
+        "id": 26300,
+        "en": "Archon Duration and Critical Damage",
+        "ru": "Длительность состояния архонта и критический урон",
+        "lines": {
+          "translated": 2,
+          "total": 2
+        },
+        "requires": [
+          5571
+        ]
+      },
+      {
+        "id": 27096,
+        "en": "Rustle of the Leaves",
+        "ru": "Шелест листвы",
+        "lines": {
+          "translated": 3,
+          "total": 3
+        },
+        "requires": [
+          5571
+        ]
+      },
+      {
+        "id": 27405,
+        "en": "Cooldown Recovery Rate",
+        "ru": "Ускорение перезарядки",
+        "lines": {
+          "translated": 1,
+          "total": 1
+        },
+        "requires": [
+          5571
+        ]
+      },
+      {
+        "id": 27572,
+        "en": "Chaos Damage",
+        "ru": "Урон хаосом",
+        "lines": {
+          "translated": 1,
+          "total": 1
+        },
+        "requires": [
+          5571
+        ]
+      },
+      {
+        "id": 28201,
+        "en": "Armour and Block Chance",
+        "ru": "Броня и шанс блока",
+        "lines": {
+          "translated": 2,
+          "total": 2
+        },
+        "requires": [
+          5571
+        ]
+      },
+      {
+        "id": 28223,
+        "en": "Critical Damage",
+        "ru": "Критический урон",
+        "lines": {
+          "translated": 1,
+          "total": 1
+        },
+        "requires": [
+          5571
+        ]
+      },
+      {
+        "id": 28489,
+        "en": "Shapeshifted Skill Effect Duration",
+        "ru": "Длительность эффектов умений при превращении",
+        "lines": {
+          "translated": 1,
+          "total": 1
+        },
+        "requires": [
+          5571
+        ]
+      },
+      {
+        "id": 28770,
+        "en": "Shapeshifted Elemental Damage",
+        "ru": "Урон от стихий при превращении",
+        "lines": {
+          "translated": 1,
+          "total": 1
+        },
+        "requires": [
+          5571
+        ]
+      },
+      {
+        "id": 29126,
+        "en": "Shapeshifted Elemental Damage",
+        "ru": "Урон от стихий при превращении",
+        "lines": {
+          "translated": 1,
+          "total": 1
+        },
+        "requires": [
+          5571
+        ]
+      },
+      {
+        "id": 29197,
+        "en": "Archon Duration and Critical Damage",
+        "ru": "Длительность состояния архонта и критический урон",
+        "lines": {
+          "translated": 2,
+          "total": 2
+        },
+        "requires": [
+          5571
+        ]
+      },
+      {
+        "id": 29985,
+        "en": "Minion Damage",
+        "ru": "Урон приспешников",
+        "lines": {
+          "translated": 1,
+          "total": 1
+        },
+        "requires": [
+          5571
+        ]
+      },
+      {
+        "id": 30781,
+        "en": "Movement Speed",
+        "ru": "Скорость передвижения",
+        "lines": {
+          "translated": 1,
+          "total": 1
+        },
+        "requires": [
+          5571
+        ]
+      },
+      {
+        "id": 31554,
+        "en": "Increased Duration",
+        "ru": "Увеличение длительности",
+        "lines": {
+          "translated": 1,
+          "total": 1
+        },
+        "requires": [
+          5571
+        ]
+      },
+      {
+        "id": 32768,
+        "en": "Glory Generation",
+        "ru": "Накопление славы",
+        "lines": {
+          "translated": 1,
+          "total": 1
+        },
+        "requires": [
+          5571
+        ]
+      },
+      {
+        "id": 33203,
+        "en": "Channelling Stun Threshold",
+        "ru": "Порог оглушения при поддержании",
+        "lines": {
+          "translated": 1,
+          "total": 1
+        },
+        "requires": [
+          5571
+        ]
+      },
+      {
+        "id": 33423,
+        "en": "Totem Cast and Attack Speed",
+        "ru": "Тотемы: скорость сотворения чар и атаки",
+        "lines": {
+          "translated": 2,
+          "total": 2
+        },
+        "requires": [
+          5571
+        ]
+      },
+      {
+        "id": 34143,
+        "en": "Physical Damage",
+        "ru": "Физический урон",
+        "lines": {
+          "translated": 1,
+          "total": 1
+        },
+        "requires": [
+          5571
+        ]
+      },
+      {
+        "id": 34181,
+        "en": "Maximum Rage",
+        "ru": "Максимум свирепости",
+        "lines": {
+          "translated": 1,
+          "total": 1
+        },
+        "requires": [
+          5571
+        ]
+      },
+      {
+        "id": 34490,
+        "en": "Shapeshifted Aftershock Chance",
+        "ru": "Шанс остаточной волны при превращения",
+        "lines": {
+          "translated": 1,
+          "total": 1
+        },
+        "requires": [
+          5571
+        ]
+      },
+      {
+        "id": 34769,
+        "en": "Life Regeneration Rate",
+        "ru": "Скорость регенерации здоровья",
+        "lines": {
+          "translated": 1,
+          "total": 1
+        },
+        "requires": [
+          5571
+        ]
+      },
+      {
+        "id": 34940,
+        "en": "Meditative Focus",
+        "ru": "Медитативная концентрация",
+        "lines": {
+          "translated": 2,
+          "total": 2
+        },
+        "requires": [
+          5571
+        ]
+      },
+      {
+        "id": 34990,
+        "en": "Poison Chance",
+        "ru": "Шанс отравить",
+        "lines": {
+          "translated": 1,
+          "total": 1
+        },
+        "requires": [
+          5571
+        ]
+      },
+      {
+        "id": 35393,
+        "en": "Armour while Bleeding",
+        "ru": "Броня при кровотечении",
+        "lines": {
+          "translated": 1,
+          "total": 1
+        },
+        "requires": [
+          5571
+        ]
+      },
+      {
+        "id": 35720,
+        "en": "Strength and Spell Damage",
+        "ru": "Сила и урон от чар",
+        "lines": {
+          "translated": 2,
+          "total": 2
+        },
+        "requires": [
+          5571
+        ]
+      },
+      {
+        "id": 35745,
+        "en": "Gain Maximum Endurance Charges on Gaining Endurance Charge",
+        "ru": "Получение максимума зарядов выносливости при получении заряда выносливости",
+        "lines": {
+          "translated": 1,
+          "total": 1
+        },
+        "requires": [
+          5571
+        ]
+      },
+      {
+        "id": 36025,
+        "en": "Minion Damage",
+        "ru": "Урон приспешников",
+        "lines": {
+          "translated": 1,
+          "total": 1
+        },
+        "requires": [
+          5571
+        ]
+      },
+      {
+        "id": 36197,
+        "en": "Totem Placement Speed",
+        "ru": "Скорость установки тотема",
+        "lines": {
+          "translated": 1,
+          "total": 1
+        },
+        "requires": [
+          5571
+        ]
+      },
+      {
+        "id": 36408,
+        "en": "Deadly Thorns",
+        "ru": "Смертоносные шипы",
+        "lines": {
+          "translated": 1,
+          "total": 1
+        },
+        "requires": [
+          5571
+        ]
+      },
+      {
+        "id": 37694,
+        "en": "Fire Damage",
+        "ru": "Урон от огня",
+        "lines": {
+          "translated": 1,
+          "total": 1
+        },
+        "requires": [
+          5571
+        ]
+      },
+      {
+        "id": 37778,
+        "en": "Self Sacrificing",
+        "ru": "Самопожертвование",
+        "lines": {
+          "translated": 2,
+          "total": 2
+        },
+        "requires": [
+          5571
+        ]
+      },
+      {
+        "id": 37888,
+        "en": "Limitless Pursuit",
+        "ru": "Бесконечная погоня",
+        "lines": {
+          "translated": 2,
+          "total": 2
+        },
+        "requires": [
+          5571
+        ]
+      },
+      {
+        "id": 38697,
+        "en": "Block Chance",
+        "ru": "Шанс блока",
+        "lines": {
+          "translated": 1,
+          "total": 1
+        },
+        "requires": [
+          5571
+        ]
+      },
+      {
+        "id": 39102,
+        "en": "Gain Maximum Power Charges on Gaining Power Charge",
+        "ru": "Получение максимума зарядов энергии при получении заряда энергии",
+        "lines": {
+          "translated": 2,
+          "total": 2
+        },
+        "requires": [
+          5571
+        ]
+      },
+      {
+        "id": 39857,
+        "en": "Mentorship",
+        "ru": "Менторство",
+        "lines": {
+          "translated": 3,
+          "total": 3
+        },
+        "requires": [
+          5571
+        ]
+      },
+      {
+        "id": 40511,
+        "en": "Minion Life",
+        "ru": "Здоровье приспешников",
+        "lines": {
+          "translated": 1,
+          "total": 1
+        },
+        "requires": [
+          5571
+        ]
+      },
+      {
+        "id": 42762,
+        "en": "Physical Damage",
+        "ru": "Физический урон",
+        "lines": {
+          "translated": 1,
+          "total": 1
+        },
+        "requires": [
+          5571
+        ]
+      },
+      {
+        "id": 43324,
+        "en": "Life Costs",
+        "ru": "Расход здоровья",
+        "lines": {
+          "translated": 1,
+          "total": 1
+        },
+        "requires": [
+          5571
+        ]
+      },
+      {
+        "id": 43385,
+        "en": "Minion Damage",
+        "ru": "Урон приспешников",
+        "lines": {
+          "translated": 1,
+          "total": 1
+        },
+        "requires": [
+          5571
+        ]
+      },
+      {
+        "id": 43486,
+        "en": "Gain Maximum Power Charges on Gaining Power Charge",
+        "ru": "Получение максимума зарядов энергии при получении заряда энергии",
+        "lines": {
+          "translated": 2,
+          "total": 2
+        },
+        "requires": [
+          5571
+        ]
+      },
+      {
+        "id": 43721,
+        "en": "Life Costs and Chaos Damage",
+        "ru": "Расход здоровья и урон хаосом",
+        "lines": {
+          "translated": 3,
+          "total": 3
+        },
+        "requires": [
+          5571
+        ]
+      },
+      {
+        "id": 44309,
+        "en": "Companion Damage",
+        "ru": "Урон компаньонов",
+        "lines": {
+          "translated": 1,
+          "total": 1
+        },
+        "requires": [
+          5571
+        ]
+      },
+      {
+        "id": 44452,
+        "en": "Physical Damage and Increased Duration",
+        "ru": "Физический урон и увеличение длительности",
+        "lines": {
+          "translated": 2,
+          "total": 2
+        },
+        "requires": [
+          5571
+        ]
+      },
+      {
+        "id": 44485,
+        "en": "Companion Damage",
+        "ru": "Урон компаньонов",
+        "lines": {
+          "translated": 1,
+          "total": 1
+        },
+        "requires": [
+          5571
+        ]
+      },
+      {
+        "id": 44560,
+        "en": "Cold Damage",
+        "ru": "Урон от холода",
+        "lines": {
+          "translated": 1,
+          "total": 1
+        },
+        "requires": [
+          5571
+        ]
+      },
+      {
+        "id": 45226,
+        "en": "Bow Damage",
+        "ru": "Урон луком",
+        "lines": {
+          "translated": 1,
+          "total": 1
+        },
+        "requires": [
+          5571
+        ]
+      },
+      {
+        "id": 45400,
+        "en": "Mighty Trunk",
+        "ru": "Могучий ствол",
+        "lines": {
+          "translated": 2,
+          "total": 2
+        },
+        "requires": [
+          5571
+        ]
+      },
+      {
+        "id": 45422,
+        "en": "Anger Management",
+        "ru": "Управление гневом",
+        "lines": {
+          "translated": 2,
+          "total": 2
+        },
+        "requires": [
+          5571
+        ]
+      },
+      {
+        "id": 46069,
+        "en": "Poison Damage",
+        "ru": "Урон от яда",
+        "lines": {
+          "translated": 1,
+          "total": 1
+        },
+        "requires": [
+          5571
+        ]
+      },
+      {
+        "id": 47633,
+        "en": "Thorns",
+        "ru": "Шипы",
+        "lines": {
+          "translated": 1,
+          "total": 1
+        },
+        "requires": [
+          5571
+        ]
+      },
+      {
+        "id": 48079,
+        "en": "Bleed Duration",
+        "ru": "Длительность кровотечения",
+        "lines": {
+          "translated": 2,
+          "total": 2
+        },
+        "requires": [
+          5571
+        ]
+      },
+      {
+        "id": 48160,
+        "en": "Ally Damage",
+        "ru": "Урон союзников",
+        "lines": {
+          "translated": 2,
+          "total": 2
+        },
+        "requires": [
+          5571
+        ]
+      },
+      {
+        "id": 48828,
+        "en": "Gain Maximum Frenzy Charges on Gaining Frenzy Charge",
+        "ru": "Получение максимума зарядов ярости при получении заряда ярости",
+        "lines": {
+          "translated": 1,
+          "total": 1
+        },
+        "requires": [
+          5571
+        ]
+      },
+      {
+        "id": 48935,
+        "en": "Attack Added Lighting Damage",
+        "ru": "Добавленный урон от молнии от атак",
+        "lines": {
+          "translated": 1,
+          "total": 1
+        },
+        "requires": [
+          5571
+        ]
+      },
+      {
+        "id": 49153,
+        "en": "Comradery",
+        "ru": "Товарищество",
+        "lines": {
+          "translated": 2,
+          "total": 2
+        },
+        "requires": [
+          5571
+        ]
+      },
+      {
+        "id": 49258,
+        "en": "Life Costs and Chaos Damage",
+        "ru": "Расход здоровья и урон хаосом",
+        "lines": {
+          "translated": 3,
+          "total": 3
+        },
+        "requires": [
+          5571
+        ]
+      },
+      {
+        "id": 49543,
+        "en": "Ally Attack and Cast Speed",
+        "ru": "Союзники: скорость атаки и сотворения чар",
+        "lines": {
+          "translated": 3,
+          "total": 3
+        },
+        "requires": [
+          5571
+        ]
+      },
+      {
+        "id": 49769,
+        "en": "Corruption Endures",
+        "ru": "Стойкая порча",
+        "lines": {
+          "translated": 1,
+          "total": 1
+        },
+        "requires": [
+          5571
+        ]
+      },
+      {
+        "id": 49929,
+        "en": "Everlasting Bloom",
+        "ru": "Вечное цветение",
+        "lines": {
+          "translated": 1,
+          "total": 1
+        },
+        "requires": [
+          5571
+        ]
+      },
+      {
+        "id": 50142,
+        "en": "Lightning Damage",
+        "ru": "Урон от молнии",
+        "lines": {
+          "translated": 1,
+          "total": 1
+        },
+        "requires": [
+          5571
+        ]
+      },
+      {
+        "id": 50184,
+        "en": "Poison Damage",
+        "ru": "Урон от яда",
+        "lines": {
+          "translated": 1,
+          "total": 1
+        },
+        "requires": [
+          5571
+        ]
+      },
+      {
+        "id": 50908,
+        "en": "Strength of the Deep",
+        "ru": "Сила глубин",
+        "lines": {
+          "translated": 2,
+          "total": 2
+        },
+        "requires": [
+          5571
+        ]
+      },
+      {
+        "id": 51618,
+        "en": "Life Costs and Regeneration",
+        "ru": "Расход здоровья и регенерация",
+        "lines": {
+          "translated": 2,
+          "total": 2
+        },
+        "requires": [
+          5571
+        ]
+      },
+      {
+        "id": 52115,
+        "en": "Nurturing Nature",
+        "ru": "Забота о природе",
+        "lines": {
+          "translated": 1,
+          "total": 1
+        },
+        "requires": [
+          5571
+        ]
+      },
+      {
+        "id": 52993,
+        "en": "Elemental Damage",
+        "ru": "Урон от стихий",
+        "lines": {
+          "translated": 1,
+          "total": 1
+        },
+        "requires": [
+          5571
+        ]
+      },
+      {
+        "id": 53910,
+        "en": "Forbidden Path",
+        "ru": "Запретный путь",
+        "lines": {
+          "translated": 4,
+          "total": 4
+        },
+        "requires": [
+          5571
+        ]
+      },
+      {
+        "id": 54289,
+        "en": "Gift of the Plains",
+        "ru": "Дар равнин",
+        "lines": {
+          "translated": 3,
+          "total": 3
+        },
+        "requires": [
+          5571
+        ]
+      },
+      {
+        "id": 54297,
+        "en": "Life Costs and Chaos Damage",
+        "ru": "Расход здоровья и урон хаосом",
+        "lines": {
+          "translated": 3,
+          "total": 3
+        },
+        "requires": [
+          5571
+        ]
+      },
+      {
+        "id": 55033,
+        "en": "Channelling Life Recoup",
+        "ru": "Восполнение здоровья при поддержании",
+        "lines": {
+          "translated": 1,
+          "total": 1
+        },
+        "requires": [
+          5571
+        ]
+      },
+      {
+        "id": 55897,
+        "en": "Shapeshifted Mana Regeneration",
+        "ru": "Регенерация маны при превращения",
+        "lines": {
+          "translated": 1,
+          "total": 1
+        },
+        "requires": [
+          5571
+        ]
+      },
+      {
+        "id": 56090,
+        "en": "Chance to Poison and Spell Damage",
+        "ru": "Шанс отравить и урон от чар",
+        "lines": {
+          "translated": 2,
+          "total": 2
+        },
+        "requires": [
+          5571
+        ]
+      },
+      {
+        "id": 56174,
+        "en": "Armour",
+        "ru": "Броня",
+        "lines": {
+          "translated": 1,
+          "total": 1
+        },
+        "requires": [
+          5571
+        ]
+      },
+      {
+        "id": 56466,
+        "en": "Night's Bite",
+        "ru": "Укус ночи",
+        "lines": {
+          "translated": 1,
+          "total": 1
+        },
+        "requires": [
+          5571
+        ]
+      },
+      {
+        "id": 56890,
+        "en": "Endlessly Soaring",
+        "ru": "Бесконечный полёт",
+        "lines": {
+          "translated": 1,
+          "total": 1
+        },
+        "requires": [
+          5571
+        ]
+      },
+      {
+        "id": 57002,
+        "en": "Rough Carapace",
+        "ru": "Грубый панцирь",
+        "lines": {
+          "translated": 1,
+          "total": 1
+        },
+        "requires": [
+          5571
+        ]
+      },
+      {
+        "id": 57079,
+        "en": "Known by All",
+        "ru": "Известен всем",
+        "lines": {
+          "translated": 1,
+          "total": 1
+        },
+        "requires": [
+          5571
+        ]
+      },
+      {
+        "id": 57202,
+        "en": "Stun Threshold",
+        "ru": "Порог оглушения",
+        "lines": {
+          "translated": 1,
+          "total": 1
+        },
+        "requires": [
+          5571
+        ]
+      },
+      {
+        "id": 57386,
+        "en": "Elemental Threshold",
+        "ru": "Порог наложения состояний",
+        "lines": {
+          "translated": 1,
+          "total": 1
+        },
+        "requires": [
+          5571
+        ]
+      },
+      {
+        "id": 57596,
+        "en": "Life Costs",
+        "ru": "Расход здоровья",
+        "lines": {
+          "translated": 1,
+          "total": 1
+        },
+        "requires": [
+          5571
+        ]
+      },
+      {
+        "id": 58197,
+        "en": "Unquenchable Iron",
+        "ru": "Неугасимое железо",
+        "lines": {
+          "translated": 1,
+          "total": 1
+        },
+        "requires": [
+          5571
+        ]
+      },
+      {
+        "id": 58368,
+        "en": "Minion Life",
+        "ru": "Здоровье приспешников",
+        "lines": {
+          "translated": 1,
+          "total": 1
+        },
+        "requires": [
+          5571
+        ]
+      },
+      {
+        "id": 59039,
+        "en": "Critical Damage",
+        "ru": "Критический урон",
+        "lines": {
+          "translated": 1,
+          "total": 1
+        },
+        "requires": [
+          5571
+        ]
+      },
+      {
+        "id": 59136,
+        "en": "Chance to Poison and Spell Damage",
+        "ru": "Шанс отравить и урон от чар",
+        "lines": {
+          "translated": 2,
+          "total": 2
+        },
+        "requires": [
+          5571
+        ]
+      },
+      {
+        "id": 59908,
+        "en": "Totem Area of Effect",
+        "ru": "Область действия тотема",
+        "lines": {
+          "translated": 1,
+          "total": 1
+        },
+        "requires": [
+          5571
+        ]
+      },
+      {
+        "id": 60014,
+        "en": "Scent of Blood",
+        "ru": "Запах крови",
+        "lines": {
+          "translated": 3,
+          "total": 3
+        },
+        "requires": [
+          5571
+        ]
+      },
+      {
+        "id": 60708,
+        "en": "Bow Damage",
+        "ru": "Урон луком",
+        "lines": {
+          "translated": 1,
+          "total": 1
+        },
+        "requires": [
+          5571
+        ]
+      },
+      {
+        "id": 61113,
+        "en": "Minion Damage",
+        "ru": "Урон приспешников",
+        "lines": {
+          "translated": 1,
+          "total": 1
+        },
+        "requires": [
+          5571
+        ]
+      },
+      {
+        "id": 61367,
+        "en": "Attack Added Lighting Damage",
+        "ru": "Добавленный урон от молнии от атак",
+        "lines": {
+          "translated": 1,
+          "total": 1
+        },
+        "requires": [
+          5571
+        ]
+      },
+      {
+        "id": 61471,
+        "en": "Damage and Minion Damage",
+        "ru": "Урон и урон приспешников",
+        "lines": {
+          "translated": 2,
+          "total": 2
+        },
+        "requires": [
+          5571
+        ]
+      },
+      {
+        "id": 61811,
+        "en": "Physical Damage and Increased Duration",
+        "ru": "Физический урон и увеличение длительности",
+        "lines": {
+          "translated": 2,
+          "total": 2
+        },
+        "requires": [
+          5571
+        ]
+      },
+      {
+        "id": 61977,
+        "en": "Damage and Minion Damage",
+        "ru": "Урон и урон приспешников",
+        "lines": {
+          "translated": 2,
+          "total": 2
+        },
+        "requires": [
+          5571
+        ]
+      },
+      {
+        "id": 62378,
+        "en": "Thorns",
+        "ru": "Шипы",
+        "lines": {
+          "translated": 1,
+          "total": 1
+        },
+        "requires": [
+          5571
+        ]
+      },
+      {
+        "id": 63170,
+        "en": "Totem Cast and Attack Speed and Elemental Resistance",
+        "ru": "Тотемы: скорость сотворения чар и атаки и сопротивление стихиям",
+        "lines": {
+          "translated": 3,
+          "total": 3
+        },
+        "requires": [
+          5571
+        ]
+      },
+      {
+        "id": 63243,
+        "en": "Ally Damage",
+        "ru": "Урон союзников",
+        "lines": {
+          "translated": 2,
+          "total": 2
+        },
+        "requires": [
+          5571
+        ]
+      },
+      {
+        "id": 63772,
+        "en": "Cooldown Recovery Rate",
+        "ru": "Ускорение перезарядки",
+        "lines": {
+          "translated": 1,
+          "total": 1
+        },
+        "requires": [
+          5571
+        ]
+      },
+      {
+        "id": 64083,
+        "en": "Lightning Damage",
+        "ru": "Урон от молнии",
+        "lines": {
+          "translated": 1,
+          "total": 1
+        },
+        "requires": [
+          5571
+        ]
+      },
+      {
+        "id": 64139,
+        "en": "Friend to Many",
+        "ru": "Друг многих",
+        "lines": {
+          "translated": 1,
+          "total": 1
+        },
+        "requires": [
+          5571
+        ]
+      },
+      {
+        "id": 64239,
+        "en": "Innate Rune",
+        "ru": "Врождённая руна",
+        "lines": {
+          "translated": 1,
+          "total": 1
+        },
+        "requires": [
+          5571
+        ]
+      },
+      {
+        "id": 65192,
+        "en": "Totem Cast and Attack Speed",
+        "ru": "Тотемы: скорость сотворения чар и атаки",
+        "lines": {
+          "translated": 2,
+          "total": 2
+        },
+        "requires": [
+          5571
+        ]
+      }
+    ],
+    "otherPrerequisites": [
+      {
+        "id": 28254,
+        "en": "Sacred Unity",
+        "ru": "Священное единство",
+        "lines": {
+          "translated": 3,
+          "total": 3
+        },
+        "requires": [
+          41401,
+          62743,
+          46070
+        ]
+      },
+      {
+        "id": 42078,
+        "en": "The Hollowkeeper",
+        "ru": "Полый хранитель",
+        "lines": {
+          "translated": 2,
+          "total": 2
+        },
+        "requires": [
+          59657,
+          49356
+        ]
+      },
+      {
+        "id": 51850,
+        "en": "Path of the Renegade",
+        "ru": "Путь отступника",
+        "lines": {
+          "translated": 2,
+          "total": 2
+        },
+        "requires": [
+          50239,
+          9535,
+          61309
+        ]
+      }
+    ]
+  },
+  "decorativeOracleNodes": 21,
+  "versionDifferences": [
+    {
+      "id": 58894,
+      "name": "Провидение Владыки",
+      "pob": "Невосприимчивость к Уязвимости у стихиям",
+      "game": "30% ослабление эффекта проклятий на вас",
+      "since": "0.5.4b",
+      "source": "https://www.pathofexile.com/forum/view-thread/3980516"
+    }
+  ],
+  "missing": {
+    "name": [],
+    "description": []
+  }
+}
