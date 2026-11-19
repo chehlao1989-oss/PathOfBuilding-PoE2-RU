@@ -9,7 +9,20 @@
   if (!/^G-[A-Z0-9]+$/.test(measurementId)) return;
   if (location.protocol !== 'https:' || location.hostname !== host || !location.pathname.startsWith(path)) return;
   const query = new URLSearchParams(location.search);
-  if (query.get('analytics') === 'off') return;
+  const optOutKey = 'pob2ru.analytics.disabled';
+  let optedOut = query.get('analytics') === 'off';
+  try {
+    if (optedOut) window.localStorage.setItem(optOutKey, '1');
+    else if (query.get('analytics') === 'on') window.localStorage.removeItem(optOutKey);
+    optedOut = optedOut || window.localStorage.getItem(optOutKey) === '1';
+  } catch {
+    // The explicit URL opt-out still works when browser storage is unavailable.
+  }
+  if (optedOut) {
+    window['ga-disable-' + measurementId] = true;
+    return;
+  }
+  if (window['ga-disable-' + measurementId]) return;
   if (window.__pob2ruAnalyticsInitialized) return;
   window.__pob2ruAnalyticsInitialized = true;
 
