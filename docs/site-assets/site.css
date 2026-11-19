@@ -175,7 +175,7 @@ h1 em { color: var(--gold); font-style: normal; }
   .feature-list > div { grid-template-columns: 1fr; gap: 6px; }
   .section-intro h2 { font-size: 32px; }
   .faq summary { gap: 18px; }
-  .faq-answer { padding-right: 8px; font-size: 15px; }
+  .faq-answer { padding-right: 8px; }
   .download-section { padding: 24px 20px; }
   .download-section h2 { font-size: 28px; }
   .footer-top nav { gap: 4px 20px; }
