@@ -1,6 +1,6 @@
 {
-  "tag": "v0.23.1-ru.1-beta.2",
-  "ruVersion": "0.23.1-ru.1-beta.2",
+  "tag": "v0.23.1-ru.1-beta.3",
+  "ruVersion": "0.23.1-ru.1-beta.3",
   "pobVersion": "0.23.1",
   "gameVersion": "0.5.5g",
   "steamBuildId": 26650308,
@@ -9,8 +9,8 @@
   "unicodeRuntime": "https://github.com/woolkingx/PathOfBuilding-PoE2-i18n/releases/tag/v0.1.0",
   "unicodeRuntimeCommit": "8cb176392b923627c42879e6af17d27d4806a4a4",
   "font": "Liberation Sans 2.1.5",
-  "buildDate": "2026-11-18",
+  "buildDate": "2026-11-20",
   "prerelease": true,
-  "archiveRoot": "PoB2-RU-0.23.1-ru.1-beta.2",
-  "archiveName": "PoB2-RU-0.23.1-ru.1-beta.2-Windows.zip"
+  "archiveRoot": "PoB2-RU-0.23.1-ru.1-beta.3",
+  "archiveName": "PoB2-RU-0.23.1-ru.1-beta.3-Windows.zip"
 }

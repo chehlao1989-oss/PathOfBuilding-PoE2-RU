@@ -77,3 +77,4 @@ runtime/*.exe binary
 *.cfg text eol=lf
 *.tgf text eol=lf
 *.py text eol=lf
+runtime/PoB2RUUpdater.exe.config text eol=lf

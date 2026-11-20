@@ -231,6 +231,22 @@ function main:Init()
 		return not launch.updateCheckRunning
 	end
 	self.controls.forkLabel = new("LabelControl", {"BOTTOMLEFT",self.anchorMain,"BOTTOMLEFT"}, {168, -26, 0, 14}, "")
+	self.controls.forkLabel.shown = function() return not launch.ruPortable end
+	self.controls.ruUpdate = new("ButtonControl", {"BOTTOMLEFT",self.anchorMain,"BOTTOMLEFT"}, {164,-24,130,20}, "", function()
+		local release = launch.ruRelease
+		if release then
+			self:OpenConfirmPopup("Обновление русской PoB", "Доступна версия "..release.tag:sub(2)..".\nСкачать и проверить архив с GitHub?\nПосле загрузки сохраните билд и закройте PoB.\nНовая версия откроется из соседней папки.", "Скачать", function()
+				LoadModule("Modules/RuUpdate").install(release)
+			end)
+		else
+			launch:CheckForUpdate(false)
+		end
+	end)
+	self.controls.ruUpdate.label = function()
+		return launch.updateCheckRunning and "Проверка…" or launch.ruRelease and "^x50E050Обновить PoB" or "Обновления"
+	end
+	self.controls.ruUpdate.enabled = function() return not launch.updateCheckRunning end
+	self.controls.ruUpdate.shown = function() return launch.ruPortable end
 	self.controls.forkLabel.label = function()
 		return "^8PoB Community Fork"
 	end

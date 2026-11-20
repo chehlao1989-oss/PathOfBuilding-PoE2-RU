@@ -5507,7 +5507,7 @@
   {
     "path": "Modules/Main.lua",
     "source": "src/Modules/Main.lua",
-    "sha256": "7ab38f3031c6ba9ac96059c61e899bb654b3956c0f2d646f2c9e7a8012f7a4f6"
+    "sha256": "6b4e9b16f99107746ba4dc8f296fa79251c89891bc714d190e7cd113fbb42008"
   },
   {
     "path": "Modules/ModParser.lua",
@@ -8557,7 +8557,7 @@
   {
     "path": "Launch.lua",
     "source": "src/Launch.lua",
-    "sha256": "a1a5370b501cb84437c5781068bbb465469434c169fc7ba8bcdf0c8a28a6a431"
+    "sha256": "f049476a87dbd7640ec3ae73c2a1e7fe62a51108effbbc0d04057e70af7c347b"
   },
   {
     "path": "LaunchServer.lua",
@@ -8612,7 +8612,7 @@
   {
     "path": "README.md",
     "source": "localization/portable/README.md",
-    "sha256": "c438831315d89f8826c3e07b31899a5c91553116e28e9b330e8e700aa6a44979"
+    "sha256": "44e3ee3625620868a2a37954a2e3c734da3d2575fdc5be1281bfd01c9000c02b"
   },
   {
     "path": "docs/QA-RU.md",
@@ -8647,6 +8647,21 @@
   {
     "path": "RU-VERSION.json",
     "source": "localization/release.json",
-    "sha256": "157fccc42b885c00a22fe73027871b99986abe659fa9dbd2c8d61e5f45d81d2c"
+    "sha256": "51a6740a5e90c7b0a775d6eb5049beb643102df2ce98f928027c88fe2c2b1a76"
+  },
+  {
+    "path": "Modules/RuUpdate.lua",
+    "source": "src/Modules/RuUpdate.lua",
+    "sha256": "552d0d7ef7174a044d54e92baac232e1efd9fed2d8cb9c688e912fdece07c29f"
+  },
+  {
+    "path": "PoB2RUUpdater.exe",
+    "source": "runtime/PoB2RUUpdater.exe",
+    "sha256": "3d3a16d701116eb04d418705ac04ee0f7ebed552b56ec2f0c9bd6f97138c197d"
+  },
+  {
+    "path": "PoB2RUUpdater.exe.config",
+    "source": "runtime/PoB2RUUpdater.exe.config",
+    "sha256": "60b692467a567dcf0e11bdbeddb47dc4f97f652b0b21089341c9692573b0bd95"
   }
 ]

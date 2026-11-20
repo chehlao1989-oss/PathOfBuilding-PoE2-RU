@@ -26,7 +26,10 @@ function launch:OnInit()
 	self.lastUpdateCheck = GetTime()
 	self.subScripts = { }
 	self.startTime = startTime
-	local firstRunFile = io.open("first.run", "r")
+	local marker = io.open("RU-VERSION.json", "rb")
+	self.ruPortable = marker ~= nil
+	if marker then marker:close() end
+	local firstRunFile = not self.ruPortable and io.open("first.run", "r")
 	if firstRunFile then
 		firstRunFile:close()
 		os.remove("first.run")
@@ -255,7 +258,7 @@ end
 function launch:DownloadPage(url, callback, params)
 	params = params or {}
 	local script = [[
-		local url, requestHeader, requestBody, connectionProtocol, proxyURL, noSSL = ...
+		local url, requestHeader, requestBody, connectionProtocol, proxyURL, noSSL, secureUpdate = ...
 		local responseHeader = ""
 		local responseBody = ""
 		ConPrintf("Downloading page at: %s", url)
@@ -271,7 +274,8 @@ function launch:DownloadPage(url, callback, params)
 		easy:setopt_url(url)
 		easy:setopt(curl.OPT_USERAGENT, "Path of Building/]]..self.versionNumber..[[")
 		easy:setopt(curl.OPT_ACCEPT_ENCODING, "")
-		easy:setopt(curl.OPT_FOLLOWLOCATION, 1)
+		easy:setopt(curl.OPT_FOLLOWLOCATION, secureUpdate and 0 or 1)
+		if secureUpdate then easy:setopt_timeout(20) end
 		if requestBody then
 			easy:setopt(curl.OPT_POST, true)
 			easy:setopt(curl.OPT_POSTFIELDS, requestBody)
@@ -282,7 +286,7 @@ function launch:DownloadPage(url, callback, params)
 		if proxyURL then
 			easy:setopt(curl.OPT_PROXY, proxyURL)
 		end
-		if noSSL then
+		if noSSL and not secureUpdate then
 			easy:setopt(curl.OPT_SSL_VERIFYPEER, 0)
 			easy:setopt(curl.OPT_SSL_VERIFYHOST, 0)
 		end
@@ -308,7 +312,7 @@ function launch:DownloadPage(url, callback, params)
 		ConPrintf("Download complete. Status: %s", errMsg or "OK")
 		return responseBody, errMsg, responseHeader
 	]]
-	local id = LaunchSubScript(script, "", "ConPrintf", url, params.header, params.body, self.connectionProtocol, self.proxyURL, self.noSSL or false)
+	local id = LaunchSubScript(script, "", "ConPrintf", url, params.header, params.body, self.connectionProtocol, self.proxyURL, self.noSSL or false, params.secureUpdate or false)
 	if id then
 		self.subScripts[id] = {
 			type = "DOWNLOAD",
@@ -317,6 +321,7 @@ function launch:DownloadPage(url, callback, params)
 			end
 		}
 	end
+	return id
 end
 
 function launch:ApplyUpdate(mode)
@@ -335,6 +340,9 @@ end
 
 function launch:CheckForUpdate(inBackground)
 	-- Official releases would overwrite this localized installation.
+	if self.ruPortable then
+		return LoadModule("Modules/RuUpdate").check(self, inBackground)
+	end
 	if UILocale or self.updateCheckRunning then
 		return
 	end
