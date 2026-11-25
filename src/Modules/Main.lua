@@ -1397,7 +1397,7 @@ function main:OpenUpdatePopup()
 end
 
 function main:OpenSupportPage()
-	OpenURL("https://boosty.to/dota2timer/donate")
+	OpenURL("https://boosty.to/dota2timer/donate?utm_source=pob_app")
 end
 
 function main:OpenAboutPopup(helpSectionIndex)

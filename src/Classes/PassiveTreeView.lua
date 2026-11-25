@@ -815,7 +815,7 @@ function PassiveTreeViewClass:Draw(build, viewPort, inputEvents)
 		self.searchLanguage = UILocale.language
 
 		local function prepSearch(search)
-			search = utf8.lower(search)
+			search = utf8.lower((utf8.clean(search)))
 			--gsub("([%[%]%%])", "%%%1")
 			local searchWords = {}
 			for matchstring, v in search:gmatch('"([^"]*)"') do

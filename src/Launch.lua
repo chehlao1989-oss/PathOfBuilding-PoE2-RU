@@ -407,7 +407,8 @@ function launch:DrawPopup(r, g, b, fmt, ...)
 	local screenW, screenH = GetVirtualScreenSize()
 	SetDrawColor(0, 0, 0, 0.5)
 	DrawImage(nil, 0, 0, screenW, screenH)
-	local txt = string.format(fmt, ...)
+	-- Black glyphs are hard to read with the runtime font's black outline.
+	local txt = string.format(fmt, ...):gsub("%^0", "^xEEEEEE")
 	local w = DrawStringWidth(20, "VAR", txt) + 20
 	local h = (#txt:gsub("[^\n]","") + 2) * 20
 	local ox = (screenW - w) / 2
@@ -416,7 +417,8 @@ function launch:DrawPopup(r, g, b, fmt, ...)
 	DrawImage(nil, ox, oy, w, h)
 	SetDrawColor(r, g, b)
 	DrawImage(nil, ox + 2, oy + 2, w - 4, h - 4)
-	SetDrawColor(1, 1, 1)
+	SetDrawColor(0.10, 0.10, 0.10)
 	DrawImage(nil, ox + 4, oy + 4, w - 8, h - 8)
+	SetDrawColor(1, 1, 1)
 	DrawString(0, oy + 10, "CENTER", 20, "VAR", txt)
 end

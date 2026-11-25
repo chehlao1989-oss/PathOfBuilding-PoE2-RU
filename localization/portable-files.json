@@ -587,7 +587,7 @@
   {
     "path": "Classes/EditControl.lua",
     "source": "src/Classes/EditControl.lua",
-    "sha256": "015505449e6c783b84b8f74c3583cd746053f86c18369633e45dd9ebabb6e08f"
+    "sha256": "46d3b8914162230289b4e564f8e92271c4de67f2994b21ed0b45dd6faeb49845"
   },
   {
     "path": "Classes/ExtBuildListControl.lua",
@@ -727,7 +727,7 @@
   {
     "path": "Classes/PassiveTreeView.lua",
     "source": "src/Classes/PassiveTreeView.lua",
-    "sha256": "eaf0aa91406acfd30aef4fd4a6f7a6335569c1aee3c61500fef21df0ca310f50"
+    "sha256": "8c89dedcc48363b00392ddd53d2e773e122e911850e3007a722ab63f96c00767"
   },
   {
     "path": "Classes/PathControl.lua",
@@ -5507,7 +5507,7 @@
   {
     "path": "Modules/Main.lua",
     "source": "src/Modules/Main.lua",
-    "sha256": "6b4e9b16f99107746ba4dc8f296fa79251c89891bc714d190e7cd113fbb42008"
+    "sha256": "b3c6dcec71cced64225c0b38e0c556d837fdf96e963c0f7bd968020aabcd7df6"
   },
   {
     "path": "Modules/ModParser.lua",
@@ -8557,7 +8557,7 @@
   {
     "path": "Launch.lua",
     "source": "src/Launch.lua",
-    "sha256": "f049476a87dbd7640ec3ae73c2a1e7fe62a51108effbbc0d04057e70af7c347b"
+    "sha256": "75087489ef2aae03020316ac830d4ab2c53ef2fab046cddd8c70e003c0708741"
   },
   {
     "path": "LaunchServer.lua",
@@ -8612,7 +8612,7 @@
   {
     "path": "README.md",
     "source": "localization/portable/README.md",
-    "sha256": "44e3ee3625620868a2a37954a2e3c734da3d2575fdc5be1281bfd01c9000c02b"
+    "sha256": "9d13bcb2efc2f4cabb2019fe98885f150943f40ef636c46878567dec42824395"
   },
   {
     "path": "docs/QA-RU.md",
@@ -8647,7 +8647,7 @@
   {
     "path": "RU-VERSION.json",
     "source": "localization/release.json",
-    "sha256": "51a6740a5e90c7b0a775d6eb5049beb643102df2ce98f928027c88fe2c2b1a76"
+    "sha256": "63963240b32a04454d91088baea7b2d88c0eb628b3cef3a55c22b8e83e7da4b9"
   },
   {
     "path": "Modules/RuUpdate.lua",

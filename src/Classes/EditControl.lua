@@ -605,49 +605,27 @@ function EditClass:OnKeyDown(key, doubleClick)
 		if self.sel and self.sel ~= self.caret then
 			self:ReplaceSel("")
 		elseif self.caret > 1 then
-			local len = 1
-			if IsKeyDown("CTRL") then
-				while self.caret - len > 1 and self.buf:sub(self.caret - len, self.caret - len):match("%s") and not self.buf:sub(self.caret - len - 1, self.caret - len - 1):match("\n") do
-					len = len + 1
-				end
-				if self.buf:sub(self.caret - len, self.caret - len):match("%w") then
-					while self.caret - len > 1 and self.buf:sub(self.caret - len - 1, self.caret - len - 1):match("%w") do
-						len = len + 1
-					end
-				end
+			self.sel = utf8.next(self.buf, self.caret, -1) or 1
+			if ctrl then
+				local before = self.buf:sub(1, self.caret - 1)
+				local spaces = before:match("[ \t\v\f]*$")
+				local word = utf8.match(before:sub(1, #before - #spaces), "%w*$")
+				self.sel = m_min(self.sel, self.caret - #spaces - #word)
 			end
-			self.buf = self.buf:sub(1, self.caret - 1 - len) .. self.buf:sub(self.caret)
-			self.caret = self.caret - len
-			self.sel = nil
-			self:ScrollCaretIntoView()
-			self.blinkStart = GetTime()
-			if self.changeFunc then
-				self.changeFunc(self.buf)
-			end
-			self:AddUndoState()
+			self:ReplaceSel("")
 		end
 	elseif key == "DELETE" then
 		if self.sel and self.sel ~= self.caret then
 			self:ReplaceSel("")
 		elseif self.caret <= #self.buf then
-			local len = 1
-			if IsKeyDown("CTRL") then
-				while self.caret + len <= #self.buf and self.buf:sub(self.caret + len - 1, self.caret + len - 1):match("%s") and not self.buf:sub(self.caret + len, self.caret + len):match("\n") do
-					len = len + 1
-				end
-				if self.buf:sub(self.caret + len - 1, self.caret + len - 1):match("%w") then
-					while self.caret + len <= #self.buf and self.buf:sub(self.caret + len, self.caret + len):match("%w") do
-						len = len + 1
-					end
-				end
+			self.sel = utf8.next(self.buf, self.caret, 1) or #self.buf + 1
+			if ctrl then
+				local after = self.buf:sub(self.caret)
+				local spaces = after:match("^[ \t\v\f]*")
+				local word = utf8.match(after:sub(#spaces + 1), "^%w*")
+				self.sel = m_max(self.sel, self.caret + #spaces + #word)
 			end
-			self.buf = self.buf:sub(1, self.caret - 1) .. self.buf:sub(self.caret + len)
-			self.sel = nil
-			self.blinkStart = GetTime()
-			if self.changeFunc then
-				self.changeFunc(self.buf)
-			end
-			self:AddUndoState()
+			self:ReplaceSel("")
 		end
 	elseif key == "TAB" then
 		return self.Object:TabAdvance(shift and -1 or 1)

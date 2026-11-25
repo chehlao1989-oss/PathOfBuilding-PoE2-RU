@@ -20,7 +20,13 @@ with tempfile.TemporaryDirectory(prefix="pob-ru-qa-") as tmp:
     shutil.copyfile(tests / "verify_pob.lua", scratch / "verify_pob.lua")
     shutil.copyfile(tests / "fixtures/reference-build.xml", scratch / "reference-build.xml")
     env = dict(os.environ, POB_FIXTURE_ROOT=str(scratch), POB_EXPECTED_LANGUAGE="ru")
-    for name in ("check_trade_locale.lua", "check_trade_results_locale.lua", "check_character_import_locale.lua", "check_ui_layout.lua"):
+    for name in (
+        "check_trade_locale.lua",
+        "check_trade_results_locale.lua",
+        "check_character_import_locale.lua",
+        "check_ui_layout.lua",
+        "check_tree_search_editing.lua",
+    ):
         print("Running " + name, flush=True)
         subprocess.run([sys.executable, "-X", "utf8", str(ROOT / "scripts/run_pob_headless.py"), str(directory), str(tests / name)], env=env, check=True)
 print("All offline RU checks passed")
