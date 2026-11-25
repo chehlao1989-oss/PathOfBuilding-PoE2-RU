@@ -1728,3 +1728,4 @@ Spectre Reservation:	Удержание духа призраком:
 Companion Reservation:	Удержание духа компаньоном:
 Support project	Поддержать проект
 Optional one-time support for the Russian localization on Boosty. PoB remains free.	Добровольный разовый донат на развитие русской версии через Boosty. PoB остаётся бесплатной.
+^8Hold a key while allocating a node with the left mouse button to select an attribute immediately:\n%s"1" or "I" for Intelligence, %s"2" or "S" for Strength, %s"3" or "D" for Dexterity\n\n%sRight-click^8 an allocated node to cycle attributes; right-click an unallocated node to allocate it with your last used attribute.	^8При выборе узла ЛКМ удерживайте клавишу, чтобы сразу выбрать характеристику:\n%s"1" или "I" — интеллект, %s"2" или "S" — сила, %s"3" или "D" — ловкость\n\n%sПКМ^8 по выбранному узлу переключает характеристику, по свободному — выбирает его с последней использованной характеристикой.

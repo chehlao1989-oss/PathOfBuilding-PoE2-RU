@@ -1,6 +1,6 @@
 {
-  "tag": "v0.23.1-ru.1-beta.4",
-  "ruVersion": "0.23.1-ru.1-beta.4",
+  "tag": "v0.23.1-ru.1-beta.5",
+  "ruVersion": "0.23.1-ru.1-beta.5",
   "pobVersion": "0.23.1",
   "gameVersion": "0.5.5g",
   "steamBuildId": 26650308,
@@ -11,6 +11,6 @@
   "font": "Liberation Sans 2.1.5",
   "buildDate": "2026-11-25",
   "prerelease": true,
-  "archiveRoot": "PoB2-RU-0.23.1-ru.1-beta.4",
-  "archiveName": "PoB2-RU-0.23.1-ru.1-beta.4-Windows.zip"
+  "archiveRoot": "PoB2-RU-0.23.1-ru.1-beta.5",
+  "archiveName": "PoB2-RU-0.23.1-ru.1-beta.5-Windows.zip"
 }

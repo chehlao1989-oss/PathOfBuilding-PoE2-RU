@@ -363,6 +363,24 @@ function main:Shutdown()
 	self:SaveSettings()
 end
 
+function main:UpdateToastLayout()
+	local message = self.toastMessages[1]
+	local title = message:match("^[^\n]*")
+	local body = message:gsub("^[^\n]*\n?", "")
+	local titleLines, bodyLines
+	if UILocale then
+		self.toastTitleCache = self.toastTitleCache or { }
+		self.toastBodyCache = self.toastBodyCache or { }
+		self.toastTitle, titleLines = UILocale.wrap(self.toastTitleCache, title, 20, "VAR", 300)
+		self.toastBody, bodyLines = UILocale.wrap(self.toastBodyCache, body, 16, "VAR", 300)
+	else
+		self.toastTitle, self.toastBody = title, body
+		titleLines, bodyLines = 1, #body:gsub("[^\n]", "") + 1
+	end
+	self.toastTitleHeight = titleLines * 20
+	self.toastHeight = self.toastTitleHeight + (body == "" and 0 or bodyLines * 16) + 40
+end
+
 function main:OnFrame()
 	self.screenW, self.screenH = GetVirtualScreenSize()
 
@@ -411,10 +429,10 @@ function main:OnFrame()
 
 	-- Run toasts
 	if self.toastMessages[1] then
+		self:UpdateToastLayout()
 		if not self.toastMode then
 			self.toastMode = "SHOWING"
 			self.toastStart = GetTime()
-			self.toastHeight = #self.toastMessages[1]:gsub("[^\n]","") * 16 + 20 + 40
 		end
 		if self.toastMode == "SHOWING" then
 			local now = GetTime()
@@ -442,8 +460,8 @@ function main:OnFrame()
 			SetDrawColor(0.1, 0.1, 0.1)
 			DrawImage(nil, 0, self.screenH - self.mainBarHeight + 4, 308, self.mainBarHeight - 4)
 			SetDrawColor(1, 1, 1)
-			DrawString(4, self.screenH - self.mainBarHeight + 8, "LEFT", 20, "VAR", self.toastMessages[1]:gsub("\n.*",""))
-			DrawString(4, self.screenH - self.mainBarHeight + 28, "LEFT", 16, "VAR", self.toastMessages[1]:gsub("^[^\n]*\n?",""))
+			DrawString(4, self.screenH - self.mainBarHeight + 8, "LEFT", 20, "VAR", self.toastTitle)
+			DrawString(4, self.screenH - self.mainBarHeight + 8 + self.toastTitleHeight, "LEFT", 16, "VAR", self.toastBody)
 		end
 	end
 

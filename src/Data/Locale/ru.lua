@@ -1706,6 +1706,7 @@ return {
 	["Your unreserved Life is below 1"] = "Свободный запас здоровья меньше 1.",
 	["Your unreserved Mana is negative"] = "Удержание маны превышает её запас.",
 	["Your unreserved Spirit is negative"] = "Удержание духа превышает его запас.",
+	["^8Hold a key while allocating a node with the left mouse button to select an attribute immediately:\n%s\"1\" or \"I\" for Intelligence, %s\"2\" or \"S\" for Strength, %s\"3\" or \"D\" for Dexterity\n\n%sRight-click^8 an allocated node to cycle attributes; right-click an unallocated node to allocate it with your last used attribute."] = "^8При выборе узла ЛКМ удерживайте клавишу, чтобы сразу выбрать характеристику:\n%s\"1\" или \"I\" — интеллект, %s\"2\" или \"S\" — сила, %s\"3\" или \"D\" — ловкость\n\n%sПКМ^8 по выбранному узлу переключает характеристику, по свободному — выбирает его с последней использованной характеристикой.",
 	["allocating"] = "выборе",
 	["in %s"] = "в лиге %s",
 	["lvl %d"] = "ур. %d",

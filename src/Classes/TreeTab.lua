@@ -850,7 +850,7 @@ function TreeTabClass:ModifyAttributePopup(hoverNode)
 	local spec = self.build.spec
 	local attributes = { "Strength", "Dexterity", "Intelligence" }
 	
-	controls.attrSelect = new("DropDownControl", {"TOPLEFT",nil,"TOPLEFT"}, {225, 30, 100, 18}, attributes, nil)
+	controls.attrSelect = new("DropDownControl", nil, {0, 30, 100, 18}, attributes, nil)
 	controls.save = new("ButtonControl", nil, {-50, 65, 80, 20}, "Allocate", function()
 		spec:SwitchAttributeNode(hoverNode.id, controls.attrSelect.selIndex)
 		spec.attributeIndex = controls.attrSelect.selIndex
@@ -863,13 +863,13 @@ function TreeTabClass:ModifyAttributePopup(hoverNode)
 		spec:DeallocNode(hoverNode)
 		main:ClosePopup()
 	end)
-	controls.hotkeyTooltip = new("LabelControl", nil, {0, 100, 0, 16}, 
-		"^8You can switch attributes quicker by holding hotkeys while allocating:\n"..colorCodes.INTELLIGENCE.."\"1\" or \"I\" for Intelligence, "
-		..colorCodes.STRENGTH.."\"2\" or \"S\" for Strength, "..colorCodes.DEXTERITY.."\"3\" or \"D\" for Dexterity\n\n"
-		..colorCodes.RARE.."Right-click ^8an allocated node to toggle attribute types or to set an\n" .. 
-		"unallocated node to your last used attribute\n\n"
-	)
-	main:OpenPopup(550, 185, "Choose Attribute", controls, "save")
+	local popupWidth = m_min(550, m_max(280, main.screenW - 32))
+	local format = UILocale and UILocale.format or string.format
+	local help = format("^8Hold a key while allocating a node with the left mouse button to select an attribute immediately:\n%s\"1\" or \"I\" for Intelligence, %s\"2\" or \"S\" for Strength, %s\"3\" or \"D\" for Dexterity\n\n%sRight-click^8 an allocated node to cycle attributes; right-click an unallocated node to allocate it with your last used attribute.",
+		colorCodes.INTELLIGENCE, colorCodes.STRENGTH, colorCodes.DEXTERITY, colorCodes.RARE)
+	controls.hotkeyTooltip = new("LabelControl", {"TOPLEFT",nil,"TOPLEFT"}, {16, 100, 0, 16}, help)
+	controls.hotkeyTooltip:SetWrapWidth(popupWidth - 32)
+	main:OpenPopup(popupWidth, 116 + controls.hotkeyTooltip:GetProperty("height"), "Choose Attribute", controls, "save")
 end
 
 function TreeTabClass:SaveMasteryPopup(node, listControl)

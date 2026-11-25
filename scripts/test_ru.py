@@ -26,6 +26,7 @@ with tempfile.TemporaryDirectory(prefix="pob-ru-qa-") as tmp:
         "check_character_import_locale.lua",
         "check_ui_layout.lua",
         "check_tree_search_editing.lua",
+        "check_attribute_help_layout.lua",
     ):
         print("Running " + name, flush=True)
         subprocess.run([sys.executable, "-X", "utf8", str(ROOT / "scripts/run_pob_headless.py"), str(directory), str(tests / name)], env=env, check=True)

@@ -872,7 +872,7 @@
   {
     "path": "Classes/TreeTab.lua",
     "source": "src/Classes/TreeTab.lua",
-    "sha256": "411f8df1a2eb4b498a6dd405725009594e8cf00ee3c075b71f4e622efb6dc2f1"
+    "sha256": "553f4bbf2304a6b16e414412b3b2cb12cb87a81feeb9009a4bb536a3f2e8da97"
   },
   {
     "path": "Classes/UndoHandler.lua",
@@ -1117,7 +1117,7 @@
   {
     "path": "Data/Locale/ru.lua",
     "source": "src/Data/Locale/ru.lua",
-    "sha256": "1cfabe35dab96587e7326c2ef5d34436ab8626d2d7597d73ac5a1624524880c6"
+    "sha256": "e380fb6a05a5374c0ac73bf541fd67b1fdcfe0e78202f164410030c5611c612b"
   },
   {
     "path": "Data/Locale/skills_ru.lua",
@@ -5507,7 +5507,7 @@
   {
     "path": "Modules/Main.lua",
     "source": "src/Modules/Main.lua",
-    "sha256": "b3c6dcec71cced64225c0b38e0c556d837fdf96e963c0f7bd968020aabcd7df6"
+    "sha256": "bfa1e584ba8da37f9225c32583d36212eeacd5bd5552da033080d796e4168d65"
   },
   {
     "path": "Modules/ModParser.lua",
@@ -8612,7 +8612,7 @@
   {
     "path": "README.md",
     "source": "localization/portable/README.md",
-    "sha256": "9d13bcb2efc2f4cabb2019fe98885f150943f40ef636c46878567dec42824395"
+    "sha256": "74d0ea7808d77f4bc31ccf09e48fc382faa774cee0972b9e2e4290f4634a3d38"
   },
   {
     "path": "docs/QA-RU.md",
@@ -8647,7 +8647,7 @@
   {
     "path": "RU-VERSION.json",
     "source": "localization/release.json",
-    "sha256": "63963240b32a04454d91088baea7b2d88c0eb628b3cef3a55c22b8e83e7da4b9"
+    "sha256": "f93775c71f3870389dd69524842f0c99bdda5c83912b54dd2fb932fa4dd7db05"
   },
   {
     "path": "Modules/RuUpdate.lua",
@@ -8657,7 +8657,7 @@
   {
     "path": "PoB2RUUpdater.exe",
     "source": "runtime/PoB2RUUpdater.exe",
-    "sha256": "3d3a16d701116eb04d418705ac04ee0f7ebed552b56ec2f0c9bd6f97138c197d"
+    "sha256": "350457e25e1f861d9ada2b10734436807d1e7640da5c5485a34072da2490de67"
   },
   {
     "path": "PoB2RUUpdater.exe.config",
